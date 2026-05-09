@@ -1,0 +1,32 @@
+example_id: annex_weighted_quorum_policy
+scenario: 3主体の共同承認だが、席ごとの重みが異なる委員会。approval と accountability を分離して扱う。
+approval_structure:
+  mode: weighted_threshold
+  threshold_weight: 0.7
+  tally_basis: active_voting_weight
+  seats:
+  - seat_id: quality_board
+    role_ref: role_quality_head
+    weight: 0.4
+  - seat_id: operations_board
+    role_ref: role_operations_head
+    weight: 0.35
+  - seat_id: safety_board
+    role_ref: role_safety_head
+    weight: 0.25
+  approval_leg:
+    required_to_execute:
+    - quality_board
+    - operations_board
+    fallback_branch_when_threshold_not_met: hold
+    hold_reason_code: H4
+  accountability_leg:
+    outcome_accountability:
+    - role_quality_head
+    - role_operations_head
+    note: approval 成立は accountability 移転の代用ではない。
+annex_links:
+- public_annex_concepts_v1.yaml#approval_weighted_quorum_governance
+- public_annex_concepts_v1.yaml#joint_approval_accountability_split_governance
+- public_annex_formalization_v1.yaml#approval_weighted_quorum_boundary_model
+- public_annex_formalization_v1.yaml#approval_accountability_split_model

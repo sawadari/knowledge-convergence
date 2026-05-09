@@ -1,0 +1,124 @@
+title: 知識収束学_公開概念仕様_v1
+file_role: public_concepts_spec
+package_role: external_facing_core
+version: '1.1'
+status: curated_public_view_revised_v1_1
+created_on: '2026-05-08'
+derived_from:
+  primary_source: 01_core/concepts_core_v1.yaml
+  freeze_basis: 04_operations/freeze_report_v1.yaml
+  semantic_policy: v1 の公開仕様を維持しつつ、v1.1 core controlled extension として domain_validity_convergence、agent execution、meaningful
+    human oversight、organization topology、convergence measurement を追加した。
+normative_language:
+  MUST: 互換性を期待する公開仕様上の必須条件。
+  SHOULD: 特別な理由がない限り従う推奨条件。
+  MAY: 互換性を壊さない範囲で採用してよい任意条件。
+purpose: 外部読者、レビュー担当、実装者が、知識収束学の核を短い正本として理解できるようにする。
+scope_statement: この仕様は、知識を「判断可能な状態」として扱うための概念境界を定める。大型拡張や研究ログは対象外。
+stable_definitions:
+  knowledge:
+    statement: Knowledge とは、構造・文脈・根拠が接続され、必要に応じて価値基準、責任割当、ドメイン妥当性条件が束縛され、判断・説明・実行・保留・差戻し・再検討に耐える状態である。
+    MUST:
+    - 主張内容だけでなく、その適用文脈と根拠所在を追跡できなければならない
+    - 見直し可能性と説明可能性を失ってはならない
+    MUST_NOT:
+    - 生成物を、そのまま knowledge と同一視してはならない
+  convergence:
+    statement: Convergence とは、唯一解への強制ではなく、所与の目的と責任条件の下で branch を選びうる整理状態へ到達することである。
+    MUST:
+    - 未比較性や複数の存立可能案を残せるようにしなければならない
+    - hold や escalate を正規の出力として認めなければならない
+    MUST_NOT:
+    - 常に single truth を返す設計だとみなしてはならない
+  two_layer_convergence:
+    statement: v1 の二層モデルは、認識収束と統治収束を分ける後方互換の中核である。v1.1 では高影響判断やドメイン妥当性を主張する判断に第三層を追加する。
+    epistemic_layer: 説明可能な知識状態かどうかを判定する層。
+    governance_layer: その知識状態を誰がどの条件で実行・保留・棄却・委任できるかを判定する層。
+    MUST:
+    - 認識収束の成立だけで統治収束成立とみなしてはならない
+  hold:
+    statement: Hold は失敗ではなく、未成立状態を理由コードと解消条件付きで維持する正規状態である。
+    MUST:
+    - reason_code と reopen_condition を持たなければならない
+  ai_role:
+    statement: AI は候補生成・分析補助・部分実行の主体にはなれるが、既定の結果責任主体にはしない。
+    MUST:
+    - AI を execution actor に含める場合、委任範囲と監査義務を束縛しなければならない
+    MUST_NOT:
+    - AI を default accountability owner として扱ってはならない
+  three_layer_convergence:
+    statement: v1.1 では、知識収束を認識収束・統治収束・ドメイン妥当性収束の三層で扱える。
+    epistemic_layer: 内容として説明可能かを判定する層。
+    governance_layer: 誰がどの条件で実行・保留・棄却・委任できるかを判定する層。
+    domain_validity_layer: 対象ドメインで実際に使ってよいかを判定する層。
+    MUST:
+    - 認識収束の成立だけで統治収束成立とみなしてはならない
+    - 統治収束の成立だけでドメイン妥当性成立とみなしてはならない
+    - ドメイン妥当性を主張する場合、domain_profile と success/verification/validation/operation 条件を明示しなければならない
+  agent_execution_governance:
+    statement: AI/agent は限定された execution actor になれる。ただし、authority_envelope、audit、stop/rollback、owner_role、accountability_binding
+      が必要である。
+    MUST:
+    - AI/agent 実行では権限範囲と監査義務を明示しなければならない
+    - AI/agent を default accountability owner として扱ってはならない
+  meaningful_human_oversight:
+    statement: 人間が形式的に介在するだけでは human oversight とはみなさない。説明理解、停止権、介入時間、訓練、代替経路、エスカレーションを備える必要がある。
+    MUST_NOT:
+    - human-in-the-loop というラベルだけで安全性を保証したとみなしてはならない
+  organization_topology:
+    statement: 組織構造・役割・専門性・意思決定権・レビュー能力・外部境界は、K の R/C/H へ接続される一級要素である。
+    MUST:
+    - expertise_scope と decision_right を混同してはならない
+  convergence_measurement:
+    statement: 収束状態は単一スコアではなく、多次元かつ blocker-preserving に計量する。
+    MUST_NOT:
+    - 重大 blocker を平均点で相殺してはならない
+governing_principles:
+  P1: 生成物は知識候補であり、そのまま知識ではない。
+  P2: 収束は唯一解への圧縮ではなく、判断可能性の確立である。
+  P3: 認識収束と統治収束は別の評価問題である。
+  P4: Hold / Reject / Escalate / Rollback は Execute と同格の branch である。
+  P5: 責任主体は role や institution として束縛し、person 依存を既定にしない。
+  P6: 欠落は null で曖昧化せず、型付き missingness として扱う。
+  P7: 統治承認はドメイン妥当性を自動的には意味しない。
+  P8: human-in-the-loop は意味ある人間監督を自動的には意味しない。
+  P9: AI/agent execution は authority envelope と audit を要求する。
+  P10: 組織構造と人間系はKへ接続される一級要素である。
+  P11: 収束指標は blocker-preserving で扱う。
+component_boundaries:
+  G_vs_C: G は意味内容の構造、C は適用境界・評価時点・前提状況を担う。
+  E: E は根拠そのもの、または根拠欠落の型付き状態を担う。
+  V: V は採択基準・許容リスク・優先関係・棄却条件を担う。
+  R: R は承認主体・実行主体・結果責任主体・委任範囲・エスカレーションを担う。
+  H: H は監査・差戻し・時系列検証のための履歴を担う。
+  DomainValidity: DomainValidity は、Kを対象ドメインの成功条件・検証条件・運用条件へ接続する補助 packet であり、V/R承認を置換しない。
+  AgentExecutionEnvelope: AgentExecutionEnvelope は、AI/agent を Ex として使う場合の権限・監査・停止・rollback を担う。
+  HumanOversight: HumanOversight は、人間の形式的存在ではなく、意味ある介入可能性を担う。
+  OrganizationTopology: OrganizationTopology は、役割、専門性、意思決定権、レビュー能力、外部境界を担う。
+public_non_goals:
+- 全ドメインに共通する万能スコアを定義すること
+- 価値衝突を数値一発で解消すること
+- AI に最終承認責任を持たせること
+- 大型 scheduler / federation 拡張をこの公開コアへ含めること
+public_commitments:
+- 公開仕様では K=(G,C,E,V,R,H) を canonical notation とする
+- 公開仕様では hold reason H1〜H6 を最小語彙とする
+- 公開仕様では execute/hold/reject/escalate/rollback を branch の最小語彙とする
+- 公開仕様では role/institution ベースの責任束縛を優先する
+- v1.1 は K=(G,C,E,V,R,H) を維持しつつ domain_validity layer を追加する
+- v1.1 は AI/agent を限定された実行主体として扱うが、既定の結果責任主体にはしない
+- v1.1 は組織構造・人間系を外部背景ではなく一級要素として扱う
+reserved_research_zones:
+- lawful cadence や burst envelope の registry 細部
+- calibration strata の粒度
+- weighted quorum の拡張表現
+- H を理論本体と運用メタ層のどちらへ最終固定するか
+- disjunctive route family の一般化
+- composite unit / derived metric の quantity family 正規化
+crosswalk_to_core:
+  knowledge: 01_core/concepts_core_v1.yaml::central_definitions.knowledge
+  convergence: 01_core/concepts_core_v1.yaml::central_definitions.convergence
+  two_layer_convergence: 01_core/concepts_core_v1.yaml::central_definitions.epistemic_governance_connection
+  hold: 01_core/concepts_core_v1.yaml::central_definitions.hold_state
+  ai_role: 01_core/concepts_core_v1.yaml::central_definitions.ai_self_evaluation
+  knowledge_state: 01_core/concepts_core_v1.yaml::central_definitions.knowledge_state

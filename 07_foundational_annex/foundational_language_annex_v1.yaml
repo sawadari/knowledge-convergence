@@ -1,0 +1,195 @@
+title: 知識収束学_基礎発展annex_言語_v1
+file_role: foundational_language_annex
+version: 1
+status: curated_foundational_extension
+created_on: '2026-04-11'
+purpose: 自然言語の発話が、どのように claim-ready な知識候補へ上がるかを、core を壊さずに補う。
+normativity:
+  precedence: 01_core > 06_public_annex > 07_foundational_annex > 02_supplements
+  foundational_role_meaning: recommended_foundational_extension は、将来の v2 検討と高説明責任実装のために採用を推奨する。
+theme_index:
+  utterance_lifting:
+    label: 発話から claim への持ち上げ
+    entries:
+    - utterance_interpretation_envelope
+    - dialogue_to_claim_lifting_rules
+    - claim_kind_typing_model
+  discourse_and_context:
+    label: 談話と文脈アンカー
+    entries:
+    - speech_act_taxonomy
+    - speaker_commitment_and_attribution_model
+    - evidentiality_tracking_model
+    - presupposition_common_ground_model
+    - deictic_anchor_model
+    - discourse_relation_model
+  ambiguity_and_thresholds:
+    label: 曖昧性と閾値
+    entries:
+    - ambiguity_decomposition_model
+    - gradable_term_threshold_profile
+foundational_entries:
+  utterance_interpretation_envelope:
+    label: 発話解釈 envelope
+    foundational_role: recommended_foundational_extension
+    statement: raw utterance を、そのまま fact claim に潰さず、speech act・commitment・evidentiality・deictic anchor を束ねて保持する。
+    public_surface:
+      minimum_fields:
+      - utterance_id
+      - speech_act
+      - speaker_commitment
+      - evidentiality
+      - deictic_anchor
+      one_of:
+      - raw_text
+      - source_ref
+      recommended_fields:
+      - attributed_source_ref
+      - presuppositions
+      - discourse_relation
+      - ambiguity_profile
+      - claim_kind_hint
+      - lift_target
+      - lift_status
+    public_rules:
+      core_claims:
+      - assert / report / proposal / directive / question を同じ assertive claim として正規化してはならない。
+      - 伝聞・推量・仮定・引用は speaker_commitment と evidentiality を失わずに保持する。
+      - deictic anchor が未束縛のときは、truth claim の欠如ではなく context binding の不足として扱う。
+      - utterance envelope は claim への昇格前 packet であり、必要なら lifted_claim_candidate と一対多で結び付けてよい。
+    implementation_touchpoints:
+      GraphLint:
+      - speech_act_missing
+      - deictic_anchor_unbound
+      - evidentiality_lost_on_lift
+      - attributed_source_dropped
+      ingestion_adapter:
+      - utterance_to_claim_candidate
+  speech_act_taxonomy:
+    label: speech act taxonomy
+    foundational_role: recommended_foundational_extension
+    statement: 発話が assert / question / directive / report / proposal のどれとして機能しているかを区別し、評価経路を変える。
+    minimal_vocabulary:
+    - assert
+    - question
+    - directive
+    - report
+    - proposal
+    rules:
+    - question は claim truth の候補ではなく information request として扱う。
+    - directive は norm / obligation / requested_action 候補として lift し、fact claim と混同しない。
+    - report は attributed content を含む可能性が高く、speaker_commitment と組みで読む。
+  speaker_commitment_and_attribution_model:
+    label: 話者コミットメントと帰属
+    foundational_role: recommended_foundational_extension
+    statement: asserted_strong / asserted_hedged / attributed / attributed_hedged / hypothetical を区別し、誰の commitment かを claim から剥がさない。
+    rules:
+    - attributed content は source_ref または attributed_source_ref を持つ。
+    - asserted_hedged は true/false の弱い版ではなく、assertion 形式で閾値や確信が限定されている状態として扱う。
+    - hypothetical は decision simulation や contingency planning に入れてよく、現実 claim と混同しない。
+    implementation_touchpoints:
+      GraphLint:
+      - unattributed_report
+      - hedge_lost_on_normalization
+      DecisionLedger:
+      - commitment_sensitive_risk_review
+  evidentiality_tracking_model:
+    label: evidentiality tracking
+    foundational_role: recommended_foundational_extension
+    statement: direct / inferred / reported / assumed / simulated を区別し、evidence binding と発話タイプの間を橋渡しする。
+    rules:
+    - direct は観測者と観測条件への参照を推奨する。
+    - inferred は inference_basis_ref を持てる。
+    - reported は attributed source と time anchor を推奨する。
+    - assumed / simulated は default execution basis に数えず、policy が許す場合だけ scenario basis として使う。
+  presupposition_common_ground_model:
+    label: presupposition / common ground model
+    foundational_role: recommended_foundational_extension
+    statement: 発話の前提化内容を、主張内容と切り分けて保持する。
+    rules:
+    - presupposition failure は referential ambiguity と別種の blocker として扱う。
+    - 前提が争われているときは lifted claim 自体ではなく context packet を hold してよい。
+    - common ground への追加は ratified claim と presupposed mention を混同してはならない。
+    typical_presupposition_kinds:
+    - existence
+    - uniqueness
+    - prior_event
+    - role_assignment
+    - temporal_continuity
+  deictic_anchor_model:
+    label: deictic anchor
+    foundational_role: recommended_foundational_extension
+    statement: 誰が、いつ、どこで、どの対象群を指しているかを文脈アンカーとして保持する。
+    minimum_fields:
+    - speaker_ref
+    - uttered_at
+    - scope_ref or referent_binding
+    recommended_fields:
+    - timezone
+    - audience_ref
+    - quoted_context_ref
+    rules:
+    - this/that/here/now のような指示語は referent_binding を欠くとき referential ambiguity を立てる。
+    - 相対日付は uttered_at と timezone を使って絶対化できる場合だけ downstream へ流す。
+  discourse_relation_model:
+    label: discourse relation
+    foundational_role: recommended_foundational_extension
+    statement: multi-utterance 入力では、evidence_for / contrast / exception / elaboration / correction を記録する。
+    rules:
+    - correction relation は predecessor utterance または claim candidate を参照する。
+    - contrast は反証を意味しない。rebut と undercut は argument graph 側で別に定める。
+    - elaboration は新しい binding を加えるだけで contradiction を意味しない。
+  ambiguity_decomposition_model:
+    label: 曖昧性分解モデル
+    foundational_role: recommended_foundational_extension
+    statement: q_ambiguity を単一バケツのままにせず、referential / scope / modality / presupposition_failure / discourse_relation / gradable_threshold_unbound に分ける。
+    rules:
+    - referential ambiguity は対象同定の問題であり、truth conflict と混同しない。
+    - scope ambiguity は quantifier / negation / modifier の効域の問題として扱う。
+    - modality ambiguity は obligation / possibility / intention / forecast の型の取り違いとして扱う。
+    - discourse relation ambiguity は evidence/contrast/correction の関係未束縛として扱う。
+    - gradable_threshold_unbound は comparison_class または threshold_source の不足として扱う。
+    implementation_touchpoints:
+      GraphLint:
+      - ambiguity_faceted_report
+      - unresolved_scope_ambiguity
+      - unbound_threshold_term
+  gradable_term_threshold_profile:
+    label: gradable term threshold profile
+    foundational_role: recommended_foundational_extension
+    statement: 高い / 十分 / 緊急 / 高リスク などの語を、単なる vague label で終わらせず threshold profile として保持する。
+    minimum_fields:
+    - term
+    - comparison_class
+    - threshold_source
+    recommended_fields:
+    - scale_structure
+    - borderline_zone
+    - decision_impact
+    rules:
+    - comparison_class が異なる比較は、同じ risk label でも直接比較しない。
+    - threshold_source は policy, expert_judgement, empirical_baseline, negotiated_rule のいずれかを持てる。
+    - borderline zone が広いときは execute 根拠でなく hold/explore 根拠として扱うことがある。
+  claim_kind_typing_model:
+    label: claim kind typing
+    foundational_role: recommended_foundational_extension
+    statement: claim を fact / event / state / norm / plan / report / obligation に型分けし、期待される evidence・approval・expiry を変える。
+    rules:
+    - norm / obligation は source authority と validity window を推奨する。
+    - plan は future commitment と review point を持てる。
+    - report は attributed source を推奨し、report content と reported proposition を区別してよい。
+    - event は time anchor を強く要求する。
+  dialogue_to_claim_lifting_rules:
+    label: dialogue-to-claim lifting
+    foundational_role: recommended_foundational_extension
+    statement: utterance envelope から G の claim candidate へ上げるときの最小規則。
+    rules:
+    - one utterance から複数の lifted claim candidate を生成してよい。
+    - source-preserving lift と proposition-only lift を区別してよい。
+    - lift 後も utterance_origin_ref を保持する。
+    - claim candidate が grounded / needs_context / rejected のどれかを返せるようにする。
+    - report/hypothetical/directive/question を assertive fact と同列に flatten してはならない。
+deferred_questions:
+- multilingual input で speech act と evidentiality をどこまで共通語彙化できるか
+- implicit subject や zero pronoun が多い言語で deictic anchor をどこまで必須化するか
+- dialogue repair と correction chain を H 側へどこまで移すか

@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "aggregation_rule_profile.schema.json",
+  "title": "AggregationRuleProfile",
+  "type": "object",
+  "required": [
+    "profile_id",
+    "decision_scope",
+    "aggregation_mode",
+    "quorum_rule",
+    "consistency_guard"
+  ],
+  "properties": {
+    "profile_id": {
+      "type": "string"
+    },
+    "decision_scope": {
+      "type": "string"
+    },
+    "aggregation_mode": {
+      "type": "string"
+    },
+    "quorum_rule": {
+      "type": "object",
+      "properties": {
+        "minimum_members": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "minimum_present": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "consistency_guard": {
+      "type": "string"
+    },
+    "weight_basis": {
+      "type": "string"
+    },
+    "premise_conclusion_mode": {
+      "type": "string"
+    },
+    "minority_report_policy": {
+      "type": "string"
+    },
+    "tie_break_rule": {
+      "type": "string"
+    },
+    "veto_roles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reopen_policy": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

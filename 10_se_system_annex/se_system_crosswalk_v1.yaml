@@ -1,0 +1,247 @@
+title: 知識収束学_SEシステム統合クロスウォーク_v1
+file_role: se_system_crosswalk
+version: '1.1'
+status: curated_applied_integration_annex_revised_v1_1
+created_on: '2026-05-08'
+purpose: SEシステムの概念を K=(G,C,E,V,R,H)、既存 institutional profile、実装コンポーネントへ対応させる。
+normativity:
+  precedence: 01_core > 06_public_annex > 07_foundational_annex > 08_institutional_annex > 09_conformance_suite > 10_se_system_annex
+    > 02_supplements
+  non_override_rule: 本ファイルは core v1.1 の三層収束をSEドメインへ具体化する。K=(G,C,E,V,R,H) は上書きしない。
+se_system_definition:
+  statement: SEシステムは、コードを書く前に必要となる事業・運用・要求・制約・設計判断・検証方針・専門家合意・組織責任を、根拠付きで、追跡可能で、検証可能で、変更可能な知識状態へ収束させる開発意思決定OSである。
+  non_goals:
+  - SysML を唯一の正本にしない
+  - AI に既定の結果責任を持たせない
+  - コード生成や業務操作を SE 収束と同一視しない
+mapping_to_K:
+  G_SE:
+    base_component: G
+    role: システム開発上の意味構造を保持する。
+    typical_nodes:
+    - opportunity
+    - mission
+    - business_goal
+    - stakeholder
+    - need
+    - operational_scenario
+    - system_boundary
+    - requirement
+    - constraint
+    - assumption
+    - function
+    - behavior
+    - component
+    - interface
+    - option
+    - decision
+    - risk
+    - verification_item
+    - validation_scenario
+    - implementation_task
+    - organization_role
+    typical_relations:
+    - need_derives_requirement
+    - requirement_constrains_function
+    - function_allocated_to_component_role_or_process
+    - decision_selects_option
+    - decision_rejects_option
+    - decision_justified_by_evidence
+    - requirement_verified_by_verification
+    - need_validated_by_scenario
+    - change_impacts_requirement_interface_test_role_process
+  C_SE:
+    base_component: C
+    role: システム境界、ライフサイクル段階、運用環境、前提、有効期間を保持する。
+    typical_fields:
+    - lifecycle_phase
+    - system_boundary
+    - operational_context
+    - market_context
+    - regulatory_context
+    - assumption_context
+    - validity_interval
+    - freshness_window
+  E_SE:
+    base_component: E
+    role: 根拠・証拠・証言・試験結果・運用フィードバックを保持する。
+    typical_evidence:
+    - stakeholder_interview
+    - meeting_minutes
+    - market_data
+    - regulation_or_standard
+    - expert_testimony
+    - test_result
+    - simulation_result
+    - operational_log
+    - incident_report
+    - code_or_pr_diff
+  V_SE:
+    base_component: V
+    role: 採択基準、価値基準、トレードオフ、リスク許容度、V&V基準を保持する。
+    typical_criteria:
+    - business_value
+    - customer_value
+    - safety
+    - quality
+    - cost
+    - schedule
+    - maintainability
+    - manufacturability
+    - legal_compliance
+    - risk_tolerance
+    - validation_success_criteria
+  R_SE:
+    base_component: R
+    role: 人間・組織・AIエージェントの責任、権限、委任、停止権を保持する。
+    typical_bindings:
+    - decision_owner
+    - accountable_role
+    - responsible_role
+    - domain_expert
+    - reviewer
+    - operator
+    - auditor
+    - ai_agent_identity
+    - delegation_policy
+    - authority_envelope
+    - stop_right
+    - escalation_path
+  H_SE:
+    base_component: H
+    role: ベースライン、差分、承認、反対意見、実行ログ、事故、reopen、rollback の履歴を保持する。
+    typical_history:
+    - baseline_event
+    - review_event
+    - approval_event
+    - dissent_trace
+    - agent_action_log
+    - test_result_history
+    - incident_event
+    - reopen_event
+    - rollback_event
+three_layer_convergence_for_SE:
+  epistemic_convergence:
+    description: 内容として説明可能で、根拠・文脈・矛盾管理ができている状態。
+    aligns_with:
+    - KC-E1
+    - KC-T1
+    - KC-L1
+  governance_convergence:
+    description: 誰がどの条件で execute / hold / reject / escalate / rollback できるかが定義された状態。
+    aligns_with:
+    - KC-G1
+    - KC-D1
+    - KC-S1
+    - KC-H1
+  engineering_validity_convergence:
+    description: SEシステムとして要求・設計・Verification・Validation・運用フィードバック・人間/組織能力へ接続されている状態。core v1.1 の domain_validity_convergence
+      をSEドメインで具体化したもの。
+    aligns_with:
+    - KC-O1
+    - KC-SE2
+    - KC-SE5
+relationship_to_existing_profiles:
+  KC-T1:
+    use_in_SE: 専門家証言、顧客発話、規格解釈、サプライヤー発言の warrant を管理する。
+  KC-S1:
+    use_in_SE: レビュー会、設計審査、専門家合議、minority report を管理する。
+  KC-O1:
+    use_in_SE: baseline、gate、artifact、verification / validation、ops feedback を管理する。
+  KC-H1:
+    use_in_SE: 人間の停止権、説明範囲、訓練状態、手動代替、認知負荷を管理する。
+implementation_mapping:
+  EvidenceStore:
+    maps_to:
+    - E_SE
+    - C_SE
+    responsibilities:
+    - raw_evidence_preservation
+    - citation_and_provenance
+    - freshness_tracking
+  CanonicalSEGraph:
+    maps_to:
+    - G_SE
+    - C_SE
+    - V_SE
+    responsibilities:
+    - typed_relation_management
+    - traceability
+    - impact_analysis
+  DecisionLedger:
+    maps_to:
+    - V_SE
+    - R_SE
+    - H_SE
+    responsibilities:
+    - issue_option_decision_rationale
+    - rejected_options
+    - reopen_conditions
+  SELint:
+    maps_to:
+    - G_SE
+    - C_SE
+    - E_SE
+    - V_SE
+    - R_SE
+    - H_SE
+    responsibilities:
+    - requirements_quality_check
+    - validation_link_check
+    - agent_delegation_check
+    - organization_human_readiness_check
+  AgentRegistry:
+    maps_to:
+    - R_SE
+    - H_SE
+    responsibilities:
+    - agent_identity
+    - permission_scope
+    - lifecycle_state
+    - audit_log
+  HumanOrganizationWorkbench:
+    maps_to:
+    - R_SE
+    - H_SE
+    responsibilities:
+    - role_decision_right_management
+    - human_oversight
+    - escalation_and_stop_path
+comparison_boundary:
+  AI_coding_agent:
+    primary_plane: execution_plane
+    uses_SE_system_for:
+    - approved_requirement
+    - accepted_design_decision
+    - test_and_validation_contract
+    - coding_task_boundary
+  OpenClaw_like_agent:
+    primary_plane: execution_plane
+    uses_SE_system_for:
+    - permitted_operation
+    - tool_permission
+    - human_review_gate
+    - audit_and_rollback
+  SE_system:
+    primary_plane:
+    - convergence_plane
+    - governance_plane
+    delegates_to:
+    - AI_coding_agent
+    - workflow_execution_agent
+    - human_engineer
+    - domain_expert
+mapping_to_domain_validity_layer:
+  core_layer: domain_validity_convergence
+  SE_instantiation: engineering_validity_convergence
+  minimum_packets:
+  - se_vv_packet
+  - se_decision_packet
+  - se_org_role_packet
+  - se_agent_delegation_packet when AI/agent executes
+  - se_representation_packet when formalization is used
+  blocking_policy:
+  - verification gap は H8
+  - validation gap は H9
+  - operator/organization readiness gap は H10
+  - ops feedback requiring reopen は H11

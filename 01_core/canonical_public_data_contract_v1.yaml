@@ -1,0 +1,289 @@
+title: 知識収束学_公開データ契約_v1
+file_role: canonical_public_data_contract
+version: '1.1'
+status: curated_public_view_revised_v1_1
+purpose: 公開仕様として最低限互換であってほしいデータ形を定める。v1.1 ではドメイン妥当性、AI実行主体、意味ある人間監督、組織トポロジー、収束計量の補助 packet を追加する。
+compatibility_rule: additional fields は許容するが、必須フィールド名と最小語彙は保持する。
+canonical_vocabularies:
+  evidence_status:
+  - linked
+  - absent
+  - pending
+  - external_ref
+  - not_applicable
+  - disputed
+  eval_state:
+  - 'true'
+  - hold
+  - 'false'
+  governance_entry_state:
+  - blocked_by_epistemic
+  - eligible
+  branch:
+  - execute
+  - hold
+  - reject
+  - escalate
+  - rollback
+  hold_reason_codes:
+  - id: H1
+    code: epistemic_gap
+    layer: epistemic
+  - id: H2
+    code: epistemic_conflict
+    layer: epistemic
+  - id: H3
+    code: governance_unbound
+    layer: governance
+  - id: H4
+    code: approval_pending
+    layer: governance
+  - id: H5
+    code: risk_excess
+    layer: governance
+  - id: H6
+    code: policy_block
+    layer: governance
+  - id: H7
+    code: domain_profile_missing
+    layer: domain_validity
+  - id: H8
+    code: verification_gap
+    layer: domain_validity
+  - id: H9
+    code: validation_gap
+    layer: domain_validity
+  - id: H10
+    code: operational_readiness_gap
+    layer: domain_validity
+  - id: H11
+    code: feedback_reopen_required
+    layer: domain_validity
+  - id: H12
+    code: agent_authority_unbound
+    layer: governance
+  - id: H13
+    code: human_oversight_not_meaningful
+    layer: governance
+  - id: H14
+    code: organization_capacity_gap
+    layer: governance
+  domain_validity_eval_state:
+  - not_applicable
+  - not_started
+  - 'true'
+  - hold
+  - 'false'
+  agent_role_class:
+  - candidate_agent
+  - critique_agent
+  - execution_agent
+  - guardian_agent
+  oversight_state:
+  - meaningful
+  - fragile
+  - formal_only
+  - absent
+  - not_applicable
+  organization_relation:
+  - reports_to
+  - approves
+  - reviews
+  - executes
+  - accountable_for
+  - consulted_by
+  - supplier_of
+  - handoff_to
+  - escalates_to
+  - backup_for
+envelopes:
+  knowledge_state_minimum:
+    required:
+    - state_id
+    - G
+    - C
+    - E
+    properties:
+      state_id: string
+      G:
+        required:
+        - claims
+        minimum:
+        - claims[0].claim_id
+        - relations or constraints
+      C:
+        required:
+        - scope
+        conditional_required:
+        - horizon or intent
+      E:
+        required:
+        - bindings
+        binding_minimum:
+        - claim_id
+        - evidence_ref or evidence_status
+      V:
+        required_when: governance judgement を行う場合
+        minimum:
+        - target_ref
+        - at least one of criteria/risk_tolerance/veto_conditions
+      R:
+        required_when: governance judgement を行う場合
+        minimum:
+        - approval_authority or outcome_accountability
+      H:
+        optional: true
+        minimum_when_present:
+        - events[0].event_id
+        - events[0].timestamp
+        - events[0].actor_ref
+        - events[0].operation
+  update_request_minimum:
+    required:
+    - request_id
+    - actor_ref
+    - target_slot
+    - delta
+    - authority_basis
+    - applied_policy_version
+    - expected_branch
+    - failure_branch
+    properties:
+      request_id: string
+      actor_ref: role_id|agent_id|system_id
+      target_slot: G|C|E|V|R|H のどこを更新するか
+      delta: 変更要求 payload
+      authority_basis: policy_ref|role_binding|approval_ref
+      applied_policy_version: string
+      expected_branch: execute|hold|reject|escalate|rollback
+      failure_branch: execute 失敗時の分岐
+  decision_outcome_minimum:
+    required:
+    - decision_context
+    - decision_outcome
+    decision_context_required:
+    - target
+    - alternatives
+    - decision_time
+    - scope
+    decision_outcome_required_common:
+    - epistemic_eval_state
+    - governance_entry_state
+    - governance_eval_state
+    - branch
+    - rationale
+    required_when_branch_is_execute:
+    - success_basis
+    required_when_branch_is_non_execute:
+    - primary_reason
+  hold_packet_minimum:
+    required:
+    - reason_code
+    - rollback_target
+    - required_action
+    - reopen_condition
+    - deadline_basis
+    - escalation_condition
+  history_event_minimum:
+    required:
+    - event_id
+    - timestamp
+    - actor_ref
+    - operation
+    - outcome
+    recommended:
+    - target_slot
+    - authority_basis
+    - applied_policy_version
+    - rationale_or_origin_ref
+  domain_validity_packet_minimum:
+    required:
+    - domain_profile_id
+    - target_ref
+    - validity_context
+    - success_or_validity_criteria
+    - verification_or_check_method
+    - owner_role
+    recommended:
+    - validation_method
+    - intended_environment
+    - operational_readiness
+    - feedback_refs
+    - reopen_or_revalidate_condition
+    eval_state: domain_validity_eval_state
+  agent_execution_envelope_minimum:
+    required:
+    - agent_id
+    - role_class
+    - owner_role
+    - capability_scope
+    - authority_envelope
+    - audit_obligation
+    required_when_high_impact:
+    - stop_condition
+    - rollback_path or no_rollback_justification
+    - human_review_gate or exception_basis
+    rule: agent execution と outcome accountability を分離する
+  meaningful_human_oversight_packet_minimum:
+    required:
+    - oversight_role
+    - role_scoped_explanation
+    - stop_or_override_right
+    - intervention_window
+    - training_readiness
+    - escalation_path
+    recommended:
+    - cognitive_load_budget
+    - manual_fallback
+    - audit_visibility
+    - operator_acceptance
+    rule: human_in_the_loop という表記だけでは oversight_state=meaningful としない
+  organization_topology_packet_minimum:
+    required:
+    - organization_nodes
+    - roles
+    - decision_rights
+    - expertise_scopes
+    - accountability_scopes
+    recommended:
+    - review_capacity
+    - separation_of_duties
+    - conflict_of_interest_status
+    - supplier_boundary
+    - backup_roles
+    - handoff_contracts
+  convergence_metrics_packet_minimum:
+    required:
+    - target_ref
+    - metric_set
+    - measurement_time
+    - measurement_basis
+    recommended:
+    - threshold_profile
+    - blocker_dimensions
+    - trend
+    - owner_role
+    rule: single aggregate score must not mask blocker dimensions
+normalization_rules:
+- 欠落は null のみで表さず、evidence_status や typed marker で表す
+- primary_reason は単数、複数 blocker は secondary_reasons で表す
+- execute branch では primary_reason を無理に流用せず、success_basis を使ってよい
+- blocks は priority_relation に混ぜず、veto_conditions へ置く
+- pair 未記述は unknown/unbound を意味し、dominates を暗黙推定しない
+- role_id を既定にし、person 固有識別子は必要時だけ使う
+- human-in-the-loop は oversight_state=meaningful を自動的に意味しない
+- AI/agent が Ex になる場合、agent_id、authority_envelope、audit_obligation、owner_role を要求する
+- Verification passed は Validation passed を自動的に意味しない
+- 組織承認はドメイン妥当性を自動的に意味しない
+- 重大 blocker は総合点や平均点で相殺しない
+related_documents:
+- 01_core/formalization_public_spec_v1.yaml
+- 01_core/conformance_profiles_public_v1.yaml
+- 01_core/minimal_implementation_contract_v1.yaml
+- 01_core/json_schema/
+- 11_core_revision_annex/core_theory_revision_report_v1_1.md
+- 01_core/json_schema/domain_validity_packet_minimum.schema.json
+- 01_core/json_schema/agent_execution_envelope_minimum.schema.json
+- 01_core/json_schema/meaningful_human_oversight_packet_minimum.schema.json
+- 01_core/json_schema/organization_topology_packet_minimum.schema.json
+- 01_core/json_schema/convergence_metrics_packet_minimum.schema.json

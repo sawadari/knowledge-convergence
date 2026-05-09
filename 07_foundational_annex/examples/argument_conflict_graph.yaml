@@ -1,0 +1,40 @@
+example_id: found-math-001
+scenario: support と rebut と undercut を分けて H2 を説明する
+claims:
+- claim_id: c-safe
+  statement: 変更は安全に実行できる
+- claim_id: c-risk
+  statement: 変更は安全ではない
+argument_graph_packet:
+  graph_id: arg-001
+  nodes:
+  - node_id: n1
+    claim_ref: c-safe
+    evidence_ref: test-report-42
+  - node_id: n2
+    claim_ref: c-risk
+    evidence_ref: incident-note-7
+  - node_id: n3
+    claim_ref: c-safe
+    provenance_ref: model-simulation-3
+  edges:
+  - edge_id: e1
+    from: n1
+    to: n2
+    relation_type: rebut
+  - edge_id: e2
+    from: n2
+    to: n1
+    relation_type: rebut
+  - edge_id: e3
+    from: n2
+    to: n3
+    relation_type: undercut
+  support_status:
+    c-safe: both
+    c-risk: supported
+recommended_result:
+  epistemic_eval_state: hold
+  primary_reason: H2
+  subtype: rebuttal_conflict
+  graph_ref: arg-001

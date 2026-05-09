@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://knowledge-convergence.local/schema/organization_topology_packet_minimum.schema.json",
+  "title": "OrganizationTopologyPacketMinimum",
+  "type": "object",
+  "required": [
+    "organization_nodes",
+    "roles",
+    "decision_rights",
+    "expertise_scopes",
+    "accountability_scopes"
+  ],
+  "properties": {
+    "organization_nodes": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "roles": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "decision_rights": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "expertise_scopes": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "accountability_scopes": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "responsibility_scopes": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "review_capacity": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "separation_of_duties": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "conflict_of_interest_status": {
+      "type": [
+        "array",
+        "object",
+        "string"
+      ]
+    },
+    "supplier_boundary": {
+      "type": [
+        "array",
+        "object",
+        "string"
+      ]
+    },
+    "backup_roles": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "handoff_contracts": {
+      "type": [
+        "array",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

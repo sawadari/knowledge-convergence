@@ -1,0 +1,58 @@
+example_id: ex_policy_update_execute
+profile:
+- KC-E1
+- KC-G1
+- KC-A1
+scenario: 社内手順書の軽微改定。根拠・承認・責任が揃って execute になる。
+knowledge_state:
+  state_id: ks_policy_001
+  G:
+    claims:
+    - claim_id: clm_update_review_cycle
+      statement: レビュー周期を四半期ごとへ変更する
+    relations:
+    - relation_id: rel_updates_doc
+      from: clm_update_review_cycle
+      to: doc_quality_policy
+      type: updates
+  C:
+    scope: 社内品質手順書
+    intent: 運用改善
+    horizon: 2026Q2
+  E:
+    bindings:
+    - claim_id: clm_update_review_cycle
+      evidence_ref: ev_audit_findings_q1
+  V:
+    target_ref: decision_policy_update
+    criteria:
+    - id: crt_no_regulatory_conflict
+      kind: must
+      description: 規制衝突がない
+  R:
+    approval_authority:
+      mode: single
+      approver_set:
+      - role_quality_head
+    execution_actor:
+    - role_doc_controller
+    outcome_accountability:
+    - role_quality_head
+decision_outcome:
+  decision_context:
+    target: decision_policy_update
+    alternatives:
+    - alt_keep_current
+    - alt_update_cycle
+    decision_time: '2026-04-11T11:00:00+09:00'
+    scope: 社内品質手順書
+  decision_outcome:
+    epistemic_eval_state: 'true'
+    governance_entry_state: eligible
+    governance_eval_state: 'true'
+    branch: execute
+    success_basis:
+      basis_ref: approval_role_quality_head
+      source_of_judgement: DecisionLedger
+    rationale: 根拠、承認、責任、対象文書が束縛されており execute 可能。
+note: execute 例では primary_reason を informational placeholder として使うより、実装上は separate success_reason を追加してもよい。互換性のため core 語彙は維持する。

@@ -1,0 +1,163 @@
+title: 知識収束学_基礎発展データ追加契約_v1
+file_role: foundational_contract_addendum
+version: 1
+status: curated_foundational_extension
+created_on: '2026-04-11'
+purpose: 言語解釈・競合意味論・多基準判断・由来追跡・時相拘束を、既存の公開データ契約へ追加採用するための最小拡張を示す。
+compatibility_rule: 追加採用は任意であり、既存の canonical_public_data_contract_v1.yaml を上書きしない。
+optional_vocabularies:
+  speech_act:
+  - assert
+  - question
+  - directive
+  - report
+  - proposal
+  speaker_commitment:
+  - asserted_strong
+  - asserted_hedged
+  - attributed
+  - attributed_hedged
+  - hypothetical
+  - interrogative
+  evidentiality_mode:
+  - direct
+  - inferred
+  - reported
+  - assumed
+  - simulated
+  claim_kind:
+  - fact
+  - event
+  - state
+  - norm
+  - plan
+  - report
+  - obligation
+  ambiguity_kind:
+  - referential
+  - scope
+  - modality
+  - presupposition_failure
+  - discourse_relation
+  - gradable_threshold_unbound
+  support_status_4:
+  - supported
+  - refuted
+  - both
+  - neither
+  outranking_relation:
+  - outranks
+  - outranked_by
+  - indifferent
+  - incomparable
+  - vetoed
+  measurement_scale_type:
+  - ordinal
+  - interval
+  - ratio
+extension_envelopes:
+  utterance_interpretation_envelope:
+    required:
+    - utterance_id
+    - speech_act
+    - speaker_commitment
+    - evidentiality
+    - deictic_anchor
+    one_of:
+    - raw_text
+    - source_ref
+    recommended:
+    - attributed_source_ref
+    - presuppositions
+    - discourse_relation
+    - ambiguity_profile
+    - claim_kind_hint
+    - lift_target
+  ambiguity_profile:
+    required:
+    - profile_id
+    - items
+    item_minimum:
+    - ambiguity_id
+    - kind
+    - target_ref
+    recommended:
+    - blocking
+    - needs_context
+    - proposed_resolution
+  argument_graph_packet:
+    required:
+    - graph_id
+    - nodes
+    - edges
+    node_minimum:
+    - node_id
+    - claim_ref
+    edge_minimum:
+    - edge_id
+    - from
+    - to
+    - relation_type
+    recommended:
+    - support_status
+    - confidence_interval
+  measurement_profile:
+    required:
+    - profile_id
+    - criterion_ref
+    - scale_type
+    - admissible_comparisons
+    recommended:
+    - unit
+    - threshold_family
+    - comparison_class
+  outranking_profile:
+    required:
+    - profile_id
+    - alternatives
+    - criteria
+    - outranking_matrix
+    recommended:
+    - veto_rules
+    - concordance_basis
+    - discordance_basis
+    - incomparability_policy
+  provenance_trace_packet:
+    required:
+    - trace_id
+    - target_ref
+    - derivation_steps
+    step_minimum:
+    - step_id
+    - operation
+    - input_refs
+    - output_refs
+    recommended:
+    - policy_ref
+    - actor_ref
+    - rollback_dependency_refs
+  temporal_guard_packet:
+    required:
+    - guard_id
+    - target_ref
+    - valid_from
+    - invalidation_policy
+    recommended:
+    - valid_until
+    - review_due
+    - renewal_policy
+    - expiry_branch
+integration_rules:
+- utterance_interpretation_envelope は G へ昇格する前段 packet として保持し、lifted claim とは utterance_origin_ref で接続してよい。
+- presupposition failure は referential ambiguity と混同せず、独立 facet として保持する。
+- gradable な語は曖昧語として捨てず、comparison_class / threshold_source / borderline_zone により保持できる。
+- four-valued support status は epistemic 内部評価であり、それだけで governance branch を直接決めない。
+- argument edge は H2 の説明責任に使えるが、ratified conflict outcome の代替にはならない。
+- measurement_profile が無い数値は、順位以外の演算に使わない。
+- veto は priority_relation に混ぜず、criteria ごとの blocking condition として保持する。
+- provenance trace は H の event chain と両立してよく、target_ref 単位で部分的に保持してもよい。
+- temporal guard は approval・delegation・hold・registry entry のどれにも適用できる。
+related_documents:
+- 01_core/canonical_public_data_contract_v1.yaml
+- 01_core/foundational_extension_profiles_v1.yaml
+- 07_foundational_annex/foundational_crosswalk_v1.yaml

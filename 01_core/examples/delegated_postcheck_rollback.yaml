@@ -1,0 +1,84 @@
+example_id: ex_delegated_postcheck_rollback
+profile:
+- KC-E1
+- KC-G1
+- KC-D1
+- KC-A1
+scenario: 委任された自動更新が post-check fail により rollback へ分岐する。
+knowledge_state:
+  state_id: ks_auto_001
+  G:
+    claims:
+    - claim_id: clm_sync_catalog
+      statement: 承認済み製品カタログを同期する
+    relations:
+    - relation_id: rel_syncs_catalog
+      from: clm_sync_catalog
+      to: catalog_prod
+      type: syncs
+  C:
+    scope: 製品カタログ同期
+    intent: 承認済み情報反映
+    horizon: nightly_batch
+  E:
+    bindings:
+    - claim_id: clm_sync_catalog
+      evidence_ref: ev_approved_manifest_778
+  V:
+    target_ref: decision_catalog_sync
+    criteria:
+    - id: crt_only_approved_items
+      kind: must
+      description: 承認済み項目のみ反映
+  R:
+    approval_authority:
+      mode: single
+      approver_set:
+      - role_catalog_owner
+    execution_actor:
+    - agent_catalog_sync
+    outcome_accountability:
+    - role_catalog_owner
+    delegation_scope:
+      policy_id: dp_catalog_sync_v1
+      target_scope:
+        target_ref: decision_catalog_sync
+        operation_class: update
+        scope: catalog_prod
+        time_window: nightly
+      guard_conditions:
+        impact_cap: low
+        reversibility_cap: reversible
+        externality_cap: internal_only
+        confidence_floor: high
+      prohibited_conditions:
+        auto_block: []
+        escalate_required: []
+      required_evidence:
+        all_of:
+        - ev_approved_manifest_778
+      fallback_branch:
+        post_check_fail: auto_rollback
+        rollback_fail: force_escalate
+      audit_obligation:
+        log_level: full
+        trace_required: true
+        rationale_required: true
+decision_outcome:
+  decision_context:
+    target: decision_catalog_sync
+    alternatives:
+    - alt_sync
+    - alt_skip
+    decision_time: '2026-04-11T02:30:00+09:00'
+    scope: catalog_prod
+  decision_outcome:
+    epistemic_eval_state: 'true'
+    governance_entry_state: eligible
+    governance_eval_state: 'true'
+    branch: rollback
+    primary_reason:
+      reason_code: H5
+      origin_ref: post_check_fail_mismatch
+      source_of_judgement: DecisionLedger
+    rationale: post-check で未承認項目混入が検出され、delegation policy に従い auto_rollback を実施。

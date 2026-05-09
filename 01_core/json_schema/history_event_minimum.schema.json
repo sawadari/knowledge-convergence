@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://knowledge-convergence.local/schema/history_event_minimum.schema.json",
+  "title": "HistoryEventMinimum",
+  "type": "object",
+  "required": [
+    "event_id",
+    "timestamp",
+    "actor_ref",
+    "operation",
+    "outcome"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "actor_ref": {
+      "type": "string"
+    },
+    "operation": {
+      "type": "string"
+    },
+    "outcome": {
+      "type": "string"
+    },
+    "target_slot": {
+      "type": "string"
+    },
+    "authority_basis": {
+      "type": "string"
+    },
+    "applied_policy_version": {
+      "type": "string"
+    },
+    "rationale_or_origin_ref": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

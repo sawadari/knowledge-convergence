@@ -1,0 +1,31 @@
+example_id: organization_capacity_gap
+profile: KC-ORG1
+organization_topology_packet:
+  organization_nodes:
+  - node_id: org-platform
+    name: Platform Engineering
+  roles:
+  - role_id: safety_reviewer
+    name: Safety Reviewer
+  decision_rights:
+    safety_reviewer:
+    - approve_safety_case
+  expertise_scopes:
+    safety_reviewer:
+    - functional_safety
+  accountability_scopes:
+    chief_systems_engineer:
+    - system_release
+  review_capacity:
+    safety_reviewer:
+      available_hours_this_week: 0
+      required_hours: 6
+  escalation_route:
+  - backup_safety_reviewer
+  - quality_board
+decision_outcome:
+  branch: hold
+  primary_reason:
+    reason_code: H14
+    code: organization_capacity_gap
+  rationale: Required safety review cannot be completed within release window.

@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://knowledge-convergence.local/schema/domain_validity_packet_minimum.schema.json",
+  "title": "DomainValidityPacketMinimum",
+  "type": "object",
+  "required": [
+    "domain_profile_id",
+    "target_ref",
+    "validity_context",
+    "success_or_validity_criteria",
+    "verification_or_check_method",
+    "owner_role"
+  ],
+  "properties": {
+    "domain_profile_id": {
+      "type": "string"
+    },
+    "target_ref": {
+      "type": "string"
+    },
+    "validity_context": {
+      "type": [
+        "object",
+        "string"
+      ]
+    },
+    "success_or_validity_criteria": {
+      "type": [
+        "array",
+        "object",
+        "string"
+      ]
+    },
+    "verification_or_check_method": {
+      "type": [
+        "array",
+        "object",
+        "string"
+      ]
+    },
+    "validation_method": {
+      "type": [
+        "array",
+        "object",
+        "string"
+      ]
+    },
+    "intended_environment": {
+      "type": [
+        "object",
+        "string"
+      ]
+    },
+    "operational_readiness": {
+      "type": [
+        "object",
+        "string"
+      ]
+    },
+    "feedback_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reopen_or_revalidate_condition": {
+      "type": [
+        "array",
+        "object",
+        "string"
+      ]
+    },
+    "owner_role": {
+      "type": "string"
+    },
+    "domain_validity_eval_state": {
+      "type": "string",
+      "enum": [
+        "not_applicable",
+        "not_started",
+        "true",
+        "hold",
+        "false"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

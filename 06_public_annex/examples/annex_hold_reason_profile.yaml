@@ -1,0 +1,27 @@
+example_id: annex_hold_reason_profile
+scenario: 主 blocker は approval_pending だが、policy_block が latent downstream として待機している。
+decision_outcome_extension:
+  branch: hold
+  primary_reason:
+    reason_code: H4
+    reason_subtype: missing_weighted_quorum
+    relation: primary
+  secondary_reasons:
+  - reason_code: H6
+    reason_subtype: export_policy_review_pending
+    relation_to_primary: independent
+    activation_state: latent_downstream
+  positive_state_snapshot:
+    evidence_binding_state: linked
+    approval_binding_state: partially_bound
+    policy_binding_state: pending_review
+  reopen_condition: required quorum 達成後に latent downstream blocker を再評価する。
+annex_links:
+- public_annex_concepts_v1.yaml#latent_downstream_hold_promotion_governance
+- public_annex_concepts_v1.yaml#hold_reason_relation_taxonomy_governance
+- public_annex_concepts_v1.yaml#hold_reason_subtype_registry_governance
+- public_annex_concepts_v1.yaml#positive_state_vocabulary_governance
+- public_annex_formalization_v1.yaml#latent_downstream_hold_promotion_model
+- public_annex_formalization_v1.yaml#hold_reason_relation_taxonomy_model
+- public_annex_formalization_v1.yaml#hold_reason_subtype_registry_model
+- public_annex_formalization_v1.yaml#positive_state_vocabulary_model

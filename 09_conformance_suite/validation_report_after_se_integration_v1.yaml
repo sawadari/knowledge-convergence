@@ -1,0 +1,265 @@
+suite_ref: 09_conformance_suite/institutional_conformance_test_suite_v1.yaml
+generated_on: '2026-05-08T09:26:15.004775Z'
+overall_result: pass
+summary:
+  total_cases: 19
+  pass: 8
+  warn: 2
+  fail: 9
+  expectation_mismatches: 0
+case_results:
+- test_id: T1-PASS-001
+  profile: KC-T1
+  input_file: ../08_institutional_annex/examples/attributed_expert_claim_with_defeater.yaml
+  actual_outcome: pass
+  expected_outcome: pass
+  actual_rule_hits: []
+  expected_rule_hits: []
+  matched_expectation: true
+  findings: []
+- test_id: T1-FAIL-001
+  profile: KC-T1
+  input_file: test_vectors/kc_t1_fail_public_claim_execute.yaml
+  actual_outcome: fail
+  expected_outcome: fail
+  actual_rule_hits:
+  - KCI-T1-001
+  - KCI-T1-002
+  expected_rule_hits:
+  - KCI-T1-001
+  - KCI-T1-002
+  matched_expectation: true
+  findings:
+  - rule_id: KCI-T1-001
+    severity: error
+    message: high-risk execute の expert warrant に expertise_scope.domain_ref が無い。
+    path: /epistemic_justification_packet/expertise_scope
+  - rule_id: KCI-T1-002
+    severity: error
+    message: public_claim 単独を high-risk execute basis にしている。
+    path: /epistemic_justification_packet/trust_channel
+- test_id: T1-FAIL-002
+  profile: KC-T1
+  input_file: test_vectors/kc_t1_fail_stale_transferable.yaml
+  actual_outcome: fail
+  expected_outcome: fail
+  actual_rule_hits:
+  - KCI-T1-003
+  expected_rule_hits:
+  - KCI-T1-003
+  matched_expectation: true
+  findings:
+  - rule_id: KCI-T1-003
+    severity: error
+    message: stale な packet が transferable のまま保持されている。
+    path: /epistemic_justification_packet/epistemic_transfer_status
+- test_id: T1-WARN-001
+  profile: KC-T1
+  input_file: test_vectors/kc_t1_warn_conflict_interest_without_status.yaml
+  actual_outcome: warn
+  expected_outcome: warn
+  actual_rule_hits:
+  - KCI-T1-004
+  expected_rule_hits:
+  - KCI-T1-004
+  matched_expectation: true
+  findings:
+  - rule_id: KCI-T1-004
+    severity: warning
+    message: conflict_of_interest があるのに conflict_of_interest_status が無い。
+    path: /epistemic_justification_packet/conflict_of_interest_status
+- test_id: S1-PASS-001
+  profile: KC-S1
+  input_file: ../08_institutional_annex/examples/premise_based_board_decision.yaml
+  actual_outcome: pass
+  expected_outcome: pass
+  actual_rule_hits: []
+  expected_rule_hits: []
+  matched_expectation: true
+  findings: []
+- test_id: S1-PASS-002
+  profile: KC-S1
+  input_file: ../08_institutional_annex/examples/minority_report_escalation.yaml
+  actual_outcome: pass
+  expected_outcome: pass
+  actual_rule_hits: []
+  expected_rule_hits: []
+  matched_expectation: true
+  findings: []
+- test_id: S1-FAIL-001
+  profile: KC-S1
+  input_file: test_vectors/kc_s1_fail_contested_without_report.yaml
+  actual_outcome: fail
+  expected_outcome: fail
+  actual_rule_hits:
+  - KCI-S1-003
+  - KCI-S1-004
+  expected_rule_hits:
+  - KCI-S1-003
+  - KCI-S1-004
+  matched_expectation: true
+  findings:
+  - rule_id: KCI-S1-003
+    severity: error
+    message: contested conclusion なのに required な minority report が無い。
+    path: /minority_report_packet
+  - rule_id: KCI-S1-004
+    severity: error
+    message: repair が必要な不整合を repair 無しで execute に直結している。
+    path: /consistency_repair_result
+- test_id: S1-FAIL-002
+  profile: KC-S1
+  input_file: test_vectors/kc_s1_fail_quorum_not_met.yaml
+  actual_outcome: fail
+  expected_outcome: fail
+  actual_rule_hits:
+  - KCI-S1-002
+  expected_rule_hits:
+  - KCI-S1-002
+  matched_expectation: true
+  findings:
+  - rule_id: KCI-S1-002
+    severity: error
+    message: quorum minimum_present=5 に対して observed_present=4。
+    path: /aggregation_rule_profile/quorum_rule/minimum_present
+- test_id: O1-PASS-001
+  profile: KC-O1
+  input_file: ../08_institutional_annex/examples/lifecycle_gate_transition_package.yaml
+  actual_outcome: pass
+  expected_outcome: pass
+  actual_rule_hits: []
+  expected_rule_hits: []
+  matched_expectation: true
+  findings: []
+- test_id: O1-PASS-002
+  profile: KC-O1
+  input_file: ../08_institutional_annex/examples/ops_feedback_triggered_reopen.yaml
+  actual_outcome: pass
+  expected_outcome: pass
+  actual_rule_hits: []
+  expected_rule_hits: []
+  matched_expectation: true
+  findings: []
+- test_id: O1-FAIL-001
+  profile: KC-O1
+  input_file: test_vectors/kc_o1_fail_execute_without_baseline.yaml
+  actual_outcome: fail
+  expected_outcome: fail
+  actual_rule_hits:
+  - KCI-O1-001
+  expected_rule_hits:
+  - KCI-O1-001
+  matched_expectation: true
+  findings:
+  - rule_id: KCI-O1-001
+    severity: error
+    message: baseline execute に baseline_id が無い。
+    path: /lifecycle_gate_packet/baseline_id
+- test_id: O1-FAIL-002
+  profile: KC-O1
+  input_file: test_vectors/kc_o1_fail_validation_pending_execute.yaml
+  actual_outcome: fail
+  expected_outcome: fail
+  actual_rule_hits:
+  - KCI-O1-003
+  expected_rule_hits:
+  - KCI-O1-003
+  matched_expectation: true
+  findings:
+  - rule_id: KCI-O1-003
+    severity: error
+    message: validation pending の high-risk execute に exception_basis が無い。
+    path: /exception_basis
+- test_id: H1-PASS-001
+  profile: KC-H1
+  input_file: ../08_institutional_annex/examples/operator_override_with_manual_fallback.yaml
+  actual_outcome: pass
+  expected_outcome: pass
+  actual_rule_hits: []
+  expected_rule_hits: []
+  matched_expectation: true
+  findings: []
+- test_id: H1-PASS-002
+  profile: KC-H1
+  input_file: test_vectors/kc_h1_pass_shadow_mode_not_ready.yaml
+  actual_outcome: pass
+  expected_outcome: pass
+  actual_rule_hits: []
+  expected_rule_hits: []
+  matched_expectation: true
+  findings: []
+- test_id: H1-FAIL-001
+  profile: KC-H1
+  input_file: test_vectors/kc_h1_fail_execute_without_training.yaml
+  actual_outcome: fail
+  expected_outcome: fail
+  actual_rule_hits:
+  - KCI-H1-002
+  - KCI-X-002
+  expected_rule_hits:
+  - KCI-H1-002
+  - KCI-X-002
+  matched_expectation: true
+  findings:
+  - rule_id: KCI-H1-002
+    severity: error
+    message: training incomplete/retraining_required のまま execute している。
+    path: /human_oversight_packet/training_readiness
+  - rule_id: KCI-X-002
+    severity: error
+    message: training failure と execute が共存している。
+    path: /premise_results
+- test_id: H1-WARN-001
+  profile: KC-H1
+  input_file: test_vectors/kc_h1_warn_no_fallback_high_risk.yaml
+  actual_outcome: warn
+  expected_outcome: warn
+  actual_rule_hits:
+  - KCI-H1-003
+  expected_rule_hits:
+  - KCI-H1-003
+  matched_expectation: true
+  findings:
+  - rule_id: KCI-H1-003
+    severity: warning
+    message: high-risk なのに fallback 不在の justification が無い。
+    path: /no_fallback_justification
+- test_id: X-FAIL-001
+  profile: CROSS
+  input_file: test_vectors/kc_x_fail_qualified_testimony_high_risk_execute.yaml
+  actual_outcome: fail
+  expected_outcome: fail
+  actual_rule_hits:
+  - KCI-X-001
+  expected_rule_hits:
+  - KCI-X-001
+  matched_expectation: true
+  findings:
+  - rule_id: KCI-X-001
+    severity: error
+    message: qualified/stale testimony で high-risk execute しているのに独立 corroboration が無い。
+    path: /corroboration_status
+- test_id: X-FAIL-002
+  profile: CROSS
+  input_file: test_vectors/kc_x_fail_training_premise_execute.yaml
+  actual_outcome: fail
+  expected_outcome: fail
+  actual_rule_hits:
+  - KCI-X-002
+  expected_rule_hits:
+  - KCI-X-002
+  matched_expectation: true
+  findings:
+  - rule_id: KCI-X-002
+    severity: error
+    message: training failure と execute が共存している。
+    path: /premise_results
+- test_id: X-PASS-001
+  profile: CROSS
+  input_file: test_vectors/kc_x_pass_qualified_with_corroboration_execute.yaml
+  actual_outcome: pass
+  expected_outcome: pass
+  actual_rule_hits: []
+  expected_rule_hits: []
+  matched_expectation: true
+  findings: []

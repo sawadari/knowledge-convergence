@@ -1,0 +1,166 @@
+title: 知識収束学_公開準拠プロファイル_v1
+file_role: public_conformance_profiles
+version: '1.1'
+status: curated_public_view_revised_v1_1
+purpose: どの段階まで実装したら何に準拠したと言えるかを、外部向けに明確化する。
+normative_language:
+  MUST: 必須
+  SHOULD: 推奨
+  MAY: 任意
+profiles:
+  KC-E1:
+    label: Epistemic State Profile
+    purpose: 説明可能な知識候補状態を表現・検査できること。
+    MUST:
+    - K=(G,C,E,...) のうち G/C/E を保持できる
+    - claim_id と relation_id または constraint_id を保持できる
+    - scope と horizon または intent を保持できる
+    - 主要 claim ごとに evidence_ref または evidence_status を保持できる
+    - evidence_status 語彙を linked/absent/pending/external_ref/not_applicable/disputed で扱える
+    SHOULD:
+    - 主要矛盾や曖昧性を issue として追跡できる
+    - 説明経路の参照を保持できる
+    exit_criteria:
+    - epistemic_eval_state を true/hold/false で返せる
+    - hold の場合 H1 または H2 を返せる
+  KC-G1:
+    label: Governed Decision Profile
+    purpose: 価値・責任・承認を含む branch 判定を行えること。
+    requires:
+    - KC-E1
+    MUST:
+    - V と R を保持できる
+    - decision_context を target / alternatives / decision_time / scope で保持できる
+    - branch を execute/hold/reject/escalate/rollback で返せる
+    - governance_entry_state を blocked_by_epistemic/eligible で返せる
+    - primary_reason と rationale を残せる
+    SHOULD:
+    - secondary_reasons を扱える
+    - approval authority と outcome accountability を分離して保持できる
+    exit_criteria:
+    - governance_eval_state を true/hold/false で返せる
+    - hold の場合 H3〜H6 を返せる
+  KC-D1:
+    label: Delegated Execution Profile
+    purpose: 委任された自動実行または条件付き自動実行を安全に扱えること。
+    requires:
+    - KC-G1
+    MUST:
+    - delegation policy D=(T,G,X,E_req,F,A) を保持できる
+    - auto_block と escalate_required を区別できる
+    - required_evidence と fallback_branch を保持できる
+    - rollback control と audit obligation を保持できる
+    - AI/agent を Ex に含む場合、D と audit を必須化できる
+    SHOULD:
+    - post_check_fail から auto_rollback へ分岐できる
+    - verification_pending と rollback_fail を区別できる
+    exit_criteria:
+    - conditional auto / force escalate / auto rollback を branch policy として表現できる
+  KC-A1:
+    label: Audit Trail Profile
+    purpose: 監査・差戻し・時系列検証を行えること。
+    MUST:
+    - history event を event_id/timestamp/actor_ref/operation/outcome で保持できる
+    - authority_basis と applied_policy_version を追跡できる
+    - rationale または origin_ref を残せる
+    SHOULD:
+    - hold_entered / hold_updated / hold_cleared を区別できる
+    - rollback の参照先を snapshot/state/baseline として保持できる
+  KC-DV1:
+    label: Domain Validity Convergence Profile
+    purpose: 認識・統治された知識状態が、対象ドメインの成功条件・検証条件・運用条件へ接続されていること。
+    requires:
+    - KC-E1
+    MUST:
+    - domain_profile_id と target_ref を保持できる
+    - success_or_validity_criteria を保持できる
+    - verification_or_check_method を保持できる
+    - domain_validity_eval_state を not_applicable/not_started/true/hold/false で返せる
+    - 高影響 execute で validation_gap がある場合、hold/escalate または exception_basis を返せる
+    SHOULD:
+    - operational_readiness と feedback_refs を保持できる
+    - reopen_or_revalidate_condition を保持できる
+    exit_criteria:
+    - ドメイン妥当性の未評価を governance approval で上書きしない
+    - Verification passed と Validation passed を区別できる
+  KC-AX1:
+    label: Agent Execution Governance Profile
+    purpose: AI/agent を限定された実行主体として扱い、権限・監査・停止・rollback を管理できること。
+    requires:
+    - KC-G1
+    - KC-A1
+    MUST:
+    - agent_id、role_class、owner_role を保持できる
+    - capability_scope と authority_envelope を保持できる
+    - tool_scope と data_scope を保持できる
+    - audit_obligation または audit_log_ref を保持できる
+    - 高影響実行では stop_condition と rollback_path または no_rollback_justification を保持できる
+    - agent execution と outcome accountability を分離できる
+    SHOULD:
+    - guardian_agent または independent lint gate を接続できる
+    - agent lifecycle state を保持できる
+    exit_criteria:
+    - AI/agent が無権限・無監査で execute に進まない
+  KC-MHO1:
+    label: Meaningful Human Oversight Profile
+    purpose: 人間の形式的介在ではなく、意味ある介入可能性を検査できること。
+    MUST:
+    - oversight_role を保持できる
+    - role_scoped_explanation を保持できる
+    - stop_or_override_right を保持できる
+    - intervention_window を保持できる
+    - training_readiness を保持できる
+    - escalation_path を保持できる
+    SHOULD:
+    - cognitive_load_budget を保持できる
+    - manual_fallback または no_fallback_justification を保持できる
+    - operator_acceptance を保持できる
+    exit_criteria:
+    - human-in-the-loop というラベルだけで oversight_state=meaningful としない
+  KC-ORG1:
+    label: Organization Topology Profile
+    purpose: 組織構造、人間系、専門性、権限、能力、外部境界をKのR/C/Hへ接続できること。
+    MUST:
+    - organization_node と role_id を保持できる
+    - decision_right と expertise_scope を区別できる
+    - accountability_scope と responsibility_scope を区別できる
+    - escalation_route を保持できる
+    - required reviewer の review_capacity または欠落理由を保持できる
+    SHOULD:
+    - separation_of_duties と conflict_of_interest_status を保持できる
+    - supplier_boundary と evidence availability を接続できる
+    - backup_role を保持できる
+    exit_criteria:
+    - 専門家証言と意思決定権限を混同しない
+  KC-Q1:
+    label: Convergence Metrics Profile
+    purpose: 収束状態を単一スカラーではなく、多次元かつblocker-preservingに計量できること。
+    MUST:
+    - metric_set、measurement_time、measurement_basis を保持できる
+    - blocker_dimensions を保持できる
+    - 平均値や総合点で blocker を相殺しない規則を持つ
+    SHOULD:
+    - trend と owner_role を保持できる
+    - threshold_profile を domain_profile と接続できる
+    exit_criteria:
+    - 進捗ダッシュボードが重大blockerを隠さない
+testing_order:
+- KC-E1
+- KC-G1
+- KC-D1
+- KC-A1
+- KC-DV1
+- KC-AX1
+- KC-MHO1
+- KC-ORG1
+- KC-Q1
+non_conformance_examples:
+- G/C/E が未充足なのに epistemic true を返す
+- V/R が未充足なのに governance true を返す
+- approval 不足や policy block があるのに execute を返す
+- AI/agent が実行したのに delegation scope と audit obligation が無い
+- C_g=true でも domain_validity_eval_state=hold の高影響判断を execute に進める
+- human-in-the-loop と記載しただけで停止権・介入時間・訓練を検査しない
+- agent が外部ツールを操作したのに authority_envelope と audit_obligation が無い
+- 専門家証言をそのまま承認権限として扱う
+- 平均収束スコアが高いことを理由に validation blocker を相殺する

@@ -1,0 +1,28 @@
+example_id: institutional_example_004
+profile: KC-O1
+scenario: execute を managed release gate と transition package に接続する。
+lifecycle_gate_packet:
+  gate_id: gate_ops_release_rc7
+  target_ref: release_candidate_rc7
+  artifact_class: baseline
+  responsible_role: release_board
+  baseline_id: baseline_rc7_2026q2
+  entry_criteria:
+  - verification_report_signed
+  - validation_trial_complete
+  - runbook_ready
+  - training_material_published
+  exit_criteria:
+  - deployment_window_confirmed
+  - rollback_package_ready
+  - monitoring_dashboard_live
+  transition_package_refs:
+  - decision_record_rc7
+  - verification_report_rc7
+  - validation_report_trial_rc7
+  - ops_runbook_v4
+  - training_material_v2
+  - rollback_runbook_v1
+branch_binding:
+  branch: execute
+  review_due: '2026-05-01'

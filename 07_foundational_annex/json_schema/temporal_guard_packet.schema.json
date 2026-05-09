@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://knowledge-convergence.local/schema/foundational/temporal_guard_packet.schema.json",
+  "title": "TemporalGuardPacket",
+  "type": "object",
+  "required": [
+    "guard_id",
+    "target_ref",
+    "valid_from",
+    "invalidation_policy"
+  ],
+  "properties": {
+    "guard_id": {
+      "type": "string"
+    },
+    "target_ref": {
+      "type": "string"
+    },
+    "valid_from": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "valid_until": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "review_due": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "renewal_policy": {
+      "type": [
+        "string",
+        "object"
+      ]
+    },
+    "invalidation_policy": {
+      "type": [
+        "string",
+        "object"
+      ]
+    },
+    "expiry_branch": {
+      "type": "string",
+      "enum": [
+        "hold",
+        "escalate",
+        "false",
+        "reject",
+        "rollback"
+      ]
+    },
+    "grace_policy": {
+      "type": [
+        "string",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

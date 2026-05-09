@@ -1,0 +1,48 @@
+example_id: found-math-002
+scenario: 単一スコアを使わずに 2 案を比較する
+decision_context:
+  target: vendor_selection
+  alternatives:
+  - vendor_A
+  - vendor_B
+  scope: release_guard_service
+  decision_time: '2026-04-11T14:00:00+09:00'
+measurement_profiles:
+- profile_id: mp-001
+  criterion_ref: latency
+  scale_type: ratio
+  admissible_comparisons:
+  - difference
+  - ratio
+  unit: ms
+- profile_id: mp-002
+  criterion_ref: auditability
+  scale_type: ordinal
+  admissible_comparisons:
+  - rank_only
+outranking_profile:
+  profile_id: or-001
+  alternatives:
+  - vendor_A
+  - vendor_B
+  criteria:
+  - latency
+  - auditability
+  - rollback_support
+  outranking_matrix:
+  - from: vendor_A
+    to: vendor_B
+    relation: incomparable
+  - from: vendor_B
+    to: vendor_A
+    relation: incomparable
+  veto_rules:
+  - criterion_ref: rollback_support
+    condition: missing_auto_rollback
+    effect: vetoed
+  incomparability_policy: hold_then_request_narrowing_evidence
+recommended_result:
+  governance_eval_state: hold
+  branch: hold
+  primary_reason: H5
+  note: rollback_support に veto があり、かつ他 criteria でも比較不能。

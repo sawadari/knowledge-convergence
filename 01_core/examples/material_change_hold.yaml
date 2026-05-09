@@ -1,0 +1,69 @@
+example_id: ex_material_change_hold
+profile:
+- KC-E1
+- KC-G1
+- KC-A1
+scenario: 製造業の材質変更提案。試験根拠はあるが承認が未完了で hold になる。
+knowledge_state:
+  state_id: ks_material_001
+  G:
+    claims:
+    - claim_id: clm_change_material
+      statement: 材質Xを材質Yへ変更する
+    relations:
+    - relation_id: rel_affects_strength
+      from: clm_change_material
+      to: test_strength
+      type: affects
+  C:
+    scope: 製品A・ロットB
+    intent: コスト低減
+    horizon: 次回量産判定
+  E:
+    bindings:
+    - claim_id: clm_change_material
+      evidence_ref: ev_strength_test_2026_04_01
+  V:
+    target_ref: decision_material_change
+    criteria:
+    - id: crt_strength_ok
+      kind: must
+      description: 強度基準を満たす
+    risk_tolerance:
+      level: medium
+      description: 安全性に影響しない範囲
+  R:
+    approval_authority:
+      mode: all_of
+      approver_set:
+      - role_quality_manager
+      - role_factory_manager
+    execution_actor:
+    - role_process_engineer
+    outcome_accountability:
+    - role_factory_manager
+  H:
+    events:
+    - event_id: evt_001
+      timestamp: '2026-04-11T10:00:00+09:00'
+      actor_ref: role_process_engineer
+      operation: propose_change
+      outcome: hold
+decision_outcome:
+  decision_context:
+    target: decision_material_change
+    alternatives:
+    - alt_keep_x
+    - alt_change_y
+    decision_time: '2026-04-11T10:10:00+09:00'
+    scope: 製品A・ロットB
+  decision_outcome:
+    epistemic_eval_state: 'true'
+    governance_entry_state: eligible
+    governance_eval_state: hold
+    branch: hold
+    primary_reason:
+      reason_code: H4
+      origin_ref: approval_role_factory_manager
+      source_of_judgement: DecisionLedger
+    rationale: 品質管理承認はあるが工場長承認が未了のため。

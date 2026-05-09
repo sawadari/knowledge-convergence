@@ -1,0 +1,168 @@
+title: 知識収束学_制度運用発展crosswalk_v1
+file_role: institutional_crosswalk
+version: 1
+status: curated_institutional_extension
+created_on: '2026-04-11'
+purpose: 認識論・合議設計・システム工学・HCI 方向の追加項目を、既存 core / public annex / foundational annex / implementation split へどう接続するかを示す。
+precedence:
+  order: 01_core > 06_public_annex > 07_foundational_annex > 08_institutional_annex > 02_supplements
+  non_override_rule: 08_institutional_annex は 01_core と 07_foundational_annex の最小語彙を上書きせず、追加 packet と追加 profile を提供する。
+integration_map:
+  epistemic_to_core:
+    epistemic_justification_packet:
+      connects_to:
+      - E
+      - H.events
+      - utterance_interpretation_envelope
+      primary_use: 証言・専門性・信頼チャネル・defeater を束ね、support の継承条件を保持する。
+      implementation_owner:
+      - GraphLint
+      - Audit layer
+    speaker_warrant_and_expertise_scope:
+      connects_to:
+      - E.bindings
+      - H2
+      - R
+      primary_use: 話者の専門性範囲や authority の限界を、source label ではなく境界条件として保持する。
+      implementation_owner:
+      - GraphLint
+      - DecisionLedger
+    defeater_register:
+      connects_to:
+      - H2
+      - E
+      - V
+      primary_use: stale testimony、scope mismatch、conflict of interest などを open conflict や qualified support として残す。
+      implementation_owner:
+      - GraphLint
+      - DecisionLedger
+  collective_to_core:
+    aggregation_rule_profile:
+      connects_to:
+      - R
+      - V
+      - H.events
+      primary_use: 複数レビューや承認を、どの aggregation mode で group outcome へまとめたかを記録する。
+      implementation_owner:
+      - DecisionLedger
+    minority_report_packet:
+      connects_to:
+      - H
+      - decision_outcome
+      primary_use: dissent と代替結論を final outcome と別に保持する。
+      implementation_owner:
+      - DecisionLedger
+      - Audit layer
+    consistency_repair_policy:
+      connects_to:
+      - H2
+      - R
+      - decision_outcome
+      primary_use: 集団判断の不整合を reopen / split / escalate へ接続する。
+      implementation_owner:
+      - DecisionLedger
+  lifecycle_to_core:
+    lifecycle_gate_packet:
+      connects_to:
+      - decision_outcome
+      - R
+      - H
+      primary_use: execute / escalate / rollback を baseline、gate、artifact、responsible_role へ結び付ける。
+      implementation_owner:
+      - GraphEngine
+      - Ops registry
+    transition_package:
+      connects_to:
+      - decision_outcome
+      - H.events
+      primary_use: runbook、training、verification、validation を move-to-operation 単位で束ねる。
+      implementation_owner:
+      - GraphEngine
+      - release workflow
+    ops_feedback_event:
+      connects_to:
+      - H
+      - rollback
+      - reopen
+      primary_use: 運用中の incident や drift を再評価ループへ戻す。
+      implementation_owner:
+      - GraphEngine
+      - monitoring layer
+  human_to_core:
+    human_oversight_packet:
+      connects_to:
+      - R
+      - decision_outcome
+      - H
+      primary_use: role ごとの explanation、override rights、training readiness、fallback を保持する。
+      implementation_owner:
+      - HMI layer
+      - DecisionLedger
+    role_scoped_explanation:
+      connects_to:
+      - decision_outcome
+      - bounded_summary
+      primary_use: reviewer / operator / auditor に応じて説明粒度を切り替える。
+      implementation_owner:
+      - HMI layer
+      - Audit layer
+    manual_fallback_and_stop_rights:
+      connects_to:
+      - escalation
+      - rollback
+      - hold
+      primary_use: hard stop や manual handoff を lawful branch として扱う。
+      implementation_owner:
+      - HMI layer
+      - GraphEngine
+profile_alignment:
+  KC-T1:
+    enriches:
+    - KC-E1
+    - KC-L1
+    typical_outputs:
+    - epistemic_justification_packet
+    - defeater_register
+    - epistemic_transfer_status
+  KC-S1:
+    enriches:
+    - KC-G1
+    typical_outputs:
+    - aggregation_rule_profile
+    - minority_report_packet
+    - consistency_repair_event
+  KC-O1:
+    enriches:
+    - KC-A1
+    - KC-M3
+    typical_outputs:
+    - lifecycle_gate_packet
+    - transition_package_ref
+    - ops_feedback_event
+  KC-H1:
+    enriches:
+    - KC-G1
+    - KC-O1
+    typical_outputs:
+    - human_oversight_packet
+    - role_scoped_explanation
+    - manual_fallback_activation
+adoption_priority:
+- id: I1
+  profile: KC-T1
+  why_first: source quality を justification へ持ち上げ、証言・専門家発話の誤用を止められるため
+- id: I2
+  profile: KC-S1
+  why_first: group outcome の一貫性と dissent retention を明示できるため
+- id: I3
+  profile: KC-O1
+  why_first: decision outcome を baseline / gate / artifact に接続し、運用事故時の reopen を閉じられるため
+- id: I4
+  profile: KC-H1
+  why_first: 人の停止権・訓練完了・手動代替を lawful state として保持できるため
+minimum_non_goals:
+- expert label だけで真理や execute を自動決定しない
+- aggregation rule を万能な社会選択解として主張しない
+- lifecycle gate を branch 語彙の代替にしない
+- human-centered を manual only の要求に変えない
+- popularity や vote count を authority_basis の代替にしない

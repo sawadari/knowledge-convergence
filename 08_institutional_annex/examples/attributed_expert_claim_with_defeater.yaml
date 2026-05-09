@@ -1,0 +1,32 @@
+example_id: institutional_example_001
+profile: KC-T1
+scenario: 外部専門家が「現行センサー較正で十分」と報告したが、専門範囲外と freshness の問題がある。
+claim_ref: claim_sensor_calibration_sufficient
+epistemic_justification_packet:
+  packet_id: ejp_001
+  target_ref: claim_sensor_calibration_sufficient
+  source_ref: src_external_consultant_a
+  speaker_warrant_profile: domain_expert
+  trust_channel: peer_report
+  justification_basis: domain_inference
+  expertise_scope:
+    domain_ref: sensor_noise_modeling
+    excluded_topics:
+    - field_maintenance_schedule
+  freshness_window:
+    observed_at: '2026-03-18'
+    stale_after: '2026-04-01'
+  epistemic_transfer_status: qualified
+  defeater_register:
+  - defeater_id: def_01
+    kind: expertise_scope_mismatch
+    effect: limits_claim_scope
+  - defeater_id: def_02
+    kind: stale_testimony
+    effect: recheck_required
+GraphLint_expected:
+- requires_scope_narrowing
+- freshness_review_required
+DecisionLedger_hint:
+  branch_candidate: hold
+  hold_reason: q_insufficient_freshness

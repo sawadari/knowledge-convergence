@@ -1,0 +1,35 @@
+title: 知識収束学_形式化_resolved_points_抽出
+file_role: decision_log_extract
+version: 1
+status: extracted
+derived_from:
+  source_file: formalization_v3.0.yaml
+  source_key: resolved_points
+entry_count: 26
+entries:
+- cross-session settlement checkpoint / quota debt carry-over / audit proof bundle を、settlement checkpoint、debt vector、transfer rule、closure projection、audit proof completeness の分離として暫定固定した
+- authority-tier 競合下の forced preemption / emergency override / appeal reopen を、override class、precedence DAG、contested surface freeze、appeal lane、restoration outcome の分離として暫定固定した
+- shared archive object / chain family 競合下の witness reservation / packet budget segregation を、reservation unit、sharing mode、borrow debt、orphan reclaim、silent invalidation 防止の分離として暫定固定した
+- multi-case legal-hold / nested replay session の quota / priority / starvation avoidance を、quota class、priority class、nested admissibility、starvation bound、timer inheritance の分離として暫定固定した
+- reopened reverse chain の re-compaction / reseal / retention timer resume を、readiness state、reseal surface、timer rule、post-reopen checkpoint append の分離として暫定固定した
+- replay-derived finding の correction / supersession / head reactivation を、finding class、action branch、reactivation admissibility、notice duty projection の分離として暫定固定した
+- replay audit packet の bounded disclosure / actor-slice redaction を、packet class、slice visibility、join barrier、unseal gate の分離として暫定固定した
+- legal-hold reopen / replay audit window を、rehydration witness、window class、basis lane、freeze/stop 条件の分離として暫定固定した
+- forward/reverse/correction chain の compaction / finality checkpoint / evidence retention を、compaction class、replay-equivalence witness、retention tier、finality state の分離として暫定固定した
+- correction notice の downstream propagation / acknowledgment closure / stale notice quarantine を、recipient surface、closure class、quarantine、current basis admissibility の分離として暫定固定した
+- overlapping rollback / cascade rollback / rollback-set normalization を、rollback cell 正規形、overlap class、active head、reverse-of-reverse admissibility の分離として暫定固定した
+- partial rollback / reverse continuity witness と correction notice supersession を、affected partition cell 選択、minimum reverse witness、supersession class、full re-notice 条件の分離として暫定固定した
+- central delegation charter extension registry の migration / supersession / inheritance 境界を、alias migration・successor supersession・monotone inheritance と freeze / history window / propagation rule の分離として暫定固定した
+- central delegation charter の weighted quorum / ordered fallback / jurisdiction subtype extension を、taxonomy core と extension parameter に分離して暫定固定した
+- ratified 済みだが未 reflected の裁定結果の provisional binding を、authoritative binding / preview / preparation / controlled provisional export の分離として暫定固定した
+- detector confidence aggregation window / cluster de-dup rule を、signal / cluster / corroboration / aggregation window の分離、dedup 同値関係、bounded aggregation、branch 接続として暫定固定した
+- 同一 authority tier 内の複数 reviewer / forum の tie-break と veto 競合を、response semantics・blocking veto・forum internal tie・timeout/fallback・DecisionLedger linkage を含めて暫定固定した
+- shared telemetry / temporary cache / derived preview の sink typing を、5軸 vocabulary・class precedence・profile/context override で暫定固定した
+- partial-overlap route candidate の lawful route mapping を、canonical route core と relation_kind で暫定固定した
+- basis lifecycle を active / review_due / expired / revoked / superseded / revalidation_pending に整理し、expiry・revocation・supersession・revalidation の分岐と q_decision 接続を暫定固定した
+- shadow / sandbox / branch-local artifact の externality budget を allowed sink / audience / ttl / rollback-purge obligation / automation prohibition の束として暫定固定した
+- registry authority tier を central authority / domain authority / delegated reviewer に分け、delegated review・template-bound activation・same-identity revalidation・emergency suspend の権限境界と baseline SLA を暫定固定した
+- detector integrity class と provenance level の canonical registry を、source family・5段階 integrity class・4段階 provenance level・claim facet 別 precedence として暫定固定した
+- sink typing evidence の freshness precedence を、freshness 4状態・mirror lag を織り込んだ effective age・self-report admissibility・facet 局所 tie-break として暫定固定した
+- local_convention_detected と confirmed policy drift の detector threshold を、local convention / confirmed drift の分離、threshold bundle、authority tier 別 confirmation で暫定固定した
+- mirror lag estimate と sampling window の統計的同値 rule を、window semantics・lag upper bound・equivalence class・resampling admissibility・branch mapping を含めて暫定固定した

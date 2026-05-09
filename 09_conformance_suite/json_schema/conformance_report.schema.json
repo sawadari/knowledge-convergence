@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "conformance_report.schema.json",
+  "title": "ConformanceReport",
+  "type": "object",
+  "required": [
+    "suite_ref",
+    "generated_on",
+    "overall_result",
+    "summary",
+    "case_results"
+  ],
+  "properties": {
+    "suite_ref": {
+      "type": "string"
+    },
+    "generated_on": {
+      "type": "string"
+    },
+    "overall_result": {
+      "type": "string",
+      "enum": [
+        "pass",
+        "warn",
+        "fail"
+      ]
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "total_cases",
+        "pass",
+        "warn",
+        "fail",
+        "expectation_mismatches"
+      ],
+      "properties": {
+        "total_cases": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "pass": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "warn": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "fail": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "expectation_mismatches": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": true
+    },
+    "case_results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "test_id",
+          "input_file",
+          "actual_outcome",
+          "expected_outcome",
+          "matched_expectation",
+          "findings"
+        ],
+        "properties": {
+          "test_id": {
+            "type": "string"
+          },
+          "input_file": {
+            "type": "string"
+          },
+          "actual_outcome": {
+            "type": "string",
+            "enum": [
+              "pass",
+              "warn",
+              "fail"
+            ]
+          },
+          "expected_outcome": {
+            "type": "string",
+            "enum": [
+              "pass",
+              "warn",
+              "fail"
+            ]
+          },
+          "matched_expectation": {
+            "type": "boolean"
+          },
+          "findings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "rule_id",
+                "severity",
+                "message"
+              ],
+              "properties": {
+                "rule_id": {
+                  "type": "string"
+                },
+                "severity": {
+                  "type": "string",
+                  "enum": [
+                    "error",
+                    "warning",
+                    "info"
+                  ]
+                },
+                "message": {
+                  "type": "string"
+                },
+                "path": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

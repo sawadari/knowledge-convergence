@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/knowledge-convergence/se_system/se_agent_delegation_packet.schema.json",
+  "title": "SE Agent Delegation Packet",
+  "type": "object",
+  "required": [
+    "delegation_id",
+    "agent_id",
+    "task_ref",
+    "input_knowledge_refs",
+    "capability_scope",
+    "authority_envelope",
+    "sandbox_policy",
+    "audit_log_refs",
+    "human_review_gate"
+  ],
+  "properties": {
+    "delegation_id": {"type": "string"},
+    "agent_id": {"type": "string"},
+    "task_ref": {"type": "string"},
+    "input_knowledge_refs": {"type": "array", "items": {"type": "string"}},
+    "capability_scope": {"type": "array", "items": {"type": "string"}},
+    "authority_envelope": {
+      "type": "object",
+      "properties": {
+        "allowed_paths": {"type": "array", "items": {"type": "string"}},
+        "denied_paths": {"type": "array", "items": {"type": "string"}},
+        "allowed_tools": {"type": "array", "items": {"type": "string"}},
+        "denied_tools": {"type": "array", "items": {"type": "string"}},
+        "max_runtime_minutes": {"type": "number"},
+        "may_create_pr": {"type": "boolean"},
+        "may_merge_pr": {"type": "boolean"}
+      },
+      "additionalProperties": true
+    },
+    "sandbox_policy": {"type": "object", "additionalProperties": true},
+    "output_artifact_refs": {"type": "array", "items": {"type": "object"}},
+    "audit_log_refs": {"type": "array", "items": {"type": "string"}},
+    "human_review_gate": {
+      "type": "object",
+      "required": ["required"],
+      "properties": {
+        "required": {"type": "boolean"},
+        "reviewer_roles": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": true
+    },
+    "rollback_path": {"type": ["object", "string", "null"]},
+    "no_rollback_justification": {"type": ["string", "null"]}
+  },
+  "additionalProperties": true
+}

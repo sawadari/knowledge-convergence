@@ -1,0 +1,116 @@
+title: 知識収束学_制度運用発展プロファイル_v1
+file_role: institutional_extension_profiles
+version: 1
+status: curated_institutional_extension
+created_on: '2026-04-11'
+purpose: core と foundational を壊さずに、認識論・合議設計・システム工学・HCI 方向の発展採用段階を明示する。
+relationship_to_core:
+  non_override_rule: 01_core の canonical public contract を上書きせず、追加採用可能な profile として扱う。
+  namespace_note: profile 名の KC-H1 は hold taxonomy の H1〜H6 とは別名前空間である。
+  recommended_reading_order:
+  - conformance_profiles_public_v1.yaml
+  - foundational_extension_profiles_v1.yaml
+  - institutional_contract_addendum_v1.yaml
+  - ../08_institutional_annex/institutional_crosswalk_v1.yaml
+  - ../08_institutional_annex/00_start_here_institutional_annex.md
+  - ../09_conformance_suite/00_start_here_conformance_suite.md
+normative_language:
+  MUST: 必須
+  SHOULD: 推奨
+  MAY: 任意
+profiles:
+  KC-T1:
+    label: Testimonial and Warrant Profile
+    purpose: 誰の発話や証言を、どの根拠で、どの範囲まで継承して信じるかを保持すること。
+    pairs_with:
+    - KC-E1
+    - KC-L1
+    MUST:
+    - epistemic_justification_packet を保持できる
+    - speaker_warrant_profile / trust_channel / justification_basis を明示できる
+    - expertise_scope またはその欠如を明示できる
+    - defeater_register または defeater_status を保持できる
+    - direct evidence と transferred justification を区別できる
+    SHOULD:
+    - freshness_window と conflict_of_interest_status を保持できる
+    - audited system や certified record を trust_channel として区別できる
+    - epistemic_transfer_status を transferable / qualified / defeated / stale / scope_exceeded で返せる
+    exit_criteria:
+    - attributed claim に対して warrant の強さを説明できる
+    - 専門性の範囲外や stale testimony を未修飾の support として流さない
+    - public claim と certified record を同等に扱わない
+  KC-S1:
+    label: Social Deliberation Profile
+    purpose: 複数人のレビューや承認を、一貫性のある合議結果として残すこと。
+    requires:
+    - KC-G1
+    pairs_with:
+    - KC-T1
+    MUST:
+    - aggregation_rule_profile を保持できる
+    - premise_based / conclusion_based など集約方式を明示できる
+    - quorum_rule と consistency_guard を明示できる
+    - minority_report または dissent の取り扱いを定義できる
+    - inconsistency が起きたときの repair_policy または escalation policy を持てる
+    SHOULD:
+    - weight_basis を role / expertise / accountability ごとに説明できる
+    - vote と reason の対応を group decision trace として保持できる
+    - conclusion は通ったが premise が割れたケースを明示できる
+    exit_criteria:
+    - 最終 outcome がどの aggregation rule から出たか説明できる
+    - minority report を消さずに retain できる
+    - 集団判断の不整合を silent flatten しない
+  KC-O1:
+    label: Systems Lifecycle Assurance Profile
+    purpose: decision outcome を baseline・gate・artifact・ops feedback に接続すること。
+    requires:
+    - KC-G1
+    pairs_with:
+    - KC-A1
+    - KC-M3
+    MUST:
+    - lifecycle_gate_packet を保持できる
+    - artifact_class と entry_exit_criteria を明示できる
+    - responsible_role と transition_package_refs を保持できる
+    - verification / validation / ops_feedback を区別できる
+    - material change 後に reopen / rollback / reapproval を結び付けられる
+    SHOULD:
+    - baseline_id と release boundary を保持できる
+    - training material や runbook を transition package に含められる
+    - ops_feedback_event を継続監視の入力に戻せる
+    exit_criteria:
+    - execute / escalate / rollback を運用成果物へ結び付けられる
+    - entry criteria 不足を hold または escalate 根拠として示せる
+    - 運用中の incident から reopen が起こせる
+  KC-H1:
+    label: Human-Centered Oversight Profile
+    purpose: 人が安全に理解し、止め、引き継ぎ、手動代替できる条件を保持すること。
+    requires:
+    - KC-G1
+    pairs_with:
+    - KC-O1
+    MUST:
+    - human_oversight_packet を保持できる
+    - role ごとの explanation scope を定義できる
+    - override_right と escalation path を明示できる
+    - training_readiness と operator_acceptance を区別できる
+    - manual_fallback または no_fallback_justification を保持できる
+    SHOULD:
+    - cognitive_load_budget を保持できる
+    - simulation rehearsal や shadow mode readiness を保持できる
+    - operator not_ready のとき自動 execute を抑止できる
+    exit_criteria:
+    - 現場の人が lawful に soft stop / hard stop / escalation できる
+    - 説明の粒度が reviewer / operator / auditor で分けられる
+    - training incomplete を黙って実行条件にしない
+adoption_advice:
+- 証言・専門家判断・監査済み記録の差が大きいなら KC-T1 を最優先する
+- 委員会・レビュー会・複数承認者が絡むなら KC-S1 を次に入れる
+- 実装を release / gate / runbook / incident 管理へ接続したいなら KC-O1 を入れる
+- 現場の停止権や手動代替が重要なら KC-H1 を続けて入れる
+failure_examples:
+- expert ラベルだけで claim を unconditional support 扱いにする
+- aggregation rule を文書化せず、毎回その場で決める
+- execute を gate や baseline と結び付けずに流す
+- operator に stop right も fallback も無いまま自動化を強める
+- 多数派 conclusion を truth の証明として扱う

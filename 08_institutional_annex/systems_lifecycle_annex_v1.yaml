@@ -1,0 +1,124 @@
+title: 知識収束学_制度運用annex_システム工学_v1
+file_role: systems_lifecycle_annex
+version: 1
+status: curated_institutional_extension
+created_on: '2026-04-11'
+purpose: decision outcome を、baseline・gate・artifact・verification / validation・ops feedback に接続するための追加 packet を与える。
+normativity:
+  precedence: 01_core > 06_public_annex > 07_foundational_annex > 08_institutional_annex > 02_supplements
+theme_index:
+  lifecycle_and_artifacts:
+    label: ライフサイクルと成果物
+    entries:
+    - lifecycle_gate_packet_model
+    - artifact_class_model
+    - entry_exit_criteria_model
+    - transition_package_model
+  feedback_and_reopen:
+    label: 運用フィードバックと再開
+    entries:
+    - baseline_transition_model
+    - verification_validation_split_model
+    - ops_feedback_event_model
+    - incident_to_reopen_model
+institutional_entries:
+  lifecycle_gate_packet_model:
+    label: lifecycle gate packet
+    institutional_role: recommended_institutional_extension
+    statement: outcome を、どの gate で、どの artifact class を対象に、どの criteria で通したかに結び付ける。
+    public_surface:
+      minimum_fields:
+      - gate_id
+      - target_ref
+      - artifact_class
+      - entry_criteria
+      - exit_criteria
+      - responsible_role
+      recommended_fields:
+      - baseline_id
+      - transition_package_refs
+      - verification_ref
+      - validation_ref
+      - ops_feedback_ref
+      - rollback_readiness
+    rules:
+    - gate packet は branch 語彙 execute / hold / reject / escalate / rollback を置き換えない。
+    - entry criteria 未充足は execute ではなく hold / escalate の根拠になりうる。
+    - exit criteria は artifact handoff の条件を明示する。
+  artifact_class_model:
+    label: artifact class
+    institutional_role: recommended_institutional_extension
+    statement: decision_record / baseline / verification_report / validation_report / ops_runbook / training_material / incident_review / monitoring_dashboard を区別する。
+    rules:
+    - artifact class を混ぜず、対象成果物を型として持つ。
+    - training material や runbook の欠如を、document missing でなく transition blocker として扱ってよい。
+  entry_exit_criteria_model:
+    label: entry / exit criteria
+    institutional_role: recommended_institutional_extension
+    statement: gate へ入る条件と gate を抜ける条件を分けて保持する。
+    rules:
+    - validation pending を verification passed で代替しない。
+    - exit criteria を満たさない execute は provisional でなく異常として扱うべき場合がある。
+  transition_package_model:
+    label: transition package
+    institutional_role: recommended_institutional_extension
+    statement: release, deployment, handoff, rollback に必要な成果物束を保持する。
+    typical_members:
+    - decision_record
+    - baseline
+    - verification_report
+    - validation_report
+    - ops_runbook
+    - training_material
+    rules:
+    - package の completeness を criteria で検査してよい。
+    - rollback 用 package は forward release package と別に保持してよい。
+  baseline_transition_model:
+    label: baseline transition
+    institutional_role: recommended_institutional_extension
+    statement: stable baseline と working state を区別し、material change 後の reopen / reapproval を結び付ける。
+    rules:
+    - baseline_id の無い execute は、managed lifecycle では限定的にしか使わない。
+    - material change が assumption を壊したときは baseline transition を reopened として扱ってよい。
+  verification_validation_split_model:
+    label: verification / validation split
+    institutional_role: recommended_institutional_extension
+    statement: verification と validation を別成果物・別 gate として扱えるようにする。
+    rules:
+    - verification passed は validation passed を意味しない。
+    - validation pending のまま high-impact execute するなら、その理由を明示する。
+  ops_feedback_event_model:
+    label: ops feedback event
+    institutional_role: recommended_institutional_extension
+    statement: 運用中の観測・障害・ドリフトを、knowledge state の reopen 入力へ戻すイベントとして扱う。
+    minimum_fields:
+    - event_id
+    - target_ref
+    - observed_in_operation
+    - effect_summary
+    recommended_fields:
+    - severity
+    - reproduction_status
+    - triggers_reopen
+    - linked_incident_ref
+    rules:
+    - ops feedback は post hoc commentary でなく、新しい evidence / risk signal として扱う。
+    - same incident family の再発は freshness と calibration の見直しに接続してよい。
+  incident_to_reopen_model:
+    label: incident-to-reopen loop
+    institutional_role: recommended_institutional_extension
+    statement: incident, anomaly, drift が material なら、reopen / rollback / retraining / revalidation へ遷移できるようにする。
+    rules:
+    - incident review を archived note に閉じず、state transition と結び付ける。
+    - reopen は failure confession ではなく lawful recovery path として扱う。
+    implementation_touchpoints:
+      GraphEngine:
+      - gate_packet_required_for_managed_release
+      - ops_feedback_can_trigger_reopen
+      Ops_registry:
+      - transition_package_completeness_check
+
+deferred_questions:
+- gate granularity を project / subsystem / release candidate のどこまで共通化するか
+- verification と validation の最小 artifact を公開仕様へどこまで含めるか
+- ops feedback の severity taxonomy を domain 共通化できるか

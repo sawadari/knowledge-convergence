@@ -1,0 +1,99 @@
+title: 知識収束学_公開annex_クロスウォーク_v1
+file_role: public_annex_crosswalk
+version: 1
+status: curated_public_annex
+created_on: '2026-04-11'
+crosswalk_rules:
+- 01_core が canonical public contract
+- 06_public_annex はその contract を厚くする recommended / informative extension
+- 02_supplements は source pool であり、annex が採らない詳細は raw supplement を参照する
+theme_crosswalk:
+  authority_and_approval:
+    related_core_sections:
+    - 01_core/concepts_public_spec_v1.yaml#component_boundaries
+    - 01_core/formalization_public_spec_v1.yaml#update_contract
+    - 01_core/formalization_public_spec_v1.yaml#decision_outcome_contract
+    - 01_core/conformance_profiles_public_v1.yaml
+    related_contract_surfaces:
+    - 01_core/canonical_public_data_contract_v1.yaml#update_request_minimum
+    - 01_core/canonical_public_data_contract_v1.yaml#decision_outcome_minimum
+    recommended_annex_entries:
+    - registry_authority_governance
+    - approval_weighted_quorum_governance
+    - joint_approval_accountability_split_governance
+    - ai_self_evaluation_model
+    - action_coverage_model
+    - registry_authority_delegation_model
+    - approval_weighted_quorum_boundary_model
+    - approval_accountability_split_model
+    example_links:
+    - 01_core/examples/material_change_hold.yaml
+    - 06_public_annex/examples/annex_weighted_quorum_policy.yaml
+  confidence_and_timing:
+    related_core_sections:
+    - 01_core/concepts_public_spec_v1.yaml#public_commitments
+    - 01_core/formalization_public_spec_v1.yaml#knowledge_state_public_profile
+    - 01_core/formalization_public_spec_v1.yaml#update_contract
+    related_contract_surfaces:
+    - 01_core/canonical_public_data_contract_v1.yaml#history_event_minimum
+    - 01_core/canonical_public_data_contract_v1.yaml#decision_outcome_minimum
+    recommended_annex_entries:
+    - sla_clock_calibration_governance
+    - semantic_delta_autoclassification_governance
+    - self_confidence_calibration_model
+    - semantic_delta_autoclassification_model
+    - sla_clock_calibration_model
+    example_links:
+    - 01_core/examples/delegated_postcheck_rollback.yaml
+  audit_trace_and_disclosure:
+    related_core_sections:
+    - 01_core/concepts_public_spec_v1.yaml#public_commitments
+    - 01_core/formalization_public_spec_v1.yaml#implementation_split
+    related_contract_surfaces:
+    - 01_core/canonical_public_data_contract_v1.yaml#history_event_minimum
+    recommended_annex_entries:
+    - self_evaluation_audit_log_governance
+    - identity_redaction_accountability_governance
+    - bounded_loss_summary_registry_governance
+    - self_evaluation_audit_log_retention_model
+    - identity_redaction_accountability_model
+    - bounded_loss_summary_registry_model
+    informative_annex_entries:
+    - raw_signal_retention_governance
+    - legal_hold_reopen_custody_governance
+    - raw_signal_retention_model
+    - legal_hold_reopen_custody_model
+    example_links:
+    - 06_public_annex/examples/annex_identity_redaction_policy.yaml
+    - 06_public_annex/examples/annex_bounded_summary_profile.yaml
+  hold_semantics_and_state_vocab:
+    related_core_sections:
+    - 01_core/concepts_public_spec_v1.yaml#stable_definitions
+    - 01_core/formalization_public_spec_v1.yaml#hold_contract
+    - 01_core/canonical_public_data_contract_v1.yaml#hold_packet_minimum
+    recommended_annex_entries:
+    - latent_downstream_hold_promotion_governance
+    - hold_reason_relation_taxonomy_governance
+    - hold_reason_subtype_registry_governance
+    - positive_state_vocabulary_governance
+    - latent_downstream_hold_promotion_model
+    - hold_reason_relation_taxonomy_model
+    - hold_reason_subtype_registry_model
+    - positive_state_vocabulary_model
+    informative_annex_entries:
+    - deliberate_exploration_option_value_governance
+    - deliberate_exploration_option_value_model
+    example_links:
+    - 06_public_annex/examples/annex_hold_reason_profile.yaml
+    - 01_core/examples/material_change_hold.yaml
+  externality_and_extension_boundaries:
+    related_core_sections:
+    - 01_core/concepts_public_spec_v1.yaml#public_non_goals
+    - 01_core/formalization_public_spec_v1.yaml#compatibility_policy
+    recommended_annex_entries:
+    - route_family_extension_boundary_governance
+    - externality_budget_numeric_calibration_governance
+    - route_family_extension_boundary_model
+    - externality_budget_numeric_calibration_model
+    example_links:
+    - 06_public_annex/examples/annex_bounded_summary_profile.yaml

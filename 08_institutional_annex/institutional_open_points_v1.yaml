@@ -1,0 +1,87 @@
+title: 知識収束学_制度運用発展_open_points_v1
+file_role: institutional_open_points
+version: 1
+status: curated_institutional_extension
+created_on: '2026-04-11'
+purpose: 認識論・合議設計・システム工学・HCI 方向の発展で、すぐに core へ戻さず annex 側で追跡すべき論点を整理する。
+triage_policy:
+  P1: 'institutional_core: 将来の v2 の骨格に効くが、今は annex のまま保持したい論点'
+  P2: 'implementation_bridge: schema / validation / workflow / UI に落とす前に整理が必要な論点'
+  P3: 'domain_calibration: 組織・領域・リスク帯で較正が大きく変わる論点'
+summary:
+  unique_question_count: 14
+  counts_by_priority:
+    P1: 5
+    P2: 5
+    P3: 4
+items:
+- id: IOP001
+  question: expert label と authority basis の最小共通語彙をどこまで分けるか
+  priority: P1
+  bucket: institutional_core
+  recommended_home: 08_institutional_annex/epistemic_justification_annex_v1.yaml
+- id: IOP002
+  question: testimony transfer status を E の support_status とどこまで橋渡しするか
+  priority: P1
+  bucket: institutional_core
+  recommended_home: 08_institutional_annex/epistemic_justification_annex_v1.yaml
+- id: IOP003
+  question: premise-based と conclusion-based を混在する多段階会議をどう canonical 化するか
+  priority: P1
+  bucket: institutional_core
+  recommended_home: 08_institutional_annex/collective_judgment_annex_v1.yaml
+- id: IOP004
+  question: lifecycle gate を project / subsystem / release candidate のどの粒度で標準化するか
+  priority: P1
+  bucket: institutional_core
+  recommended_home: 08_institutional_annex/systems_lifecycle_annex_v1.yaml
+- id: IOP005
+  question: human override right と governance authority の境界をどこまで固定するか
+  priority: P1
+  bucket: institutional_core
+  recommended_home: 08_institutional_annex/human_centered_operations_annex_v1.yaml
+- id: IOP006
+  question: epistemic_justification_packet の calibration_ref を最小契約へ含めるべきか
+  priority: P2
+  bucket: implementation_bridge
+  recommended_home: 08_institutional_annex/json_schema/epistemic_justification_packet.schema.json
+- id: IOP007
+  question: weighted quorum の weight_basis を machine-checkable にどう表現するか
+  priority: P2
+  bucket: implementation_bridge
+  recommended_home: 08_institutional_annex/json_schema/aggregation_rule_profile.schema.json
+- id: IOP008
+  question: minority report の redaction と traceability をどう両立するか
+  priority: P2
+  bucket: implementation_bridge
+  recommended_home: 08_institutional_annex/json_schema/minority_report_packet.schema.json
+- id: IOP009
+  question: transition package completeness を artifact registry とどう同期するか
+  priority: P2
+  bucket: implementation_bridge
+  recommended_home: 08_institutional_annex/json_schema/lifecycle_gate_packet.schema.json
+- id: IOP010
+  question: cognitive load budget の breach を UI 側でどう検査するか
+  priority: P2
+  bucket: implementation_bridge
+  recommended_home: 08_institutional_annex/json_schema/human_oversight_packet.schema.json
+- id: IOP011
+  question: expertise scope の granularity を領域ごとにどう設計するか
+  priority: P3
+  bucket: domain_calibration
+  recommended_home: domain profile
+- id: IOP012
+  question: ops feedback severity taxonomy を domain 共通化できるか
+  priority: P3
+  bucket: domain_calibration
+  recommended_home: monitoring / incident profile
+- id: IOP013
+  question: training readiness と operator acceptance の判定基準をどこまで共通化するか
+  priority: P3
+  bucket: domain_calibration
+  recommended_home: HCI / operations policy pack
+- id: IOP014
+  question: no_fallback_justification を許すリスク帯をどう定めるか
+  priority: P3
+  bucket: domain_calibration
+  recommended_home: safety policy pack

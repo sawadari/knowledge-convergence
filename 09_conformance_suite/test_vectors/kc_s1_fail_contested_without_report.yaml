@@ -1,0 +1,18 @@
+test_vector_id: kc_s1_fail_contested_without_report
+profile: KC-S1
+aggregation_rule_profile:
+  profile_id: agr_bad_001
+  decision_scope: release_candidate_rc8
+  aggregation_mode: conclusion_based
+  quorum_rule:
+    minimum_members: 5
+    minimum_present: 4
+  consistency_guard: inconsistency_requires_repair
+  minority_report_policy: required_when_conclusion_contested
+vote_summary:
+  approve: 2
+  reject: 2
+contested_conclusion: true
+final_group_outcome:
+  branch: execute
+  rationale: split vote but proceed anyway

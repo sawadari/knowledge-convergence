@@ -1,0 +1,30 @@
+example_id: institutional_example_003
+profile: KC-S1
+scenario: 結論票では承認多数だが、前提不整合と dissent を残して escalate した。
+aggregation_rule_profile:
+  profile_id: agr_002
+  decision_scope: external_vendor_switch
+  aggregation_mode: conclusion_based
+  premise_conclusion_mode: mixed
+  quorum_rule:
+    minimum_members: 6
+    minimum_present: 6
+  consistency_guard: inconsistency_requires_repair
+  reopen_policy: escalate_if_premise_split
+vote_summary:
+  approve: 4
+  reject: 2
+consistency_repair_result:
+  action: escalate
+  reason: legal_review_premise_and_security_review_premise_conflict
+minority_report_packet:
+  report_id: mr_002
+  decision_ref: external_vendor_switch
+  authors:
+  - member_security_lead
+  - member_privacy_lead
+  dissent_scope: security_and_privacy_risk
+  stated_reasons:
+  - security evidence insufficient
+  - privacy impact unresolved
+  risk_if_overridden: post_release_rollback_likely

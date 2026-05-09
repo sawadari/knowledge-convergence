@@ -1,0 +1,31 @@
+example_id: institutional_example_005
+profile: KC-H1
+scenario: false positive spike を受けて、operator が soft stop し manual fallback へ切り替えた。
+human_oversight_packet:
+  packet_id: hop_001
+  target_ref: automated_dispatch_policy_v3
+  human_roles:
+  - operator
+  - safety_lead
+  - auditor
+  override_rights:
+    operator: soft_stop
+    safety_lead: hard_stop
+    auditor: escalation_request
+  explanation_scope_by_role:
+    operator: operational_rationale
+    safety_lead: full_audit
+    auditor: full_audit
+  cognitive_load_budget:
+    max_blocking_alerts: 2
+    max_simultaneous_risk_factors: 4
+  training_readiness: provisional
+  operator_acceptance: limited
+  manual_fallback:
+    available: true
+    fallback_route: manual_dispatch_queue
+    switchover_time_target: PT5M
+runtime_event:
+  trigger: false_positive_spike
+  executed_action: soft_stop_then_manual_fallback
+  expected_branch: escalate

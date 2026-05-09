@@ -1,0 +1,24 @@
+test_vector_id: kc_h1_fail_execute_without_training
+profile: KC-H1
+evaluation_context:
+  risk_tier: high
+human_oversight_packet:
+  packet_id: hop_bad_001
+  target_ref: automated_dispatch_policy_v4
+  human_roles:
+  - operator
+  - safety_lead
+  override_rights:
+    operator: soft_stop
+    safety_lead: hard_stop
+  explanation_scope_by_role:
+    operator: operational_rationale
+    safety_lead: full_audit
+  training_readiness: incomplete
+  operator_acceptance: limited
+  manual_fallback:
+    available: true
+    fallback_route: manual_dispatch_queue
+    switchover_time_target: PT5M
+branch_binding:
+  branch: execute

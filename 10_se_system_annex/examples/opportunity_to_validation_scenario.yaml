@@ -1,0 +1,60 @@
+example_id: se_ex_opportunity_to_validation_scenario_v1
+scenario: 事業企画上の機会を、ステークホルダニーズ、要求、Validationシナリオへ落とす。
+risk_tier: medium
+opportunity:
+  opportunity_id: OPP-006
+  statement: 保守員の現場診断時間を短縮し、停止時間を削減する。
+  evidence_refs:
+    - EV-FIELD-SERVICE-REPORT-Q1-2026
+business_goal:
+  goal_id: BG-012
+  statement: 主要設備の平均復旧時間を20%短縮する。
+  value_metric: mean_time_to_repair
+stakeholders:
+  - stakeholder_id: STK-MAINTAINER
+    role: field_maintainer
+  - stakeholder_id: STK-OPS-MANAGER
+    role: operations_manager
+operational_scenario:
+  scenario_id: SCN-019
+  statement: 保守員が現場で設備ログを読み取り、故障候補と確認手順を提示される。
+  intended_environment: 工場内、ネットワーク品質が不安定な区域を含む。
+system_boundary:
+  system_of_interest: field_diagnosis_support_system
+  external_actors:
+    - field_maintainer
+    - equipment_controller
+    - maintenance_database
+  out_of_scope:
+    - 自動修理作業
+    - 安全インターロック解除
+requirements:
+  - requirement_id: REQ-045
+    statement: システムは、保守員が設備ログを読み取った後、3つ以内の故障候補と確認手順を提示する。
+    derived_from:
+      - OPP-006
+      - BG-012
+      - SCN-019
+    evidence_refs:
+      - EV-FIELD-SERVICE-REPORT-Q1-2026
+    validation_ref: VAL-045
+    verification_ref: VER-045
+verification:
+  verification_id: VER-045
+  method: integration_test
+  success_criteria:
+    - 入力ログに対して故障候補が3件以内で提示される
+    - 確認手順が保守手順書の許可範囲内である
+validation:
+  validation_id: VAL-045
+  scenario_ref: SCN-019
+  success_criteria:
+    - 平均診断時間が現行手順より25%以上短縮される
+    - 保守員が提示手順を理解できる
+    - 安全上禁止された操作を提示しない
+  validation_environment: 現場相当環境での保守員参加テスト
+expected_lint_result:
+  KCS-SE0-001: pass
+  KCS-SE0-003: pass
+  KCS-SE2-001: pass
+  KCS-SE2-002: pass

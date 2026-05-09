@@ -1,0 +1,24 @@
+example_id: engineering_validation_hold
+profile: KC-DV1 / KC-SE2
+decision_outcome:
+  epistemic_eval_state: 'true'
+  governance_entry_state: eligible
+  governance_eval_state: 'true'
+  domain_validity_eval_state: hold
+  branch: hold
+  primary_reason:
+    reason_code: H9
+    code: validation_gap
+  rationale: Verification method is defined, but validation scenario in intended environment
+    is not yet available.
+domain_validity_packet:
+  domain_profile_id: SE_engineering_validity
+  target_ref: REQ-042
+  validity_context:
+    intended_environment: factory_line_A
+  success_or_validity_criteria:
+  - operator can complete recovery within 120 seconds
+  verification_or_check_method: integration_test_IT-017
+  validation_method: pending field validation with operators
+  owner_role: chief_systems_engineer
+  domain_validity_eval_state: hold

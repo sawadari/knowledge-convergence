@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://knowledge-convergence.local/schema/agent_execution_envelope_minimum.schema.json",
+  "title": "AgentExecutionEnvelopeMinimum",
+  "type": "object",
+  "required": [
+    "agent_id",
+    "role_class",
+    "owner_role",
+    "capability_scope",
+    "authority_envelope",
+    "audit_obligation"
+  ],
+  "properties": {
+    "agent_id": {
+      "type": "string"
+    },
+    "role_class": {
+      "type": "string",
+      "enum": [
+        "candidate_agent",
+        "critique_agent",
+        "execution_agent",
+        "guardian_agent"
+      ]
+    },
+    "owner_role": {
+      "type": "string"
+    },
+    "capability_scope": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "authority_envelope": {
+      "type": "object",
+      "required": [
+        "allowed_actions",
+        "denied_actions"
+      ],
+      "properties": {
+        "allowed_actions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "denied_actions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "allowed_tools": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "denied_tools": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "data_scope": {
+          "type": [
+            "array",
+            "object",
+            "string"
+          ]
+        },
+        "time_limit": {
+          "type": [
+            "string",
+            "number"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "audit_obligation": {
+      "type": [
+        "object",
+        "string"
+      ]
+    },
+    "stop_condition": {
+      "type": [
+        "object",
+        "string"
+      ]
+    },
+    "rollback_path": {
+      "type": [
+        "object",
+        "string"
+      ]
+    },
+    "no_rollback_justification": {
+      "type": "string"
+    },
+    "human_review_gate": {
+      "type": [
+        "object",
+        "string"
+      ]
+    },
+    "exception_basis": {
+      "type": [
+        "object",
+        "string"
+      ]
+    },
+    "accountability_binding": {
+      "type": [
+        "object",
+        "string"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

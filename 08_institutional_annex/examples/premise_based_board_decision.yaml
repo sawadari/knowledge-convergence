@@ -1,0 +1,36 @@
+example_id: institutional_example_002
+profile: KC-S1
+scenario: リリース審査会で premise-based 集約を採用し、training readiness 未達のため hold にした。
+aggregation_rule_profile:
+  profile_id: agr_001
+  decision_scope: release_candidate_rc7
+  aggregation_mode: premise_based
+  premise_conclusion_mode: premise_based
+  quorum_rule:
+    minimum_members: 5
+    minimum_present: 4
+  consistency_guard: all_required_premises_must_pass
+  weight_basis: role_accountability
+  minority_report_policy: required_when_conclusion_contested
+premise_results:
+- premise_ref: safety_verification_passed
+  yes: 4
+  no: 1
+- premise_ref: operator_training_ready
+  yes: 2
+  no: 3
+- premise_ref: release_documentation_complete
+  yes: 5
+  no: 0
+final_group_outcome:
+  branch: hold
+  rationale: required premise operator_training_ready failed
+minority_report_packet:
+  report_id: mr_001
+  decision_ref: release_candidate_rc7
+  authors:
+  - member_release_manager_b
+  dissent_scope: release_timing_only
+  stated_reasons:
+  - training can finish within 24 hours
+  requested_followup: rehear_after_training_completion

@@ -1,0 +1,93 @@
+title: 知識収束学_制度運用適合マトリクス_v1
+file_role: institutional_conformance_matrix
+version: 1
+status: curated_conformance_suite
+created_on: '2026-04-11'
+purpose: KC-T1 / KC-S1 / KC-O1 / KC-H1 と cross rule を、schema・semantic rule・試験ケースへ写像する。
+profiles:
+  KC-T1:
+    required_packet_types:
+    - epistemic_justification_packet
+    schema_refs:
+    - ../08_institutional_annex/json_schema/epistemic_justification_packet.schema.json
+    semantic_rule_ids:
+    - KCI-T1-001
+    - KCI-T1-002
+    - KCI-T1-003
+    - KCI-T1-004
+    cross_rule_ids:
+    - KCI-X-001
+    reference_examples:
+    - ../08_institutional_annex/examples/attributed_expert_claim_with_defeater.yaml
+    negative_vectors:
+    - test_vectors/kc_t1_fail_public_claim_execute.yaml
+    - test_vectors/kc_t1_fail_stale_transferable.yaml
+    - test_vectors/kc_t1_warn_conflict_interest_without_status.yaml
+  KC-S1:
+    required_packet_types:
+    - aggregation_rule_profile
+    schema_refs:
+    - ../08_institutional_annex/json_schema/aggregation_rule_profile.schema.json
+    - ../08_institutional_annex/json_schema/minority_report_packet.schema.json
+    semantic_rule_ids:
+    - KCI-S1-001
+    - KCI-S1-002
+    - KCI-S1-003
+    - KCI-S1-004
+    cross_rule_ids:
+    - KCI-X-002
+    reference_examples:
+    - ../08_institutional_annex/examples/premise_based_board_decision.yaml
+    - ../08_institutional_annex/examples/minority_report_escalation.yaml
+    negative_vectors:
+    - test_vectors/kc_s1_fail_contested_without_report.yaml
+    - test_vectors/kc_s1_fail_quorum_not_met.yaml
+  KC-O1:
+    required_packet_types:
+    - lifecycle_gate_packet
+    - ops_feedback_event
+    schema_refs:
+    - ../08_institutional_annex/json_schema/lifecycle_gate_packet.schema.json
+    - ../08_institutional_annex/json_schema/ops_feedback_event.schema.json
+    semantic_rule_ids:
+    - KCI-O1-001
+    - KCI-O1-002
+    - KCI-O1-003
+    - KCI-O1-004
+    reference_examples:
+    - ../08_institutional_annex/examples/lifecycle_gate_transition_package.yaml
+    - ../08_institutional_annex/examples/ops_feedback_triggered_reopen.yaml
+    negative_vectors:
+    - test_vectors/kc_o1_fail_execute_without_baseline.yaml
+    - test_vectors/kc_o1_fail_validation_pending_execute.yaml
+  KC-H1:
+    required_packet_types:
+    - human_oversight_packet
+    schema_refs:
+    - ../08_institutional_annex/json_schema/human_oversight_packet.schema.json
+    semantic_rule_ids:
+    - KCI-H1-001
+    - KCI-H1-002
+    - KCI-H1-003
+    - KCI-H1-004
+    cross_rule_ids:
+    - KCI-X-002
+    reference_examples:
+    - ../08_institutional_annex/examples/operator_override_with_manual_fallback.yaml
+    negative_vectors:
+    - test_vectors/kc_h1_fail_execute_without_training.yaml
+    - test_vectors/kc_h1_warn_no_fallback_high_risk.yaml
+    positive_vectors:
+    - test_vectors/kc_h1_pass_shadow_mode_not_ready.yaml
+  CROSS:
+    semantic_rule_ids:
+    - KCI-X-001
+    - KCI-X-002
+    reference_vectors:
+    - test_vectors/kc_x_fail_qualified_testimony_high_risk_execute.yaml
+    - test_vectors/kc_x_fail_training_premise_execute.yaml
+    - test_vectors/kc_x_pass_qualified_with_corroboration_execute.yaml
+outcome_policy:
+  pass: error も warning も無い
+  warn: error は無いが warning がある
+  fail: 1件以上の error がある

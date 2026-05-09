@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://knowledge-convergence.local/schema/convergence_metrics_packet_minimum.schema.json",
+  "title": "ConvergenceMetricsPacketMinimum",
+  "type": "object",
+  "required": [
+    "target_ref",
+    "metric_set",
+    "measurement_time",
+    "measurement_basis"
+  ],
+  "properties": {
+    "target_ref": {
+      "type": "string"
+    },
+    "metric_set": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "measurement_time": {
+      "type": "string"
+    },
+    "measurement_basis": {
+      "type": [
+        "array",
+        "object",
+        "string"
+      ]
+    },
+    "threshold_profile": {
+      "type": [
+        "object",
+        "string"
+      ]
+    },
+    "blocker_dimensions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "trend": {
+      "type": [
+        "object",
+        "string"
+      ]
+    },
+    "owner_role": {
+      "type": "string"
+    },
+    "aggregation_rule": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

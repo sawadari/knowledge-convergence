@@ -1,0 +1,16 @@
+test_vector_id: kc_x_fail_qualified_testimony_high_risk_execute
+profile: CROSS
+evaluation_context:
+  risk_tier: critical
+  intended_branch: execute
+corroboration_status: absent
+epistemic_justification_packet:
+  packet_id: ejp_cross_fail_001
+  target_ref: claim_night_shift_release_safe
+  source_ref: src_external_consultant_b
+  speaker_warrant_profile: domain_expert
+  trust_channel: peer_report
+  justification_basis: domain_inference
+  expertise_scope:
+    domain_ref: sensor_noise_modeling
+  epistemic_transfer_status: qualified

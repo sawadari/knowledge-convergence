@@ -1,0 +1,267 @@
+title: 知識収束学_SEシステム参照アーキテクチャ_v1
+file_role: se_system_reference_architecture
+version: '1.1'
+status: curated_applied_integration_annex_revised_v1_1
+created_on: '2026-05-08'
+purpose: SEシステムを、Convergence plane / Execution plane / Governance plane と実装レイヤに分けて定義する。
+planes:
+  convergence_plane:
+    statement: 何を、なぜ、どの制約で、どう検証するかを収束させる。
+    primary_components:
+    - EvidenceStore
+    - ContextRegistry
+    - CanonicalSEGraph
+    - DecisionLedger
+    - TradeoffWorkspace
+    - RequirementVVGraph
+    - SELint
+  execution_plane:
+    statement: 承認済み知識状態をコード、テスト、資料、業務操作、通知、チケットへ変換する。
+    primary_components:
+    - CodingAgentAdapter
+    - WorkflowAgentAdapter
+    - OpenClawLikeToolAdapter
+    - CIAdapter
+    - TicketingAdapter
+    - DocumentationBuilder
+  governance_plane:
+    statement: 人間・組織・AIエージェントの責任、権限、監査、停止、再開を管理する。
+    primary_components:
+    - RoleRegistry
+    - AgentRegistry
+    - AuthorityEnvelopeManager
+    - HumanOversightWorkbench
+    - AuditLog
+    - EscalationRouter
+    - ReopenRollbackManager
+  domain_validity_plane:
+    statement: 対象ドメインで実際に有効かを、V&V、運用、人間/組織、表現形式、フィードバックから検査する。core v1.1 の domain_validity_convergence に対応する。
+    primary_components:
+    - DomainValidityProfileRegistry
+    - RequirementVVGraph
+    - ValidationScenarioWorkbench
+    - OperationalReadinessRegistry
+    - FeedbackReopenRouter
+    - ConvergenceMetricsDashboard
+layers:
+  L1_integration_layer:
+    purpose: 既存資料・ツール・実装環境・運用環境を接続する。
+    inputs:
+    - meeting_minutes
+    - documents
+    - spreadsheets
+    - slides
+    - requirements_tools
+    - PLM_ALM
+    - Git
+    - issue_tracker
+    - test_logs
+    - simulation_logs
+    - incident_reports
+    - regulations
+    rules:
+    - 既存ツールを最初から置き換えない
+    - raw input と extracted candidate を分ける
+  L2_evidence_context_store:
+    purpose: 根拠と文脈を保存する。
+    stores:
+    - evidence_object_store
+    - source_citation_index
+    - context_registry
+    - freshness_registry
+    rules:
+    - AI summary を raw evidence と同一視しない
+    - source、version、timestamp、scope を保持する
+  L3_canonical_SE_graph:
+    purpose: SE の正本となる意味関係を保持する。
+    graph_characteristics:
+    - typed_nodes
+    - typed_edges
+    - evidence_links
+    - context_links
+    - state_and_status
+    - versioned_baseline
+    rules:
+    - SysML / DSL / document は view であり canonical graph を置換しない
+    - relationship validity を検査対象にする
+  L4_decision_tradeoff_layer:
+    purpose: コード以前の意思決定・選択肢・比較・却下理由を正本化する。
+    components:
+    - DecisionLedger
+    - TradeoffMatrix
+    - DissentRegister
+    - AssumptionRegister
+    - ReopenConditionRegistry
+  L5_SE_lint_reasoning_simulation_layer:
+    purpose: SE の判定器として、抜け漏れ、矛盾、検証不能、無権限実行を検出する。
+    components:
+    - RequirementsQualityLint
+    - TraceabilityLint
+    - VVLinkLint
+    - DecisionCompletenessLint
+    - OrganizationReadinessLint
+    - AgentDelegationLint
+    - ChangeImpactEngine
+    - SimulationConnector
+  L6_agent_delegation_orchestration_layer:
+    purpose: AIエージェントに対する委任と実行を管理する。
+    components:
+    - AgentRegistry
+    - DelegationPolicyEngine
+    - PermissionSandbox
+    - AgentTaskBoard
+    - GuardianAgent
+    - ExecutionLogCollector
+    rules:
+    - agent は正本を直接変更しない
+    - agent output は差分候補または実行結果として登録する
+    - high risk action は human review gate または exception_basis を要求する
+  L7_human_organization_workbench:
+    purpose: 人間が知識状態、判断、役割、責任、AI委任を操作する。
+    workspaces:
+    - MissionWorkspace
+    - StakeholderScenarioWorkspace
+    - DecisionBoard
+    - TradeoffWorkspace
+    - RequirementVVWorkspace
+    - OrganizationResponsibilityView
+    - HumanOversightView
+    - ChangeImpactView
+    - AgentTaskBoard
+  L8_convergence_metrics_and_feedback_layer:
+    purpose: 収束状態を多次元に計量し、運用フィードバック・incident・変更影響から reopen / revalidate / rollback を起動する。
+    components:
+    - ConvergenceMetricsDashboard
+    - OpsFeedbackRouter
+    - IncidentReopenEngine
+    - AssumptionFragilityTracker
+    - ValidationReadinessMonitor
+    rules:
+    - 重大 blocker を平均点で相殺しない
+    - verification passed と validation passed を分けて表示する
+    - 高影響判断では validation_readiness と organization_capacity_risk を release gate に接続する
+canonical_packets:
+  se_decision_packet:
+    minimum_fields:
+    - decision_id
+    - issue_statement
+    - options
+    - selected_option
+    - rejected_options
+    - criteria
+    - rationale
+    - evidence_refs
+    - assumptions
+    - responsible_role
+    - approver_role
+    - reopen_conditions
+  se_vv_packet:
+    minimum_fields:
+    - vv_packet_id
+    - target_requirement_ref
+    - verification_method
+    - validation_scenario
+    - success_criteria
+    - evidence_refs
+    - status
+  se_org_role_packet:
+    minimum_fields:
+    - role_id
+    - role_name
+    - decision_rights
+    - expertise_scope
+    - accountability_scope
+    - escalation_path
+    - training_readiness
+    - override_rights
+  se_agent_delegation_packet:
+    minimum_fields:
+    - delegation_id
+    - agent_id
+    - task_ref
+    - input_knowledge_refs
+    - capability_scope
+    - authority_envelope
+    - sandbox_policy
+    - output_artifact_refs
+    - audit_log_refs
+    - human_review_gate
+    - rollback_path
+  se_representation_packet:
+    minimum_fields:
+    - representation_id
+    - representation_level
+    - canonical_refs
+    - transformation_rationale
+    - unresolved_ambiguity
+    - loss_of_meaning_notes
+    - formalization_readiness
+agent_roles:
+  CandidateAgent:
+    allowed_actions:
+    - extract_candidates
+    - propose_questions
+    - draft_requirement
+    - draft_decision_options
+    prohibited_by_default:
+    - approve_baseline
+    - execute_external_action
+  CritiqueAgent:
+    allowed_actions:
+    - run_SE_lint
+    - find_conflicts
+    - find_missing_evidence
+    - find_unverified_requirements
+    prohibited_by_default:
+    - resolve_conflict_as_final
+  ExecutionAgent:
+    allowed_actions:
+    - create_branch
+    - edit_code
+    - run_tests
+    - create_pr
+    - update_ticket
+    - operate_allowed_tool
+    mandatory_controls:
+    - authority_envelope
+    - sandbox_policy
+    - audit_log
+    - review_gate
+    - rollback_path
+  GuardianAgent:
+    allowed_actions:
+    - monitor_agent_actions
+    - check_permission
+    - block_policy_violation
+    - request_human_review
+    prohibited_by_default:
+    - override_human_accountability_owner
+state_flow:
+  candidate_to_baseline:
+    sequence:
+    - raw_evidence_ingested
+    - candidates_extracted
+    - SE_lint_executed
+    - human_reviewed
+    - decision_recorded
+    - VV_linked
+    - baseline_created
+    - execution_delegated
+    - execution_result_reviewed
+    - ops_feedback_monitored
+    - reopen_or_close
+  branch_policy:
+    execute_requires:
+    - evidence_sufficient_or_exception_basis
+    - governance_approval
+    - VV_anchor_for_high_risk
+    - agent_delegation_packet_if_agent_executes
+    - human_oversight_packet_for_high_risk
+    hold_allowed_reasons:
+    - missing_evidence
+    - validation_pending
+    - decision_owner_missing
+    - expert_conflict_unresolved
+    - agent_authority_missing
+    - human_readiness_incomplete
+    - representation_ambiguity_unresolved

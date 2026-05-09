@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://knowledge-convergence.local/schema/foundational/argument_graph_packet.schema.json",
+  "title": "ArgumentGraphPacket",
+  "type": "object",
+  "required": [
+    "graph_id",
+    "nodes",
+    "edges"
+  ],
+  "properties": {
+    "graph_id": {
+      "type": "string"
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "node_id",
+          "claim_ref"
+        ],
+        "properties": {
+          "node_id": {
+            "type": "string"
+          },
+          "claim_ref": {
+            "type": "string"
+          },
+          "evidence_ref": {
+            "type": "string"
+          },
+          "provenance_ref": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "edge_id",
+          "from",
+          "to",
+          "relation_type"
+        ],
+        "properties": {
+          "edge_id": {
+            "type": "string"
+          },
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
+          },
+          "relation_type": {
+            "type": "string",
+            "enum": [
+              "support",
+              "rebut",
+              "undercut",
+              "priority_override"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "support_status": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "enum": [
+          "supported",
+          "refuted",
+          "both",
+          "neither"
+        ]
+      }
+    },
+    "confidence_interval": {
+      "type": [
+        "array",
+        "object",
+        "string"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

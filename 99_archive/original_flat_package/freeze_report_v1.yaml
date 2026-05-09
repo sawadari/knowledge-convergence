@@ -1,0 +1,104 @@
+title: 知識収束学_v1_凍結報告
+file_role: freeze_report
+version: '1'
+language: ja
+status: frozen
+last_updated: '2026-03-22'
+release_identity:
+  statement: 研究過程では internal tracking label として v3.1 を使うが、正規の凍結版名は v1 とする。
+  internal_tracking_label: v3.1
+  canonical_release_label: v1
+  canonical_release_state: frozen
+  frozen_on: '2026-03-22'
+  note: ファイル名や YAML 自体の作業版 version=3.0 は研究用の系譜管理であり、公開上の理論版名とは別物である。
+purpose:
+  statement: internal tracking label v3.1 に対応する canonical release v1 の凍結報告物を一箇所にまとめる。
+scope:
+  included_files:
+  - research_master_v3.0.yaml
+  - concepts_v3.0.yaml
+  - formalization_v3.0.yaml
+  - thread_handoff_v3.0.yaml
+  - completion_backlog_v3.1.yaml
+  freeze_target: 知識収束学の統治可能版としての理論コア
+  non_goals:
+  - 全ての将来拡張 open_points を 0 にすること
+  - 応用領域や実装詳細の全完了
+  - 研究系譜管理用の内部 version 表記を消去すること
+release_note:
+  summary: Q01-Q24 のバックログ解消、中核定義の fixed 化、freeze 報告物の整備を完了し、internal v3.1 を canonical release v1 として凍結した。
+  adopted_changes:
+  - knowledge 定義を knowledge_state / convergence / update_operator に接続できる provisional_fixed 文へ更新した。
+  - A1/A2/A4/A5 を core axiom として provisional_fixed 化した。
+  - 'update_operator を U_a : (K, Δ, Π) -> (K'', h, o) の typed update operator として fixed 化し、silent success を禁止した。'
+  - partial_order_model と abstract_interpretation_model を基礎形式化として採用した。
+  - release note / zero-draft report / zero-open-question report / cross-file consistency check を報告物として確定した。
+  rejected_or_relocated_changes:
+  - A3 は core axiom から外し、ai_governance_principle として保持した。
+  - metric_model は基礎形式化から外し、supplementary diagnostic model として保持した。
+  implementation_readiness:
+  - GraphLint に渡せる判定単位と禁止 shortcut が明示された。
+  - DecisionLedger に渡せる採用・棄却・保留イベントが整理された。
+  - GraphEngine に渡せる typed state transition と failure branch が明示された。
+  - archive object に渡せる保存・監査証跡要件が整理された。
+  naming_note: 本報告では internal tracking label を v3.1 と記すが、正規版名は v1 とする。
+zero_draft_report:
+  result: pass
+  measured_targets:
+    concepts:
+      draft: 0
+      candidate: 0
+      strong_candidate: 0
+      status_counts:
+        active: 1
+        provisional_fixed: 362
+        provisional_adopted: 1
+        provisionally_resolved: 1
+    formalization:
+      draft: 0
+      candidate: 0
+      strong_candidate: 0
+      status_counts:
+        active: 1
+        provisional_fixed: 353
+        provisional_adopted: 9
+        provisionally_resolved: 1
+  interpretation_rule: ここでの zero-draft は freeze gate 対象である draft / candidate / strong_candidate が 0 であることを意味する。
+  note: concepts / formalization には将来拡張メモとしての local open_points が残るが、これは freeze gate の closure blocker ではない。
+zero_open_question_report:
+  result: pass
+  measured_targets:
+    research_master.current_unresolved_issues_count: 0
+    thread_handoff.current_handoff.unresolved_issues_count: 0
+    thread_handoff.current_handoff.deferred_points_count: 0
+    concepts.open_questions_count: 0
+    completion_backlog.required_end_state.open_questions_target: 0
+  interpretation_rule: ここでの zero-open-question は、追跡対象の未解決問題と deferred points が 0 であることを意味する。
+  note: local open_points は post-freeze extension backlog として扱い、凍結版の未解決問題とは区別する。
+cross_file_consistency_check:
+  overall_result: pass
+  checks:
+  - name: release_identity_alias
+    result: pass
+    evidence: internal tracking label v3.1 と canonical release v1 の関係を research_master / completion_backlog / freeze_report に明示した。
+  - name: status_gate_alignment
+    result: pass
+    evidence: completion_backlog.required_end_state の draft=0, candidate=0, strong_candidate=0, open_questions=0, deferred_points=0 を満たした。
+  - name: priority_and_handoff_alignment
+    result: pass
+    evidence: research_master.current_priority, thread_handoff.current_status, phase_backlog.P7 を freeze 完了後の状態に更新した。
+  - name: disposition_traceability
+    result: pass
+    evidence: knowledge 定義、A1/A2/A4/A5、A3、update_operator、partial_order_model、abstract_interpretation_model、metric_model の disposition が handoff と release_note に一致する。
+  - name: report_artifact_presence
+    result: pass
+    evidence: release note / zero-draft report / zero-open-question report / cross-file consistency check を freeze_report_v1.yaml に実体化した。
+  residual_notes:
+  - local open_points は post-freeze extension backlog であり、freeze gate の不合格理由ではない。
+freeze_decision:
+  result: approve_freeze
+  decision_statement: 知識収束学の理論コアは、internal v3.1 / canonical v1 として統治可能版の凍結条件を満たした。
+  post_freeze_next_topics:
+  - non-gating open_points の post-freeze triage
+  - MBSE / 製造業応用への接続整理
+  - GraphLint / DecisionLedger / GraphEngine / archive object の実装境界の具体化

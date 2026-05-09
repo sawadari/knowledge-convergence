@@ -1,0 +1,23 @@
+example_id: agent_authority_unbound_hold
+profile: KC-AX1
+agent_execution_envelope:
+  agent_id: coding-agent-07
+  role_class: execution_agent
+  owner_role: software_lead
+  capability_scope:
+  - edit_code
+  - run_tests
+  authority_envelope:
+    allowed_actions:
+    - run_tests
+    denied_actions:
+    - merge_pr
+    - modify_safety_config
+  audit_obligation: store prompt, diff, terminal log, test result
+decision_outcome:
+  branch: hold
+  primary_reason:
+    reason_code: H12
+    code: agent_authority_unbound
+  rationale: Agent is requested to update safety-related configuration, but authority
+    envelope only permits test execution.

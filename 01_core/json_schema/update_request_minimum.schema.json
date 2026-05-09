@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://knowledge-convergence.local/schema/update_request_minimum.schema.json",
+  "title": "UpdateRequestMinimum v1.1",
+  "type": "object",
+  "required": [
+    "request_id",
+    "actor_ref",
+    "target_slot",
+    "delta",
+    "authority_basis",
+    "applied_policy_version",
+    "expected_branch",
+    "failure_branch"
+  ],
+  "properties": {
+    "request_id": {
+      "type": "string"
+    },
+    "actor_ref": {
+      "type": "string"
+    },
+    "target_slot": {
+      "type": "string",
+      "enum": [
+        "G",
+        "C",
+        "E",
+        "V",
+        "R",
+        "H",
+        "domain_validity",
+        "agent_execution",
+        "human_oversight",
+        "organization",
+        "metrics"
+      ]
+    },
+    "delta": {
+      "type": [
+        "object",
+        "array",
+        "string"
+      ]
+    },
+    "authority_basis": {
+      "type": "string"
+    },
+    "applied_policy_version": {
+      "type": "string"
+    },
+    "expected_branch": {
+      "type": "string",
+      "enum": [
+        "execute",
+        "hold",
+        "reject",
+        "escalate",
+        "rollback"
+      ]
+    },
+    "failure_branch": {
+      "type": "string",
+      "enum": [
+        "execute",
+        "hold",
+        "reject",
+        "escalate",
+        "rollback"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

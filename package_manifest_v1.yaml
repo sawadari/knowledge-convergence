@@ -1,0 +1,262 @@
+package_name: knowledge_convergence_v1_1_se_system_core_revised_20260508
+package_role: public_spec_with_core_revision_se_system_integration
+created_on: '2026-05-08'
+source_integrity:
+  source_zip_name: knowledge_convergence_yaml_v1_with_beginner_report_20260322.zip
+  source_zip_sha256: c60d5c8f9fd24355daa6af0a9c97f7b8c64871da338d9af6f9d9e1fb3b6b4da8
+  source_flat_directory: knowledge_convergence_yaml_v3.0_validated_repacked_v300
+  preservation_note: 元のフラット構成ファイルは 99_archive/original_flat_package/ に無変更で保存した。
+  base_zip_sha256_for_SE_integration: 88ff8dff2385519e5ccc614f9c8a3d823563ce926a1dc40dd5a02e931fc775f7
+  se_system_integration_note: 10_se_system_annex を追加した前版を土台にした。v1.1では core semantics を一部補強し、K tuple と branch vocab は維持した。
+  core_revision_note_v1_1: domain_validity_convergence, agent_execution_governance, meaningful_human_oversight, organization_topology,
+    convergence_measurement を core に追加。
+release_boundary:
+  canonical_release_label: v1
+  research_tracking_label: v3.1
+  canonical_release_state: frozen
+  frozen_on: '2026-03-22'
+  freeze_report: 04_operations/freeze_report_v1.yaml
+design_intent:
+- コア理論を公開仕様として読める短い正本へ再提示する
+- 実装者向けに最小データ契約と JSON Schema を与える
+- 準拠レベルを KC-E1 / KC-G1 / KC-D1 / KC-A1 として明確化する
+- 理論コアと公開配布面を分ける
+- 拡張論点と研究ログは引き続き補助層へ隔離する
+- 02_supplements から公開配布しやすい補助論点だけを 06_public_annex として再編集する
+- 自然言語入力を claim-ready packet へ上げるための言語解釈層を追加する
+- 競合・多基準・由来・時相を扱う数学的 packet を追加する
+- KC-L1 / KC-M1 / KC-M2 / KC-M3 を追加採用可能な発展プロファイルとして示す
+- 証言・専門性・defeater を source quality 以上の正当化 packet として扱う
+- 複数レビューの集約規則と dissent retention を明示する
+- decision outcome を baseline / gate / artifact / ops feedback へ接続する
+- 人の停止権・訓練完了・手動代替を状態として保持する
+- 制度運用 annex packet 群に対する conformance suite と semantic validation rulebook を追加する
+- 既存 institutional example と負例 test vector を用いた pass/warn/fail 付き適合試験を提供する
+- SEシステム統合 annex を追加し、組織構造・人間系・AIエージェント運用へ接続する
+inventory:
+  01_core:
+  - 00_start_here_public_spec.md
+  - concepts_public_spec_v1.yaml
+  - formalization_public_spec_v1.yaml
+  - canonical_public_data_contract_v1.yaml
+  - conformance_profiles_public_v1.yaml
+  - implementation_quickstart_public_v1.md
+  - public_term_glossary_v1.md
+  - public_examples_v1.yaml
+  - public_spec_release_notes_v1.md
+  - json_schema/
+  - examples/
+  - concepts_core_v1.yaml
+  - formalization_core_v1.yaml
+  - knowledge_convergence_report_for_beginners_repackaged_v1.md
+  - reader_guide_v1.md
+  - minimal_implementation_contract_v1.yaml
+  - foundational_extension_profiles_v1.yaml
+  - foundational_contract_addendum_v1.yaml
+  - foundational_glossary_addendum_v1.md
+  - institutional_extension_profiles_v1.yaml
+  - institutional_contract_addendum_v1.yaml
+  - institutional_glossary_addendum_v1.md
+  02_supplements:
+  - concepts_governance_supplement_v1.yaml
+  - formalization_governance_supplement_v1.yaml
+  - README_scope_note.md
+  03_extensions:
+  - scheduler_federation_governance_pack_v1.yaml
+  - scheduler_federation_formalization_pack_v1.yaml
+  04_operations:
+  - research_master_operational_view_v1.yaml
+  - thread_handoff_operational_view_v1.yaml
+  - completion_backlog_v3.1.yaml
+  - freeze_report_v1.yaml
+  - work_queue_extract_v1.yaml
+  - open_point_register_v1.yaml
+  - release_boundary_note_v1.md
+  05_logs:
+  - concepts_recent_decisions_v1.yaml
+  - concepts_update_log_v1.yaml
+  - formalization_update_log_v1.yaml
+  - formalization_resolved_points_v1.yaml
+  - research_master_recent_progress_v1.yaml
+  - research_master_update_log_v1.yaml
+  - research_master_update_history_v1.yaml
+  - thread_handoff_update_log_v1.yaml
+  99_archive:
+  - original_flat_package/
+  06_public_annex:
+  - 00_start_here_public_annex.md
+  - annex_normativity_policy_v1.md
+  - publication_filter_report_v1.yaml
+  - public_annex_concepts_v1.yaml
+  - public_annex_formalization_v1.yaml
+  - public_annex_crosswalk_v1.yaml
+  - public_annex_release_notes_v1.md
+  - examples/
+  07_foundational_annex:
+  - 00_start_here_foundational_annex.md
+  - foundational_crosswalk_v1.yaml
+  - foundational_language_annex_v1.yaml
+  - foundational_mathematical_annex_v1.yaml
+  - foundational_open_points_v1.yaml
+  - foundational_release_notes_v1.md
+  - adoption_roadmap_v1.md
+  - examples/
+  - json_schema/
+  08_institutional_annex:
+  - 00_start_here_institutional_annex.md
+  - institutional_crosswalk_v1.yaml
+  - epistemic_justification_annex_v1.yaml
+  - collective_judgment_annex_v1.yaml
+  - systems_lifecycle_annex_v1.yaml
+  - human_centered_operations_annex_v1.yaml
+  - institutional_open_points_v1.yaml
+  - institutional_release_notes_v1.md
+  - adoption_roadmap_v1.md
+  - examples/
+  - json_schema/
+  09_conformance_suite:
+  - 00_start_here_conformance_suite.md
+  - institutional_validation_rulebook_v1.yaml
+  - institutional_conformance_matrix_v1.yaml
+  - institutional_conformance_test_suite_v1.yaml
+  - institutional_runner_notes_v1.md
+  - validation_report_v1.yaml
+  - validation_report_after_se_integration_v1.yaml
+  - json_schema/
+  - test_vectors/
+  - tools/
+  10_se_system_annex:
+  - 00_start_here_se_system_annex.md
+  - se_system_theory_integration_v1.md
+  - se_system_theory_review_and_corrections_v1.md
+  - external_references_current_ai_development_v1.md
+  - se_system_crosswalk_v1.yaml
+  - se_system_extension_profiles_v1.yaml
+  - se_system_reference_architecture_v1.yaml
+  - se_system_lint_rulebook_v1.yaml
+  - examples/
+  - json_schema/
+  11_core_revision_annex: core v1.1 修正内容、移行ガイド、delta conformance、例を格納する。
+selection_statistics:
+  concepts:
+    source_top_level_sections: 306
+    core_sections: 8
+    governance_supplement_sections: 82
+    scheduler_extension_sections: 206
+    workflow_extract_collections: 2
+    log_extract_collections: 2
+  formalization:
+    source_top_level_sections: 335
+    core_sections: 19
+    governance_supplement_sections: 99
+    scheduler_extension_sections: 206
+    workflow_extract_collections: 3
+    log_extract_collections: 2
+  research_logs:
+    recent_progress_entries: 334
+    update_log_entries: 265
+    update_history_entries: 213
+    thread_handoff_update_log_entries: 341
+  open_points:
+    raw_occurrence_count: 48
+    unique_question_count: 46
+    counts_by_priority:
+      P1: 18
+      P2: 23
+      P3: 5
+    counts_by_bucket:
+      core_theory: 18
+      implementation_bridge: 23
+      extension_pack: 5
+derived_from_package: knowledge_convergence_v1_institutional_annex_20260411
+public_spec_stage: stage6_institutional_conformance
+public_spec_statistics:
+  new_core_documents: 12
+  json_schema_files: 4
+  example_files: 3
+  public_profiles:
+  - KC-E1
+  - KC-G1
+  - KC-D1
+  - KC-A1
+  foundational_profile_files: 1
+  foundational_contract_files: 1
+  foundational_glossary_files: 1
+  foundational_profiles:
+  - KC-L1
+  - KC-M1
+  - KC-M2
+  - KC-M3
+  institutional_profile_files: 1
+  institutional_contract_files: 1
+  institutional_glossary_files: 1
+  institutional_profiles:
+  - KC-T1
+  - KC-S1
+  - KC-O1
+  - KC-H1
+semantic_change_policy:
+  core_meaning_change: controlled_extension_v1_1
+  public_spec_policy: K=(G,C,E,V,R,H) と既存 branch 語彙は維持する。v1.1では domain_validity_convergence と関連 packet を core に追加する controlled
+    extension として扱う。
+  archive_policy: 99_archive/original_flat_package/ は無変更保全
+  se_system_integration_policy: 前版ではSEシステム統合を応用annexとして追加した。v1.1では、その統合で判明した弱点をcore補強として反映した。
+  core_revision_policy: 二層収束は廃止せず、認識収束・統治収束の後方互換説明として残す。高影響 execute では domain_validity layer を追加評価する。
+public_annex_statistics:
+  concept_annex_entries: 17
+  formalization_annex_entries: 20
+  concept_left_in_raw_supplement: 65
+  formalization_left_in_raw_supplement: 79
+  annex_example_files: 4
+  annex_precedence: 01_core > 06_public_annex > 02_supplements
+foundational_annex_statistics:
+  language_annex_entries: 11
+  mathematical_annex_entries: 10
+  foundational_profiles: 4
+  open_points: 12
+  example_files: 6
+  json_schema_files: 6
+  precedence: 01_core > 06_public_annex > 07_foundational_annex > 02_supplements
+institutional_annex_statistics:
+  epistemic_annex_entries: 7
+  collective_annex_entries: 6
+  systems_annex_entries: 8
+  human_annex_entries: 7
+  institutional_profiles: 4
+  open_points: 14
+  example_files: 6
+  json_schema_files: 6
+  precedence: 01_core > 06_public_annex > 07_foundational_annex > 08_institutional_annex > 02_supplements
+institutional_conformance_statistics:
+  rulebook_files: 1
+  conformance_matrix_files: 1
+  test_suite_files: 1
+  runner_files: 1
+  report_files: 2
+  conformance_rule_count: 18
+  test_case_count: 19
+  test_vector_files: 13
+  conformance_schema_files: 2
+  precedence: 01_core > 06_public_annex > 07_foundational_annex > 08_institutional_annex > 09_conformance_suite > 02_supplements
+se_system_annex_statistics:
+  theory_markdown_files: 3
+  profile_files: 1
+  crosswalk_files: 1
+  reference_architecture_files: 1
+  lint_rulebook_files: 1
+  lint_rule_count: 24
+  example_files: 3
+  json_schema_files: 3
+  se_profiles: 6
+  precedence: 01_core > 06_public_annex > 07_foundational_annex > 08_institutional_annex > 09_conformance_suite > 10_se_system_annex
+    > 02_supplements
+revision_v1_1:
+  basis: SEシステム統合後の理論レビューに基づくcore修正
+  modified_core: true
+  new_core_revision_annex: 11_core_revision_annex/
+  compatibility: K=(G,C,E,V,R,H) and existing branch vocabulary retained
+core_revision_statistics:
+  new_core_concepts: 5
+  new_public_profiles: 5
+  new_core_json_schemas: 5
+  new_examples: 4

@@ -1,0 +1,24 @@
+report_id: validation_report_v1_1_core_revision_new_packets
+generated_on: '2026-05-08T15:00:41.269622+00:00'
+scope:
+- 01_core/json_schema all core schemas
+- 11_core_revision_annex/examples
+overall_result: pass
+schema_check:
+  total_schemas: 9
+  errors: []
+example_check:
+- file: 11_core_revision_annex/examples/agent_authority_unbound_hold.yaml
+  result: pass
+  findings: []
+- file: 11_core_revision_annex/examples/engineering_validation_hold.yaml
+  result: pass
+  findings: []
+- file: 11_core_revision_annex/examples/meaningful_human_oversight_pass.yaml
+  result: pass
+  findings: []
+- file: 11_core_revision_annex/examples/organization_capacity_gap.yaml
+  result: pass
+  findings: []
+note: v1.1で修正したcore/schema/example範囲を検査した。既存 institutional conformance runner は validation_report_v1_1_core_revision.yaml
+  を参照。

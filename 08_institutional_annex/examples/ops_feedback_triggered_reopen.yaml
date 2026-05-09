@@ -1,0 +1,19 @@
+example_id: institutional_example_006
+profile: KC-O1
+scenario: 運用中の incident が material change と判断され、reopen を起こした。
+ops_feedback_event:
+  event_id: ofe_001
+  target_ref: release_candidate_rc7
+  observed_in_operation: post_release_week1
+  effect_summary: incident cluster indicates calibration drift under night-shift workload
+  severity: medium_high
+  reproduction_status: partially_reproduced
+  triggers_reopen: true
+  linked_incident_ref: inc_2241
+GraphEngine_expected:
+- reopen_decision_state
+- attach_incident_review
+- request_revalidation
+DecisionLedger_hint:
+  branch_candidate: rollback
+  rationale: operational evidence broke baseline assumptions

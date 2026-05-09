@@ -1,0 +1,148 @@
+title: 知識収束学_SEシステムLintルール集_v1
+file_role: se_system_lint_rulebook
+version: 1
+status: curated_applied_integration_annex
+created_on: '2026-05-08'
+purpose: SEシステムで、コード化前Decision、V&V、組織・人間、AI委任、表現形式を意味検査するためのルールを定義する。
+severity_meaning:
+  error: 当該 profile では不適合。release gate や agent execution gate で fail 扱いにできる。
+  warning: 直ちに不適合とは限らないが、説明・補強・例外根拠が必要。
+  info: 補助的な観察結果。
+
+rule_groups:
+  KC-SE0_problem_framing:
+    - rule_id: KCS-SE0-001
+      severity: error
+      label: システム境界なしに高リスク実装へ進まない
+      statement: risk_tier が high/critical の implementation_task は、system_boundary_ref を持たなければならない。
+      remediation: system boundary と external actor / enabling system を登録する。
+    - rule_id: KCS-SE0-002
+      severity: warning
+      label: stakeholder need の根拠欠落
+      statement: stakeholder_need は evidence_ref または evidence_status を持つ。
+      remediation: 顧客発言、業務観察、契約、分析結果などの根拠を接続する。
+    - rule_id: KCS-SE0-003
+      severity: error
+      label: success criteria なしに validation を完了扱いにしない
+      statement: validation_status を passed にする場合、success_criteria_ref を要求する。
+      remediation: business outcome または operational scenario の成功条件を定義する。
+
+  KC-SE1_decision_tradeoff:
+    - rule_id: KCS-SE1-001
+      severity: error
+      label: 重要Decisionには選択肢と採択理由が必要
+      statement: decision_criticality が material/high の decision は options、selected_option、rationale、evidence_refs を持つ。
+      remediation: decision packet を補完する。
+    - rule_id: KCS-SE1-002
+      severity: warning
+      label: 却下案の不在
+      statement: material decision で rejected_options が空なら warning とする。
+      remediation: 検討した代替案と却下理由を残す。
+    - rule_id: KCS-SE1-003
+      severity: error
+      label: reopen condition のない前提依存Decision
+      statement: assumptions を持つ material decision は reopen_conditions を持つ。
+      remediation: 前提が崩れたときの再検討条件を追加する。
+    - rule_id: KCS-SE1-004
+      severity: error
+      label: 承認者のない実装委任
+      statement: implementation_task が decision_ref を持つ場合、その decision は approver_role を持つ。
+      remediation: 承認ロールまたは hold 理由を明示する。
+
+  KC-SE2_VV_anchor:
+    - rule_id: KCS-SE2-001
+      severity: error
+      label: 要求にはVerification方法が必要
+      statement: requirement が baseline 状態なら verification_method_ref を持つ。
+      remediation: test / analysis / inspection / demonstration などの方法を接続する。
+    - rule_id: KCS-SE2-002
+      severity: error
+      label: high-risk requirement にはValidation scenarioが必要
+      statement: risk_tier が high/critical の requirement は validation_scenario_ref を持つ。
+      remediation: intended environment と stakeholder expectation に接続した validation scenario を追加する。
+    - rule_id: KCS-SE2-003
+      severity: error
+      label: Verification passed を Validation passed として扱わない
+      statement: verification_status が passed でも、validation_status を自動で passed にしない。
+      remediation: 別個の validation evidence を登録する。
+    - rule_id: KCS-SE2-004
+      severity: error
+      label: validation pending の high-risk execute には例外根拠が必要
+      statement: risk_tier high/critical かつ branch execute かつ validation_status pending の場合、exception_basis を要求する。
+      remediation: hold / escalate に落とすか、例外承認とリスク受容を記録する。
+
+  KC-SE3_human_organization:
+    - rule_id: KCS-SE3-001
+      severity: error
+      label: 意思決定権と専門家証言を混同しない
+      statement: expertise_scope を持つ role は自動的には decision_right を持たない。
+      remediation: expert testimony と approval authority を別フィールドで管理する。
+    - rule_id: KCS-SE3-002
+      severity: error
+      label: high-risk execute には停止権が必要
+      statement: high/critical risk の automated execution には stop_right または escalation_path が必要。
+      remediation: soft_stop / hard_stop / escalation_request / rollback_request を割り当てる。
+    - rule_id: KCS-SE3-003
+      severity: error
+      label: training incomplete は実行ブロッカー
+      statement: required_operator_role の training_readiness が incomplete/retraining_required の場合、supervisory_exception 無しの execute を許容しない。
+      remediation: hold / shadow mode / retraining に落とす。
+    - rule_id: KCS-SE3-004
+      severity: warning
+      label: 認知負荷予算の未定義
+      statement: high-frequency alert や multi-agent monitoring を行う operator role は cognitive_load_budget を持つことを推奨する。
+      remediation: alert 数、説明深度、escalation 条件を定義する。
+
+  KC-SE4_agent_delegation:
+    - rule_id: KCS-SE4-001
+      severity: error
+      label: AIエージェント委任には agent identity が必要
+      statement: agent が execution_actor になる場合、agent_id と owner_role を持つ。
+      remediation: AgentRegistry に登録する。
+    - rule_id: KCS-SE4-002
+      severity: error
+      label: authority envelope なしに外部操作しない
+      statement: agent が code repository、browser、messaging、calendar、filesystem、ticketing のいずれかを操作する場合、authority_envelope を持つ。
+      remediation: 操作対象、許可操作、禁止操作、期限、承認条件を定義する。
+    - rule_id: KCS-SE4-003
+      severity: error
+      label: audit log なしの agent execute を禁止
+      statement: agent execution branch は audit_log_refs を持つ。
+      remediation: prompt、入力、tool call、差分、test result、review result を保存する。
+    - rule_id: KCS-SE4-004
+      severity: error
+      label: high-risk agent execution には rollback path が必要
+      statement: risk_tier high/critical の agent execution は rollback_path または no_rollback_justification を持つ。
+      remediation: rollback package、manual fallback、reopen route を定義する。
+    - rule_id: KCS-SE4-005
+      severity: warning
+      label: shadow agent のスプロール警告
+      statement: owner_role または lifecycle_state がない agent は warning とする。
+      remediation: AgentRegistry で owner、permission、retirement condition を登録する。
+
+  KC-SE5_representation_ladder:
+    - rule_id: KCS-SE5-001
+      severity: error
+      label: view を正本と誤認しない
+      statement: SysML / UML / BPMN / DSL / document / code artifact は canonical_refs を持つ。
+      remediation: CanonicalSEGraph への対応を明示する。
+    - rule_id: KCS-SE5-002
+      severity: warning
+      label: 形式化で失われた意味を記録する
+      statement: natural_language から semi_formal / DSL / formal へ変換した場合、loss_of_meaning_notes または unresolved_ambiguity を持つことを推奨する。
+      remediation: 変換できなかった意図、前提、曖昧性を残す。
+    - rule_id: KCS-SE5-003
+      severity: error
+      label: gradable term には threshold が必要
+      statement: high-risk requirement が fast / easy / sufficient / robust / safe 等の gradable term を含む場合、threshold_profile を要求する。
+      remediation: 計測方法、閾値、評価環境を定義する。
+    - rule_id: KCS-SE5-004
+      severity: warning
+      label: DSL には適用範囲が必要
+      statement: domain_specific_language_profile は scope と non_goal を持つことを推奨する。
+      remediation: DSL が扱える概念と扱えない概念を明示する。
+
+non_goals:
+  - 全ドメイン共通の万能要求品質スコアを定義しない
+  - SysML、DSL、形式仕様のどれかを唯一の正本にしない
+  - AIエージェントを既定の結果責任主体にしない

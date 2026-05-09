@@ -1,0 +1,183 @@
+title: 知識収束学_公開annex_選別報告_v1
+file_role: public_annex_selection_report
+version: 1
+status: curated_public_annex
+created_on: '2026-04-11'
+selection_policy:
+  goal: 02_supplements から、公開配布面として安定化できる補助論点だけを annex に再編集する。
+  keep_out_of_annex:
+  - scheduler / federation pack に実質依存するもの
+  - bridge token / witness packet / external serialization など実装依存が強いもの
+  - quota / debt / reservation / multi-session のような内部運用管理
+  - 長い migration / reverse / replay chain の細密機構
+  - 組織固有の numeric table をそのまま要求するもの
+  normativity_rule: annex は 01_core を上書きせず、公開実装の補助規則として配布する。
+selection_statistics:
+  concepts:
+    source_sections: 82
+    included_in_public_annex: 17
+    left_in_raw_supplement: 65
+  formalization:
+    source_sections: 99
+    included_in_public_annex: 20
+    left_in_raw_supplement: 79
+included_by_theme:
+  concepts:
+    authority_and_approval:
+    - registry_authority_governance
+    - approval_weighted_quorum_governance
+    - joint_approval_accountability_split_governance
+    confidence_and_timing:
+    - sla_clock_calibration_governance
+    - semantic_delta_autoclassification_governance
+    audit_trace_and_disclosure:
+    - self_evaluation_audit_log_governance
+    - identity_redaction_accountability_governance
+    - raw_signal_retention_governance
+    - legal_hold_reopen_custody_governance
+    - bounded_loss_summary_registry_governance
+    hold_semantics_and_state_vocab:
+    - latent_downstream_hold_promotion_governance
+    - hold_reason_relation_taxonomy_governance
+    - hold_reason_subtype_registry_governance
+    - positive_state_vocabulary_governance
+    - deliberate_exploration_option_value_governance
+    externality_and_extension_boundaries:
+    - route_family_extension_boundary_governance
+    - externality_budget_numeric_calibration_governance
+  formalization:
+    authority_and_approval:
+    - ai_self_evaluation_model
+    - action_coverage_model
+    - registry_authority_delegation_model
+    - approval_weighted_quorum_boundary_model
+    - approval_accountability_split_model
+    confidence_and_timing:
+    - self_confidence_calibration_model
+    - semantic_delta_autoclassification_model
+    - sla_clock_calibration_model
+    audit_trace_and_disclosure:
+    - self_evaluation_audit_log_retention_model
+    - identity_redaction_accountability_model
+    - raw_signal_retention_model
+    - legal_hold_reopen_custody_model
+    - bounded_loss_summary_registry_model
+    hold_semantics_and_state_vocab:
+    - latent_downstream_hold_promotion_model
+    - hold_reason_relation_taxonomy_model
+    - hold_reason_subtype_registry_model
+    - positive_state_vocabulary_model
+    - deliberate_exploration_option_value_model
+    externality_and_extension_boundaries:
+    - route_family_extension_boundary_model
+    - externality_budget_numeric_calibration_model
+excluded_buckets:
+  concepts:
+    calibration_and_detection_detail:
+      count: 13
+      example_keys:
+      - policy_drift_detector_governance
+      - detector_confidence_aggregation_governance
+      - detector_window_expiry_governance
+      - mirror_lag_prior_credibility_governance
+      - same_team_partial_independence_governance
+      reason: public core を厚くするより内部 tuning に近い。
+    heavy_migration_and_replay_mechanics:
+      count: 13
+      example_keys:
+      - transition_bundle_lineage_partition_governance
+      - tenant_merge_split_lawful_continuity_governance
+      - merge_split_transition_bundle_canonical_schema_governance
+      - handoff_manifest_rollback_reopen_replay_splice_governance
+      - replay_benchmark_registry_governance
+      reason: 移行鎖や reverse/replay の長い連鎖は annex より研究補助資料向き。
+    internal_resource_governance:
+      count: 4
+      example_keys:
+      - multi_session_quota_priority_governance
+      - shared_archive_reservation_budget_governance
+      - cross_session_settlement_debt_governance
+      - quota_debt_remediation_rebalancing_governance
+      reason: 公開実装の最初の導入には重く、組織内運用差が大きい。
+    other_research_detail:
+      count: 20
+      example_keys:
+      - early_stage_burst_flooding_separation_governance
+      - execution_capsule_canonical_archive_governance
+      - stable_pseudonym_continuity_governance
+      - duplicate_discard_digest_governance
+      - root_profile_schema_version_dual_root_comparability_governance
+      reason: 縮約の利益が小さいか、まだ annex 化より補助資料のままが自然。
+    specialized_extension_structure:
+      count: 7
+      example_keys:
+      - staged_bundle_of_bundles_canonical_schema_governance
+      - allocation_witness_family_registry_governance
+      - allocation_witness_composite_decomposition_governance
+      - recursive_bundle_of_bundles_stage_dag_governance
+      - probabilistic_allocation_witness_registry_governance
+      reason: 拡張構造の詳細であり、一般導入の first surface にはしない。
+    specialized_registry_or_attestation:
+      count: 8
+      example_keys:
+      - bridge_token_registry_governance
+      - audit_witness_profile_registry_governance
+      - bridge_token_suite_revision_governance
+      - proof_handle_partial_revocation_propagation_governance
+      - audit_witness_external_audit_emergency_bypass_governance
+      reason: attestation / packet / registry の外部依存が強く、公開 annex では raw supplement 参照に留める。
+  formalization:
+    calibration_and_detection_detail:
+      count: 14
+      example_keys:
+      - detector_abuse_anchor_binding_model
+      - mirror_sampling_equivalence_model
+      - mirror_lag_prior_credibility_model
+      - same_team_partial_independence_model
+      - hidden_common_mode_coupling_registry_model
+      reason: public core を厚くするより内部 tuning に近い。
+    heavy_migration_and_replay_mechanics:
+      count: 13
+      example_keys:
+      - transition_bundle_lineage_partition_model
+      - tenant_merge_split_continuity_model
+      - transition_bundle_canonical_schema_model
+      - handoff_manifest_rollback_reopen_replay_splice_model
+      - replay_benchmark_registry_model
+      reason: 移行鎖や reverse/replay の長い連鎖は annex より研究補助資料向き。
+    internal_resource_governance:
+      count: 5
+      example_keys:
+      - isolation_externality_budget_model
+      - multi_session_quota_priority_model
+      - shared_archive_reservation_budget_model
+      - cross_session_settlement_debt_model
+      - quota_debt_remediation_rebalancing_model
+      reason: 公開実装の最初の導入には重く、組織内運用差が大きい。
+    other_research_detail:
+      count: 31
+      example_keys:
+      - guard_meet_model
+      - same_frame_manual_redesign_model
+      - canonical_registry_model
+      - execution_capsule_archive_boundary_model
+      - stable_pseudonym_continuity_model
+      reason: 縮約の利益が小さいか、まだ annex 化より補助資料のままが自然。
+    specialized_extension_structure:
+      count: 8
+      example_keys:
+      - staged_bundle_of_bundles_canonical_schema_model
+      - allocation_witness_family_registry_model
+      - allocation_witness_composite_decomposition_model
+      - recursive_bundle_of_bundles_stage_dag_model
+      - probabilistic_allocation_witness_registry_model
+      reason: 拡張構造の詳細であり、一般導入の first surface にはしない。
+    specialized_registry_or_attestation:
+      count: 8
+      example_keys:
+      - bridge_token_registry_model
+      - audit_witness_profile_registry_model
+      - bridge_token_suite_revision_model
+      - proof_handle_partial_revocation_propagation_model
+      - audit_witness_authority_bypass_model
+      reason: attestation / packet / registry の外部依存が強く、公開 annex では raw supplement 参照に留める。

@@ -1,0 +1,19 @@
+example_id: found-ling-002
+scenario: 高リスクという語を閾値 profile として束縛する
+term_profile:
+  term: 高リスク
+  comparison_class: customer_data_schema_change
+  threshold_source: policy_risk_matrix_v2
+  scale_structure: ordinal_band_with_veto
+  borderline_zone:
+    lower_band: M2
+    upper_band: M3
+  decision_impact:
+    at_or_above: M3
+    branch: hold_or_escalate
+resulting_interpretation:
+  term_status: context_bound
+  can_be_used_in_V: true
+  still_requires:
+  - source_quality_review
+  - approval_path_check

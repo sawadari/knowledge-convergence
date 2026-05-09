@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "epistemic_justification_packet.schema.json",
+  "title": "EpistemicJustificationPacket",
+  "type": "object",
+  "required": [
+    "packet_id",
+    "target_ref",
+    "source_ref",
+    "speaker_warrant_profile",
+    "trust_channel",
+    "justification_basis"
+  ],
+  "properties": {
+    "packet_id": {
+      "type": "string"
+    },
+    "target_ref": {
+      "type": "string"
+    },
+    "source_ref": {
+      "type": "string"
+    },
+    "speaker_warrant_profile": {
+      "type": "string"
+    },
+    "trust_channel": {
+      "type": "string"
+    },
+    "justification_basis": {
+      "type": "string"
+    },
+    "expertise_scope": {
+      "type": "object",
+      "required": [
+        "domain_ref"
+      ],
+      "properties": {
+        "domain_ref": {
+          "type": "string"
+        },
+        "boundary_conditions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "excluded_topics": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "stale_after": {
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "additionalProperties": true
+    },
+    "freshness_window": {
+      "type": "object",
+      "properties": {
+        "observed_at": {
+          "type": "string",
+          "format": "date"
+        },
+        "stale_after": {
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "additionalProperties": true
+    },
+    "epistemic_transfer_status": {
+      "type": "string"
+    },
+    "defeater_register": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind"
+        ],
+        "properties": {
+          "defeater_id": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "effect": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "conflict_of_interest_status": {
+      "type": "string"
+    },
+    "calibration_ref": {
+      "type": "string"
+    },
+    "transfer_limits": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

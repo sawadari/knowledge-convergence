@@ -1,0 +1,782 @@
+title: 知識収束学_100パーセント到達バックログ
+file_role: completion_backlog
+version: '3.1'
+language: ja
+status: active
+last_updated: '2026-03-22'
+purpose:
+  statement: 知識収束学を運用上の100%へ到達させるために、完了定義、昇格規則、閉鎖ブロッカー、優先度付き作業バックログを固定する。
+  policy:
+  - 探索量を増やすより、未解決論点を閉じる順序を固定する
+  - draft/candidate/open question を明示的な出口条件で減らす
+  - 既存4ファイルを壊さず、完了制御だけを別ファイルで管理する
+  - 各スレッドは決定スレッドとして運用し、採用・棄却・保留を必ず残す
+source_files_referenced:
+- research_master_v3.0.yaml
+- concepts_v3.0.yaml
+- formalization_v3.0.yaml
+- thread_handoff_v3.0.yaml
+- freeze_report_v1.yaml
+baseline_progress_snapshot:
+  research_master:
+    status: active
+    current_priority: v1 freeze 完了後の post-freeze extension backlog triage
+    current_unresolved_issues_count: 0
+    recent_progress_count: 333
+    update_log_count: 264
+    update_history_count: 212
+  concepts:
+    status_counts:
+      active: 1
+      provisional_fixed: 362
+      provisional_adopted: 1
+      provisionally_resolved: 1
+    open_questions_count: 0
+    draft_targets: []
+    candidate_targets: []
+  formalization:
+    status_counts:
+      active: 1
+      provisional_fixed: 353
+      provisional_adopted: 9
+      provisionally_resolved: 1
+    open_questions_count: 0
+    draft_targets: []
+    candidate_targets: []
+  handoff:
+    current_thread_theme: release note / zero-draft report / zero-open-question report / cross-file consistency check の確定
+    current_status: P7 完了。internal tracking label v3.1 / canonical release v1 の freeze 報告物を確定した。
+    deferred_points_count: 0
+operational_completion_definition:
+  statement: ここでいう100%とは、理論の永遠の終了ではなく、internal tracking label v3.1 / canonical release v1 を統治可能版として凍結できる運用上の完了状態を指す。
+  required_end_state:
+    status_targets:
+      draft: 0
+      candidate: 0
+      strong_candidate: 0
+      open_questions: 0
+      deferred_points: 0
+    cross_file_consistency:
+    - research_master / concepts / formalization / thread_handoff の4ファイル間で用語と論点状態が矛盾しない
+    - current_priority と current_unresolved_issues と current_handoff.unresolved_issues が一致する
+    - 完了済み論点は handoff の adopted_points または rejected_points のいずれかに落ちている
+    decision_traceability:
+    - 各重要論点に adoption_rule, rejection_rule, promotion_condition がある
+    - 各重要論点に採用理由と棄却理由がある
+    - 各重要論点に例外条件と禁止 shortcut がある
+    - 各重要論点に最低1つの負例テストまたは破綻例がある
+    implementation_readiness:
+    - GraphLint に渡せる判定単位がある
+    - DecisionLedger に渡せる採用・棄却・保留イベントがある
+    - GraphEngine に渡せる状態遷移条件がある
+    - archive object に渡せる保存・監査証跡要件がある
+promotion_rules:
+  draft_to_candidate:
+    required:
+    - 問いが1文で言える
+    - 比較する選択肢が最低2つある
+    - 論点の外延と非対象範囲が書かれている
+    forbidden:
+    - 論点自体が曖昧なまま status だけを上げる
+  candidate_to_strong_candidate:
+    required:
+    - 比較表がある
+    - 棄却理由がある
+    - 最低1つの具体例に当てて破綻しない
+    forbidden:
+    - 採用理由だけを書き、棄却理由を書かない
+  strong_candidate_to_provisional_adopted:
+    required:
+    - concepts と formalization の両方に反映できる
+    - thread_handoff に採用・棄却・保留が記録される
+    - research_master の次スレッド指示と矛盾しない
+    forbidden:
+    - 概念だけ固めて形式化を後回しにする
+  provisional_adopted_to_provisional_fixed:
+    required:
+    - 例外条件が定義済みである
+    - 負例テストに耐える
+    - GraphLint / DecisionLedger / GraphEngine / archive object の責務分割に落ちる
+    forbidden:
+    - 平常系だけで固定し、緊急系と争訟系を未定義のまま残す
+thread_execution_rule:
+  statement: 各スレッドは考察スレッドではなく決定スレッドとして扱う。
+  mandatory_output_fields:
+  - 今回このスレッドで決めることは1つだけ
+  - 比較する選択肢は最大3つまで
+  - 各選択肢の採用メリット
+  - 各選択肢の棄却理由
+  - 今回の決定
+  - 例外条件
+  - 今回 fixed になった文
+  - 今回 defer したもの
+closure_blockers: []
+open_question_groups:
+- group_id: G1
+  name: 統治コア
+  goal: 誰が最後に止められるかを固定する。
+  question_refs: []
+  completion_effect: 体系の骨格が立つ。
+- group_id: G2
+  name: 証拠・評価コア
+  goal: GraphLint 判定と evidence 比較ができるようにする。
+  question_refs: []
+  completion_effect: 主要 open question は解消済み。残作業は draft/candidate の fixed 化である。
+- group_id: G3
+  name: 運用制約・例外
+  goal: 例外・期限・外部性・適用外境界を監査可能にする。
+  question_refs: []
+  completion_effect: 主要 open question は解消済み。残作業は draft/candidate の fixed 化である。
+- group_id: G4
+  name: 語彙・型・状態遷移
+  goal: 型・語彙・状態遷移の揺れを止める。
+  question_refs: []
+  completion_effect: 実装が綺麗になり、再利用性が上がる。
+phase_backlog:
+- phase_id: P1
+  name: 完了定義の固定
+  priority: P0
+  objective: 何を満たせば v3.1 を凍結できるかを先に固定する。
+  deliverables:
+  - completion definition
+  - promotion rules
+  - closure blockers
+  - open question groups
+  exit_criteria:
+  - 100%の意味が運用上の完了として定義される
+  - 各 status の昇格規則が固定される
+  status: completed
+  completion_note: 完了定義・昇格規則・closure blocker・open question groups を先に固定済み。
+- phase_id: P2
+  name: 閉鎖ブロッカーの解消
+  priority: P0
+  objective: Q01 と Q02 を fixed にして authority chain を閉じる。
+  question_refs:
+  - Q01
+  - Q02
+  exit_criteria:
+  - autonomous policy agent governance が fixed
+  - meta-governance / amendment / emergency override constitution が fixed
+  status: completed
+  completion_note: Q01 と Q02 を provisional_fixed として反映済み。authority chain を閉じた。
+- phase_id: P3
+  name: 中核定義の固定
+  priority: P1
+  objective: knowledge 定義、公理候補、update_operator を fixed にする。
+  targets:
+  - central_definitions.knowledge
+  - axiom_candidates[0..4]
+  - formalization.update_operator
+  exit_criteria:
+  - draft が 0 になる
+  - concepts と formalization の核定義が相互参照可能になる
+  status: completed
+  completion_note: knowledge 定義を provisional_fixed 化し、A1/A2/A4/A5 を採用、A3 を ai_governance_principle へ整理、update_operator を typed update operator として fixed 化した。
+- phase_id: P4
+  name: 証拠・評価群の解消
+  priority: P1
+  objective: criticality, q_evidence, benchmark を固定する。
+  question_refs: []
+  exit_criteria:
+  - GraphLint に供する criticality 定義が固定される
+  - 再利用可能性 benchmark が profile 間で比較可能になる
+  status: completed
+  completion_note: Q24 を provisional_fixed として反映済み。benchmark registry canonicalization を閉じた。
+- phase_id: P5
+  name: 運用例外と較正の解消
+  priority: P2
+  objective: identity, size boundary, externality, expiry, abuse anchor, artifact attribution を固定する。
+  question_refs: []
+  exit_criteria:
+  - 例外系が監査可能になる
+  - profile ごとの数値較正対象が明示される
+  status: completed
+  completion_note: Q21〜Q23 を provisional_fixed として反映済み。運用例外と較正の主要 open question を閉じた。
+- phase_id: P6
+  name: 語彙・型・状態遷移の掃除
+  priority: P2
+  objective: hold reason, H subtype, positive vocabulary, route family などの揺れを止める。
+  question_refs: []
+  exit_criteria:
+  - 用語の同義反復が減る
+  - 型の揺れがなくなる
+  status: completed
+  completion_note: Q17〜Q19 を provisional_fixed として反映済み。語彙・型・状態遷移の掃除を一段落させた。
+- phase_id: P7
+  name: internal v3.1 / canonical v1 freeze
+  priority: P0
+  objective: internal tracking label v3.1 を canonical release v1 として統治可能版に凍結する。
+  deliverables:
+  - release note
+  - zero-draft report
+  - zero-open-question report
+  - cross-file consistency check
+  exit_criteria:
+  - draft=0
+  - candidate=0
+  - strong_candidate=0
+  - open_questions=0
+  - deferred_points=0
+  status: completed
+  completion_note: release note / zero-draft report / zero-open-question report / cross-file consistency check を freeze_report_v1.yaml に確定し、freeze を完了した。
+prioritized_question_backlog:
+- id: Q01
+  priority: P0
+  group: G1
+  status_goal: provisional_fixed
+  question: scheduler federation autonomous policy agent credential / model drift challenge lane / human override supremacy clause をどこまで registry 化するか
+  decision_question: autonomous policy agent をどこまで constitutional authority の下に置き、人間 override をどの粒度で絶対優先にするか。
+  dependencies: []
+  expected_outputs:
+  - credential schema
+  - revocation rule
+  - drift challenge lane
+  - human override supremacy clause
+  closure_test:
+  - attestation/scope/expiry/revocation が揃う
+  - drift trigger/evidence/review/freeze が揃う
+  - precedence/logging/public notice が揃う
+  current_status: provisional_fixed
+  resolved_on: '2026-03-22'
+  resolution_summary:
+  - autonomous policy agent credential を registry 単位で固定した
+  - model drift challenge lane の trigger / evidence / review / freeze / reinstatement を固定した
+  - human override supremacy clause の precedence / logging / public notice を固定した
+- id: Q02
+  priority: P0
+  group: G1
+  status_goal: provisional_fixed
+  question: scheduler federation meta-governance council / amendment ratification / emergency override constitution をどこまで registry 化するか
+  decision_question: meta-governance council と amendment/emergency override constitution をどこまで registry 化するか。
+  dependencies:
+  - Q01
+  expected_outputs:
+  - council charter
+  - ratification rule
+  - emergency override constitution
+  closure_test:
+  - 通常改訂・緊急改訂・遡及修正が分離される
+  - human final stop が明記される
+  current_status: provisional_fixed
+  resolved_on: '2026-03-22'
+  resolution_summary:
+  - meta-governance council charter を fixed 扱いへ整合化した
+  - amendment ratification と emergency override constitution の closure blocker 表示を解除した
+- id: Q03
+  priority: P2
+  group: G3
+  status_goal: provisional_fixed
+  question: life-safety / active compromise 例外で accountable_identity_slice を許す threshold を detector family / sink class ごとにどこまで細分化するか
+  decision_question: accountable_identity_slice の例外開示を detector family / sink class ごとにどこまで細分化するか。
+  dependencies:
+  - Q01
+  - Q02
+  expected_outputs:
+  - threshold matrix
+  - exception audit rule
+  closure_test:
+  - life-safety と active compromise の閾値が分離される
+  current_status: provisional_fixed
+  resolved_on: '2026-03-22'
+  resolution_summary:
+  - detector family / sink class 別 threshold matrix を固定した
+  - behavioral detector 単独の accountable_identity_slice 例外を禁止した
+  - single named principal / direct route evidence / auto-reseal branch を必須化した
+- id: Q04
+  priority: P2
+  group: G3
+  status_goal: provisional_fixed
+  question: inline blob と pinned blob の size class / replay class 境界を profile ごとにどこまで registry 化するか
+  decision_question: inline blob と pinned blob の size class / replay class 境界を profile ごとにどこまで固定するか。
+  dependencies: []
+  expected_outputs:
+  - size boundary table
+  - replay class boundary
+  closure_test:
+  - profile 別境界と例外が監査可能になる
+  current_status: provisional_fixed
+  resolved_on: '2026-03-22'
+  resolution_summary:
+  - root profile × replay class ごとの inline_max_bytes と max_inline_parts を固定した
+  - forensic replay / active legal hold / strict sink / protected facet では size に関係なく pinned を強制した
+  - pointer-only canonicalization / post-hoc repin / current system 再生成を archive proof の代替として禁止した
+- id: Q05
+  priority: P1
+  group: G2
+  status_goal: provisional_fixed
+  question: 主要主張 criticality をどう定義し、GraphLint 判定に供するか
+  decision_question: 主要主張 criticality をどう定義し、GraphLint 判定入力へ落とすか。
+  dependencies:
+  - Q01
+  - Q02
+  expected_outputs:
+  - criticality definition
+  - GraphLint mapping
+  closure_test:
+  - 主要主張と補助主張の重み差が表現できる
+  current_status: provisional_fixed
+  resolved_on: '2026-03-22'
+  resolution_summary:
+  - 主要主張 / context-sensitive claim / 補助主張の role rule を固定した
+  - constitutional_or_irreversible / branch_decisive / operational_support / explanatory_auxiliary の4 band を採用した
+  - GraphLint の severity / weight / required evidence / escalation routing と auxiliary weight floor を固定した
+- id: Q06
+  priority: P1
+  group: G2
+  status_goal: provisional_fixed
+  question: Q_e(K_e) の補助主張側しきい値を領域別にどう較正するか
+  decision_question: Q_e(K_e) の補助主張側しきい値を領域別にどう較正するか。
+  dependencies:
+  - Q05
+  expected_outputs:
+  - domain calibration table
+  closure_test:
+  - 領域別しきい値が比較可能になる
+  current_status: provisional_fixed
+  resolved_on: '2026-03-22'
+  resolution_summary:
+  - 補助主張 cluster の score 2/3 floor と required role set を domain profile ごとに固定した
+  - independent origin の数え方、systemic promotion threshold、context-sensitive claim の active/inactive uplift rule を固定した
+  - active primary unresolved 時の q_dimension cap rule を固定した
+- id: Q07
+  priority: P1
+  group: G2
+  status_goal: provisional_fixed
+  question: 根拠強度を q_evidence の内部で扱うか、別次元として外出しするか
+  decision_question: 根拠強度を q_evidence の内部に入れるか、別次元へ外出しするか。
+  dependencies:
+  - Q05
+  expected_outputs:
+  - dimension decision
+  - reason for adopted modeling
+  closure_test:
+  - evidence strength の位置づけが固定される
+  current_status: provisional_fixed
+  resolved_on: '2026-03-22'
+  resolution_summary:
+  - 根拠強度は q_evidence の内部 subfactor として扱い、第7軸へ外出ししない方針を固定した
+  - coverage / binding / strength_class / origin_diversity の最弱リンクで q_evidence を決める方針を固定した
+  - GraphLint 監査出力に evidence_strength_profile を追加してよいが Q_e 次元は増やさない方針を固定した
+- id: Q08
+  priority: P2
+  group: G4
+  status_goal: provisional_fixed
+  question: latent_downstream な hold reason を、いつ active な governance blocker へ昇格させるか
+  decision_question: latent_downstream な hold reason をいつ active governance blocker へ昇格させるか。
+  dependencies:
+  - Q05
+  expected_outputs:
+  - escalation trigger
+  closure_test:
+  - 昇格条件が時系列で書ける
+  current_status: provisional_fixed
+  resolved_on: '2026-03-22'
+  resolution_summary:
+  - latent_downstream を relation ではなく activation_state として保持する方針を固定した
+  - GC1 通過、dependency clear、deadline 逼迫、precommit/externality 露出を promotion trigger として固定した
+  - 特に H5/H6 は near_due や external exposure があれば active へ早期昇格させる方針を固定した
+- id: Q09
+  priority: P2
+  group: G4
+  status_goal: provisional_fixed
+  question: 複数 hold reason の relation_to_primary を dependency だけで足りるとみなすか、causal/temporal を追加するか
+  decision_question: hold reason 間関係を dependency だけにするか causal/temporal を追加するか。
+  dependencies:
+  - Q08
+  expected_outputs:
+  - relation vocabulary
+  closure_test:
+  - dependency と causal/temporal の採否が固定される
+  current_status: provisional_fixed
+  resolved_on: '2026-03-22'
+  resolution_summary:
+  - relation_to_primary を dependency だけにせず、derived / dependency / causal / temporal / independent の5語彙へ拡張した
+  - activation_state を relation_to_primary から分離した
+  - deadline precedence を causal や dependency に潰さず保持する方針を固定した
+- id: Q10
+  priority: P2
+  group: G4
+  status_goal: provisional_fixed
+  question: H1〜H6 の下位 subtype をどこまで共通語彙化し、どこから領域拡張に委ねるか
+  decision_question: H1〜H6 の下位 subtype をどこまで共通語彙化するか。
+  dependencies:
+  - Q08
+  - Q09
+  expected_outputs:
+  - core subtype vocabulary
+  closure_test:
+  - 共通語彙と拡張語彙の境界が固定される
+  current_status: provisional_fixed
+  resolved_on: '2026-03-22'
+  resolution_summary:
+  - H1〜H6 ごとに4つの core subtype を固定した
+  - domain extension subtype は parent_core_subtype_ref を持つ場合にだけ許す方針を固定した
+  - extension-only 記録と cross-family subtype alias を禁止した
+- id: Q11
+  priority: P2
+  group: G4
+  status_goal: provisional_fixed
+  question: linked / bound の正値語彙を present 系へ統一するか、component-specific positive state を維持するか
+  decision_question: linked / bound の正値語彙を present 系へ統一するか。
+  dependencies:
+  - Q10
+  expected_outputs:
+  - positive vocabulary rule
+  closure_test:
+  - 正値語彙の統一または維持方針が固定される
+  current_status: provisional_fixed
+  resolved_on: '2026-03-22'
+  resolution_summary:
+  - linked / bound は literal present へ統一せず、component-specific positive state を維持する方針を固定した
+  - present は derived meta predicate としてだけ許し、raw schema には保存しない方針を固定した
+  - legacy present alias は component kind が確定しない限り migration_error とする方針を固定した
+- id: Q12
+  priority: P2
+  group: G4
+  status_goal: provisional_fixed
+  question: H の補助メタデータに typed missing marker をどこまで許し、どこから invalid event とみなすか
+  decision_question: typed missing marker をどこまで許し、どこから invalid event とみなすか。
+  dependencies:
+  - Q10
+  expected_outputs:
+  - missing marker rule
+  closure_test:
+  - 許容 missing と invalid event の境界が書ける
+  current_status: provisional_fixed
+  resolved_on: '2026-03-22'
+  resolution_summary:
+  - H の core event identity field と replay-critical transition field には marker を許さず、persisted event に残れば invalid_event とする方針を固定した
+  - audit-support auxiliary field にだけ required metadata 付きで marker を許す方針を固定した
+  - closure-critical witness に unresolved auxiliary marker を使った event を invalid_event とする方針を固定した
+- id: Q13
+  priority: P2
+  group: G3
+  status_goal: provisional_fixed
+  question: organizational_or_social_domain における risk_binding の not_applicable 境界をどう監査可能にするか
+  decision_question: organizational_or_social_domain での risk_binding の not_applicable 境界をどう監査可能にするか。
+  dependencies:
+  - Q05
+  expected_outputs:
+  - not_applicable audit rule
+  closure_test:
+  - 適用外を恣意的に広げられない
+  current_status: provisional_fixed
+  resolved_on: '2026-03-22'
+  resolution_summary:
+  - organizational_or_social_domain で risk_binding=not_applicable を許すのは bounded local analysis に限る方針を固定した
+  - effect_zone・reversibility_class・reviewer/reflection_owner・reevaluation_trigger を audit packet の必須要素にした
+  - reputation / privacy / personnel / public artifact / resource commitment / contested risk_tolerance がある場合は risk_binding を active にする方針を固定した
+- id: Q14
+  priority: P1
+  group: G2
+  status_goal: provisional_fixed
+  question: score 3 の再利用可能性を profile 間でどうベンチマークするか
+  decision_question: score 3 の再利用可能性を profile 間でどう benchmark するか。
+  dependencies:
+  - Q05
+  - Q06
+  - Q24
+  expected_outputs:
+  - profile benchmark suite
+  closure_test:
+  - score 3 の意味が profile 間で比較可能になる
+  current_status: provisional_fixed
+  resolved_on: '2026-03-22'
+  resolution_summary:
+  - score 3 の profile 間 benchmark は ordinal 直比較ではなく witness packet と portability class で行う方針を固定した
+  - direct_reusable / caveated_reusable / benchmark_only / non_reusable の4クラスを採用した
+  - canonical registry cell と suite governance は Q24 へ切り分けた
+- id: Q15
+  priority: P1
+  group: G1
+  status_goal: provisional_fixed
+  question: weighted quorum や議決権重み付けを、approval structure の共通語彙へどこまで含めるか
+  decision_question: weighted quorum や議決権重み付けを共通語彙へどこまで含めるか。
+  dependencies:
+  - Q02
+  expected_outputs:
+  - approval structure vocabulary
+  closure_test:
+  - 共通語彙に入れる範囲と拡張へ逃がす範囲が固定される
+  current_status: provisional_fixed
+  resolved_on: '2026-03-22'
+  resolution_summary:
+  - weighted quorum は approval structure core に最小 tally semantics だけを残す方針を固定した
+  - seat_weight_table_ref や apportionment formula は extension registry に分離する方針を固定した
+  - weighted quorum は forum 内部 tally であり、mandatory role / veto / accountability owner を置き換えない方針を固定した
+- id: Q16
+  priority: P1
+  group: G1
+  status_goal: provisional_fixed
+  question: joint approval と joint accountability の衝突を、同一 R でどう分離して追跡するか
+  decision_question: joint approval と joint accountability の衝突を同一Rでどう分離追跡するか。
+  dependencies:
+  - Q02
+  - Q15
+  expected_outputs:
+  - responsibility split rule
+  closure_test:
+  - approval と accountability が混線しない
+  current_status: provisional_fixed
+  resolved_on: '2026-03-22'
+  resolution_summary:
+  - joint approval と joint accountability を同一 R の approval leg / accountability leg として分離記録する方針を固定した
+  - co-accountability は facet partition と residual owner 付きでのみ許す方針を固定した
+  - approval 成立を accountability 移転の代用にしない方針を固定した
+- id: Q17
+  priority: P2
+  group: G4
+  status_goal: provisional_fixed
+  question: same-frame manual redesign action family の finer typing をどこまで共通語彙化するか
+  decision_question: same-frame manual redesign action family の finer typing をどこまで共通語彙化するか。
+  dependencies:
+  - Q10
+  expected_outputs:
+  - action family typing
+  closure_test:
+  - core typing と extension typing の境界が固定される
+  current_status: provisional_fixed
+  resolved_on: '2026-03-22'
+  resolution_summary:
+  - same-frame manual redesign を5つの core family へ限定して共通語彙化する方針を固定した
+  - domain/tool 固有 subtype は extension registry に分離する方針を固定した
+  - reframe / policy exception / role change は same-frame redesign family に含めない方針を固定した
+- id: Q18
+  priority: P2
+  group: G4
+  status_goal: provisional_fixed
+  question: deliberate_exploration の option value と終了条件をどう半定量化するか
+  decision_question: deliberate_exploration の option value と終了条件をどう半定量化するか。
+  dependencies:
+  - Q05
+  expected_outputs:
+  - option value rule
+  - termination rule
+  closure_test:
+  - 探索継続の正当化と終了条件が両立する
+  current_status: provisional_fixed
+  resolved_on: '2026-03-22'
+  resolution_summary:
+  - deliberate_exploration の option value を6軸の半定量評価で扱う方針を固定した
+  - continue / bounded_continue / terminate_or_escalate の3分類を採用した
+  - review window、budget cap、risk/authority bound、allowed action 枯渇を termination rule に接続した
+- id: Q19
+  priority: P2
+  group: G4
+  status_goal: provisional_fixed
+  question: ordered_fallback と weighted k_of_n を、route family の core ではなく拡張語彙としてどう分離するか
+  decision_question: ordered_fallback と weighted k_of_n を route family の core ではなく拡張語彙としてどう分離するか。
+  dependencies:
+  - Q15
+  expected_outputs:
+  - route family separation rule
+  closure_test:
+  - core と extension の境界が固定される
+  current_status: provisional_fixed
+  resolved_on: '2026-03-22'
+  resolution_summary:
+  - ordered_fallback を selection policy overlay、weighted k_of_n を route overlay として core から分離する方針を固定した
+  - route family core は any_of / k_of_n の離散 selection semantics に限定する方針を固定した
+  - weighted k_of_n を approval weighted quorum と混同しない方針を固定した
+- id: Q20
+  priority: P2
+  group: G3
+  status_goal: provisional_fixed
+  question: externality budget の ttl / audience / sink cap を profile ごとにどこまで数値較正するか
+  decision_question: externality budget の ttl / audience / sink cap を profile ごとにどこまで数値較正するか。
+  dependencies:
+  - Q13
+  expected_outputs:
+  - externality calibration table
+  closure_test:
+  - ttl / audience / sink cap が profile ごとに表現できる
+  current_status: provisional_fixed
+  resolved_on: '2026-03-22'
+  resolution_summary:
+  - externality budget の numeric calibration を regulated / engineering_tradeoff / organizational_or_social の3 profile baseline で固定した
+  - single_branch / external_irreversible / policy_sensitive の stricter-only override を採用した
+  - review_due と expiry を別概念として固定した
+- id: Q21
+  priority: P2
+  group: G3
+  status_goal: provisional_fixed
+  question: profile/context ごとの freshness window と hard expiry をどこまで registry 化するか
+  decision_question: profile/context ごとの freshness window と hard expiry をどこまで registry 化するか。
+  dependencies:
+  - Q20
+  expected_outputs:
+  - freshness/expiry table
+  closure_test:
+  - freshness と expiry が別概念として固定される
+  current_status: provisional_fixed
+  resolved_on: '2026-03-22'
+  resolution_summary:
+  - freshness window は evidence admissibility、hard expiry は case carry-over 失効として分離し、evidence freshness cell / case expiry cell / context cap の三層 registry で固定した
+  - profile baseline + context override shortening-only ルールを採用した
+  - review_due と expiry を別概念として維持し、grace/stale/expired の branch semantics を固定した
+- id: Q22
+  priority: P2
+  group: G3
+  status_goal: provisional_fixed
+  question: direct abuse anchor と detector abuse anchor の最小束縛を detector family ごとにどう分けるか
+  decision_question: direct abuse anchor と detector abuse anchor の最小束縛を detector family ごとにどう分けるか。
+  dependencies:
+  - Q03
+  - Q05
+  expected_outputs:
+  - abuse anchor minimum binding
+  closure_test:
+  - direct と detector のアンカー最小束縛が分離される
+  current_status: provisional_fixed
+  resolved_on: '2026-03-22'
+  resolution_summary:
+  - direct abuse anchor と detector abuse anchor を family ごとに分離し、detector abuse anchor 単独では final penalty を作らない方針を固定した
+  - sink_identity_and_reach / route_access_and_owner / cadence_burst / replay_lineage / semantic_delta_and_policy_drift の5 family ごとに minimum binding を固定した
+  - separated corroboration は補助に使えても direct abuse anchor の代用ではない方針を固定した
+- id: Q23
+  priority: P2
+  group: G3
+  status_goal: provisional_fixed
+  question: prompt_pack / rulepack / template_bundle の joint change を artifact 別寄与へどこまで分解できるか
+  decision_question: prompt_pack / rulepack / template_bundle の joint change を artifact 別寄与へどこまで分解できるか。
+  dependencies:
+  - Q24
+  expected_outputs:
+  - artifact contribution rule
+  closure_test:
+  - joint change の寄与分解が最低限できる
+  current_status: provisional_fixed
+  resolved_on: '2026-03-22'
+  resolution_summary:
+  - joint change は lexical diff ではなく benchmark cell 上の counterfactual replay で artifact contribution を分解する方針を固定した
+  - decisive_primary / required_joint / modulating / observational_only / unresolved_joint の5 class を採用した
+  - baseline + single + pair + full の8-run minimum replay matrix を採用した
+- id: Q24
+  priority: P1
+  group: G2
+  status_goal: provisional_fixed
+  question: detector family / claim facet ごとの replay benchmark suite をどこまで canonical registry 化するか
+  decision_question: detector family / claim facet ごとの replay benchmark suite をどこまで canonical registry 化するか。
+  dependencies:
+  - Q05
+  expected_outputs:
+  - canonical replay benchmark suite
+  closure_test:
+  - family/facet 別 benchmark が registry 化される
+  current_status: provisional_fixed
+  resolved_on: '2026-03-22'
+  resolution_summary:
+  - replay benchmark suite は detector family × claim facet × criticality band × evidence strength × portability class × profile family の canonical registry cell 単位で管理する方針を固定した
+  - positive/negative/boundary/stale-abuse/joint-change の mandatory case set と migration/versioning rule を固定した
+  - DecisionLedger / GraphEngine / GraphLint / archive object の benchmark registry 管理責務を固定した
+draft_and_candidate_resolution_backlog:
+  concepts:
+  - target: central_definitions.knowledge / axiom_candidates
+    current_status: resolved
+    priority: P1
+    resolution_summary: knowledge 定義を provisional_fixed 化し、A1/A2/A4/A5 を採用、A3 を ai_governance_principle へ整理した。
+  formalization:
+  - target: update_operator / mathematical_directions
+    current_status: resolved
+    priority: P1
+    resolution_summary: update_operator を provisional_fixed 化し、partial_order_model / abstract_interpretation_model を採用、metric_model を supplementary diagnostic model へ整理した。
+gating_policy:
+  statement: Q01-Q24 は provisional_fixed 済みで、knowledge 定義・公理候補・update_operator・数理候補の draft/candidate/strong_candidate も解消済み。freeze 報告物の整理も完了したため、以後は post-freeze extension backlog triage を優先する。
+  exceptions:
+  - 既存 draft/candidate を fixed にするために不可避な下位論点
+  - 既存4ファイル間の矛盾修正
+final_freeze_checklist:
+- draft=0
+- candidate=0
+- strong_candidate=0
+- open_questions=0
+- deferred_points=0
+- release note が freeze_report_v1.yaml にある
+- zero-draft report が freeze_report_v1.yaml にある
+- zero-open-question report が freeze_report_v1.yaml にある
+- cross-file consistency check が freeze_report_v1.yaml にある
+- internal v3.1 / canonical v1 の版名整理が反映済み
+release_identity:
+  statement: 研究過程では internal tracking label として v3.1 を使うが、正規の凍結版名は v1 とする。
+  internal_tracking_label: v3.1
+  canonical_release_label: v1
+  canonical_release_state: frozen
+  frozen_on: '2026-03-22'
+  note: ファイル名や YAML 自体の作業版 version=3.0 は研究用の系譜管理であり、公開上の理論版名とは別物である。
+freeze_report_ref: freeze_report_v1.yaml
+canonical_release:
+  internal_tracking_label: v3.1
+  canonical_release_label: v1
+  release_state: frozen
+  frozen_on: '2026-03-22'
+  summary: status gate と報告物整理を完了し、知識収束学の統治可能版を canonical release v1 として凍結した。
+release_note:
+  summary: Q01-Q24 のバックログ解消、中核定義の fixed 化、freeze 報告物の整備を完了し、internal v3.1 を canonical release v1 として凍結した。
+  adopted_changes:
+  - knowledge 定義を knowledge_state / convergence / update_operator に接続できる provisional_fixed 文へ更新した。
+  - A1/A2/A4/A5 を core axiom として provisional_fixed 化した。
+  - 'update_operator を U_a : (K, Δ, Π) -> (K'', h, o) の typed update operator として fixed 化し、silent success を禁止した。'
+  - partial_order_model と abstract_interpretation_model を基礎形式化として採用した。
+  - release note / zero-draft report / zero-open-question report / cross-file consistency check を報告物として確定した。
+  rejected_or_relocated_changes:
+  - A3 は core axiom から外し、ai_governance_principle として保持した。
+  - metric_model は基礎形式化から外し、supplementary diagnostic model として保持した。
+  implementation_readiness:
+  - GraphLint に渡せる判定単位と禁止 shortcut が明示された。
+  - DecisionLedger に渡せる採用・棄却・保留イベントが整理された。
+  - GraphEngine に渡せる typed state transition と failure branch が明示された。
+  - archive object に渡せる保存・監査証跡要件が整理された。
+  naming_note: 本報告では internal tracking label を v3.1 と記すが、正規版名は v1 とする。
+zero_draft_report:
+  result: pass
+  measured_targets:
+    concepts:
+      draft: 0
+      candidate: 0
+      strong_candidate: 0
+      status_counts:
+        active: 1
+        provisional_fixed: 362
+        provisional_adopted: 1
+        provisionally_resolved: 1
+    formalization:
+      draft: 0
+      candidate: 0
+      strong_candidate: 0
+      status_counts:
+        active: 1
+        provisional_fixed: 353
+        provisional_adopted: 9
+        provisionally_resolved: 1
+  interpretation_rule: ここでの zero-draft は freeze gate 対象である draft / candidate / strong_candidate が 0 であることを意味する。
+  note: concepts / formalization には将来拡張メモとしての local open_points が残るが、これは freeze gate の closure blocker ではない。
+zero_open_question_report:
+  result: pass
+  measured_targets:
+    research_master.current_unresolved_issues_count: 0
+    thread_handoff.current_handoff.unresolved_issues_count: 0
+    thread_handoff.current_handoff.deferred_points_count: 0
+    concepts.open_questions_count: 0
+    completion_backlog.required_end_state.open_questions_target: 0
+  interpretation_rule: ここでの zero-open-question は、追跡対象の未解決問題と deferred points が 0 であることを意味する。
+  note: local open_points は post-freeze extension backlog として扱い、凍結版の未解決問題とは区別する。
+cross_file_consistency_check:
+  overall_result: pass
+  checks:
+  - name: release_identity_alias
+    result: pass
+    evidence: internal tracking label v3.1 と canonical release v1 の関係を research_master / completion_backlog / freeze_report に明示した。
+  - name: status_gate_alignment
+    result: pass
+    evidence: completion_backlog.required_end_state の draft=0, candidate=0, strong_candidate=0, open_questions=0, deferred_points=0 を満たした。
+  - name: priority_and_handoff_alignment
+    result: pass
+    evidence: research_master.current_priority, thread_handoff.current_status, phase_backlog.P7 を freeze 完了後の状態に更新した。
+  - name: disposition_traceability
+    result: pass
+    evidence: knowledge 定義、A1/A2/A4/A5、A3、update_operator、partial_order_model、abstract_interpretation_model、metric_model の disposition が handoff と release_note に一致する。
+  - name: report_artifact_presence
+    result: pass
+    evidence: release note / zero-draft report / zero-open-question report / cross-file consistency check を freeze_report_v1.yaml に実体化した。
+  residual_notes:
+  - local open_points は post-freeze extension backlog であり、freeze gate の不合格理由ではない。

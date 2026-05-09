@@ -1,0 +1,16 @@
+test_vector_id: kc_o1_fail_execute_without_baseline
+profile: KC-O1
+evaluation_context:
+  risk_tier: high
+  validation_status: passed
+lifecycle_gate_packet:
+  gate_id: gate_release_rc9
+  target_ref: release_candidate_rc9
+  artifact_class: baseline
+  entry_criteria:
+  - verification_report_signed
+  exit_criteria:
+  - deployment_window_confirmed
+  responsible_role: release_board
+branch_binding:
+  branch: execute

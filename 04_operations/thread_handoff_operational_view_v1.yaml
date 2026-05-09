@@ -1,0 +1,130 @@
+title: 知識収束学_スレッド引き継ぎ
+file_role: handoff
+package_role: operations_view
+version: '3.0'
+status: active
+created_on: '2026-04-11'
+release_boundary:
+  canonical_release_label: v1
+  research_tracking_label: v3.1
+  canonical_release_state: frozen
+  frozen_on: '2026-03-22'
+  statement: 研究過程では internal tracking label として v3.1 を使うが、正規の凍結版名は v1 とする。
+derived_from:
+  source_file: thread_handoff_v3.0.yaml
+  source_version: '3.0'
+  source_status: active
+  selection_rule: 元ファイルのうち、このビューに必要な節だけを抽出した。
+excluded_to:
+  logs:
+  - ../05_logs/thread_handoff_update_log_v1.yaml
+reading_note: 引き継ぎ規則と current_handoff を先に読めるよう、更新ログを分離した。
+language: ja
+last_updated: '2026-03-22'
+purpose:
+  statement: '複数スレッドに研究を分割しても、前提、確定事項、未解決問題、次の指示を失わないための引き継ぎ管理ファイル。
+
+    '
+multi_thread_policy:
+  rules:
+  - 新しいスレッドは1テーマだけ扱う
+  - 新スレッド開始時に、参照するYAMLファイルを明示する
+  - スレッド終了時に、固定事項と未解決問題をこのファイルへ反映する
+  - 途中で話が広がったら、新スレッド候補として切り出す
+thread_start_instructions:
+  standard_template: 'このスレッドでは「{theme}」だけを扱います。
+
+    前提として、以下の外部記憶ファイルを参照してください。
+
+    - research_master.yaml
+
+    - concepts.yaml
+
+    - formalization.yaml
+
+    - thread_handoff.yaml
+
+
+    まず、現時点の暫定命題を整理し、
+
+    次に概念批判・学術批判・実装批判を行い、
+
+    最後に固定できるものと未解決問題を分けてください。
+
+    '
+  compact_template: '外部記憶YAMLを前提に、今回のテーマ「{theme}」だけを扱ってください。
+
+    命題化 → 批判 → 暫定固定 → 未解決問題整理の順で進めてください。
+
+    '
+thread_end_template:
+  standard_template: 'このスレッドの結果を次の形式で整理してください。
+
+    - 今回のテーマ
+
+    - 今回の暫定命題
+
+    - 有効だった指摘
+
+    - 今回固定したもの
+
+    - 残った問題
+
+    - 次スレッド候補
+
+
+    そのうえで、更新すべきYAMLファイル名と更新内容を提案してください。
+
+    '
+handoff_fields:
+- current_thread_theme
+- current_status
+- adopted_points
+- deferred_points
+- rejected_points
+- unresolved_issues
+- next_thread_candidates
+- recommended_next_thread
+current_handoff:
+  current_thread_theme: release note / zero-draft report / zero-open-question report / cross-file consistency check の確定
+  current_status: P7 完了。internal tracking label v3.1 / canonical release v1 の freeze 報告物を確定した。
+  adopted_points:
+  - freshness window は evidence admissibility、hard expiry は case carry-over 失効として分離し、profile baseline + context cap の registry で管理する方針を固定した
+  - direct abuse anchor と detector abuse anchor は family ごとに minimum binding を分け、detector abuse anchor 単独では final penalty を作らない方針を固定した
+  - prompt_pack / rulepack / template_bundle の joint change は benchmark cell 上の counterfactual replay で artifact contribution class を最小分解する方針を固定した
+  - replay benchmark suite は detector family × claim facet × criticality band × evidence strength × portability class × profile family の canonical registry cell 単位で管理する方針を固定した
+  - knowledge 定義を knowledge_state / convergence / update_operator と整合する provisional_fixed 文へ更新した
+  - A1/A2/A4/A5 を provisional_fixed とし、採用理由・棄却理由・負例を追加した
+  - 'update_operator を U_a : (K, Δ, Π) -> (K'', h, o) として fixed 化し、silent success を禁止した'
+  - partial_order_model と abstract_interpretation_model を provisional_fixed とし、metric_model は supplementary diagnostic へ整理した
+  - release note / zero-draft report / zero-open-question report / cross-file consistency check を freeze_report_v1.yaml として確定した
+  - v3.1 は研究過程識別用の internal tracking label、v1 は正規の凍結版名とする方針を明示した
+  deferred_points: []
+  rejected_points:
+  - freshness と expiry を単一 ttl へ潰す方針
+  - detector abuse anchor を direct abuse anchor と同格に扱い final penalty を起動する方針
+  - lexical diff や full-bundle 1回 replay だけで artifact attribution を確定する方針
+  - negative case や migration rule を持たない replay suite を canonical registry と呼ぶ方針
+  - A3 を知識収束学の core axiom として採用する方針
+  - update_operator を K->K の無条件写像として扱う方針
+  - metric_model を収束の唯一または基礎の形式化とする方針
+  unresolved_issues: []
+  next_thread_candidates:
+  - v1 freeze 完了後の post-freeze extension backlog triage
+  - concepts / formalization に残る local open_points をどこから掘るか
+  - MBSE / 製造業応用へどの順で接続するか
+  recommended_next_thread:
+    theme: v1 freeze 完了後の post-freeze extension backlog triage
+    start_instruction: 'このスレッドでは「v1 freeze 完了後の post-freeze extension backlog triage」だけを扱います。
+
+
+      前提として、freeze_report_v1.yaml, research_master.yaml, concepts.yaml, formalization.yaml, thread_handoff.yaml を参照してください。
+
+
+      まず、freeze gate を通過した条件と local open_points を区別してください。
+
+
+      次に、open_points を concept / formalization / application / implementation connection に分け、優先度を付けてください。
+
+
+      最後に、次に着手するスレッドを3件まで提案してください。'

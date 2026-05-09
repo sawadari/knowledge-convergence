@@ -1,0 +1,276 @@
+title: 知識収束学_公開形式仕様_v1
+file_role: public_formalization_spec
+package_role: external_facing_core
+version: '1.1'
+status: curated_public_view_revised_v1_1
+created_on: '2026-05-08'
+derived_from:
+  primary_source: 01_core/formalization_core_v1.yaml
+  freeze_basis: 04_operations/freeze_report_v1.yaml
+  semantic_policy: v1 の最小契約に、v1.1 controlled extension として domain_validity、agent_execution、human_oversight、organization_topology、convergence_metrics
+    を追加した。
+normative_language:
+  MUST: 互換性を期待する必須要件
+  SHOULD: 推奨要件
+  MAY: 任意拡張
+canonical_notation:
+  knowledge_state: K = (G, C, E, V, R, H)
+  update_operator: 'U_a : (K, Δ, Π) -> (K'', h, o)'
+  approval_structure: A_p^+ = (M, S_req, Pxy, Q, Fbk, Vld, SoD)
+  delegation_policy: D = (T, G, X, E_req, F, A)
+  hold: Hold(K, rc, pkt)
+  domain_validity_projection: K_d = π_d(K, P_d, D_p)
+  domain_validity_eval: Eval_d(K_d) ∈ {not_applicable, not_started, true, hold, false}
+  agent_execution_envelope: AEx = (agent_id, role_class, capability_scope, authority_envelope, data_scope, tool_scope, audit,
+    stop, rollback, owner, accountability)
+  meaningful_human_oversight: MHO = (explain, stop, time, competence, load, fallback, escalation, visibility)
+  organization_topology: Org = (nodes, roles, decision_rights, expertise_scopes, accountability_scopes, handoff_contracts,
+    escalation_routes, boundaries, capacities)
+required_vocabularies:
+  evidence_status:
+  - linked
+  - absent
+  - pending
+  - external_ref
+  - not_applicable
+  - disputed
+  eval_state:
+  - 'true'
+  - hold
+  - 'false'
+  governance_entry_state:
+  - blocked_by_epistemic
+  - eligible
+  branch:
+  - execute
+  - hold
+  - reject
+  - escalate
+  - rollback
+  hold_reason_codes:
+  - id: H1
+    code: epistemic_gap
+    layer: epistemic
+  - id: H2
+    code: epistemic_conflict
+    layer: epistemic
+  - id: H3
+    code: governance_unbound
+    layer: governance
+  - id: H4
+    code: approval_pending
+    layer: governance
+  - id: H5
+    code: risk_excess
+    layer: governance
+  - id: H6
+    code: policy_block
+    layer: governance
+  - id: H7
+    code: domain_profile_missing
+    layer: domain_validity
+  - id: H8
+    code: verification_gap
+    layer: domain_validity
+  - id: H9
+    code: validation_gap
+    layer: domain_validity
+  - id: H10
+    code: operational_readiness_gap
+    layer: domain_validity
+  - id: H11
+    code: feedback_reopen_required
+    layer: domain_validity
+  - id: H12
+    code: agent_authority_unbound
+    layer: governance
+  - id: H13
+    code: human_oversight_not_meaningful
+    layer: governance
+  - id: H14
+    code: organization_capacity_gap
+    layer: governance
+  domain_validity_eval_state:
+  - not_applicable
+  - not_started
+  - 'true'
+  - hold
+  - 'false'
+  agent_role_class:
+  - candidate_agent
+  - critique_agent
+  - execution_agent
+  - guardian_agent
+  oversight_state:
+  - meaningful
+  - fragile
+  - formal_only
+  - absent
+  - not_applicable
+knowledge_state_public_profile:
+  statement: 公開仕様での最小 profile は、認識コア K_e=(G,C,E) と、必要に応じて V/R/H を追加する二段構えで扱う。
+  minimum_presence_rules:
+    G:
+    - 少なくとも1つの claim_id
+    - claim を他要素へ接続する relation_id または constraint_id
+    C:
+    - scope
+    - horizon または intent の少なくとも一方
+    E:
+    - 主要 claim ごとの evidence_ref または evidence_status
+    V:
+    - governance judgement を行う場合、target_ref と A/L/X の少なくとも一つ
+    R:
+    - governance judgement を行う場合、Ap または Ac
+    - execution を計画する場合は Ex
+    - AI/agent を Ex に含むなら D
+    H:
+    - 監査や差戻しを扱う場合、event_id/timestamp/actor_ref/operation を持つ履歴
+  MUST_NOT:
+  - G/C/E がないのに epistemic true を返してはならない
+  - V/R がないのに governance true を返してはならない
+  v1_1_domain_validity_extension: 高影響 execute、対外コミット、AI/agent実行、またはドメイン妥当性主張を行う場合、domain_validity_packet と該当する oversight/organization/agent
+    packet を追加する。
+two_layer_evaluation_contract:
+  epistemic_requirements:
+  - 主要主張の構造化
+  - 文脈境界の固定
+  - 根拠接続
+  - 重大矛盾の管理
+  - 主要曖昧性の管理
+  - 説明経路の可用性
+  governance_requirements:
+  - 決定対象の明示
+  - 採択基準と許容リスクの明示
+  - 責任割当の明示
+  - 保留・差戻し・エスカレーション条件の明示
+  - 結果影響の分類
+  non_implications:
+  - epistemic true は governance true を含意しない
+  - 十分な根拠は承認主体の不要化を意味しない
+  - AI による診断は最終承認権限を意味しない
+update_contract:
+  required_bindings:
+  - target_slot
+  - authority_basis
+  - evidence_ref または justified_missing_marker
+  - applied_policy_version
+  - expected_branch
+  - failure_branch
+  outcome_space:
+  - execute
+  - hold
+  - reject
+  - escalate
+  - rollback
+  MUST:
+  - 制約違反、根拠不足、承認不足、政策違反、競合未解消がある場合、silent success を返してはならない
+  - 更新ごとに監査可能な履歴事象 h を残さなければならない
+  MUST_NOT:
+  - authority_basis なしに execute してはならない
+  - evidence も missingness justification もないまま evidence-bound update を確定してはならない
+hold_contract:
+  required_fields:
+  - rollback_target
+  - required_action
+  - reopen_condition
+  - deadline_basis
+  - escalation_condition
+  release_split:
+  - H1/H2 の解除候補判定は GraphLint 再評価で与える
+  - H3〜H6 の解除候補判定は DecisionLedger の binding / approval / risk / policy 判定で与える
+  - GraphEngine は hold の意味判定を行わず、イベントを永続化する
+decision_outcome_contract:
+  required_fields_common:
+  - decision_context.target
+  - decision_context.alternatives
+  - decision_context.decision_time
+  - decision_context.scope
+  - decision_outcome.epistemic_eval_state
+  - decision_outcome.governance_entry_state
+  - decision_outcome.governance_eval_state
+  - decision_outcome.branch
+  - decision_outcome.rationale
+  required_when_branch_is_execute:
+  - decision_outcome.success_basis
+  required_when_branch_is_non_execute:
+  - decision_outcome.primary_reason
+  primary_reason_rule: primary_reason は non-execute branch の主 blocker を表す単数フィールドとし、複合 blocker は secondary_reasons へ退避する。
+  success_basis_rule: execute branch では primary_reason の代わりに success_basis を置いてよい。
+  MUST:
+  - branch は execute/hold/reject/escalate/rollback の語彙を保つ
+  - reason の source_of_judgement は GraphLint または DecisionLedger を明示する
+  - execute branch では成功根拠を success_basis または同等の正フィールドで残す
+implementation_split:
+  GraphLint: Δ適用前後の構造・文脈・根拠・矛盾・曖昧性を検査する。
+  DecisionLedger: V/R/approval/authority の正本判断と branch 決定を行う。
+  GraphEngine: K から K' への状態遷移と履歴 h の永続化を行う。
+  archive_object: evidence / manifest / digest の保存境界と監査証跡を保持する。
+compatibility_policy:
+  forward_extension: 追加フィールドは許容するが、canonical notation と最小語彙は壊してはならない。
+  id_policy: 原則として role_id / institution_id / claim_id / evidence_ref などの typed id を使う。
+  missingness_policy: 欠落は null のみで表現せず、status や typed marker として明示する。
+  v1_1: K tuple と既存 branch vocabulary は維持する。domain_validity/agent_execution/human_oversight/organization/metrics は補助 packet
+    として追加する。
+reserved_research_zones:
+- lawful cadence registry の精密仕様
+- weighted quorum の seat weight 拡張
+- route family の partial-overlap candidate 一般化
+- rollback_success の historical success への算入規則
+crosswalk_to_core:
+  knowledge_state: 01_core/formalization_core_v1.yaml::knowledge_state
+  update_operator: 01_core/formalization_core_v1.yaml::update_operator
+  two_layer_model: 01_core/formalization_core_v1.yaml::proposed_two_layer_model
+  hold_reason_model: 01_core/formalization_core_v1.yaml::hold_reason_model
+  decision_ledger_minimal_schema: 01_core/formalization_core_v1.yaml::decision_ledger_minimal_schema
+  approval_structure: 01_core/formalization_core_v1.yaml::approval_structure_formalization
+  delegation_policy: 01_core/formalization_core_v1.yaml::delegation_scope_formalization
+  implementation_mapping: 01_core/formalization_core_v1.yaml::implementation_mapping
+three_layer_evaluation_contract:
+  epistemic_eval: Eval_e(K_e) ∈ {true, hold, false}
+  governance_eval: Eval_g(K_g) ∈ {not_started, true, hold, false}
+  domain_validity_eval: Eval_d(K_d) ∈ {not_applicable, not_started, true, hold, false}
+  MUST:
+  - C_e=false の場合、final execute を返してはならない
+  - C_g=true でも C_d=hold/false の高影響 branch は execute に進めてはならない
+  - Verification passed を Validation passed と自動的にみなしてはならない
+agent_execution_contract:
+  required_when: AI/agent is Ex
+  MUST:
+  - agent_id
+  - role_class
+  - owner_role
+  - capability_scope
+  - authority_envelope
+  - audit_obligation
+  MUST_FOR_HIGH_IMPACT:
+  - stop_condition
+  - rollback_path or no_rollback_justification
+  - human_review_gate or exception_basis
+meaningful_human_oversight_contract:
+  required_when: human oversight is claimed for high-impact or automated execution
+  MUST:
+  - oversight_role
+  - role_scoped_explanation
+  - stop_or_override_right
+  - intervention_window
+  - training_readiness
+  - escalation_path
+organization_topology_contract:
+  MUST:
+  - organization_nodes
+  - roles
+  - decision_rights
+  - expertise_scopes
+  - accountability_scopes
+  MUST_NOT:
+  - expertise_scope を decision_right と同一視してはならない
+convergence_metrics_contract:
+  MUST:
+  - target_ref
+  - metric_set
+  - measurement_time
+  - measurement_basis
+  - blocker_dimensions
+  MUST_NOT:
+  - 重大 blocker を平均点で相殺してはならない

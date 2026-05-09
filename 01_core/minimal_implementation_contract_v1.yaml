@@ -1,0 +1,302 @@
+title: 知識収束学_最小実装契約_v1
+file_role: minimal_implementation_contract
+version: '1.1'
+status: curated_revised_v1_1
+purpose: 実装者が最初に必要とする最小契約を、v1.1 の三層収束・AI実行主体・組織人間系まで含めて抽出した。
+derived_from:
+- 01_core/formalization_core_v1.yaml
+- 01_core/concepts_core_v1.yaml
+contracts:
+  knowledge_state_minimum:
+    notation: K = (G, C, E, V, R, H)
+    layer_cuts:
+      epistemic_core: K_e = (G, C, E)
+      governance_extension: K_g = (G, C, E, V, R)
+      operational_envelope: K_full = (G, C, E, V, R, H)
+      domain_validity_extension: K_d = project(K_full, domain_profile, domain_packets)
+      three_layer_view: epistemic_core -> governance_extension -> domain_validity_extension
+    minimum_payload:
+      G:
+        required:
+        - 少なくとも1つの主要 claim_id
+        - claim を他要素へ接続する relation_id または constraint_id
+        source_ref: formalization_core_v1.yaml::knowledge_state.component_minima.G
+      C:
+        required:
+        - scope
+        - horizon または intent の少なくとも一方
+        source_ref: formalization_core_v1.yaml::knowledge_state.component_minima.C
+      E:
+        required:
+        - 主要 claim ごとの evidence_ref または evidence_status
+        allowed_status:
+        - linked
+        - absent
+        - pending
+        - external_ref
+        - not_applicable
+        - disputed
+        source_ref: formalization_core_v1.yaml::knowledge_state.component_minima.E
+      V:
+        required_when: governance judgment を行うとき
+        minimum:
+        - target_ref
+        - A/L/X の少なくとも一つ
+        - risk-bearing decision の場合は risk_tolerance
+        - tradeoff がある場合は priority_relation P
+        source_ref: formalization_core_v1.yaml::knowledge_state.component_minima.V
+      R:
+        required_when: governance judgment を行うとき
+        minimum:
+        - Ap または Ac
+        - execution を行うなら Ex
+        - AI/agent を Ex に含むなら D
+        - high impact や例外経路が必要なら Esc
+        source_ref: formalization_core_v1.yaml::knowledge_state.component_minima.R
+      H:
+        minimum_role: 履歴・差戻し・監査・時系列検証
+        source_ref: formalization_core_v1.yaml::knowledge_state.operational_envelope
+  update_operator_minimum:
+    notation: 'U_a : (K, Δ, Π) -> (K'', h, o)'
+    required_bindings:
+    - target_slot
+    - authority_basis
+    - evidence_ref または justified_missing_marker
+    - applied_policy_version
+    - expected_branch
+    - failure_branch
+    outcome_space: o ∈ {execute, hold, reject, escalate, rollback}
+    failure_rule: 制約違反、根拠不足、承認不足、政策違反、競合未解消がある場合、U_a は silent success を返してはならず、hold / reject / escalate / rollback のいずれかへ分岐し、その理由を履歴へ残さなければならない。
+    implementation_split:
+      GraphLint: Δ適用前後の構造・文脈・根拠・矛盾・曖昧性の検査を担当する。
+      DecisionLedger: V/R/approval/authority の正本判断と branch 決定を担当する。
+      GraphEngine: K から K' への状態遷移と履歴 h の永続化を担当する。
+      archive_object: evidence / manifest / digest の保存境界と監査証跡を保持する。
+    source_ref: formalization_core_v1.yaml::update_operator
+  decision_outcome_minimum:
+    decision_context_required:
+    - target
+    - alternatives
+    - decision_time
+    - scope
+    outcome_fields:
+    - epistemic_eval_state
+    - governance_entry_state
+    - governance_eval_state
+    - branch
+    - primary_reason
+    - secondary_reasons
+    - rationale
+    branch_vocab:
+    - execute
+    - hold
+    - rollback
+    - reject
+    - escalate
+    source_ref: formalization_core_v1.yaml::decision_ledger_minimal_schema.schema
+  hold_minimum:
+    reason_codes:
+    - id: H1
+      code: epistemic_gap
+      layer: epistemic
+    - id: H2
+      code: epistemic_conflict
+      layer: epistemic
+    - id: H3
+      code: governance_unbound
+      layer: governance
+    - id: H4
+      code: approval_pending
+      layer: governance
+    - id: H5
+      code: risk_excess
+      layer: governance
+    - id: H6
+      code: policy_block
+      layer: governance
+    hold_packet_required_fields:
+    - rollback_target
+    - required_action
+    - reopen_condition
+    - deadline_basis
+    - escalation_condition
+    release_judgement_split:
+    - H1/H2 の解除候補判定は GraphLint 再評価により与える
+    - H3〜H6 の解除候補判定は DecisionLedger の binding, approval, risk, policy 判定により与える
+    - GraphEngine は解除可否そのものの意味判定は持たず、解除イベントを H に永続化する
+    history_events:
+    - hold_entered
+    - hold_updated
+    - hold_rebased
+    - hold_cleared
+    source_ref: formalization_core_v1.yaml::hold_reason_model
+  approval_structure_minimum:
+    notation: A_p^+ = (M, S_req, Pxy, Q, Fbk, Vld, SoD)
+    required_when:
+    - 複数承認主体を使う
+    - proxy を使う
+    - quorum を使う
+    - fallback role を使う
+    components:
+      M: approval_mode。single / all_of / any_of / quorum / forum
+      S_req: required approver condition。必須 role、k-of-n、または forum membership 条件を含む
+      Pxy: proxy rules。principal_role_id, proxy_role_id, activation_condition, scope_limit の組
+      Q: quorum rule。eligible_voting_set_ref, counting_basis(headcount|seat_weight), threshold_rule, mandatory_role_set, veto_rule,
+        abstention_rule, timeout_rule, tie_break_rule, weighted_tally_profile_ref_or_null の組
+      Fbk: fallback activation rules。vacancy, unavailable, SLA breach, expiry などから lawful fallback role への写像
+      Vld: approval validity。valid_from, valid_until, invalidated_by, renewal_condition
+      SoD: segregation_of_duties。principal と proxy、approver と executor などの兼務禁止
+    well_formedness_rules:
+    - M は |Ap|>1、proxy、quorum、forum、fallback のいずれかがあるとき必須である
+    - S_req は approver_set と required_count または mandatory roles を含み、誰の承認不足で branch が未成立か判定できなければならない
+    - Pxy の principal_role_id は S_req または approver_set に含まれていなければならない
+    - Q の threshold は eligible_roles 数を超えてはならず、mandatory role を閾値に埋もれさせてはならない
+    - Fbk は activation_condition と scope_limit を伴わなければならない
+    - Vld により失効した承認は quorum や any_of の成立数へ算入してはならない
+    - SoD に違反する principal/proxy/approver/executor の組は有効承認として数えてはならない
+    - counting_basis=seat_weight のとき、weighted_tally_profile_ref_or_null は null であってはならない
+    - seat weight は mandatory role や blocking veto を上書きしてはならない
+    - observer/auditor seat を voting weight や veto class に算入してはならない
+    source_ref: formalization_core_v1.yaml::approval_structure_formalization
+  delegation_policy_minimum:
+    notation: D = (T, G, X, E_req, F, A)
+    components:
+      T: target_scope。decision target、operation class、scope、time/horizon から成る対象境界。
+      G: guard_conditions。conditional_auto を許す条件集合。impact、reversibility、externality、policy_risk、confidence などを含む。
+      X: prohibited_conditions。delegated path を categorical に止める条件集合であり、X=(X_auto, X_esc) に分ける。X_auto は自動実行のみを禁止し、X_esc は上位
+        authority への送致を強制する。
+      E_req: required_evidence。自動実行前に満たすべき evidence/status 条件。
+      F: fallback_branch。out_of_scope、required_evidence_missing、post_check_fail、rollback_fail などへの分岐規則。
+      A: audit_obligation。最低限残すべき actor_ref、timestamp、operation、rationale、evidence_ref_or_status、outcome などの監査義務。
+    minimum_audit_obligation:
+    - actor_ref
+    - timestamp
+    - operation
+    - rationale
+    - outcome
+    source_ref: formalization_core_v1.yaml::delegation_scope_formalization
+  history_event_envelope_recommendation:
+    minimum_fields:
+    - actor_ref
+    - timestamp
+    - operation
+    - target_slot
+    - authority_basis
+    - evidence_ref_or_status
+    - applied_policy_version
+    - expected_branch
+    - failure_branch
+    - outcome
+    - rationale_or_origin_ref
+    derivation: update_operator.required_bindings + delegation_scope_formalization.A + hold_reason_model.hold_transition_events
+      から合成した最小推奨エンベロープ
+  domain_validity_packet_minimum:
+    notation: DVP = (domain_profile_id, target_ref, validity_context, criteria, verification, validation, operation, feedback,
+      owner)
+    required:
+    - domain_profile_id
+    - target_ref
+    - validity_context
+    - success_or_validity_criteria
+    - verification_or_check_method
+    - owner_role
+    required_when: final execute, high-impact decision, externally committed claim, regulated/safety-related decision, or
+      domain validity claim is made
+    source_ref: formalization_core_v1.yaml::domain_validity_convergence_model
+  agent_execution_envelope_minimum:
+    notation: AEx = (agent_id, role_class, capability_scope, authority_envelope, data_scope, tool_scope, audit, stop, rollback,
+      owner, accountability)
+    required_when: AI/agent or delegated automation is an execution actor
+    minimum:
+    - agent_id
+    - role_class
+    - owner_role
+    - capability_scope
+    - authority_envelope
+    - audit_obligation
+    high_impact_additions:
+    - stop_condition
+    - rollback_path or no_rollback_justification
+    - human_review_gate or exception_basis
+    source_ref: formalization_core_v1.yaml::agent_execution_envelope_model
+  meaningful_human_oversight_minimum:
+    notation: MHO = (explain, stop, time, competence, load, fallback, escalation, visibility)
+    required_when: human oversight is claimed for high-impact or automated execution
+    minimum:
+    - oversight_role
+    - role_scoped_explanation
+    - stop_or_override_right
+    - intervention_window
+    - training_readiness
+    - escalation_path
+    source_ref: formalization_core_v1.yaml::meaningful_human_oversight_model
+  organization_topology_minimum:
+    notation: Org = (nodes, roles, decision_rights, expertise_scopes, accountability_scopes, handoff_contracts, escalation_routes,
+      boundaries, capacities)
+    minimum:
+    - organization_nodes
+    - roles
+    - decision_rights
+    - expertise_scopes
+    - accountability_scopes
+    source_ref: formalization_core_v1.yaml::organization_topology_model
+  convergence_metrics_minimum:
+    notation: M = {m_i} with blocker-preserving aggregation
+    minimum:
+    - target_ref
+    - metric_set
+    - measurement_time
+    - measurement_basis
+    rule: 重大 blocker を平均値で相殺しない
+    source_ref: formalization_core_v1.yaml::convergence_metrics_model
+minimal_end_to_end_example:
+  scenario: 製造業の材質変更提案
+  knowledge_state_excerpt:
+    G:
+      claims:
+      - claim_id: clm_change_material
+        statement: 材質Xを材質Yへ変更する
+      relations:
+      - relation_id: rel_affects_strength
+        from: clm_change_material
+        to: test_strength
+    C:
+      scope: 対象製品A・対象ロットB
+      intent: コスト低減施策
+      horizon: 次回量産判定
+    E:
+    - claim_id: clm_change_material
+      evidence_ref: test_report_2026_03_15
+    V:
+      target_ref: decision_material_change
+      A:
+      - 強度試験合格
+      L:
+      - 品質リスクが許容範囲内
+      X:
+      - 法規適合NG
+    R:
+      Ap:
+      - quality_manager
+      - design_manager
+      Ex:
+      - production_owner
+      Ac:
+      - product_owner
+  update_request_excerpt:
+    actor: design_manager
+    delta: 試験報告を追加して実行可否を再判定
+    policy_context: material_change_policy_v2
+  decision_outcome_excerpt:
+    epistemic_eval_state: 'true'
+    governance_entry_state: eligible
+    governance_eval_state: hold
+    branch: hold
+    primary_reason:
+      reason_code: H4
+      origin_ref: approval_quality_manager
+      source_of_judgement: DecisionLedger
+    rationale: 設計側根拠は揃ったが品質責任者の承認待ち
+  why_this_is_useful: 内容の説明可能性と、実行不可の理由付き保留を同じ系で扱える。
+  v1_1_extension_note: 高影響 execute では、decision_outcome に加えて domain_validity_packet、agent_execution_envelope、meaningful_human_oversight_packet、organization_topology_packet
+    の該当部分を検査する。

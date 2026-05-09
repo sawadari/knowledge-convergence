@@ -1,0 +1,25 @@
+test_vector_id: kc_x_fail_training_premise_execute
+profile: CROSS
+evaluation_context:
+  risk_tier: high
+premise_results:
+- premise_ref: operator_training_ready
+  'yes': 1
+  'no': 3
+- premise_ref: release_documentation_complete
+  'yes': 4
+  'no': 0
+final_group_outcome:
+  branch: execute
+  rationale: lead accepted residual risk
+aggregation_rule_profile:
+  profile_id: agr_cross_001
+  decision_scope: cross_training_release
+  aggregation_mode: premise_based
+  quorum_rule:
+    minimum_members: 4
+    minimum_present: 4
+  consistency_guard: all_required_premises_must_pass
+consistency_repair_result:
+  action: reopen
+  reason: operator_training_not_ready

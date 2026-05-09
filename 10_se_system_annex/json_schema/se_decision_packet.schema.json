@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/knowledge-convergence/se_system/se_decision_packet.schema.json",
+  "title": "SE Decision Packet",
+  "type": "object",
+  "required": [
+    "decision_id",
+    "issue_statement",
+    "options",
+    "selected_option",
+    "criteria",
+    "rationale",
+    "evidence_refs",
+    "responsible_role",
+    "approver_role",
+    "reopen_conditions"
+  ],
+  "properties": {
+    "decision_id": {"type": "string"},
+    "issue_statement": {"type": "string"},
+    "options": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "label"],
+        "properties": {
+          "id": {"type": "string"},
+          "label": {"type": "string"},
+          "description": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "selected_option": {"type": "string"},
+    "rejected_options": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["option_id", "rationale"],
+        "properties": {
+          "option_id": {"type": "string"},
+          "rationale": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "criteria": {"type": "array", "items": {"type": "string"}},
+    "rationale": {"type": "string"},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}},
+    "assumptions": {"type": "array", "items": {"type": "string"}},
+    "responsible_role": {"type": "string"},
+    "approver_role": {"type": "string"},
+    "dissent_trace": {"type": "array", "items": {"type": "object"}},
+    "reopen_conditions": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

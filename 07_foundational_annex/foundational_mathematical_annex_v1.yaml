@@ -1,0 +1,196 @@
+title: 知識収束学_基礎発展annex_数学_v1
+file_role: foundational_mathematical_annex
+version: 1
+status: curated_foundational_extension
+created_on: '2026-04-11'
+purpose: 不完全・競合・多基準・由来・時間を、core を壊さずにより精密な数学的 packet として扱う。
+normativity:
+  precedence: 01_core > 06_public_annex > 07_foundational_annex > 02_supplements
+theme_index:
+  conflict_and_information:
+    label: 競合と情報順序
+    entries:
+    - four_valued_support_status_model
+    - dual_order_information_model
+    - argument_graph_conflict_model
+    - conflict_relation_taxonomy_model
+  decision_and_measurement:
+    label: 多基準判断と測定
+    entries:
+    - outranking_decision_model
+    - measurement_profile_model
+    - interval_uncertainty_model
+  provenance_and_temporality:
+    label: 由来追跡と時相拘束
+    entries:
+    - provenance_semiring_trace_model
+    - temporal_guard_transition_model
+    - approval_validity_interval_model
+foundational_entries:
+  four_valued_support_status_model:
+    label: 4値 support status
+    foundational_role: recommended_foundational_extension
+    statement: claim ごとの認識評価を supported / refuted / both / neither で保持し、単純な true/false/unknown への過早な潰れを防ぐ。
+    notation:
+      status_set:
+      - supported
+      - refuted
+      - both
+      - neither
+    rules:
+    - supported は支持根拠があり refutation が優勢でない状態。
+    - refuted は反証根拠があり support が優勢でない状態。
+    - both は support と refutation が併存し、未裁定または source regime が競合している状態。
+    - neither は十分な support も refutation も無い状態であり、both と混同しない。
+    - four-valued status は epistemic 内部評価であり、governance branch を直接決めない。
+  dual_order_information_model:
+    label: 真偽順序と情報順序
+    foundational_role: recommended_foundational_extension
+    statement: truth-likeness と information richness を別軸で扱い、矛盾豊富と情報欠如を区別する。
+    notation:
+      truth_order_examples:
+      - refuted < neither < supported
+      - refuted < both < supported
+      information_order_examples:
+      - neither < supported
+      - neither < refuted
+      - supported < both
+      - refuted < both
+    rules:
+    - neither は低情報状態であり、both は高情報だが未裁定の状態として扱える。
+    - information order の上昇は、truth order の改善を自動には意味しない。
+    - escalation policy は truth order だけでなく information order を参照してよい。
+  argument_graph_conflict_model:
+    label: argument graph conflict model
+    foundational_role: recommended_foundational_extension
+    statement: support / rebut / undercut / priority の edge を持つ argument graph で H2 を説明する。
+    public_surface:
+      required:
+      - graph_id
+      - nodes
+      - edges
+      node_minimum:
+      - node_id
+      - claim_ref
+      - provenance_ref or evidence_ref
+      edge_types:
+      - support
+      - rebut
+      - undercut
+      - priority_override
+    rules:
+    - rebut は proposition conflict、undercut は inference / reliability / applicability conflict として扱う。
+    - priority_override はすべての rebut を消すわけではなく、適用範囲を明示する。
+    - argument graph は conflict explanation packet であり、最終 adjudication の代替ではない。
+  conflict_relation_taxonomy_model:
+    label: conflict relation taxonomy
+    foundational_role: recommended_foundational_extension
+    statement: H2 を source_conflict / rebuttal_conflict / undercut_conflict / authority_conflict に細分化する。
+    rules:
+    - source_conflict は情報源間の不一致。
+    - rebuttal_conflict は proposition レベルの相反。
+    - undercut_conflict は support route, method, calibration, applicability への攻撃。
+    - authority_conflict はどの rule / source regime / approver が優先か不明な状態。
+    integration_hint:
+    - H2 本体は維持し、subtype と graph_ref を追加してよい。
+  outranking_decision_model:
+    label: outranking decision model
+    foundational_role: recommended_foundational_extension
+    statement: V の多基準判断を、単一総合スコアでなく outranks / indifferent / incomparable / vetoed で保持する。
+    public_surface:
+      minimum_fields:
+      - profile_id
+      - alternatives
+      - criteria
+      - outranking_matrix
+      recommended_fields:
+      - concordance_basis
+      - discordance_basis
+      - veto_rules
+      - incomparability_policy
+    rules:
+    - outranks は「A が B より必ず良い」を意味せず、current criteria regime で B を上回る十分条件があることを意味する。
+    - incomparable は欠陥ではなく lawful result であり、hold や explore の根拠になりうる。
+    - vetoed は weighted average に吸収しない。
+  measurement_profile_model:
+    label: measurement profile
+    foundational_role: recommended_foundational_extension
+    statement: score や quantity が ordinal / interval / ratio のどこまで意味を持つかを criteria ごとに固定する。
+    public_surface:
+      minimum_fields:
+      - profile_id
+      - criterion_ref
+      - scale_type
+      - admissible_comparisons
+      recommended_fields:
+      - unit
+      - zero_meaning
+      - allowed_transformations
+      - threshold_family
+    rules:
+    - ordinal しか保証されない score に加減算や平均を適用しない。
+    - interval では差分比較を許しても ratio comparison は許さない。
+    - ratio では meaningful zero と unit を要求する。
+  interval_uncertainty_model:
+    label: interval uncertainty
+    foundational_role: recommended_foundational_extension
+    statement: confidence や risk を一点値で固定せず、区間または有界集合で保持できるようにする。
+    rules:
+    - narrow interval は高確実性の一指標だが、source quality や model validity の代替ではない。
+    - interval overlap が大きい比較は incomparability の根拠になりうる。
+    - profile が要求する safety margin を下回る区間は veto または hold 根拠にできる。
+  provenance_semiring_trace_model:
+    label: provenance semiring trace
+    foundational_role: recommended_foundational_extension
+    statement: derive された claim が、どの入力・変換・統合から来たかを加法的/乗法的に追跡できる trace packet を与える。
+    public_surface:
+      minimum_fields:
+      - trace_id
+      - target_ref
+      - derivation_steps
+      step_fields:
+      - step_id
+      - operation
+      - input_refs
+      - output_refs
+      recommended_fields:
+      - policy_ref
+      - actor_ref
+      - rollback_dependency_refs
+      - lineage_summary
+    rules:
+    - union / alternative source は additive composition として保持してよい。
+    - chained derivation は multiplicative composition として保持してよい。
+    - provenance は H の event log を置き換えず、target-centric explanation を補う。
+  temporal_guard_transition_model:
+    label: temporal guard transition
+    foundational_role: recommended_foundational_extension
+    statement: approval / hold / delegation / registry validity を、valid_from / valid_until / review_due / expiry_branch を持つ guard として扱う。
+    public_surface:
+      minimum_fields:
+      - guard_id
+      - target_ref
+      - valid_from
+      - invalidation_policy
+      recommended_fields:
+      - valid_until
+      - review_due
+      - renewal_policy
+      - expiry_branch
+      - grace_policy
+    rules:
+    - valid_until を過ぎた approval は historical fact と current lawful basis を区別して保持する。
+    - review_due breach は silent extension の根拠にならない。
+    - expiry_branch は hold / escalate / false のいずれかを明示してよい。
+  approval_validity_interval_model:
+    label: approval validity interval
+    foundational_role: recommended_foundational_extension
+    statement: 承認や委任の有効区間を event time で扱い、reapproval の要否を検査可能にする。
+    rules:
+    - material_change が validity assumption を壊したときは reapproval_required を立てる。
+    - renewed approval は predecessor validity interval を継承せず、新しい interval として扱う。
+    - approval_source regime が変わったときは authority_conflict または governance_unbound を起こしうる。
+deferred_questions:
+- four-valued status と existing eval_state true/hold/false の橋渡しをどこまで共通化するか
+- domain ごとの concordance/discordance threshold を annex 標準へどこまで含めるか
+- provenance trace の圧縮要約を何単位で canonical 化するか

@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://knowledge-convergence.local/schema/meaningful_human_oversight_packet_minimum.schema.json",
+  "title": "MeaningfulHumanOversightPacketMinimum",
+  "type": "object",
+  "required": [
+    "oversight_role",
+    "role_scoped_explanation",
+    "stop_or_override_right",
+    "intervention_window",
+    "training_readiness",
+    "escalation_path"
+  ],
+  "properties": {
+    "oversight_role": {
+      "type": "string"
+    },
+    "role_scoped_explanation": {
+      "type": [
+        "object",
+        "string"
+      ]
+    },
+    "stop_or_override_right": {
+      "type": [
+        "object",
+        "string",
+        "boolean"
+      ]
+    },
+    "intervention_window": {
+      "type": [
+        "object",
+        "string"
+      ]
+    },
+    "training_readiness": {
+      "type": "string"
+    },
+    "cognitive_load_budget": {
+      "type": [
+        "object",
+        "string"
+      ]
+    },
+    "manual_fallback": {
+      "type": [
+        "object",
+        "string"
+      ]
+    },
+    "no_fallback_justification": {
+      "type": "string"
+    },
+    "escalation_path": {
+      "type": [
+        "array",
+        "object",
+        "string"
+      ]
+    },
+    "audit_visibility": {
+      "type": [
+        "object",
+        "string"
+      ]
+    },
+    "operator_acceptance": {
+      "type": [
+        "object",
+        "string"
+      ]
+    },
+    "oversight_state": {
+      "type": "string",
+      "enum": [
+        "meaningful",
+        "fragile",
+        "formal_only",
+        "absent",
+        "not_applicable"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

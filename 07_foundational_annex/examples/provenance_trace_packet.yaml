@@ -1,0 +1,24 @@
+example_id: found-math-003
+scenario: rollback 可能性を由来依存で追跡する
+provenance_trace_packet:
+  trace_id: trace-001
+  target_ref: claim:c-safe
+  derivation_steps:
+  - step_id: s1
+    operation: ingest
+    input_refs:
+    - test-report-42
+    output_refs:
+    - evidence:qa-test-42
+  - step_id: s2
+    operation: derive_claim
+    input_refs:
+    - evidence:qa-test-42
+    - policy:risk-threshold-v2
+    output_refs:
+    - claim:c-safe
+    rollback_dependency_refs:
+    - snapshot:pre-change-17
+recommended_result:
+  audit_note: claim:c-safe を rollback するときは snapshot:pre-change-17 と test-report-42
+    の再検証が必要。

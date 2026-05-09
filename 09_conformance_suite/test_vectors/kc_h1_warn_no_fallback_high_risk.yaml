@@ -1,0 +1,22 @@
+test_vector_id: kc_h1_warn_no_fallback_high_risk
+profile: KC-H1
+evaluation_context:
+  risk_tier: high
+human_oversight_packet:
+  packet_id: hop_warn_001
+  target_ref: fully_automated_screening_v2
+  human_roles:
+  - operator
+  - auditor
+  override_rights:
+    operator: soft_stop
+    auditor: escalation_request
+  explanation_scope_by_role:
+    operator: operational_rationale
+    auditor: full_audit
+  training_readiness: complete
+  operator_acceptance: ready
+  manual_fallback:
+    available: false
+branch_binding:
+  branch: hold

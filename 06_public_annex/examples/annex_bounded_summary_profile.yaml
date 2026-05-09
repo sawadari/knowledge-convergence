@@ -1,0 +1,27 @@
+example_id: annex_bounded_summary_profile
+scenario: duplicate discard digest を公開相手向けに要約するが、lossless escalation 条件を固定して silent drift を防ぐ。
+bounded_summary_profile:
+  registry_cell:
+    detector_family: mail_duplicate_detector
+    claim_facet: sender_domain
+    sink_class: recipient_visible_export
+    replay_class: incident_replay
+    recipient_class: external_auditor
+    root_profile: organizational_or_social
+  exact_preserved_statistics:
+  - total_cluster_count
+  - distinct_sender_domain_count
+  top_k_cap: 10
+  tail_metric: other_sender_domains_exact_tail_count
+  lossless_escalation_when:
+  - regulatory inquiry が入ったとき
+  - summary drift detector が threshold 超過したとき
+  mandatory_summary_trailer:
+    summary_profile_ref: bsummary_maildup_orgsoc_v1
+    loss_model: top-k + exact tail
+    escalation_path: request_lossless_canonical_export
+annex_links:
+- public_annex_concepts_v1.yaml#bounded_loss_summary_registry_governance
+- public_annex_concepts_v1.yaml#externality_budget_numeric_calibration_governance
+- public_annex_formalization_v1.yaml#bounded_loss_summary_registry_model
+- public_annex_formalization_v1.yaml#externality_budget_numeric_calibration_model

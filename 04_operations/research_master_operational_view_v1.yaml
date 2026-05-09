@@ -1,0 +1,172 @@
+title: 知識収束学_研究マスター
+file_role: master
+package_role: operations_view
+version: '3.0'
+status: active
+created_on: '2026-04-11'
+release_boundary:
+  canonical_release_label: v1
+  research_tracking_label: v3.1
+  canonical_release_state: frozen
+  frozen_on: '2026-03-22'
+  statement: 研究過程では internal tracking label として v3.1 を使うが、正規の凍結版名は v1 とする。
+derived_from:
+  source_file: research_master_v3.0.yaml
+  source_version: '3.0'
+  source_status: active
+  selection_rule: 元ファイルのうち、このビューに必要な節だけを抽出した。
+excluded_to:
+  logs:
+  - ../05_logs/research_master_recent_progress_v1.yaml
+  - ../05_logs/research_master_update_log_v1.yaml
+  - ../05_logs/research_master_update_history_v1.yaml
+reading_note: 運用上いま効いている方針・優先度・出力テンプレートだけを残し、巨大ログは分離した。
+language: ja
+last_updated: '2026-03-22'
+purpose:
+  statement: '知識収束学の研究全体を、複数スレッドと外部記憶YAMLを用いて 発散させずに継続するためのマスター管理ファイル。
+
+    '
+  policy:
+  - 単一スレッドで全論点を扱わない
+  - YAMLを会話外の作業記憶として使う
+  - 毎回、確定事項と未解決問題を分ける
+  - 概念、形式化、応用、運用を混線させない
+research_goal:
+  statement: '生成AIによって外化された知的現象を、意図・意味・根拠・価値・責任の観点から 構造化し、AIと人間が説明可能な意思決定に到達できる知識状態へ収束させる 理論と実装の両面を確立する。
+
+    '
+working_style:
+  mode: 命題駆動・批判駆動・履歴固定型
+  rules:
+  - 1スレッド1テーマを原則とする
+  - 各スレッドで対象テーマを明記する
+  - 各スレッドで暫定命題を明記する
+  - 各スレッドで固定事項と未解決問題を残す
+  - 各スレッド終了時に thread_handoff.yaml を更新する
+feedback_cycle:
+  steps:
+  - name: テーマ選定
+    detail: 1回のスレッドで扱う論点を1つに絞る
+  - name: 命題化
+    detail: 主張を短い命題文に落とす
+  - name: 批判
+    detail: 概念・学術・実装の3方向から検証する
+  - name: 修正判断
+    detail: 採用・保留・棄却を決める
+  - name: 暫定固定
+    detail: 定義、公理候補、設計原理、仮説を固定する
+  - name: 未解決問題管理
+    detail: 次スレッドへ送る課題を明示する
+thread_strategy:
+  statement: '長大化を避けるため、論点ごとに新規スレッドを立てる。 各スレッドは必ず外部記憶YAMLを参照して開始し、終了時に更新内容を明示する。
+
+    '
+  thread_types:
+  - name: 概念スレッド
+    examples:
+    - 知識とは何か
+    - 収束とは何か
+    - AI自己評価とは何か
+    - 価値判断とは何か
+  - name: 形式化スレッド
+    examples:
+    - Knowledge State の型定義
+    - 更新作用素の定義
+    - 収束条件の定式化
+    - 品質ベクトルの定義
+  - name: 実装接続スレッド
+    examples:
+    - GraphBuildとの接続
+    - GraphLintとの接続
+    - DecisionLedgerとの接続
+    - GraphEngineとの接続
+  - name: 応用スレッド
+    examples:
+    - MBSE
+    - 製造業
+    - 企業AI
+    - 教育研究
+  - name: 統合レビュー
+    examples:
+    - 用語整合レビュー
+    - 理論と実装の整合レビュー
+    - 未解決問題の棚卸し
+external_memory_files:
+  statement: 研究の外部記憶は以下のYAML群で管理する。
+  files:
+  - path: research_master.yaml
+    role: 研究全体の運営方針、優先順位、ファイル関係
+  - path: concepts.yaml
+    role: 基本概念、定義、公理候補、差分整理
+  - path: formalization.yaml
+    role: 数理・計算的形式化の管理
+  - path: thread_handoff.yaml
+    role: スレッド開始・終了時の引き継ぎ管理
+  - path: knowledge_convergence_studies.yaml
+    role: 初期の本体定義ドラフト
+  - path: freeze_report_v1.yaml
+    role: v1 凍結報告。release note / zero-draft / zero-open-question / cross-file consistency check を保持する
+update_policy:
+  when_to_update:
+  - 新しい定義を採用したとき
+  - 未解決問題が追加または解消されたとき
+  - スレッドを閉じるとき
+  - 次スレッドの開始指示を決めたとき
+  update_order:
+  - thread_handoff.yaml
+  - concepts.yaml または formalization.yaml
+  - research_master.yaml
+  rule:
+  - 変更箇所だけでなく、変更理由を短く残す
+current_priority:
+  main_topic: v1 freeze 完了後の post-freeze extension backlog triage
+  reason:
+  - internal tracking label v3.1 / canonical release v1 の freeze 報告物を確定したから。
+  - status gate と報告物整理が完了し、P7 を閉じられるから。
+  - 残る作業は freeze gate の未解決問題ではなく、非gating open_points の優先度整理だから。
+  next_topics:
+  - non-gating open_points の triage と優先度付け
+  - MBSE / 製造業応用への接続整理
+  - GraphLint / DecisionLedger / GraphEngine / archive object の実装接続具体化
+current_unresolved_issues: []
+session_output_template:
+  fields:
+  - 今回のテーマ
+  - 今回の暫定命題
+  - 有効だった指摘
+  - 今回固定したもの
+  - 残った問題
+  - 次スレッド候補
+next_thread_recommendation:
+  topic: v1 freeze 完了後の post-freeze extension backlog triage
+  param: local open_points を freeze gate blocker と extension backlog に分けて優先順位付けする
+  objective: 凍結版を壊さずに、次に掘るべき概念・形式化・応用・実装接続の論点を整理する。
+  expected_outputs:
+  - post-freeze backlog tiering
+  - gating ではない open_points の優先順位表
+  - 次の概念 / 形式化 / 応用 / 実装スレッド候補
+  start_instruction: 'このスレッドでは「v1 freeze 完了後の post-freeze extension backlog triage」だけを扱います。
+
+
+    前提として、freeze_report_v1.yaml, research_master.yaml, concepts.yaml, formalization.yaml, thread_handoff.yaml を参照してください。
+
+
+    まず、freeze gate を通過した条件と、未解決問題ではない local open_points を区別してください。
+
+
+    次に、open_points を concept / formalization / application / implementation connection の4群に分けて優先順位付けしてください。
+
+
+    最後に、次に掘るべきスレッドを3件まで提案してください。'
+  question: v1 freeze 後に、どの extension backlog を先に掘るべきか
+  reason:
+  - freeze 報告物の整理が完了したから。
+  - 残る論点は未解決問題ではなく、拡張の優先順位づけだから。
+release_identity:
+  statement: 研究過程では internal tracking label として v3.1 を使うが、正規の凍結版名は v1 とする。
+  internal_tracking_label: v3.1
+  canonical_release_label: v1
+  canonical_release_state: frozen
+  frozen_on: '2026-03-22'
+  note: ファイル名や YAML 自体の作業版 version=3.0 は研究用の系譜管理であり、公開上の理論版名とは別物である。

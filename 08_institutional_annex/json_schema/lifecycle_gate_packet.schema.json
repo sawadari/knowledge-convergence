@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "lifecycle_gate_packet.schema.json",
+  "title": "LifecycleGatePacket",
+  "type": "object",
+  "required": [
+    "gate_id",
+    "target_ref",
+    "artifact_class",
+    "entry_criteria",
+    "exit_criteria",
+    "responsible_role"
+  ],
+  "properties": {
+    "gate_id": {
+      "type": "string"
+    },
+    "target_ref": {
+      "type": "string"
+    },
+    "artifact_class": {
+      "type": "string"
+    },
+    "entry_criteria": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "exit_criteria": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "responsible_role": {
+      "type": "string"
+    },
+    "baseline_id": {
+      "type": "string"
+    },
+    "transition_package_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "verification_ref": {
+      "type": "string"
+    },
+    "validation_ref": {
+      "type": "string"
+    },
+    "ops_feedback_ref": {
+      "type": "string"
+    },
+    "rollback_readiness": {
+      "type": [
+        "string",
+        "boolean"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

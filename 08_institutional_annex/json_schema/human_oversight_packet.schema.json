@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "human_oversight_packet.schema.json",
+  "title": "HumanOversightPacket",
+  "type": "object",
+  "required": [
+    "packet_id",
+    "target_ref",
+    "human_roles",
+    "override_rights",
+    "explanation_scope_by_role"
+  ],
+  "properties": {
+    "packet_id": {
+      "type": "string"
+    },
+    "target_ref": {
+      "type": "string"
+    },
+    "human_roles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "override_rights": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "explanation_scope_by_role": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "cognitive_load_budget": {
+      "type": "object",
+      "properties": {
+        "max_blocking_alerts": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "max_simultaneous_risk_factors": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": true
+    },
+    "training_readiness": {
+      "type": "string"
+    },
+    "operator_acceptance": {
+      "type": "string"
+    },
+    "manual_fallback": {
+      "type": "object",
+      "properties": {
+        "available": {
+          "type": "boolean"
+        },
+        "fallback_route": {
+          "type": "string"
+        },
+        "switchover_time_target": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "escalation_contact": {
+      "type": "string"
+    },
+    "review_cadence": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "conformance_finding.schema.json",
+  "title": "ConformanceFinding",
+  "type": "object",
+  "required": [
+    "rule_id",
+    "severity",
+    "message"
+  ],
+  "properties": {
+    "rule_id": {
+      "type": "string"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "error",
+        "warning",
+        "info"
+      ]
+    },
+    "message": {
+      "type": "string"
+    },
+    "path": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,31 @@
+title: 知識収束学_v1_1_core_delta_conformance
+version: '1.1'
+status: curated_revision_delta
+created_on: '2026-05-08'
+new_or_revised_profiles:
+- KC-DV1
+- KC-AX1
+- KC-MHO1
+- KC-ORG1
+- KC-Q1
+new_core_concepts:
+- domain_validity_convergence
+- agent_execution_governance
+- meaningful_human_oversight
+- organization_topology
+- convergence_measurement
+new_hold_reason_codes:
+- H7 domain_profile_missing
+- H8 verification_gap
+- H9 validation_gap
+- H10 operational_readiness_gap
+- H11 feedback_reopen_required
+- H12 agent_authority_unbound
+- H13 human_oversight_not_meaningful
+- H14 organization_capacity_gap
+non_conformance_patterns:
+- high_impact_execute_with_domain_validity_hold
+- agent_execute_without_authority_envelope
+- human_oversight_formal_only
+- expertise_scope_used_as_decision_right
+- validation_blocker_hidden_by_average_score

@@ -1,0 +1,166 @@
+title: 知識収束学_制度運用適合検査ルール集_v1
+file_role: institutional_validation_rulebook
+version: 1
+status: curated_conformance_suite
+created_on: '2026-04-11'
+purpose: 08_institutional_annex の packet 群を、schema だけでなく semantic rule でも検査できるようにする。
+validation_order:
+- structural_schema_validation
+- packet_semantic_validation
+- cross_profile_validation
+- scenario_expectation_check
+severity_meaning:
+  error: 当該 profile では不適合。CI や release gate で fail 扱いにできる。
+  warning: 直ちに不適合とは限らないが、説明や補強が必要。
+  info: 補助的な観察結果。
+rule_groups:
+  KC-T1:
+  - rule_id: KCI-T1-001
+    severity: error
+    label: high-risk execute では expert warrant に expertise_scope が必要
+    applies_to:
+    - epistemic_justification_packet
+    statement: risk_tier が high/critical で intended_branch が execute のとき、speaker_warrant_profile が domain_expert または external_authority なら expertise_scope.domain_ref を持つ。
+    remediation: expert label を scope 付き warrant に分解する。
+  - rule_id: KCI-T1-002
+    severity: error
+    label: public claim 単独を high-risk execute basis にしない
+    applies_to:
+    - epistemic_justification_packet
+    statement: trust_channel が public_claim で、risk_tier が high/critical かつ intended_branch が execute なら不適合。
+    remediation: independent corroboration や direct evidence を追加する。
+  - rule_id: KCI-T1-003
+    severity: error
+    label: stale packet を transferable のまま使わない
+    applies_to:
+    - epistemic_justification_packet
+    statement: evaluation_date が freshness_window.stale_after を過ぎている場合、epistemic_transfer_status は transferable のままにしない。
+    remediation: status を qualified/stale/recheck_required 系へ落とし、再確認する。
+  - rule_id: KCI-T1-004
+    severity: warning
+    label: conflict_of_interest は status 追跡を伴う
+    applies_to:
+    - epistemic_justification_packet
+    statement: defeater_register に conflict_of_interest がある場合、conflict_of_interest_status を併記する。
+    remediation: 利害関係と独立裏取りの状態を追記する。
+  KC-S1:
+  - rule_id: KCI-S1-001
+    severity: error
+    label: group outcome には aggregation rule profile が必要
+    applies_to:
+    - aggregation_rule_profile
+    - final_group_outcome
+    statement: final_group_outcome があるのに aggregation_rule_profile が無い状態を許容しない。
+    remediation: 事前または同時に aggregation rule を記録する。
+  - rule_id: KCI-S1-002
+    severity: error
+    label: quorum を満たさない group outcome を成立させない
+    applies_to:
+    - aggregation_rule_profile
+    - vote_summary
+    - premise_results
+    statement: observed_present が quorum_rule.minimum_present 未満なら不適合。
+    remediation: 再招集するか outcome を hold/escalate へ落とす。
+  - rule_id: KCI-S1-003
+    severity: error
+    label: contested conclusion では required policy に従って minority report を残す
+    applies_to:
+    - aggregation_rule_profile
+    - minority_report_packet
+    statement: minority_report_policy が required_when_conclusion_contested で結論争いがある場合、minority_report_packet を省略しない。
+    remediation: dissent と requested_followup を別 packet で残す。
+  - rule_id: KCI-S1-004
+    severity: error
+    label: repair が必要な不整合を execute に直結させない
+    applies_to:
+    - aggregation_rule_profile
+    - final_group_outcome
+    - consistency_repair_result
+    - premise_results
+    statement: consistency_guard が repair を要求し、争点または failed premise があるなら、repair 無しの execute を許容しない。
+    remediation: reopen / split / escalate / repair を挿入する。
+  KC-O1:
+  - rule_id: KCI-O1-001
+    severity: error
+    label: baseline execute には baseline_id が必要
+    applies_to:
+    - lifecycle_gate_packet
+    statement: artifact_class が baseline で branch が execute のとき baseline_id を要求する。
+    remediation: managed lifecycle では baseline を明示する。
+  - rule_id: KCI-O1-002
+    severity: error
+    label: managed execute には gate 条件と責任者が必要
+    applies_to:
+    - lifecycle_gate_packet
+    statement: branch が execute のとき、entry_criteria / exit_criteria / responsible_role を空にしない。
+    remediation: gate packet を補完し、handoff 条件を埋める。
+  - rule_id: KCI-O1-003
+    severity: error
+    label: validation pending の high-risk execute は exception 無しでは通さない
+    applies_to:
+    - lifecycle_gate_packet
+    - evaluation_context
+    statement: risk_tier が high/critical で branch が execute かつ validation_status が pending の場合、exception_basis を要求する。
+    remediation: hold / escalate に落とすか、例外根拠を残す。
+  - rule_id: KCI-O1-004
+    severity: error
+    label: reopen trigger には follow-up path が必要
+    applies_to:
+    - ops_feedback_event
+    statement: ops_feedback_event.triggers_reopen が true の場合、rollback / reopen / escalate / hold / revalidate のいずれかへ結び付く follow-up を持つ。
+    remediation: incident review を archived note にせず state transition へ接続する。
+  KC-H1:
+  - rule_id: KCI-H1-001
+    severity: error
+    label: 全 role に override と explanation を割り当てる
+    applies_to:
+    - human_oversight_packet
+    statement: human_roles にある role は、override_rights と explanation_scope_by_role の両方に現れる。
+    remediation: role-scoped authority と explanation map を埋める。
+  - rule_id: KCI-H1-002
+    severity: error
+    label: training incomplete / retraining_required は execute blocker
+    applies_to:
+    - human_oversight_packet
+    - branch_binding
+    statement: training_readiness が incomplete または retraining_required なら、supervisory_exception 無しの execute を通さない。
+    remediation: hold / shadow / retraining に落とす。
+  - rule_id: KCI-H1-003
+    severity: warning
+    label: high-risk で fallback が無いなら justification が必要
+    applies_to:
+    - human_oversight_packet
+    - evaluation_context
+    statement: risk_tier が high/critical で manual_fallback.available が false の場合、no_fallback_justification を要求する。
+    remediation: fallback route を追加するか不在理由を明示する。
+  - rule_id: KCI-H1-004
+    severity: error
+    label: operator not_ready は shadow mode 以外の execute を通さない
+    applies_to:
+    - human_oversight_packet
+    - evaluation_context
+    statement: operator_acceptance が not_ready のとき、deployment_mode が shadow でない execute を不適合とする。
+    remediation: shadow mode / extra supervision / retraining を入れる。
+  CROSS:
+  - rule_id: KCI-X-001
+    severity: error
+    label: qualified/stale testimony で high-risk execute するなら corroboration が必要
+    applies_to:
+    - epistemic_justification_packet
+    - evaluation_context
+    statement: epistemic_transfer_status が qualified/stale/scope_exceeded/defeated で branch が execute なら、independent_confirmed または multi_source_confirmed の corroboration_status を要求する。
+    remediation: 独立裏取りを追加するか execute を止める。
+  - rule_id: KCI-X-002
+    severity: error
+    label: training failure と execute を共存させない
+    applies_to:
+    - premise_results
+    - human_oversight_packet
+    - final_group_outcome
+    - branch_binding
+    statement: operator_training_ready の failed premise、または human training incomplete/retraining_required があるなら execute を通さない。
+    remediation: premise repair・rehearing・retraining のいずれかを先行させる。
+non_goals:
+- すべての domain-specific policy をここで固定しない
+- weighted quorum の内容そのものを普遍的に定義しない
+- 人工的な総合スコアで制度運用問題を単純化しない

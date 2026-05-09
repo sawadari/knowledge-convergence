@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://knowledge-convergence.local/schema/foundational/ambiguity_profile.schema.json",
+  "title": "AmbiguityProfile",
+  "type": "object",
+  "required": [
+    "profile_id",
+    "items"
+  ],
+  "properties": {
+    "profile_id": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "ambiguity_id",
+          "kind",
+          "target_ref"
+        ],
+        "properties": {
+          "ambiguity_id": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "referential",
+              "scope",
+              "modality",
+              "presupposition_failure",
+              "discourse_relation",
+              "gradable_threshold_unbound"
+            ]
+          },
+          "target_ref": {
+            "type": "string"
+          },
+          "blocking": {
+            "type": "boolean"
+          },
+          "needs_context": {
+            "type": [
+              "array",
+              "string"
+            ]
+          },
+          "proposed_resolution": {
+            "type": [
+              "string",
+              "object",
+              "array"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

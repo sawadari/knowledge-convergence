@@ -1,0 +1,1567 @@
+title: 知識収束学_公開annex_概念補助束_v1
+file_role: public_annex_concepts
+package_role: public_annex_distribution
+version: 1
+status: curated_public_annex
+created_on: '2026-04-11'
+derived_from:
+  package: knowledge_convergence_v1_public_spec_20260411
+  source_file: ../../02_supplements/concepts_governance_supplement_v1.yaml
+  selection_basis: 公開仕様を厚くするが、組織固有表・重い移行鎖・内部セッション運用へ踏み込みすぎない項目を選別した。
+normativity:
+  precedence: 01_core > 06_public_annex > 02_supplements
+  default_role: annex は informative だが、public_spec_role=recommended_extension の項目は公開実装で優先採用を推奨する。
+  non_override_rule: annex は 01_core の語彙と最小契約を上書きしない。詳細化・補助境界の提示に限る。
+selection_criteria:
+- 01_core の公開仕様だけでは実装判断が粗くなりやすい論点であること
+- scheduler / federation の大型拡張に依存しないこと
+- 組織固有の数表や内部コスト配賦を必須にしないこと
+- DecisionLedger / GraphLint / GraphEngine の一般的分離で実装可能なこと
+- 未整理の open point を抱えていても、公開配布面として縮約できること
+theme_index:
+  authority_and_approval:
+    label: 権限・承認・責任境界
+    note: 誰が review / approve / activate / revoke できるか、加重承認や共同責任をどう公開仕様上で扱うか。
+    included_entries:
+    - registry_authority_governance
+    - approval_weighted_quorum_governance
+    - joint_approval_accountability_split_governance
+  confidence_and_timing:
+    label: 較正・時間制約・意味差分
+    note: 安全側の信頼度較正、SLA、semantic delta 判定のように public 実装で参照頻度が高い補助規則。
+    included_entries:
+    - sla_clock_calibration_governance
+    - semantic_delta_autoclassification_governance
+  audit_trace_and_disclosure:
+    label: 監査・保持・公開境界
+    note: 監査ログ、保持、再開封、要約、redaction のような実務導入で必要になる公開寄り補助規則。
+    included_entries:
+    - self_evaluation_audit_log_governance
+    - identity_redaction_accountability_governance
+    - raw_signal_retention_governance
+    - legal_hold_reopen_custody_governance
+    - bounded_loss_summary_registry_governance
+  hold_semantics_and_state_vocab:
+    label: Hold 意味論・状態語彙
+    note: Hold を failure に潰さないための補助語彙。public implementer が早めに読む価値が高い。
+    included_entries:
+    - latent_downstream_hold_promotion_governance
+    - hold_reason_relation_taxonomy_governance
+    - hold_reason_subtype_registry_governance
+    - positive_state_vocabulary_governance
+    - deliberate_exploration_option_value_governance
+  externality_and_extension_boundaries:
+    label: 外部性と拡張境界
+    note: route family の core 境界と externality budget の較正を annex 側で安定化する。
+    included_entries:
+    - route_family_extension_boundary_governance
+    - externality_budget_numeric_calibration_governance
+public_annex_entries:
+  authority_and_approval:
+    registry_authority_governance:
+      label: registry 権限分配
+      public_spec_role: recommended_extension
+      public_reader_note: route mapping / strengthening / canonical registry の変更権限を tier と blast radius で分ける。
+      source_reference: ../../02_supplements/concepts_governance_supplement_v1.yaml#registry_authority_governance
+      status: provisional_fixed
+      statement: mapping registry authority governance とは、route mapping / strengthening / canonical registry entry の review・ratification・activation・supersession・revoke を、semantic blast radius と protected facet への影響に応じて central authority、domain authority、delegated reviewer に分配し、SLA breach と emergency suspend を統治する規則である。
+      public_rules:
+        core_claims:
+        - semantic family、counting_basis、exclusivity、effect_zone、authority/accountability/rollback expectation を変更する rule change は delegated reviewer に委譲しない。
+        - delegated reviewer は evidence completeness、scope fit、invariance witness、lineage 整合の review と、pre-ratified template に基づく low-blast-radius activation / revalidation、および provisional な emergency suspend に限定して権限を持つ。
+        - domain authority は domain-local な route mapping / strengthening / canonical registry entry の ratification / activation / supersession / final revoke を担えるが、cross-domain conversion、global canonical core change、authority/accountability rebinding、rollback expectation 変更は central authority に留保する。
+        - emergency revoke は provisional suspend と final revoke を分離する。delegated reviewer と domain authority は suspend を即時発火できるが、final revoke は domain authority または central authority の confirm を要する。
+        - ratified だが未 activated / 未 reflected の entry は authoritative reliance basis に数えない。
+        - SLA breach は convenience extension を許さず、active predecessor の有無、same-frame remedy、upper authority path、deadline / risk に応じて hold / escalate / false へ分岐させる。
+        minimal_vocabulary:
+          authority_tiers:
+          - central_authority
+          - domain_authority
+          - delegated_reviewer
+          action_classes:
+          - propose
+          - review
+          - ratify
+          - activate
+          - revalidate
+          - supersede
+          artifact_classes:
+          - route_mapping_rule
+          - strengthening_rule
+          - canonical_registry_entry
+          protected_facets:
+          - semantic_family
+          - counting_basis
+          - exclusivity
+          - effect_zone
+          - authority_path
+          - accountability_family
+          blast_radius_classes:
+          - template_local
+          - domain_local
+          - cross_domain
+          - global_default
+          sla_clocks:
+          - submitted_at
+          - review_due_at
+          - ratification_due_at
+          - activation_due_at
+          - confirmation_due_at
+          lineage_fields:
+          - registry_id
+          - predecessor_rule_ref
+          - successor_rule_ref
+          - template_ref
+          - invariance_witness_ref
+      supporting_details:
+        delegation_policy:
+          central_authority:
+            exclusive_scope:
+            - cross-domain conversion rule、canonical route core、global default registry template の新設または変更
+            - semantic facet / counting_basis / exclusivity の再解釈
+            - authority path・accountability family・rollback expectation の再束縛
+            - effect_zone を contested / external / irreversible 側へ拡張する rule 変更
+            - 複数 domain にまたがる revoke / supersession dispute の最終裁定
+            delegable_prechecks:
+            - evidence completeness review
+            - lineage / witness / scope fit の事前確認
+            - template-bound candidate の妥当性確認
+          domain_authority:
+            allowed_scope:
+            - 既存 canonical registry と central policy の範囲内で、semantic family を変えない domain-local route mapping を ratify / activate / supersede / revoke する
+            - central ratified template の範囲内で、domain-local strengthening rule を ratify / activate / supersede / revoke する
+            - same identity かつ same or narrower scope の canonical registry successor entry を domain 境界内で確定する
+            forbidden_scope:
+            - cross-domain conversion や global canonical core の変更
+            - authority/accountability rebinding
+            - rollback expectation の弱化
+            - external irreversible commitment を許す default 緩和
+          delegated_reviewer:
+            allowed_scope:
+            - evidence completeness / scope fit / invariance witness / lineage 整合の review
+            - pre-ratified template と zero semantic delta を満たす entry の activation
+            - same identity・same scope・no revocation trigger の revalidation
+            - suspected leak、authority drift、semantic mismatch、policy contradiction に対する provisional emergency suspend の起票と即時停止
+            forbidden_scope:
+            - 新規 semantic rule の ratification
+            - final revoke の単独確定
+            - cross-domain / global_default artifact の supersession
+            - lexical 類似や慣行だけを根拠に lawful equivalence を主張すること
+        sla_policy:
+          baseline_windows:
+            delegated_review_business_days: 2
+            domain_ratification_business_days: 5
+            central_ratification_business_days: 10
+            activation_or_reflection_business_days: 2
+            emergency_suspend_confirmation_business_days: 1
+          override_rules:
+          - profile 別 override は baseline を短縮または厳格化する方向にだけ許し、single_branch / external irreversible / policy-sensitive action のために緩めてはならない。
+          - review_due は pre-expiry cap であり、期限超過を黙示延長の根拠に使ってはならない。
+          breach_branch_rules:
+            hold: active predecessor がなお lawful であり、same-frame で review / ratification / activation を完了できるとき。
+            escalate: same-frame では解決できないが、upper authority path または emergency confirmation path が生きているとき。
+            'false': lawful predecessor も upper authority path もなく、decision deadline または safety / policy constraint により current frame を継続できないとき。
+      implementation_touchpoints:
+        tool_split:
+          DecisionLedger:
+          - authority_tier
+          - delegation_charter_ref
+          - artifact_class
+          - scope_ref
+          - protected_facet_ref
+          - blast_radius_class
+          - lineage_ref
+          - ratification_basis_ref
+          GraphEngine:
+          - registry_review_started
+          - registry_review_due
+          - registry_review_breached
+          - registry_ratified
+          - registry_activated
+          - registry_superseded
+          - registry_emergency_suspended
+          - registry_suspend_confirmed
+      guardrails:
+        local_convention_barriers:
+        - すべての mapping / strengthening / canonical entry は registry_id、scope_ref、authority_ref、lineage_ref、witness_ref を持たなければ authoritative に参照できない。
+        - GraphLint は unregistered_mapping_reference、missing_lineage、template_scope_mismatch、silent_extension、local_convention_drift を診断し、GraphEngine は drift event を累積記録する。
+        - 反復運用実績は proposal の補助根拠になっても、ratification の代替根拠にはならない。
+        - emergency suspend の解除は explicit release または confirmed revoke / supersession を要し、silent revert を許さない。
+      deferred_questions:
+      - profile/context ごとの aggregation window と hard expiry を SLA clock とどう整合させるか
+    approval_weighted_quorum_governance:
+      label: 加重 quorum の最小境界
+      public_spec_role: recommended_extension
+      public_reader_note: weighted approval を core へ過剰流入させず、最小 envelope だけ公開仕様へ残す。
+      source_reference: ../../02_supplements/concepts_governance_supplement_v1.yaml#approval_weighted_quorum_governance
+      status: provisional_fixed
+      statement: weighted quorum や voting power は approval structure の共通語彙へ最小 envelope だけを入れ、seat weight table・apportionment formula・constituency census などの詳細は extension registry へ逃がす。つまり「weighted であること」と「成立判定に最低限必要な tally semantics」は core に残すが、組織固有の重み表そのものは core に含めない。
+      public_rules:
+        design_rules:
+        - counting_basis=seat_weight を使う場合、weighted_tally_profile_ref を必須にする。headcount の quorum へ暗黙変換してはならない。
+        - mandatory role, blocking veto, segregation_of_duties は weighted tally で上書きしてはならない。
+        - observer seat, auditor seat, explainer seat を voting weight や veto seat に算入してはならない。
+        - weighted tally は forum 内部の成立計算に属し、same-tier peer conflict routing を直接置き換えない。
+        - 動的な人員数や部門規模から重みを導く場合でも、current basis では frozen snapshot ref を通してだけ参照する。
+        core_vocabulary:
+        - approval_mode=quorum|forum
+        - eligible_voting_set_ref
+        - counting_basis=headcount|seat_weight
+        - threshold_rule
+        - mandatory_role_set
+        - veto_rule_or_blocking_class
+      supporting_details:
+        hold_connection_rules:
+        - weighted_tally_profile_ref が必要なのに欠ける場合は approval_structure_gap として H3 候補になる。
+        - weighted tally profile はあるが threshold 未充足、mandatory role 未参加、valid blocking veto 存在のいずれかなら H4 候補になる。
+        - forum internal tally の不成立を、別 forum や peer reviewer の多数で相殺してはならない。
+      guardrails:
+        forbidden_shortcuts:
+        - weighted quorum を approval authority family そのものへ昇格させ、core taxonomy を汚染すること。
+        - seat weight table を current snapshot なしに live org chart から都度推論すること。
+        - weighted majority を理由に mandatory role や policy/risk veto を黙殺すること。
+      deferred_questions: []
+    joint_approval_accountability_split_governance:
+      label: 共同承認と共同責任の分離
+      public_spec_role: recommended_extension
+      public_reader_note: approval 成立と accountability 移転を同一視しないためのレコード分離。
+      source_reference: ../../02_supplements/concepts_governance_supplement_v1.yaml#joint_approval_accountability_split_governance
+      status: provisional_fixed
+      statement: joint approval と joint accountability は同一 responsibility object R に共存してよいが、approval leg と accountability leg を別レコードとして保持し、approval 成立を accountability 移転の代用にしてはならない。
+      public_rules:
+        core_claims:
+        - approval は「誰が今この action を合法化できるか」を表し、accountability は「誰が outcome / rollback / explanation / incident response を引き受けるか」を表す。両者は同じ人物に束縛されても意味論は別である。
+        - joint approval は all_of / quorum / forum などの approval structure で表せるが、joint accountability は無差別な共同責任としては置かず、facet partition と residual owner を持つ明示 co-accountability としてだけ許す。
+        - forum verdict、proxy approval、fallback approval は approval leg の成立であり、forum chair・execution coordinator・secretariat を自動的に accountability owner にしてはならない。
+        - approval が成立しても accountability leg が未束縛なら execute-ready ではない。逆に accountability owner がいても required approval が未成立なら lawful execution ではない。
+        - 同一 actor が approver と accountability owner を兼ねてもよいが、approval_event_ref と accountability_binding_ref を別に残さなければならない。
+        adopted_rule:
+          binding_rule:
+          - commitment-sensitive facet ごとに primary accountability owner をちょうど1つ持つことを原則とする。
+          - co-accountability を使う場合、facet partition と residual owner を必須にする。空白 facet を残してはならない。
+          - approval leg の fulfilled / expired / invalidated は accountability leg の active / transferred / revoked と独立に遷移する。
+          - accountability transfer は approval とは別イベントとして明示し、source owner・target owner・effective window・handoff witness を要する。
+          hold_and_gap_policy:
+            H3_candidates:
+            - approval_accountability_split_gap
+            - accountability_partition_missing
+            - rollback_owner_missing_when_commitment_active
+            - residual_owner_missing_under_co_accountability
+            H4_candidates:
+            - approval_wait_with_accountability_bound
+            - forum_verdict_pending
+            - approval_valid_but_accountability_handoff_pending
+        minimal_vocabulary:
+          responsibility_object:
+          - responsibility_id
+          - target_ref
+          - effect_zone_ref
+          - approval_leg_ref
+          - accountability_leg_ref
+          - decision_outcome_ref
+          approval_leg_fields:
+          - approval_case_id
+          - action_scope_ref
+          - approval_structure_ref
+          - approval_outcome_ref
+          - validity_window
+          - invalidation_rule_ref
+          accountability_leg_fields:
+          - accountability_case_id
+          - accountable_facet_set
+          - primary_owner_ref
+          - co_owner_partition_ref_or_null
+          - residual_owner_ref
+          - rollback_owner_ref
+      implementation_touchpoints:
+        tool_split:
+          DecisionLedger:
+          - approval_leg / accountability_leg の authoritative binding
+          - co-accountability partition と residual owner の正当性判定
+          - accountability transfer / rollback owner / reflection owner の記録
+          GraphEngine:
+          - approval state と accountability state の別系列ライフサイクル保存
+          - approval_event_ref と accountability_binding_ref の lineage 管理
+          - gap / pending / transferred / invalidated の状態遷移保持
+          GraphLint:
+          - approval 成立だけで accountability 充足とみなした shortcut の検出
+          - co-accountability partition の coverage 欠落検出
+          - rollback owner / reflection owner 欠落の lint
+          archive_object:
+          - approval witness packet
+          - accountability partition packet
+          - handoff / transfer witness packet
+      guardrails:
+        forbidden_shortcuts:
+        - approved_by_many を accountability shared_by_many と読み替えること。
+        - forum chair / approver / proxy を暗黙の outcome owner とみなすこと。
+        - co-accountability を facet partition なしの crowd ownership として記録すること。
+      deferred_questions: []
+  confidence_and_timing:
+    sla_clock_calibration_governance:
+      label: SLA clock 較正
+      public_spec_role: recommended_extension
+      public_reader_note: 危険文脈ほど短く、便宜理由では緩めない time bound。
+      source_reference: ../../02_supplements/concepts_governance_supplement_v1.yaml#sla_clock_calibration_governance
+      status: provisional_fixed
+      statement: profile specific SLA clock calibration governance とは、registry authority governance と detector governance における delegated_review_due・ratification_due・activation_due・emergency_confirmation_due を、artifact class・authority tier・profile・context override の直積上で monotone に較正し、危険文脈ほど短く、便宜文脈を理由に緩められないよう拘束する規則である。
+      public_rules:
+        core_claims:
+        - SLA は作業待ちの目安ではなく、未審査・未裁定・未反映・未確認の各 provisional state が lawful に滞留してよい最大時間である。
+        - review_due は delegated review 未完了状態、ratification_due は normative binding 未確定状態、activation_due は ratified だが未 reflected / 未 effective 状態、emergency_confirmation_due は provisional emergency suspend の未確認状態に対応する。
+        - route_mapping_rule は semantic blast radius が最も大きく、strengthening_rule は protected facet 保存前提の局所強化、canonical_registry_entry は same identity / same scope の登録更新が中心であるため、clock を一律にしない。
+        - profile baseline と context override の effective due は strictest bound の min で決め、single_branch / external_irreversible / policy_sensitive を理由に時計を延ばしてはならない。
+        - emergency suspend は review hold の代用品ではなく、release / revoke / supersede / confirm_hold のいずれかへ必ず接続する確認時計を持つ。
+        baseline_sla_table:
+          regulated:
+            route_mapping_rule:
+              delegated_review_due: 1営業日
+              domain_ratification_due: 3営業日
+              central_ratification_due: 5営業日
+              activation_due: 1営業日
+              emergency_confirmation_due: 4時間
+            strengthening_rule:
+              delegated_review_due: 1営業日
+              domain_ratification_due: 2営業日
+              central_ratification_due: 4営業日
+              activation_due: 4時間
+              emergency_confirmation_due: 4時間
+            canonical_registry_entry:
+              delegated_review_due: 4時間
+              domain_ratification_due: 1営業日
+              central_ratification_due: 2営業日
+              activation_due: 4時間
+              emergency_confirmation_due: 2時間
+          engineering_tradeoff:
+            route_mapping_rule:
+              delegated_review_due: 2営業日
+              domain_ratification_due: 5営業日
+              central_ratification_due: 10営業日
+              activation_due: 2営業日
+              emergency_confirmation_due: 1営業日
+            strengthening_rule:
+              delegated_review_due: 2営業日
+              domain_ratification_due: 4営業日
+              central_ratification_due: 7営業日
+              activation_due: 1営業日
+              emergency_confirmation_due: 1営業日
+            canonical_registry_entry:
+              delegated_review_due: 1営業日
+              domain_ratification_due: 3営業日
+              central_ratification_due: 5営業日
+              activation_due: 1営業日
+              emergency_confirmation_due: 1営業日
+          organizational_or_social:
+            route_mapping_rule:
+              delegated_review_due: 3営業日
+              domain_ratification_due: 7営業日
+              central_ratification_due: 12営業日
+              activation_due: 2営業日
+              emergency_confirmation_due: 1営業日
+            strengthening_rule:
+              delegated_review_due: 2営業日
+              domain_ratification_due: 5営業日
+              central_ratification_due: 8営業日
+              activation_due: 2営業日
+              emergency_confirmation_due: 1営業日
+            canonical_registry_entry:
+              delegated_review_due: 2営業日
+              domain_ratification_due: 4営業日
+              central_ratification_due: 6営業日
+              activation_due: 1営業日
+              emergency_confirmation_due: 1営業日
+      implementation_touchpoints:
+        decision_ledger_graph_engine_linkage:
+          decision_ledger:
+          - sla_profile
+          - active_context_override_set
+          - artifact_class
+          - required_authority_tier
+          - delegated_review_due_at
+          - ratification_due_at
+          - activation_due_at
+          - emergency_confirmation_due_at
+          graph_engine:
+          - sla_override_applied
+          - delegated_review_due_reached
+          - ratification_due_reached
+          - activation_due_reached
+          - emergency_confirmation_due_reached
+          - breach_branch_selected
+          - suspend_confirm_entered
+          - suspend_confirm_confirmed
+      guardrails:
+        override_rules:
+          shortening_only:
+          - effective due は profile baseline と active context cap の min で決める。
+          - local forum convenience、reviewer 不在、会議体の都合、batch 待ちを理由に due を延長してはならない。
+          - lawful に再提出された successor artifact または reframe だけが新しい時計を開始できる。silent extension は開始しない。
+          non_relaxable_clocks:
+          - emergency_confirmation_due は profile/context を問わず緩和禁止である。
+          - review_due は delegated reviewer から上位 authority へ handoff されても、handoff 前の滞留を帳消しにしない。
+          - activation_due は ratified 済み artifact が effective basis へ未反映のまま external / branch-critical action を支えることを許さない hard cap である。
+          - ratification_due は required authority tier を落として短絡する根拠に使ってはならない。
+        context_override_caps:
+          single_branch:
+            statement: 単一 branch の authoritative fixation を現在要求する文脈では、unratified / unactivated basis の並存を短時間で閉じる。
+            route_mapping_rule:
+              delegated_review_due_cap: 1営業日
+              domain_ratification_due_cap: 2営業日
+              central_ratification_due_cap: 5営業日
+              activation_due_cap: 1営業日
+              emergency_confirmation_due_cap: 4時間
+            strengthening_rule:
+              delegated_review_due_cap: 1営業日
+              domain_ratification_due_cap: 2営業日
+              central_ratification_due_cap: 3営業日
+              activation_due_cap: 4時間
+              emergency_confirmation_due_cap: 2時間
+            canonical_registry_entry:
+              delegated_review_due_cap: 4時間
+              domain_ratification_due_cap: 1営業日
+              central_ratification_due_cap: 2営業日
+              activation_due_cap: 4時間
+              emergency_confirmation_due_cap: 1時間
+          external_irreversible:
+            statement: 外部コミット・不可逆ロック・公開出力に触れる文脈では provisional suspend と unactivated basis の滞留を最短側へ寄せる。
+            route_mapping_rule:
+              delegated_review_due_cap: 4時間
+              domain_ratification_due_cap: 1営業日
+              central_ratification_due_cap: 2営業日
+              activation_due_cap: 4時間
+              emergency_confirmation_due_cap: 1時間
+            strengthening_rule:
+              delegated_review_due_cap: 4時間
+              domain_ratification_due_cap: 1営業日
+              central_ratification_due_cap: 2営業日
+              activation_due_cap: 2時間
+              emergency_confirmation_due_cap: 1時間
+            canonical_registry_entry:
+              delegated_review_due_cap: 2時間
+              domain_ratification_due_cap: 4時間
+              central_ratification_due_cap: 1営業日
+              activation_due_cap: 2時間
+              emergency_confirmation_due_cap: 30分
+          policy_sensitive:
+            statement: policy-sensitive facet は semantic drift や local convention の放置コストが高いため、review / ratification / confirmation を baseline より必ず短くする。
+            route_mapping_rule:
+              delegated_review_due_cap: 1営業日
+              domain_ratification_due_cap: 2営業日
+              central_ratification_due_cap: 3営業日
+              activation_due_cap: 1営業日
+              emergency_confirmation_due_cap: 2時間
+            strengthening_rule:
+              delegated_review_due_cap: 1営業日
+              domain_ratification_due_cap: 1営業日
+              central_ratification_due_cap: 2営業日
+              activation_due_cap: 4時間
+              emergency_confirmation_due_cap: 1時間
+            canonical_registry_entry:
+              delegated_review_due_cap: 4時間
+              domain_ratification_due_cap: 1営業日
+              central_ratification_due_cap: 1営業日
+              activation_due_cap: 4時間
+              emergency_confirmation_due_cap: 1時間
+      deferred_questions:
+      - mirror lag upper bound の prior / credibility level を confirmation_due の admissible evidence 側とどう接続するか
+    semantic_delta_autoclassification_governance:
+      label: semantic delta 自動分類
+      public_spec_role: recommended_extension
+      public_reader_note: lexical diff ではなく witness ベースで none / bounded / material / unresolved を返す。
+      source_reference: ../../02_supplements/concepts_governance_supplement_v1.yaml#semantic_delta_autoclassification_governance
+      status: provisional_fixed
+      statement: semantic delta autoclassification governance とは、shared prompt / template 変更を lexical diff だけでなく canonical normalization・execution behavior・downstream binding・protected invariant の witness で判定し、semantic delta class を none / bounded / material / unresolved の4値で安全側に返して、hidden coupling・prior reset・burst taxonomy・penalty activation へ接続する規則である。
+      public_rules:
+        core_claims:
+        - semantic delta class の自動判定は wording 類似度ではなく、execution meaning と downstream governance effect の差分判定として扱う。
+        - prompt_pack / template_bundle の表面差分だけでは none を返さない。protected facet、decision branch、evidence admissibility、sink exposure、schema binding が不変である witness を要求する。
+        - bounded は「小さい変更」を意味しない。affected facet と blast radius が ratified mapping で限定され、unaffected protected facet に material drift が出ないときだけ bounded を返す。
+        - material は threshold / comparator / veto / escalation / sink typing / evidence requirement / output schema requiredness / authority semantics / tool routing / confirmation logic の変更を含む。
+        - unresolved は失敗ではなく安全側の中立分類であり、lineage 欠落・joint change・witness 競合・protected facet 接触・benchmark 不足のいずれかで既定値として返してよい。
+        semantic_delta_classes:
+          none:
+            statement: canonical normalization 後の executing meaning、protected invariant、downstream binding が保存され、差分が execution-semantic no-op に留まる状態。
+            minimum_witness:
+            - canonical normalization または semantic no-op witness により executing meaning の同型性が束縛されている
+            - protected invariant set が保存されている
+            - downstream binding set が不変である
+            - lineage / parent / execution capsule が追跡可能である
+            governance_effects:
+            - parameterized_variant / inherited_bundle でも confirm-grade independence は増えない
+            - hard_shared 扱いを維持し、prior reset は原則不要とする
+            - lawful burst witness を増やさない
+          bounded:
+            statement: 変更は存在するが、affected facet と blast radius が ratified mapping で限定され、unaffected protected facet の invariant が保存される状態。
+            minimum_witness:
+            - affected facet set と detector family set が明示されている
+            - bounded-change rule または equivalence envelope が ratified 済みである
+            - unaffected protected facet の replay / benchmark drift が許容域内である
+            - downstream binding change が scoped で review owner / rollback path を持つ
+            governance_effects:
+            - affected facet に対してだけ corroboration increment を止め、scoped prior reset / review を掛ける
+            - unaffected facet の historical calibration は維持できる
+            - bounded bonus / scoped triage metadata にだけ使う
+          material:
+            statement: 変更が execution branch、confirmability、externality、authority、schema meaning のいずれかを再構成し、scoped cosmetic/bounded update では吸収できない状態。
+            trigger_patterns:
+            - threshold / comparator / veto / escalation / authority / sink / evidence / schema requiredness / tool routing / confirmation branch の変更
+            - same input replay で decision branch または protected facet outcome が変わる
+            - downstream binding または execution capsule が変化する
+            governance_effects:
+            - hard_shared with material drift として扱い、affected facet の warmed state を無効化する
+            - pre/post version を独立 corroboration route に数えない
+            - unannounced material change が burst 内へ流入した場合、ambiguous_sparse か flooding_suspect を優先する
+          unresolved:
+            statement: 差分は観測されたが、安全側 classification に必要な lineage / benchmark / facet mapping / execution witness のいずれかが不足または衝突している状態。
+            trigger_patterns:
+            - lineage / parent / execution capsule / witness ref が欠落している
+            - prompt + template + rulepack の joint change で寄与分離不能である
+            - lexical diff は小さいが benchmark / protected invariant が未確認である
+            - protected facet に触れるのに bounded mapping が ratified されていない
+            governance_effects:
+            - lawful burst witness を増やさない
+            - confirm / release / delegated auto activation の shortcut を開かない
+            - protected facet では manual review と scoped reset を先に要求する
+      implementation_touchpoints:
+        decision_ledger_graph_engine_linkage:
+          decision_ledger:
+          - semantic_delta_class
+          - delta_witness_ref_set
+          - affected_facet_set
+          - affected_detector_family_set
+          - protected_invariant_result
+          - downstream_binding_diff_class
+          - scoped_prior_reset_reason
+          - manual_review_required_by_delta
+          graph_engine:
+          - semantic_delta_classified
+          - semantic_delta_reclassified
+          - delta_witness_bound
+          - protected_invariant_failed
+          - scoped_prior_reset_triggered
+          - burst_taxonomy_degraded_by_delta
+      deferred_questions: []
+  audit_trace_and_disclosure:
+    self_evaluation_audit_log_governance:
+      label: 自己評価監査ログ
+      public_spec_role: recommended_extension
+      public_reader_note: 自己評価を後から再監査できる最小 event と retention bucket を定める。
+      source_reference: ../../02_supplements/concepts_governance_supplement_v1.yaml#self_evaluation_audit_log_governance
+      status: provisional_fixed
+      statement: 自己評価監査ログ統治とは、semantic delta class・hidden coupling・prior reset・burst taxonomy・override judgement の判定を後から再監査・再較正できるように、何を event として残し、どの粒度で witness を保持し、いつ archive / purge へ移すかを定める規則である。
+      public_rules:
+        core_claims:
+        - 最終スコアや最終ラベルだけを残しても再監査はできない。判定時点の policy bundle、witness、override、branch effect、actor/authority を結び付けて残す必要がある。
+        - GraphLint の説明 trace は有用だが、それだけを正本にしてはならない。normative binding は DecisionLedger、状態遷移と retention timer は GraphEngine、再計算可能な診断要約は GraphLint に分ける。
+        - 保存期間は storage 都合ではなく audit criticality、protected facet 影響、override の有無、confirm/release への接続度で決める。
+        - raw witness を全件永久保存する方針は採らないが、summary だけに潰してよい class と full witness を残すべき class を分ける。
+      supporting_details:
+        canonical_event_families:
+          registry_snapshot:
+            statement: 判定時点で効いていた policy / rulepack / template / model / registry version の束縛を残す event。
+            minimum_fields:
+            - policy_bundle_ref
+            - registry_version_set
+            - execution_capsule_ref
+          evaluation_run:
+            statement: semantic delta、hidden coupling、drift、burst taxonomy などの自己評価そのものを残す event。
+            minimum_fields:
+            - target_ref
+            - detector_family
+            - claim_facet_set
+            - outcome_label
+            - score_or_class
+            - trace_summary_ref
+          witness_binding:
+            statement: 判定根拠として使った witness の束縛と admissibility を残す event。
+            minimum_fields:
+            - witness_ref_set
+            - witness_hash_set
+            - provenance_level
+            - integrity_class
+          override_review:
+            statement: manual review、override、veto、reclassification、release/reject の理由と authority を残す event。
+            minimum_fields:
+            - reviewer_or_forum_ref
+            - authority_basis_ref
+            - override_kind
+            - rationale_code_set
+          branch_transition:
+            statement: hold / escalate / suspend / confirm / reject / reset / rollback など branch 変化を残す event。
+            minimum_fields:
+            - state_before
+            - state_after
+            - branch_effect
+            - parent_case_ref
+          recalibration_feedback:
+            statement: postmortem、confirmed leak、confirmed drift、false positive/negative 評価など、後から prior や threshold を更新する根拠を残す event。
+            minimum_fields:
+            - feedback_type
+            - linked_event_ref_set
+            - recalibration_scope
+            - outcome_truth_source
+        canonical_minimum_fields:
+        - event_id
+        - event_family
+        - event_time
+        - tool_owner
+        - subject_ref
+        - profile
+        granularity_policy:
+          full_witness:
+            statement: raw witness、normalized trace、execution capsule、override 理由、branch effect を event 単位で再生可能に残す粒度。
+            required_when:
+            - protected facet に触れる
+            - manual override / veto / escalate / reject / force suspend / delegated auto re-enable を伴う
+            - semantic delta class が material または unresolved である
+            - hidden coupling が hard_shared または unresolved relation を含む
+            - prior reset / calibration reset / policy drift / leak confirm / abuse confirm に接続する
+            - burst taxonomy が ambiguous_sparse_burst / flooding_suspect / attack_like_flooding_confirmed のいずれかである
+          summary_with_repro_capsule:
+            statement: hot path では summary を主に持つが、必要時に deterministic replay または immutable witness bundle へ戻れる粒度。
+            admissible_when:
+            - override がない
+            - protected facet への影響がない、または ratified bounded mapping の範囲に閉じている
+            - semantic delta class が none または bounded であり、prior reset を発火していない
+            - branch effect が no_state_change または scoped_internal_review に留まる
+          archive_digest:
+            statement: 日常運用からは外すが、postmortem・監査・再較正のため summary、integrity proof、capsule ref を削らず archive へ送る粒度。
+            required_when:
+            - case は閉じたが confirm / release / override / penalty / public explanation の根拠として後日再参照されうる
+            - raw witness の常時 hot 保持は不要だが、summary だけでは責任追跡が不足する
+          purge_eligible_digest:
+            statement: 低リスク・非override・非protected の派生診断について、canonical summary と witness hash を残した上で raw trace を purge してよい粒度。
+            admissible_when:
+            - final outcome や normative binding を変えていない
+            - detector tuning や UI explanation の補助であり、protected facet・external sink・authority decision に接続しない
+            - archive_digest に必要な summary / hash / capsule ref が先に固定されている
+        common_retention_buckets:
+          normative_permanent:
+            statement: registry ratification、approval / veto / override、final confirm / release / reject、confirmed leak / drift / severe penalty など、normative explanation 責任を持つ event の bucket。
+            baseline:
+              full_witness_hot: permanent
+              archive_retention: permanent
+              purge_rule: never
+          audit_long:
+            statement: protected facet、material / unresolved delta、hard shared coupling、reset、abuse / leak / drift investigation に接続する高監査重要度 bucket。
+            baseline_by_profile:
+              regulated:
+                full_witness_hot: 365d
+                archive_retention: 7y
+              engineering_tradeoff:
+                full_witness_hot: 180d
+                archive_retention: 3y
+              organizational_or_social:
+                full_witness_hot: 90d
+                archive_retention: 2y
+          audit_medium:
+            statement: bounded / none の benign 評価だが、replay、postmortem、threshold review の比較可能性を残す bucket。
+            baseline_by_profile:
+              regulated:
+                full_witness_hot: 180d
+                archive_retention: 3y
+              engineering_tradeoff:
+                full_witness_hot: 90d
+                archive_retention: 1y
+              organizational_or_social:
+                full_witness_hot: 30d
+                archive_retention: 180d
+          summary_short:
+            statement: override なし、protected facet 非接触、nonbinding な自己診断の summary 保持 bucket。
+            baseline_by_profile:
+              regulated:
+                full_witness_hot: 30d
+                archive_retention: 1y
+              engineering_tradeoff:
+                full_witness_hot: 14d
+                archive_retention: 180d
+              organizational_or_social:
+                full_witness_hot: 7d
+                archive_retention: 90d
+      implementation_touchpoints:
+        decision_ledger_graph_engine_graphlint_split:
+          DecisionLedger:
+          - registry ratification / activation / supersession
+          - approval / veto / override / reject / final confirm / release の authority basis
+          - legal_hold、postmortem_hold、accountability hold
+          GraphEngine:
+          - evaluation_run、reclassification、reset、cluster lifecycle、state transition
+          - retention_due / archive_due / purge_due timer
+          - archive completed / purge completed / replay requested の履歴
+          GraphLint:
+          - normalized trace summary
+          - issue candidate、guard explanation、witness digest
+          - deterministic replay に必要な入力正規化メタデータ
+      deferred_questions:
+      - bridge token の cryptographic shape を HSM-backed seal / append-only notarization / derived proof のどこまで標準化するか
+      - merge / split transition bundle の predecessor/successor cardinality と allocation witness をどこまで canonical 化するか
+      - export-local pseudonym の TTL table に対する profile/context local override と shortening-only rule をどこまで許すか
+    identity_redaction_accountability_governance:
+      label: 匿名化と再開示責任
+      public_spec_role: recommended_extension
+      public_reader_note: 常時露出を避けつつ lawful reopen の道を残す。
+      source_reference: ../../02_supplements/concepts_governance_supplement_v1.yaml#identity_redaction_accountability_governance
+      status: provisional_fixed
+      statement: identity redaction accountability governance とは、reviewer / operator の個人識別を常時露出させずに、authority・accountability・incident replay・security escalation に必要な再開示可能性だけを lawful に残すため、identity surface の層、場面別 visibility、reopen 条件を定める規則である。
+      public_rules:
+        core_claims:
+        - accountability に必要なのは常時の実名露出ではなく、authority に束縛された再開示可能性である。
+        - reviewer / operator の identity surface は、display identity、stable pseudonym、team / forum label、authority binding、accountability binding、legal-hold reopen key の少なくとも6層に分けて扱う。
+        - cadence breach、bias / flooding / replay penalty、review accountability、incident replay、security escalation は、同じ identity surface を見ない。場面ごとの最小可視層を分ける必要がある。
+        - stable pseudonym と authority / accountability binding が残っている限り、通常の監査・レビュー・penalty judgement は cleartext personal identity を要しない。
+        - de-redaction は lawful purpose、required authority、active reopen basis、lower-layer insufficiency の4条件が揃うときにだけ許す。
+      supporting_details:
+        canonical_identity_layers:
+          display_identity:
+            statement: 人間に読みやすい表示名。可変であり、canonical key に使ってはならない。
+          stable_pseudonym:
+            statement: scope と epoch の内部で安定な識別子。通常の event 連結、bias / replay / cadence 追跡の主キーに使う。
+          team_or_forum_label:
+            statement: team、forum、review lane、operator family などの所属・経路ラベル。集計と可視化に使うが、個人 accountability の代用にはしない。
+          authority_binding:
+            statement: role、authority tier、approval charter、delegation scope、signature context の束縛。誰が見ても同じ権限意味を取れる層。
+          accountability_binding:
+            statement: decision owner、execution coordinator、outcome accountability、security escalation owner などの責任束縛。
+          legal_hold_reopen_key:
+            statement: lawful な再識別のための封印鍵またはそれへの参照。通常ログから導出できず、別 custody に置く。
+        visibility_policy_by_scenario:
+          routine_review:
+            minimum_visible_layers:
+            - stable_pseudonym
+            - team_or_forum_label
+            - authority_binding
+            hidden_by_default:
+            - display_identity
+            - legal_hold_reopen_key
+          cadence_breach:
+            minimum_visible_layers:
+            - stable_pseudonym
+            - team_or_forum_label
+            - authority_binding
+            conditional_layers:
+            - accountability_binding
+            reveal_conditions:
+            - repeated severe breach
+            - contested override
+            - cross-team queue freeze
+          bias_flooding_replay_penalty:
+            minimum_visible_layers:
+            - stable_pseudonym
+            - team_or_forum_label
+            - authority_binding
+            additional_required_context:
+            - tool_or_pipeline_lineage
+            - forum_chain_ref
+            reveal_conditions:
+            - confirmed abuse
+            - replay concealment
+            - review gaming suspicion that cannot be resolved at pseudonym layer
+          review_accountability:
+            minimum_visible_layers:
+            - stable_pseudonym
+            - authority_binding
+            - accountability_binding
+            optional_layers:
+            - team_or_forum_label
+            non_implications:
+            - display identity を常時見せることを意味しない。
+          incident_replay:
+            minimum_visible_layers:
+            - stable_pseudonym
+            - authority_binding
+            - accountability_binding
+            - execution_or_event_lineage_ref
+            reveal_conditions:
+            - same-frame remediation failure
+            - cross-system join required
+            - external audit basis active
+          security_escalation:
+            minimum_visible_layers:
+            - stable_pseudonym
+            - authority_binding
+            - accountability_binding
+            - legal_hold_reopen_key
+            non_implications:
+            - team_or_forum_label だけで sufficient になることを意味しない。
+      implementation_touchpoints:
+        decision_ledger_graph_engine_graphlint_archive_split:
+          DecisionLedger:
+          - normative actor pseudonym
+          - authority binding ref
+          - accountability binding ref
+          - reopen authorization basis
+          - legal_hold / accountability_hold state
+          forbidden_defaults:
+          - real identity cache
+          - sole re-identification path
+          GraphEngine:
+          - runtime actor instance ref
+          - pseudonym epoch lineage
+          - session / run linkage
+          - reopen_requested / reopen_granted / reopen_denied event
+          GraphLint:
+          - redacted trace summary
+          - actor class / authority tier / forum label
+          - pseudonym-free diagnostic digest when actor specificity is unnecessary
+          archive_object:
+          - pseudonymized event body
+          - sealed identity envelope または mapping ref
+          - reopen policy ref
+          - integrity proof and access log
+      guardrails:
+        prohibited_shortcuts:
+        - display identity、email address、chat handle を canonical actor key に使わない。
+        - stable pseudonym の rotation で accountability lineage を切断しない。
+        - team / forum label だけで reviewer / operator accountability を代用しない。
+        - delegated reviewer 単独で de-redaction を確定しない。
+        - cleartext personal identity の多さを独立 corroboration や bias severity の根拠に使わない。
+        - GraphLint trace だけを reopen 可能性の唯一根拠にしない。
+      deferred_questions:
+      - bridge token の cryptographic shape を HSM-backed seal / append-only notarization / derived proof のどこまで標準化するか
+      - tenant merge / split 時の lawful continuity 条件をどこまで細分化するか
+      - export-local pseudonym の TTL table に対する profile/context local override と shortening-only rule をどこまで許すか
+    raw_signal_retention_governance:
+      label: raw signal 最小保持
+      public_spec_role: informative_annex
+      public_reader_note: dedup 後でも replay・abuse 判定を壊さない最小 retained raw unit を定める。
+      source_reference: ../../02_supplements/concepts_governance_supplement_v1.yaml#raw_signal_retention_governance
+      status: provisional_fixed
+      statement: cluster de-dup 後の raw signal retention governance とは、detector family / claim facet / sink class / replay class ごとに、dedup 後にも replay・abuse 判定・purge 監査を壊さない minimum retained raw unit と optional retained support blob を分離して固定する規則である。
+      public_rules:
+        core_claims:
+        - de-dup 後の retained raw unit は detector family ごとに異なる。cluster representative 1件を universal default にしてはならない。
+        - representative だけで足りるのは、local convention の内部レビュー寄り事案や、confirmed policy drift のうち authoritative basis pair と effective use path が別記録で再構成できる場合に限られる。
+        - flooding_penalty と replay_penalty では、discard された member 群の digest-bound 集約記録と burst / lineage 証拠を保持しなければ、count inflation・replay concealment・penalty fairness を再監査できない。
+        - suspected_leak と protected facet 接触の confirmed_policy_drift では、route / recipient / effect realization / authoritative mismatch を直接または digest-bound に再確認できる raw slice を minimum retained raw unit に含める。
+        - purge admissibility は、cluster representative の有無だけでなく、duplicate_discard_digest、abuse_anchor、replay-support blob が family-specific replay requirement を満たすかで判定する。
+      supporting_details:
+        retained_artifact_classes:
+          cluster_representative:
+            statement: dedup 後の cluster を代表する raw unit。representative signal 本体、source lineage、claim facet、window anchor、target lineage、effect zone、protected facet / sink facet を束縛する。
+            minimum_fields:
+            - representative_signal_id
+            - hypothesis_key
+            - detector_family
+            - claim_facet
+            - target_or_basis_lineage_ref
+            - effect_zone_ref
+          duplicate_discard_digest:
+            statement: discard された duplicate 群を再監査するための digest-bound 集約記録。member 全文保持ではなくてもよいが、discard 根拠と cardinality を失ってはならない。
+            minimum_fields:
+            - cluster_member_digest_set_or_multiset_root
+            - discard_reason_set
+            - source_diversity_summary
+            - window_membership_summary
+            - duplicate_kind_summary
+            - member_count
+          burst_evidence_packet:
+            statement: cadence / simultaneous burst / queue saturation / resampling 逸脱を再監査するための raw timing・window・queue 系証拠束。
+            minimum_fields:
+            - cadence_registry_cell_ref
+            - window_event_count
+            - simultaneous_burst_count
+            - backlog_or_lag_snapshot
+            - lawful_burst_witness_ref_set
+            - batch_charter_ref_or_null
+          abuse_anchor_packet:
+            statement: direct abuse anchor または detector abuse anchor を支える raw evidence 束。
+            minimum_fields:
+            - anchor_kind
+            - anchor_digest_set
+            - actor_or_route_binding_ref
+            - penalty_or_confirm_case_ref
+          replay_support_blob:
+            statement: deterministic / forensic replay、benchmark replay、protected facet mismatch 再検証のために追加保持する raw blob。
+            minimum_fields:
+            - blob_digest
+            - serialization_profile
+            - environment_descriptor_ref
+            - replay_class
+        family_retention_rules:
+          local_convention_detected:
+            minimum_retained_raw_unit:
+            - cluster_representative
+            conditional_minimum:
+            - authoritative_state 以上の sink class、または protected facet 接触時は duplicate_discard_digest を追加する
+            - protected facet 上の benchmark 差分や material/unresolved semantic delta が関与するときは replay_support_blob を追加する
+            optional_retained_support_blob:
+            - burst_evidence_packet
+            - abuse_anchor_packet
+            archive_bucket_guidance:
+              owner_bound_internal: audit_medium
+              bounded_internal_shared: audit_medium
+              authoritative_state: audit_long
+              public_or_external_commitment: audit_long
+              irreversible_resource_lock: audit_long
+            purge_notes:
+            - cluster representative と required duplicate_discard_digest が残り、active investigation / hold がなく、confirm judgement に使っていなければ raw blob purge を許しうる
+          confirmed_policy_drift:
+            minimum_retained_raw_unit:
+            - cluster_representative
+            - authoritative_basis_pair_or_effective_use_path_evidence
+            conditional_minimum:
+            - protected facet mismatch、external commitment、irreversible lock が絡むときは replay_support_blob を追加する
+            - cluster の dedup 後 cardinality や repeated mismatch を severity に使うときは duplicate_discard_digest を追加する
+            optional_retained_support_blob:
+            - burst_evidence_packet
+            - abuse_anchor_packet
+            archive_bucket_guidance:
+              owner_bound_internal: audit_long
+              bounded_internal_shared: audit_long
+              authoritative_state: normative_permanent
+              public_or_external_commitment: normative_permanent
+              irreversible_resource_lock: normative_permanent
+            purge_notes:
+            - confirm / override / reflected correction の根拠になった mismatch では、required basis pair と protected facet replay-support を欠く purge を許してはならない
+          suspected_leak:
+            minimum_retained_raw_unit:
+            - cluster_representative
+            - route_or_recipient_identity_evidence
+            - effect_realization_or_direct_reach_basis
+            conditional_minimum:
+            - cluster 化により exposure episode を畳み込んだときは duplicate_discard_digest を追加する
+            - public_or_external_commitment または irreversible_resource_lock では replay_support_blob を既定 required とする
+            optional_retained_support_blob:
+            - burst_evidence_packet
+            - abuse_anchor_packet
+            archive_bucket_guidance:
+              owner_bound_internal: audit_long
+              bounded_internal_shared: audit_long
+              authoritative_state: audit_long
+              public_or_external_commitment: normative_permanent
+              irreversible_resource_lock: normative_permanent
+            purge_notes:
+            - direct reach / recipient identity / route identity を raw または digest-bound で再確認できない状態で leak case を purge admissible にしてはならない
+          bias_penalty:
+            minimum_retained_raw_unit:
+            - cluster_representative
+            - duplicate_discard_digest
+            - actor_or_forum_concentration_evidence
+            conditional_minimum:
+            - final penalty または contested review では abuse_anchor_packet を追加する
+            optional_retained_support_blob:
+            - burst_evidence_packet
+            - replay_support_blob
+            archive_bucket_guidance:
+              owner_bound_internal: audit_long
+              bounded_internal_shared: audit_long
+              authoritative_state: audit_long
+              public_or_external_commitment: audit_long
+              irreversible_resource_lock: audit_long
+            purge_notes:
+            - fairness review と reopen accountability が残る間は member digest 群と actor concentration evidence の purge を禁止する
+          flooding_penalty:
+            minimum_retained_raw_unit:
+            - cluster_representative
+            - duplicate_discard_digest
+            - burst_evidence_packet
+            conditional_minimum:
+            - direct abuse confirm では abuse_anchor_packet を追加する
+            optional_retained_support_blob:
+            - replay_support_blob
+            archive_bucket_guidance:
+              owner_bound_internal: audit_long
+              bounded_internal_shared: audit_long
+              authoritative_state: audit_long
+              public_or_external_commitment: audit_long
+              irreversible_resource_lock: audit_long
+            purge_notes:
+            - burst / count inflation / lawful batch 区別に使った timing 証拠を失う purge を許してはならない
+          replay_penalty:
+            minimum_retained_raw_unit:
+            - cluster_representative
+            - duplicate_discard_digest
+            - lineage_or_mirror_reuse_evidence
+            conditional_minimum:
+            - protected facet 影響、branch change、forensic replay 要求時は replay_support_blob を追加する
+            - confirmed concealment または intentional reuse では abuse_anchor_packet を追加する
+            optional_retained_support_blob:
+            - burst_evidence_packet
+            archive_bucket_guidance:
+              owner_bound_internal: audit_long
+              bounded_internal_shared: audit_long
+              authoritative_state: audit_long
+              public_or_external_commitment: audit_long
+              irreversible_resource_lock: normative_permanent
+            purge_notes:
+            - replay lineage と compared artifact の digest-bound relation を失う purge を許してはならない
+      implementation_touchpoints:
+        decision_ledger_graph_engine_linkage:
+          DecisionLedger:
+          - retention_family_rule_ref
+          - retained_raw_unit_class_set
+          - purge_admissibility_state
+          - archive_bucket_ref
+          - confirm_or_penalty_usage_ref
+          GraphEngine:
+          - cluster_representative_ref
+          - duplicate_discard_digest_ref
+          - burst_evidence_packet_ref
+          - abuse_anchor_packet_ref
+          - replay_support_blob_ref
+          - blob_pin_or_unpin_event
+      guardrails:
+        prohibited_shortcuts:
+        - cluster representative 1件だけで全 detector family の minimum retained raw unit を満たしたとみなさない。
+        - duplicate discard 後の member cardinality と discard reason を失ったまま flooding / replay penalty を確定しない。
+        - suspected leak で route / recipient / effect evidence を summary label だけへ潰して purge admissible としない。
+        - protected facet mismatch を benchmark replay なしの説明文だけで confirm しない。
+        - current system から再計算できることを理由に replay_support_blob を未保持のまま purge してよいと主張しない。
+      deferred_questions:
+      - duplicate_discard_digest の family-specific summary と replay linkage を detector family / sink class ごとにどこまで固定するか
+    legal_hold_reopen_custody_governance:
+      label: legal hold と reopen custody
+      public_spec_role: informative_annex
+      public_reader_note: sealed identity envelope の reopen を custody lane と quorum で統治する。
+      source_reference: ../../02_supplements/concepts_governance_supplement_v1.yaml#legal_hold_reopen_custody_governance
+      status: provisional_fixed
+      statement: legal_hold_reopen_custody_governance とは、sealed identity envelope を lawful に再開封する際に、authorization・custody・security・audit witness を分離し、scenario ごとの minimum quorum、retention timer 停止、access audit、emergency bypass 条件を定める規則である。
+      public_rules:
+        core_claims:
+        - lawful reopen は「誰か1人の権限」ではなく lane-based quorum の成立として扱う。
+        - delegated reviewer は reopen request と scope packet 準備まではできるが、単独で authority lane も custody lane も満たさない。
+        - domain/central authority が authorization_shard、legal_hold_custodian が custody_release_shard、security_officer が security_override_shard を持ち、役割分離を崩さない。
+        - audit witness は access audit anchor が append-only に固定されたことを条件にだけ成立し、事後記録で代替してはならない。
+        - emergency bypass は final de-redaction ではなく、containment / incident stabilization のための最小 reveal scope を時限付きで開く provisional path である。
+        quorum_matrix:
+          normal_reopen:
+            minimum_required_lanes:
+            - authority_lane
+            - custody_lane
+            - audit_notary_lane
+            authority_rule:
+              same_domain_same_tenant: domain_authority で足りる
+              cross_domain_or_global: central_authority を要する
+            reveal_scope: accountability_binding または必要最小限の identity slice
+            notes:
+            - delegated reviewer は request owner になれるが quorum lane には数えない。
+          incident_replay:
+            minimum_required_lanes:
+            - authority_lane
+            - custody_lane
+            - audit_notary_lane
+            conditional_required_lanes:
+              security_lane:
+              - compromise suspected
+              - protected facet touched
+              - cross-system join または cross-tenant join が必要
+            reveal_scope: incident_slice with lineage and accountable actor binding
+          external_audit:
+            minimum_required_lanes:
+            - authority_lane
+            - custody_lane
+            - audit_notary_lane
+            authority_rule:
+              default: central_authority
+              exception: domain-local かつ single-tenant で ratified audit charter がある場合だけ domain_authority で足りる
+            preconditions:
+            - active legal_hold
+            - retention timer stopped before envelope materialization
+            - export_scope bound to audit charter
+            audience_rule:
+            - external_auditor は supervised session または digest-bound derived export だけを受ける。
+            - external_auditor 自身を shard holder にしない。
+          security_escalation:
+            provisional_required_lanes:
+            - security_lane
+            - custody_lane
+            - audit_notary_lane
+            post_confirm_required_lanes:
+            - authority_lane
+            post_confirm_sla_basis:
+            - profile/context specific emergency confirmation SLA
+            reveal_scope: minimum emergency slice only
+            failure_branch:
+            - authority confirm 不成立なら auto-reseal / continued hold / violation event へ分岐する。
+      supporting_details:
+        actor_classes:
+          delegated_reviewer:
+            statement: reopen request、scope packet、evidence completeness の確認を担う。key release shard を持たない。
+          domain_authority:
+            statement: same-domain / same-tenant の lawful purpose と reveal scope を承認する authority actor。
+          central_authority:
+            statement: cross-domain / cross-tenant / global-default / high-sensitivity external audit の final authority を担う。
+          legal_hold_custodian:
+            statement: sealed identity envelope の escrow、legal hold state、retention timer stop 確認、custody release を担う。
+          security_officer:
+            statement: security escalation、compromise containment、provisional emergency bypass を担う。
+          audit_notary:
+            statement: append-only access audit anchor を固定し、audit_witness_shard を発行する独立 lane。
+          external_auditor:
+            statement: 監査対象の viewer / recipient であり、reusable shard holder にはならない。
+        custody_lanes:
+          authority_lane:
+            holder_classes:
+            - domain_authority
+            - central_authority
+            shard_class: authorization_shard
+            statement: purpose / scope / authority tier の適法性を確定する lane。
+          custody_lane:
+            holder_classes:
+            - legal_hold_custodian
+            shard_class: custody_release_shard
+            statement: sealed identity envelope の escrow release と hold/timer 状態を管理する lane。
+          security_lane:
+            holder_classes:
+            - security_officer
+            shard_class: security_override_shard
+            statement: active compromise・attack-like 事案で provisional emergency bypass を開く lane。
+          audit_notary_lane:
+            holder_classes:
+            - audit_notary
+            shard_class: audit_witness_shard
+            statement: access audit anchor の先行固定を条件に witness token を発行する lane。
+      implementation_touchpoints:
+        decision_ledger_graph_engine_archive_split:
+          DecisionLedger:
+          - reopen basis
+          - lane quorum policy ref
+          - purpose tag / allowed reveal scope
+          - legal_hold / investigation_hold / session_hold state
+          - post-confirm due
+          GraphEngine:
+          - access session
+          - timer pause / resume event
+          - key materialization / reseal event
+          - blob pin state
+          - derived export digest linkage
+          archive_object:
+          - sealed_identity_envelope_ref_or_digest
+          - reopen_policy_ref
+          - access_audit_log_ref
+          - derived_export_digest_ref
+          GraphLint:
+          - redacted explanation only
+          - cleartext identity や shard material を保持しない
+      guardrails:
+        prohibited_shortcuts:
+        - delegated reviewer 単独で reopen を確定しない。
+        - security_officer 単独で final de-redaction を確定しない。
+        - access audit を事後記録で埋め合わせない。
+        - retention timer 停止前に emergency bypass を発火しない。
+        - external auditor へ raw shard や長期 plaintext copy を渡さない。
+        - emergency bypass の出力を authority post-confirm 前に final evidence / penalty / public explanation へ流用しない。
+      deferred_questions:
+      - audit witness packet の vendor-neutral attestation / observer credential schema をどこまで canonical registry 化するか
+      - cross-jurisdiction external audit の authority taxonomy と central delegation charter をどこまで registry 化するか
+      - life-safety / active compromise 例外で accountable_identity_slice を許す threshold を profile/context ごとにどこまで再較正するか
+    bounded_loss_summary_registry_governance:
+      label: bounded summary registry
+      public_spec_role: recommended_extension
+      public_reader_note: 圧縮要約を許すが、silent drift を禁止し lossless への昇格条件を定める。
+      source_reference: ../../02_supplements/concepts_governance_supplement_v1.yaml#bounded_loss_summary_registry_governance
+      status: provisional_fixed
+      statement: bounded_loss_summary_registry_governance とは、duplicate_discard_digest の bounded_loss_summary について、どの統計を exact に保持し、どの統計を top-k + exact tail で保持し、どの条件で lossless_canonical に escalate し、どの圧縮を forbidden とするかを detector family / claim facet / sink class / replay class / recipient class / root profile ごとの registry cell で固定する規則である。
+      public_rules:
+        core_claims:
+        - bounded_loss_summary は「ざっくりした要約」ではない。exact に保持する統計、top-k で保持する統計、exact tail mass / omitted bucket count / max omitted bucket mass を必須にした bounded summary contract である。
+        - detector family が preserved-statistic set の主軸を決め、claim facet / sink class / replay class / recipient class / root profile はその cell を弱めずに strict 化するだけである。したがって override は permissive override ではなく monotone tightening として扱う。
+        - suspected_leak と replay_penalty は、route/recipient/effect・replay lineage・external continuity の再監査を壊しやすいため bounded_loss_summary を禁止し、lossless_canonical を mandatory とする。
+        - protected facet / authority path / export bundle / lawful purpose / retention bucket は hard partition axis であり、bounded_loss_summary でもこれらを跨いで bucket を融合してはならない。partition count は exact に残し、融合が必要なら lossless へ escalate しなければならない。
+        - top-k cap は単独では意味を持たない。top-k entry に加えて omitted_tail_mass、omitted_bucket_count、max_omitted_bucket_mass、concentration_upper_bound、summary_generation_rule_ref を残し、silent summary drift を再計算可能にしなければならない。
+        - root_profile_ref は multiset root 側の canonicalization を束縛するが、bounded_loss_summary の admissibility にも効く。compact_internal_v1 は bounded admissible、standard_canonical_v1 は authority review 限定で bounded admissible、strict_external_v1 は bounded forbidden とする。
+        mandatory_summary_trailer:
+          required_fields:
+          - summary_registry_cell_ref
+          - summary_generation_rule_ref
+          - cap_class_ref
+          - exact_preserved_stat_digest
+          - omitted_bucket_count_by_dimension
+          - omitted_tail_mass_by_dimension
+          rules:
+          - top-k summary を持つ各 dimension は omitted_tail_mass と max_omitted_bucket_mass を exact に持たなければならない。
+          - partition_guard_digest は hard partition axes ごとの exact count vector を束縛しなければならない。
+          - summary_generation_rule_ref は detector family / cap class / ordering key / tie-break / bucketization version を固定しなければならない。
+      supporting_details:
+        registry_axes:
+          primary_axes:
+          - detector_family_ref
+          - claim_facet_family_ref
+          - sink_class_ref
+          - replay_class_ref
+          - recipient_class_ref
+          - root_profile_ref
+          hard_partition_axes:
+          - protected_facet_partition
+          - authority_path_partition
+          - export_bundle_partition
+          - lawful_purpose_partition
+          - retention_bucket_partition
+          - canonical_scope_partition
+          resolution_rule: registry cell は detector_family_ref を first key とし、claim_facet_family_ref が statistic family を追加し、sink / replay / recipient / root profile が cap class と lossless escalation 条件を上書きする。override は stricter side を採用し、cap を小さくして detail を減らすことは許されない。
+      implementation_touchpoints:
+        responsibility_split:
+          DecisionLedger: summary_registry_cell_ref、cap_class_ref、exact_preserved_stat_digest、compression_admissibility_state、lossless_escalation_reason の正本を保持する。
+          GraphEngine: detector family / claim facet / sink / replay / recipient / root profile から applicable registry cell を解決し、exact stats・top-k summary・tail metrics・partition_guard_digest を生成する。
+          GraphLint: forbidden family での bounded usage、missing exact trailer、cap undershoot、hard partition merge、fairness tail 欠落、silent summary drift を検査する。
+          archive_object: summary_generation_rule、tail audit sample、lossless fallback linkage、partition_guard_digest、drift diff report を immutable に保持する。
+      guardrails:
+        prohibited_shortcuts:
+        - detector family ごとの preserved-statistic set を定義せず、一律の generic top-k summary を使うこと
+        - top-k entry だけ残して omitted tail mass / omitted bucket count を捨てること
+        - protected facet / authority path / export bundle / lawful purpose / retention bucket を跨いで summary bucket を融合すること
+        - strict_external_v1 や deterministic / forensic replay で bounded_loss_summary を使うこと
+        - suspected_leak / replay_penalty を local_convention 用 summary profile で近似すること
+        - cap class を縮めて detail を減らす override を permissive override として扱うこと
+        silent_summary_drift_rules:
+          drift_detected_when:
+          - exact_preserved_stat_digest が再計算値と一致しない
+          - top-k entry 集合は一致していても omitted_tail_mass / omitted_bucket_count / max_omitted_bucket_mass のいずれかがずれる
+          - hard partition axes を跨いだ bucket merge が見つかる
+          - registry cell が要求する cap class より小さい cap で summary が生成されている
+          - summary_generation_rule_ref が tie-break / ordering / bucketization version を変えているのに migration witness がない
+          - concentration_upper_bound が再計算より楽観的で fairness 判定を弱めている
+          mandatory_checks:
+          - same raw cluster から recompute した bounded summary と archived summary の diff scan
+          - lossless representative sample または archive linkage を用いた tail audit
+          - claim facet overlay と detector family overlay の strictest side selection lint
+      deferred_questions: []
+  hold_semantics_and_state_vocab:
+    latent_downstream_hold_promotion_governance:
+      label: latent downstream hold
+      public_spec_role: recommended_extension
+      public_reader_note: まだ正式 blocker ではない理由を latent として保持し、条件成立後に昇格させる。
+      source_reference: ../../02_supplements/concepts_governance_supplement_v1.yaml#latent_downstream_hold_promotion_governance
+      status: provisional_fixed
+      statement: latent_downstream_hold_promotion_governance とは、GC1 未成立や governance 評価未開始のため secondary reason をまだ正式 blocker としては扱わない状態を activation_state=latent_downstream として保持し、適用条件が満たされた時点で active governance blocker へ昇格させる規則である。
+      public_rules:
+        core_claims:
+        - latent_downstream は relation_to_primary ではなく activation_state である。理由間関係と活性状態を混線させてはならない。
+        - latent_downstream は H3〜H6 に限って許す。H1/H2 は epistemic entry gate 上の active issue として扱い、latent に逃がしてはならない。
+        - active への昇格は、governance facet が現在の chosen branch / rollback branch に対して適用可能になったとき、または期限・外部性・precommit が先行して待てなくなったときに発火する。
+        - H5/H6 は near_due, external_or_irreversible exposure, public/precommit artifact のいずれかがある場合、GC1 完了前でも latent のまま放置してはならない。
+        - primary_reason が解消されなくても、secondary reason の deadline が先に来る場合は active promotion を許す。
+        promotion_triggers:
+          governance_entry_trigger: GC1=true になり Eval_g の対象 facet が判定可能になったとき。
+          dependency_clear_trigger: secondary reason の前提になっていた upstream blocker が解消し、required_action を今すぐ実行可能になったとき。
+          temporal_urgency_trigger: remaining_time <= promotion_window(profile, reason_code) になったとき。
+          precommit_or_externality_trigger: external commitment, irreversible preparation, public notice, customer-visible export など affected facet を先取りする artifact が current/precommit になったとき。
+        promotion_windows:
+          H3: decision_due の 25% 以内または approval path instantiation 開始時
+          H4: approval_sla 開始時点または fallback/proxy activation が必要になった時点
+          H5: risk_review_due 到来前、または mitigation/waiver が execution gate より後ろへずれ込むと判明した時点
+          H6: policy_review_window 到来前、または exception request / external commitment が発火した時点
+      implementation_touchpoints:
+        tool_responsibilities:
+          DecisionLedger:
+            owns:
+            - latent reason registry
+            - promotion_window policy
+            - manual early-promotion decision
+            - active governance blocker judgement
+          GraphEngine:
+            owns:
+            - activation_state transition event
+            - deadline countdown trace
+            - precommit artifact linkage
+            - promotion/rebase history
+          GraphLint:
+            owns:
+            - epistemic blockers that mask governance evaluation
+            - latent reason surfacing hints for H5/H6
+          archive_object:
+            owns:
+            - promotion witness packet
+            - deadline basis snapshot
+            - precommit linkage evidence
+      guardrails:
+        forbidden_shortcuts:
+        - GC1 未成立を理由に、deadline が迫る H5/H6 を無期限に latent のままにする。
+        - relation_to_primary=latent_downstream と書いて activation_state を省略する。
+        - chosen branch や precommit artifact が確定しているのに downstream governance blocker を active 化しない。
+      deferred_questions: []
+    hold_reason_relation_taxonomy_governance:
+      label: hold reason 関係語彙
+      public_spec_role: recommended_extension
+      public_reader_note: dependency / causal / temporal / independent を分ける。
+      source_reference: ../../02_supplements/concepts_governance_supplement_v1.yaml#hold_reason_relation_taxonomy_governance
+      status: provisional_fixed
+      statement: hold_reason_relation_taxonomy_governance とは、secondary hold reason と primary_reason の関係を dependency だけに縮退させず、dependency / causal / temporal / independent を分けて保持する規則である。
+      public_rules:
+        design_rules:
+        - relation_to_primary は1つの canonical primary relation を必須にし、activation_state は別フィールドで持つ。
+        - dependency_precondition と causal_driver は同義ではない。依存がなくても causal_driver はありうる。
+        - temporal_deadline_precedence は causal でも dependency でもなく、SLA / review window / externality timing の順序を表す。
+        - independent_co_blocker は「無関係」を意味しない。代表SLAや primary_reason 選定とは独立に解除責務を持つことを意味する。
+      supporting_details:
+        selection_guidance:
+          pick_dependency_precondition_when:
+          - secondary の reopen_condition が primary repair 後でないと評価不能
+          - secondary action が primary output を入力とする
+          pick_causal_driver_when:
+          - primary の放置により risk/policy conflict が増幅する
+          - primary event が secondary blocker を誘発した
+          pick_temporal_deadline_precedence_when:
+          - secondary deadline < planned primary repair completion
+          - review window 失効が先に来る
+          pick_independent_co_blocker_when:
+          - 解除経路が独立
+          - どちらを先に修復しても他方は残る
+        adopted_vocab:
+          derived_from_primary: 同一 root issue の局所 manifestation であり、primary の修復で通常は同時に消える。
+          dependency_precondition: secondary の required_action または reopen_condition が primary の解消を前提にする。
+          causal_driver: primary の存在や処理遅延が secondary の発生確率・強度を押し上げている。
+          temporal_deadline_precedence: secondary の deadline や review window が primary の修復予定より先に来る。
+          independent_co_blocker: primary と独立に解除が必要な並列 blocker。
+      guardrails:
+        forbidden_shortcuts:
+        - すべての secondary reason を dependency_precondition に丸める。
+        - deadline 先行を causal と書き換えて SLA 情報を失う。
+        - activation_state=latent_downstream を relation_to_primary に埋め込む。
+      deferred_questions: []
+    hold_reason_subtype_registry_governance:
+      label: hold reason subtype registry
+      public_spec_role: recommended_extension
+      public_reader_note: H1〜H6 の family-level subtype を共有語彙として固定する。
+      source_reference: ../../02_supplements/concepts_governance_supplement_v1.yaml#hold_reason_subtype_registry_governance
+      status: provisional_fixed
+      statement: hold_reason_subtype_registry_governance とは、H1〜H6 の family-level core subtype を共通語彙として固定し、より細かい領域差は parent core subtype を弱めない domain extension としてのみ許す規則である。
+      public_rules:
+        core_subtype_registry:
+          H1:
+          - missing_primary_evidence
+          - missing_context_binding
+          - missing_structure_link
+          - missing_explanation_path
+          H2:
+          - contradictory_evidence
+          - semantic_ambiguity
+          - threshold_or_scope_collision
+          - unresolved_counterargument
+          H3:
+          - decision_context_unbound
+          - value_binding_gap
+          - responsibility_binding_gap
+          - approval_structure_gap
+          H4:
+          - required_approval_missing
+          - approval_conflict_active
+          - quorum_or_proxy_unmet
+          - fallback_activation_pending
+          H5:
+          - residual_risk_over_tolerance
+          - mitigation_evidence_insufficient
+          - waiver_required_ungranted
+          - monitoring_or_rollback_inadequate
+          H6:
+          - explicit_policy_prohibition
+          - legal_or_contractual_prohibition
+          - external_commitment_conflict
+          - exception_path_missing_or_denied
+      supporting_details:
+        extension_boundary:
+          allowed:
+          - domain_extension_subtype は必ず parent_core_subtype_ref を持つ
+          - extension は family を跨いではならない
+          - extension は reopen authority, deadline_basis family, escalation route family を弱めてはならない
+          forbidden:
+          - core_subtype を書かず extension 名だけを保持する
+          - regulated_domain 固有 subtype を core subtype と同格に扱い、cross-domain benchmark を壊す
+          - extension により reason_code family を付け替える
+      implementation_touchpoints:
+        tool_responsibilities:
+          DecisionLedger:
+            owns:
+            - core subtype registry
+            - extension registration approval
+            - cross-family invalidation check
+          GraphEngine:
+            owns:
+            - reason_code/core_subtype/extension_subtype history
+            - migration alias trace
+          GraphLint:
+            owns:
+            - H1/H2 subtype inference hint
+            - invalid subtype/family mismatch lint
+          archive_object:
+            owns:
+            - subtype registry snapshot
+            - extension charter witness
+            - benchmark export label
+      guardrails:
+        forbidden_shortcuts:
+        - core subtype を未記載のまま自然言語だけで hold family を説明する。
+        - domain extension subtype で core subtype の reopen_condition を密かに差し替える。
+        - 同じ extension 名を複数 family で再利用し、比較可能性を壊す。
+      deferred_questions: []
+    positive_state_vocabulary_governance:
+      label: positive state 語彙
+      public_spec_role: recommended_extension
+      public_reader_note: bound / linked を literal present に潰さず component-specific に保持する。
+      source_reference: ../../02_supplements/concepts_governance_supplement_v1.yaml#positive_state_vocabulary_governance
+      status: provisional_fixed
+      statement: linked / bound を raw schema 上の literal present へ統一せず、component-specific positive state を authoritative storage に維持する。ただし cross-component analytics には derived meta predicate として positive_meta_state=present を返してよい。
+      public_rules:
+        adopted_rule:
+          authoritative_positive_states:
+            G_C: required slot は concrete typed value または concrete ref を positive state とする。literal present は保存しない。
+            E: evidence_status=linked を positive state とする。
+            V_R: binding_status=bound を positive state とする。
+            H_auxiliary: auxiliary slot は concrete typed value / concrete ref / concrete digest を positive state とする。literal present は保存しない。
+          derived_meta_projection:
+            present: component-specific positive state または concrete typed value/ref/digest を持つ。
+            reasoned_missing: typed missing marker と required metadata を持つ。
+            invalid: required slot に prohibited serialization または許されない marker が入っている。
+          storage_policy:
+          - raw schema 値として present を保存してはならない。present は query/view 層の派生述語である。
+          - migration 時に literal present を見つけた場合、component kind を見て linked / bound / concrete value populated へ正規化し、kind が不明なら migration_error とする。
+          - cross-component completeness 指標は positive_meta_state を使って集計してよいが、authoritative remediation は component-specific state を参照する。
+        options_compared:
+          unify_to_present_literal:
+            adopt: false
+            rejected_because:
+            - evidence linkage と governance binding と event auxiliary value の意味差が消え、監査時に何が満たされたのか読めなくなる
+            - legacy 正規化と component-aware lint を壊し、present から linked / bound / concrete value への逆写像が不可能になる
+            - Q12 の invalid event 境界で、H の core field が「present かどうか」だけでは replay 可能性を判定できない
+          keep_component_specific_positive_state:
+            adopt: true
+            merits:
+            - E は linked、V/R は bound、G/C/H auxiliary は concrete typed value or concrete ref という意味差を保持できる
+            - typed missing marker の reason layer と positive state の fulfillment layer を分けられる
+            - generic dashboard では derived meta predicate として present_count / reasoned_missing_count を計算できる
+      implementation_touchpoints:
+        tool_responsibilities:
+          GraphBuild:
+            owns:
+            - component kind aware status generation
+            - literal present の生成禁止
+            - legacy present alias の migration hint
+          GraphLint:
+            owns:
+            - component-specific positive state lint
+            - derived positive_meta_state computation
+            - present literal misuse detection
+          DecisionLedger:
+            owns:
+            - binding_status=bound の authoritative judgement
+            - risk/approval/policy state と binding_status の切り分け
+          GraphEngine:
+            owns:
+            - normalized positive state history
+            - invalid migration event trace
+            - component-aware state API
+          archive_object:
+            owns:
+            - normalized_state_snapshot
+            - migration warning packet
+            - component-kind witness
+      guardrails:
+        forbidden_shortcuts:
+        - linked / bound / concrete value をまとめて literal present へ潰し、何が満たされたのかを失うこと。
+        - present_count が高いことを理由に、linked/bound の component-specific 検査を省略すること。
+        - component kind 不明の legacy present を自動的に linked や bound へ決め打ちすること。
+      deferred_questions: []
+    deliberate_exploration_option_value_governance:
+      label: deliberate exploration 価値評価
+      public_spec_role: informative_annex
+      public_reader_note: 探索継続を思いつきではなく gain と burn の比較で扱う。
+      source_reference: ../../02_supplements/concepts_governance_supplement_v1.yaml#deliberate_exploration_option_value_governance
+      status: provisional_fixed
+      statement: deliberate_exploration は、exploration charter に対して discrimination gain・branch relevance・reuse value・reversibility headroom と、cost/risk burn を半定量化し、continue / bounded_continue / terminate_or_escalate を判定する。
+      public_rules:
+        decision_policy:
+          continue:
+          - discrimination_gain >= 2
+          - branch_relevance >= 2
+          - max(cost_burn, risk_burn) <= 1
+          - review_window と budget_cap が残っている
+          bounded_continue:
+          - discrimination_gain >= 1
+          - branch_relevance >= 1 または reuse_value >= 2
+          - risk_burn <= 1
+          - 終了条件がまだ発火していない
+          terminate_or_escalate:
+          - discrimination_gain = 0 が連続 review で持続する
+          - review_window 失効、budget_cap 超過、または allowed_actions 枯渇
+          - risk_burn = 3 または authority/risk bound breach
+          - 選択 / coexistence / split / hold / false のいずれかへ出口が定まった
+      supporting_details:
+        semi_quant_axes:
+          discrimination_gain: 0=候補識別に寄与しない, 1=局所識別, 2=action-relevant 識別, 3=branch-critical 識別
+          branch_relevance: 0=将来判断に無関係, 1=補助的, 2=current action に関連, 3=single-branch commitment を左右
+          reuse_value: 0=一回限り, 1=local reuse, 2=profile reuse, 3=cross-profile reuse
+          reversibility_headroom: 0=ほぼ不可逆, 1=限定可逆, 2=十分可逆, 3=shadow/sandbox/rollback-contained
+          cost_burn: 0=低, 1=管理可能, 2=高, 3=budget breach
+          risk_burn: 0=低, 1=管理可能, 2=高, 3=authority/risk bound breach
+        termination_outcomes:
+        - governance_converged へ閉じる
+        - ratified coexistence / split に移る
+        - same-frame repair が必要なら hold に戻す
+        - lawful path absent または frame invalidated なら false へ閉じる
+        - registry / authority / policy 再設計が必要なら escalate する
+      guardrails:
+        forbidden_shortcuts:
+        - exploration 中だから終了条件を書かなくてよいとみなすこと。
+        - 好奇心や作業継続欲だけで option value を高いと扱うこと。
+        - cost/risk burn を無視して reuse value だけで継続を正当化すること。
+      deferred_questions: []
+  externality_and_extension_boundaries:
+    route_family_extension_boundary_governance:
+      label: route family 拡張境界
+      public_spec_role: recommended_extension
+      public_reader_note: ordered_fallback や weighted k_of_n を extension overlay として分離する。
+      source_reference: ../../02_supplements/concepts_governance_supplement_v1.yaml#route_family_extension_boundary_governance
+      status: provisional_fixed
+      statement: route family の core は any_of / k_of_n の離散的 selection semantics と candidate/local_bundle/alignment までに限り、ordered_fallback と weighted k_of_n は extension overlay として分離する。
+      public_rules:
+        boundary_rules:
+        - ordered_fallback は route family identity ではなく selection policy である。obligation family・effect_zone・authority/accountability を変えてはならない。
+        - weighted k_of_n は route selection の overlay であり、approval forum の weighted quorum や seat_weight_table を参照してはならない。必要なら別 registry ref で接続する。
+        - extension overlay がなければ core comparability は離散 selection semantics で判定する。overlay 依存 action を core-only family へ写像してはならない。
+        core_vocabulary:
+        - modality=any_of|k_of_n
+        - k_required
+        - candidate_routes
+        - local_bundle_ref
+        - activation_conditions
+        - incompatibility_ref
+        extension_overlays:
+          ordered_fallback_overlay:
+            meaning: すでに lawful な candidate_routes の上に preference order / timeout / activation predicate を重ねる。core modality を置き換えない。
+            required_fields:
+            - ordered_chain
+            - fallback_activation_predicates
+            - timeout_rule
+            - exhaustion_escalation_ref
+          weighted_k_of_n_overlay:
+            meaning: candidate route ごとの離散 weight を用いた weighted threshold を重ねる。approval forum の voting power と混同しない。
+            required_fields:
+            - route_weight_profile_ref
+            - weight_threshold_rule
+            - eligibility_freeze_ref
+            - tie_break_rule
+      guardrails:
+        forbidden_shortcuts:
+        - ordered fallback を any_of の単純並び順と誤認し、timeout / exhaustion / escalation を記録しないこと。
+        - weighted k_of_n を approval weighted quorum と同じものとして扱うこと。
+        - overlay に依存する route family を core family と称して registry 省略すること。
+      deferred_questions: []
+    externality_budget_numeric_calibration_governance:
+      label: externality budget 数値較正
+      public_spec_role: recommended_extension
+      public_reader_note: regulated / engineering_tradeoff / organizational_or_social を baseline にする。
+      source_reference: ../../02_supplements/concepts_governance_supplement_v1.yaml#externality_budget_numeric_calibration_governance
+      status: provisional_fixed
+      statement: externality budget の numeric calibration は regulated / engineering_tradeoff / organizational_or_social の3 profile を baseline とし、single_branch / external_irreversible / policy_sensitive の文脈 override では stricter-only で短縮する。
+      public_rules:
+        calibration_rule:
+        - 数値較正対象は sink_cap_count, audience_cap_named_humans, artifact_kind_cap_count, review_due, expiry, purge_due_after_expiry とする。
+        - baseline profile table は isolation_externality_budget_governance の numeric_cap_table を正本とする。
+        - context override は cap の緩和ではなく min / stricter 方向の短縮だけを許す。
+        - review_due は cleanup / containment reinforcement / revalidation 用の pre-expiry cap であり、propagation 延長の黙示承認ではない。
+        - expiry 後は quarantine read-only または purge queue へ送り、new propagation basis に使ってはならない。
+        profile_summary:
+          regulated: sealed_internal を既定とし、bounded_internal_observable は exception_only。review_due と expiry を最短に固定する。
+          engineering_tradeoff: sealed_internal と bounded_internal_observable を運用するが、authoritative / externalized は isolation basis に数えない。
+          organizational_or_social: bounded_internal_observable の audience を engineering_tradeoff より広く取れるが、human-forwardable surface を重く見て sink typing を保守化する。
+      supporting_details:
+        override_summary:
+          single_branch: audience / ttl を短くし、sealed_internal を優先する。
+          external_irreversible: 最短 review_due / expiry を要求し、class cap を sealed_internal に固定する。
+          policy_sensitive: bounded_internal_observable は exception path に限定し、preapproval と designated reviewer を要求する。
+      guardrails:
+        forbidden_shortcuts:
+        - profile baseline より緩い local override を許すこと。
+        - review_due を expiry の grace period と誤解すること。
+        - externalized_nonbinding や authoritative_or_committing を isolation basis の numeric cap で正当化すること。
+      deferred_questions: []

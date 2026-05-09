@@ -1,0 +1,129 @@
+title: 知識収束学_制度運用annex_認識論_v1
+file_role: epistemic_justification_annex
+version: 1
+status: curated_institutional_extension
+created_on: '2026-04-11'
+purpose: 誰の証言を、どの根拠で、どの範囲まで継承して信じるかを、core を壊さずに補う。
+normativity:
+  precedence: 01_core > 06_public_annex > 07_foundational_annex > 08_institutional_annex > 02_supplements
+  institutional_role_meaning: recommended_institutional_extension は、高説明責任実装と将来の組織運用標準化のために採用を推奨する。
+theme_index:
+  testimony_and_transfer:
+    label: 証言と正当化の継承
+    entries:
+    - epistemic_justification_packet_model
+    - speaker_warrant_profile_model
+    - epistemic_transfer_model
+  scope_and_reliability:
+    label: 専門性範囲と信頼性
+    entries:
+    - expertise_scope_model
+    - trust_channel_model
+    - freshness_and_staleness_model
+  defeaters:
+    label: defeater と無効化事情
+    entries:
+    - defeater_register_model
+    - conflict_of_interest_and_independence_model
+institutional_entries:
+  epistemic_justification_packet_model:
+    label: epistemic justification packet
+    institutional_role: recommended_institutional_extension
+    statement: claim や support candidate を、source・warrant・trust channel・defeater で包み、testimony を direct evidence と混同しないようにする。
+    public_surface:
+      minimum_fields:
+      - packet_id
+      - target_ref
+      - source_ref
+      - speaker_warrant_profile
+      - trust_channel
+      - justification_basis
+      recommended_fields:
+      - expertise_scope
+      - freshness_window
+      - epistemic_transfer_status
+      - defeater_register
+      - conflict_of_interest_status
+      - calibration_ref
+      - transfer_limits
+    public_rules:
+      core_claims:
+      - testimony は evidence になりうるが、direct observation と同型ではない。
+      - packet は source label の飾りではなく、どの条件で support を継承するかの説明単位である。
+      - packet 単体で governance approval を発生させてはならない。
+    implementation_touchpoints:
+      GraphLint:
+      - source_warrant_missing
+      - trust_channel_unspecified
+      - defeater_untracked
+      DecisionLedger:
+      - testimony_weight_review
+  speaker_warrant_profile_model:
+    label: speaker warrant profile
+    institutional_role: recommended_institutional_extension
+    statement: 話者・情報源を firsthand_observer / domain_expert / process_owner / delegated_reporter / external_authority / audited_system_proxy / unknown に型分けする。
+    rules:
+    - firsthand_observer は観測条件と時間条件を持てる。
+    - domain_expert は expertise_scope 外の主張では自動的に強い warrant にならない。
+    - process_owner は運用実態の説明に強いが、理論妥当性の証明とは別である。
+    - audited_system_proxy は校正や監査条件を推奨する。
+  expertise_scope_model:
+    label: expertise scope
+    institutional_role: recommended_institutional_extension
+    statement: 専門家や authority の有効範囲を、domain_ref・boundary_conditions・excluded_topics として保持する。
+    minimum_fields:
+    - domain_ref
+    recommended_fields:
+    - boundary_conditions
+    - excluded_topics
+    - stale_after
+    rules:
+    - scope 外の testimony は defeated でなくても qualified として弱化できる。
+    - expertise scope 未指定の expert label は、高リスク execute 根拠では弱い。
+  trust_channel_model:
+    label: trust channel
+    institutional_role: recommended_institutional_extension
+    statement: 証言や記録が、direct_witness / certified_record / audited_system / peer_report / public_claim / incident_report / synthesized_summary のどれを通って届いたかを保持する。
+    rules:
+    - certified_record は public claim と区別する。
+    - synthesized_summary は upstream source set を provenance で追えることを推奨する。
+    - peer_report は delegated testimony として扱い、元 source 不明のとき qualified にできる。
+  freshness_and_staleness_model:
+    label: freshness and staleness
+    institutional_role: recommended_institutional_extension
+    statement: 証言や記録の time sensitivity を freshness_window と stale_after で管理する。
+    rules:
+    - stale testimony は false ではなく、qualified / stale / recheck_required として扱ってよい。
+    - field condition が変わった後の古い record は context_shift defeater を立ててよい。
+  defeater_register_model:
+    label: defeater register
+    institutional_role: recommended_institutional_extension
+    statement: expertise_scope_mismatch / stale_testimony / conflict_of_interest / contradictory_witness / missing_calibration / revoked_authority / context_shift を、support を弱める事情として保持する。
+    rules:
+    - defeater は必ずしも refutation を意味しない。
+    - contradictory_witness は rebuttal だけでなく source conflict として保持できる。
+    - revoked authority は authority_basis と testimony warrant の両方へ影響しうる。
+    implementation_touchpoints:
+      GraphLint:
+      - defeater_presence_blocks_flat_support
+      DecisionLedger:
+      - defeater_sensitive_hold
+  conflict_of_interest_and_independence_model:
+    label: conflict of interest and independence
+    institutional_role: recommended_institutional_extension
+    statement: 話者や source が、主張の帰結に利害関係を持つか、独立検証されたかを分けて扱う。
+    rules:
+    - conflict_of_interest は automatic falsity ではないが、independent corroboration を要求しうる。
+    - same organization repeated report を独立 witness と数えない。
+  epistemic_transfer_model:
+    label: epistemic transfer
+    institutional_role: recommended_institutional_extension
+    statement: 証言や報告から support を継承するとき、transferable / qualified / defeated / stale / scope_exceeded を返せるようにする。
+    rules:
+    - direct observation の不在を、expert label だけで完全に埋めない。
+    - delegated reporter は upstream source が traceable なとき transfer を強くできる。
+    - public claim 単独は、高リスク execute basis にしない。
+deferred_questions:
+- expert calibration の最低要件を domain 共通でどこまで書けるか
+- same-source repetition を corroboration count からどこまで除外するか
+- testimony transfer と four-valued support status の橋渡しをどこまで自動化するか

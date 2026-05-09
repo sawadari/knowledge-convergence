@@ -1,0 +1,195 @@
+title: 知識収束学_制度運用データ追加契約_v1
+file_role: institutional_contract_addendum
+version: 1
+status: curated_institutional_extension
+created_on: '2026-04-11'
+purpose: 証言の正当化・合議・ライフサイクル運用・人間中心監督を、既存の公開データ契約へ追加採用するための最小拡張を示す。
+compatibility_rule: 追加採用は任意であり、既存の canonical_public_data_contract_v1.yaml を上書きしない。
+optional_vocabularies:
+  speaker_warrant_profile:
+  - firsthand_observer
+  - domain_expert
+  - process_owner
+  - delegated_reporter
+  - external_authority
+  - audited_system_proxy
+  - unknown
+  trust_channel:
+  - direct_witness
+  - certified_record
+  - audited_system
+  - peer_report
+  - public_claim
+  - incident_report
+  - synthesized_summary
+  justification_basis:
+  - direct_observation
+  - domain_inference
+  - process_attestation
+  - documentary_record
+  - delegated_testimony
+  - simulation_support
+  epistemic_transfer_status:
+  - transferable
+  - qualified
+  - defeated
+  - stale
+  - scope_exceeded
+  defeater_kind:
+  - expertise_scope_mismatch
+  - stale_testimony
+  - conflict_of_interest
+  - contradictory_witness
+  - missing_calibration
+  - revoked_authority
+  - context_shift
+  aggregation_mode:
+  - consensus
+  - simple_majority
+  - weighted_quorum
+  - premise_based
+  - conclusion_based
+  - chair_decides
+  - escalation_required
+  consistency_repair_mode:
+  - reopen_premises
+  - reopen_conclusion
+  - split_decision
+  - minority_report
+  - escalate
+  - defer_to_policy
+  artifact_class:
+  - decision_record
+  - baseline
+  - verification_report
+  - validation_report
+  - ops_runbook
+  - training_material
+  - incident_review
+  - monitoring_dashboard
+  human_role:
+  - reviewer
+  - approver
+  - operator
+  - domain_owner
+  - auditor
+  - safety_lead
+  - incident_commander
+  override_right:
+  - none
+  - soft_stop
+  - hard_stop
+  - rollback_request
+  - escalation_request
+  training_readiness_state:
+  - complete
+  - provisional
+  - incomplete
+  - retraining_required
+  operator_acceptance_state:
+  - ready
+  - limited
+  - not_ready
+  - retraining_required
+  explanation_scope:
+  - summary
+  - operational_rationale
+  - exception_only
+  - full_audit
+extension_envelopes:
+  epistemic_justification_packet:
+    required:
+    - packet_id
+    - target_ref
+    - source_ref
+    - speaker_warrant_profile
+    - trust_channel
+    - justification_basis
+    recommended:
+    - expertise_scope
+    - freshness_window
+    - epistemic_transfer_status
+    - defeater_register
+    - conflict_of_interest_status
+    - calibration_ref
+    - transfer_limits
+  aggregation_rule_profile:
+    required:
+    - profile_id
+    - decision_scope
+    - aggregation_mode
+    - quorum_rule
+    - consistency_guard
+    recommended:
+    - weight_basis
+    - premise_conclusion_mode
+    - minority_report_policy
+    - tie_break_rule
+    - veto_roles
+    - reopen_policy
+  minority_report_packet:
+    required:
+    - report_id
+    - decision_ref
+    - authors
+    - dissent_scope
+    - stated_reasons
+    recommended:
+    - alternative_conclusion
+    - requested_followup
+    - risk_if_overridden
+  lifecycle_gate_packet:
+    required:
+    - gate_id
+    - target_ref
+    - artifact_class
+    - entry_criteria
+    - exit_criteria
+    - responsible_role
+    recommended:
+    - baseline_id
+    - transition_package_refs
+    - verification_ref
+    - validation_ref
+    - ops_feedback_ref
+    - rollback_readiness
+  ops_feedback_event:
+    required:
+    - event_id
+    - target_ref
+    - observed_in_operation
+    - effect_summary
+    recommended:
+    - severity
+    - reproduction_status
+    - triggers_reopen
+    - linked_incident_ref
+  human_oversight_packet:
+    required:
+    - packet_id
+    - target_ref
+    - human_roles
+    - override_rights
+    - explanation_scope_by_role
+    recommended:
+    - cognitive_load_budget
+    - training_readiness
+    - operator_acceptance
+    - manual_fallback
+    - escalation_contact
+    - review_cadence
+integration_rules:
+- epistemic_justification_packet は E の support を補強してよいが、それだけで governance approval の代替にはならない。
+- speaker_warrant_profile は truth guarantee ではなく、justification transfer の条件を示す。
+- expertise_scope を外れた testimony は qualified または defeated として保持できる。
+- aggregation_rule_profile は implicit にせず、group outcome ごとに rule basis を説明できるようにする。
+- minority report は final outcome が execute でも retain してよい。
+- lifecycle gate packet は decision_outcome branch を置き換えず、運用遷移先と成果物を補う。
+- ops_feedback_event は reopen / rollback / retraining の根拠になりうる。
+- human override right は execute authority を自動付与しない。
+- training_readiness と operator_acceptance は似ていても別 packet として扱ってよい。
+related_documents:
+- 01_core/canonical_public_data_contract_v1.yaml
+- 01_core/foundational_contract_addendum_v1.yaml
+- 01_core/institutional_extension_profiles_v1.yaml
+- 08_institutional_annex/institutional_crosswalk_v1.yaml

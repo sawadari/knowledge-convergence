@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://knowledge-convergence.local/schema/foundational/provenance_trace_packet.schema.json",
+  "title": "ProvenanceTracePacket",
+  "type": "object",
+  "required": [
+    "trace_id",
+    "target_ref",
+    "derivation_steps"
+  ],
+  "properties": {
+    "trace_id": {
+      "type": "string"
+    },
+    "target_ref": {
+      "type": "string"
+    },
+    "derivation_steps": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "step_id",
+          "operation",
+          "input_refs",
+          "output_refs"
+        ],
+        "properties": {
+          "step_id": {
+            "type": "string"
+          },
+          "operation": {
+            "type": "string"
+          },
+          "input_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "output_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "policy_ref": {
+            "type": "string"
+          },
+          "actor_ref": {
+            "type": "string"
+          },
+          "rollback_dependency_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "lineage_summary": {
+            "type": [
+              "object",
+              "array",
+              "string"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,93 @@
+title: 知識収束学_基礎発展プロファイル_v1
+file_role: foundational_extension_profiles
+version: 1
+status: curated_foundational_extension
+created_on: '2026-04-11'
+purpose: core を壊さずに、言語学・数学方向の発展採用段階を明示する。
+relationship_to_core:
+  non_override_rule: 01_core の canonical public contract を上書きせず、追加採用可能な profile として扱う。
+  recommended_reading_order:
+  - conformance_profiles_public_v1.yaml
+  - foundational_contract_addendum_v1.yaml
+  - ../07_foundational_annex/foundational_crosswalk_v1.yaml
+normative_language:
+  MUST: 必須
+  SHOULD: 推奨
+  MAY: 任意
+profiles:
+  KC-L1:
+    label: Linguistic Interpretation Profile
+    purpose: 自然言語の発話を claim-ready な packet に持ち上げること。
+    pairs_with:
+    - KC-E1
+    MUST:
+    - utterance_interpretation_envelope を保持できる
+    - speech_act / speaker_commitment / evidentiality / deictic_anchor を明示できる
+    - presupposition の有無または presupposition_status を保持できる
+    - ambiguity を facet 別に保持できる
+    SHOULD:
+    - claim_kind を typed に保持できる
+    - gradable term に comparison_class / threshold_source / borderline_zone を持てる
+    - discourse_relation を multi-utterance 単位で保持できる
+    exit_criteria:
+    - raw utterance から lifted_claim_candidate を生成できる
+    - どの candidate が grounded / needs_context / rejected かを返せる
+    - 伝聞や推量を assert と誤正規化しない
+  KC-M1:
+    label: Conflict Semantics Profile
+    purpose: H2 を単純な衝突フラグではなく、支持・反証・攻撃関係として保持すること。
+    requires:
+    - KC-E1
+    MUST:
+    - claim ごとに four-valued support status または等価表現を保持できる
+    - conflict relation を rebut / undercut / authority_conflict / source_conflict などで型分けできる
+    - argument_graph_packet または等価の攻撃防御グラフを保持できる
+    - open conflict と information absence を区別できる
+    SHOULD:
+    - truth order と information order を分離できる
+    - reflected conflict outcome と unresolved conflict を区別できる
+    exit_criteria:
+    - supported / refuted / both / neither を返せる
+    - H2 の説明に argument edge を添えられる
+  KC-M2:
+    label: Multi-Criteria Decision Profile
+    purpose: 単一スコアへ潰さずに、多基準・比較不能・veto を伴う判断を扱うこと。
+    requires:
+    - KC-G1
+    MUST:
+    - measurement_profile を保持できる
+    - outranking_profile を保持できる
+    - veto_conditions を priority_relation と分離できる
+    - incomparability を lawful な結果として保持できる
+    SHOULD:
+    - interval uncertainty または bounded range を保持できる
+    - comparison_class と threshold_source を criteria ごとに保持できる
+    exit_criteria:
+    - outranks / indifferent / incomparable / vetoed を返せる
+    - execute / hold / reject の根拠を criteria 別に説明できる
+  KC-M3:
+    label: Provenance and Temporal Assurance Profile
+    purpose: 由来追跡・失効・再承認・hold lifecycle を機械検査可能にすること。
+    requires:
+    - KC-A1
+    MUST:
+    - provenance_trace_packet を保持できる
+    - temporal_guard_packet を保持できる
+    - approval validity interval と review_due / expiry / renew を区別できる
+    - hold entered / revalidated / cleared / expired を区別できる
+    SHOULD:
+    - rollback lineage を dependency 単位で保持できる
+    - derived claim の upstream source set を semiring 的に要約できる
+    exit_criteria:
+    - expired approval を current lawful basis に数えない
+    - rollback と reopen の trace を event chain として返せる
+adoption_advice:
+- 発話由来の誤読が多いなら KC-L1 を最優先する
+- H2 の説明責任が重いなら KC-M1 を先に入れる
+- 評価基準が複数で単純加点が危険なら KC-M2 を入れる
+- 監査・再承認・失効事故が問題なら KC-M3 を入れる
+failure_examples:
+- 伝聞表現を asserted fact として G に直送する
+- both と neither を同じ unresolved 扱いにする
+- veto を weighted score に吸収してしまう
+- valid_until 切れの approval を実行根拠に残す

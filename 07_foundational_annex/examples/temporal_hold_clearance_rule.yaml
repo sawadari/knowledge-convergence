@@ -1,0 +1,17 @@
+example_id: found-math-004
+scenario: approval の有効期限切れを検知して hold に入れる
+temporal_guard_packet:
+  guard_id: guard-001
+  target_ref: approval:sec-review-55
+  valid_from: '2026-04-01T00:00:00+09:00'
+  valid_until: '2026-04-10T23:59:59+09:00'
+  review_due: '2026-04-10T18:00:00+09:00'
+  invalidation_policy: expire_then_hold
+  expiry_branch: hold
+decision_outcome:
+  epistemic_eval_state: 'true'
+  governance_entry_state: eligible
+  governance_eval_state: hold
+  branch: hold
+  primary_reason: H4
+  rationale: approval validity interval が切れているため再承認が必要。

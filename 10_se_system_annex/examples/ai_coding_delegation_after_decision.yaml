@@ -1,0 +1,95 @@
+example_id: se_ex_ai_coding_delegation_after_decision_v1
+scenario: 承認済みDecisionとV&V契約に基づき、AIコーディングエージェントへ実装を委任する。
+risk_tier: medium
+knowledge_state_refs:
+  decision_ref: DEC-014
+  requirement_refs:
+    - REQ-021
+  verification_refs:
+    - VER-009
+  validation_refs:
+    - VAL-004
+decision_packet:
+  decision_id: DEC-014
+  issue_statement: 注文履歴検索に日付範囲フィルタを追加するか。
+  options:
+    - id: OPT-A
+      label: UIに開始日・終了日フィルタを追加する
+    - id: OPT-B
+      label: バックエンドAPIだけを先に追加する
+  selected_option: OPT-A
+  rejected_options:
+    - option_id: OPT-B
+      rationale: 顧客業務では画面操作で検索条件を指定する必要があり、APIのみではValidation条件を満たさない。
+  criteria:
+    - customer_value
+    - implementation_effort
+    - regression_risk
+  rationale: 顧客サポート業務で過去注文の絞り込み時間を短縮するため。
+  evidence_refs:
+    - EV-CUSTOMER-INTERVIEW-20260501
+    - EV-SUPPORT-LOG-202604
+  assumptions:
+    - ASSUME-ORDER-TIMESTAMP-UTC
+  responsible_role: ProductOwner
+  approver_role: ChiefSystemsEngineer
+  reopen_conditions:
+    - 注文時刻のタイムゾーン仕様が変更された場合
+vv_packet:
+  vv_packet_id: VV-021
+  target_requirement_ref: REQ-021
+  verification_method: automated_ui_test_and_api_test
+  validation_scenario: サポート担当者が顧客IDと日付範囲で注文履歴を10秒以内に特定できる。
+  success_criteria:
+    - 検索結果が指定範囲外の注文を含まない
+    - サポート担当者の操作時間中央値が既存運用より30%以上短縮する
+  evidence_refs:
+    - EV-UX-BASELINE-20260425
+  status: ready_for_implementation
+agent_delegation_packet:
+  delegation_id: DEL-20260508-001
+  agent_id: codex_like_coding_agent_01
+  task_ref: TASK-IMPL-REQ-021
+  input_knowledge_refs:
+    - DEC-014
+    - REQ-021
+    - VV-021
+  capability_scope:
+    - read_repository
+    - edit_code
+    - create_branch
+    - run_tests
+    - draft_pull_request
+  authority_envelope:
+    allowed_paths:
+      - src/orders/**
+      - tests/orders/**
+    denied_paths:
+      - infrastructure/**
+      - production_secrets/**
+    max_runtime_minutes: 60
+    may_create_pr: true
+    may_merge_pr: false
+  sandbox_policy:
+    network_access: disabled_except_package_registry
+    secrets_access: denied
+  output_artifact_refs:
+    - branch: ai/req-021-date-range-filter
+    - pull_request: pending
+  audit_log_refs:
+    - LOG-AGENT-20260508-001
+  human_review_gate:
+    required: true
+    reviewer_roles:
+      - SoftwareLead
+      - QAEngineer
+  rollback_path:
+    strategy: revert_pr_before_merge_or_revert_commit_after_merge
+expected_lint_result:
+  KCS-SE1-001: pass
+  KCS-SE2-001: pass
+  KCS-SE2-002: pass
+  KCS-SE4-001: pass
+  KCS-SE4-002: pass
+  KCS-SE4-003: pass
+  KCS-SE4-004: pass

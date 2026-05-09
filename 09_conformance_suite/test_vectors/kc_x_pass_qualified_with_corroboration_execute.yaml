@@ -1,0 +1,36 @@
+test_vector_id: kc_x_pass_qualified_with_corroboration_execute
+profile: CROSS
+evaluation_context:
+  risk_tier: high
+  intended_branch: execute
+corroboration_status: independent_confirmed
+epistemic_justification_packet:
+  packet_id: ejp_cross_pass_001
+  target_ref: claim_managed_release_safe_under_guardrails
+  source_ref: src_external_consultant_c
+  speaker_warrant_profile: domain_expert
+  trust_channel: peer_report
+  justification_basis: domain_inference
+  expertise_scope:
+    domain_ref: sensor_noise_modeling
+  epistemic_transfer_status: qualified
+human_oversight_packet:
+  packet_id: hop_cross_pass_001
+  target_ref: managed_release_with_shadow_mode
+  human_roles:
+  - operator
+  - safety_lead
+  override_rights:
+    operator: soft_stop
+    safety_lead: hard_stop
+  explanation_scope_by_role:
+    operator: operational_rationale
+    safety_lead: full_audit
+  training_readiness: complete
+  operator_acceptance: ready
+  manual_fallback:
+    available: true
+    fallback_route: manual_release_gate
+    switchover_time_target: PT2M
+branch_binding:
+  branch: execute

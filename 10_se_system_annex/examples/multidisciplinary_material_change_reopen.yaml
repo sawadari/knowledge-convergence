@@ -1,0 +1,102 @@
+example_id: se_ex_multidisciplinary_material_change_reopen_v1
+scenario: 製造業の部品材質変更で、調達・設計・品質・生産技術の判断を統合し、Validation未完了のためholdする。
+risk_tier: high
+problem_context:
+  business_goal: 部品コストを10%削減する
+  system_boundary: 対象製品Aの冷却ユニット固定部品
+  lifecycle_phase: production_change
+  intended_environment: 高温多湿環境を含む通常運用
+stakeholder_needs:
+  - need_id: NEED-COST-001
+    stakeholder: Procurement
+    statement: 代替材Yを使い材料費を下げたい
+    evidence_refs:
+      - EV-SUPPLIER-QUOTE-20260502
+  - need_id: NEED-QUALITY-001
+    stakeholder: Quality
+    statement: 代替材Yで耐久性と工程安定性を確認する必要がある
+    evidence_refs:
+      - EV-PAST-FAILURE-THERMAL-202503
+decision_packet:
+  decision_id: DEC-MAT-032
+  issue_statement: 材質Xから材質Yへ変更してよいか。
+  options:
+    - id: OPT-KEEP-X
+      label: 現行材Xを維持する
+    - id: OPT-SWITCH-Y
+      label: 代替材Yへ変更する
+    - id: OPT-PARTIAL-Y
+      label: 一部ロットで限定評価する
+  selected_option: OPT-PARTIAL-Y
+  rejected_options:
+    - option_id: OPT-SWITCH-Y
+      rationale: 耐久試験と工程条件確認が未完了で、本番全面切替はValidation未成立。
+  criteria:
+    - cost_reduction
+    - durability
+    - manufacturability
+    - customer_approval
+    - legal_compliance
+  rationale: コスト削減余地はあるが、全面切替には品質・生産技術・顧客承認の根拠が不足しているため限定評価を選択する。
+  evidence_refs:
+    - EV-SUPPLIER-QUOTE-20260502
+    - EV-DESIGN-CALC-20260503
+  assumptions:
+    - ASSUME-SUPPLIER-PROCESS-CAPABILITY
+    - ASSUME-NO-REGULATORY-MATERIAL-RESTRICTION
+  responsible_role: DesignLead
+  approver_role: ChangeControlBoard
+  dissent_trace:
+    - role: QualityLead
+      concern: 高温多湿耐久試験が未完了である。
+  reopen_conditions:
+    - 高温多湿耐久試験がfailした場合
+    - 顧客承認が得られない場合
+vv_packet:
+  vv_packet_id: VV-MAT-032
+  target_requirement_ref: REQ-DURABILITY-017
+  verification_method: strength_analysis_and_durability_test
+  validation_scenario: 限定ロットで通常運用環境と高温多湿条件を再現し、顧客要求寿命を満たす。
+  success_criteria:
+    - 耐久試験で要求寿命を満たす
+    - 工程不良率が現行材Xと同等以下
+    - 顧客承認が得られる
+  status: validation_pending
+organization_packets:
+  - role_id: DesignLead
+    expertise_scope:
+      - mechanical_design
+    decision_rights:
+      - propose_material_change
+    accountability_scope:
+      - design_integrity
+  - role_id: QualityLead
+    expertise_scope:
+      - durability_test
+      - process_quality
+    decision_rights:
+      - block_release_on_quality_risk
+    accountability_scope:
+      - quality_assurance
+  - role_id: ProductionEngineer
+    expertise_scope:
+      - process_condition
+    decision_rights:
+      - approve_process_trial
+    accountability_scope:
+      - manufacturability
+branch_outcome:
+  branch: hold
+  primary_reason: validation_pending
+  secondary_reasons:
+    - customer_approval_pending
+    - process_capability_unconfirmed
+  reopen_path:
+    - complete_durability_test
+    - complete_process_trial
+    - obtain_customer_approval
+expected_lint_result:
+  KCS-SE1-001: pass
+  KCS-SE1-002: pass
+  KCS-SE2-004: pass_as_hold
+  KCS-SE3-001: pass

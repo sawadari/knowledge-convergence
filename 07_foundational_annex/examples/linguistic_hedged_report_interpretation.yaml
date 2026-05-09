@@ -1,0 +1,44 @@
+example_id: found-ling-001
+scenario: 伝聞と推量を含む発話を、そのまま fact claim に潰さず保持する
+raw_utterance:
+  utterance_id: utt-001
+  raw_text: 現場チームの話では、今回の変更はたぶん高リスクです。
+  speaker_ref: reviewer_a
+  uttered_at: '2026-04-11T09:30:00+09:00'
+utterance_interpretation_envelope:
+  utterance_id: utt-001
+  speech_act: report
+  speaker_commitment: attributed_hedged
+  evidentiality: reported
+  deictic_anchor:
+    speaker_ref: reviewer_a
+    uttered_at: '2026-04-11T09:30:00+09:00'
+    scope_ref: release-2026-04-change-set
+  attributed_source_ref: onsite_team
+  ambiguity_profile:
+    profile_id: amb-001
+    items:
+    - ambiguity_id: amb-001-a
+      kind: gradable_threshold_unbound
+      target_ref: term:high_risk
+      needs_context:
+      - comparison_class
+      - threshold_source
+      blocking: false
+  claim_kind_hint: report
+  lift_status: needs_context
+lifted_claim_candidates:
+- claim_id: c-001
+  statement: onsite_team は当該変更を高リスクとみなしている
+  claim_kind: report
+  utterance_origin_ref: utt-001
+  grounding_status: grounded
+- claim_id: c-002
+  statement: 当該変更は高リスクである
+  claim_kind: state
+  utterance_origin_ref: utt-001
+  grounding_status: needs_additional_grounding
+recommended_result:
+  epistemic_eval_state: hold
+  primary_reason: H1
+  note: 報告内容は保持できるが、高リスクの threshold が未束縛なので proposition-only lift は保留。

@@ -1,0 +1,77 @@
+title: 知識収束学_基礎発展_open_points_v1
+file_role: foundational_open_points
+version: 1
+status: curated_foundational_extension
+created_on: '2026-04-11'
+purpose: 言語学・数学方向の発展で、すぐに core へ戻さず annex 側で追跡すべき論点を整理する。
+triage_policy:
+  P1: 'foundational_core: 将来の v2 の骨格に効くが、今は annex のまま保持したい論点'
+  P2: 'implementation_bridge: schema / validation / test / adapter に落とす前に整理が必要な論点'
+  P3: 'domain_calibration: 個別領域や言語により較正が大きく変わる論点'
+summary:
+  unique_question_count: 12
+  counts_by_priority:
+    P1: 5
+    P2: 4
+    P3: 3
+items:
+- id: FOP001
+  question: speech act と claim_kind の対応表をどこまで共通語彙化するか
+  priority: P1
+  bucket: foundational_core
+  recommended_home: 07_foundational_annex/foundational_language_annex_v1.yaml
+- id: FOP002
+  question: presupposition failure を H1 subtype として canonical 化するか
+  priority: P1
+  bucket: foundational_core
+  recommended_home: 07_foundational_annex/foundational_language_annex_v1.yaml
+- id: FOP003
+  question: four-valued support status と eval_state true/hold/false の対応をどこまで固定するか
+  priority: P1
+  bucket: foundational_core
+  recommended_home: 07_foundational_annex/foundational_mathematical_annex_v1.yaml
+- id: FOP004
+  question: incomparable をどの条件で hold と reject に分けるか
+  priority: P1
+  bucket: foundational_core
+  recommended_home: 07_foundational_annex/foundational_mathematical_annex_v1.yaml
+- id: FOP005
+  question: provenance trace を H の一部とみなすか、E の補助 packet とみなすか
+  priority: P1
+  bucket: foundational_core
+  recommended_home: 07_foundational_annex/foundational_crosswalk_v1.yaml
+- id: FOP006
+  question: multilingual input で evidentiality と commitment をどこまで自動抽出できるか
+  priority: P2
+  bucket: implementation_bridge
+  recommended_home: 07_foundational_annex/json_schema/ と adapter 実装
+- id: FOP007
+  question: argument graph edge の confidence interval を最小契約へ含めるべきか
+  priority: P2
+  bucket: implementation_bridge
+  recommended_home: 07_foundational_annex/json_schema/argument_graph_packet.schema.json
+- id: FOP008
+  question: measurement_profile の admissible_comparisons を policy registry とどう同期するか
+  priority: P2
+  bucket: implementation_bridge
+  recommended_home: 01_core/foundational_contract_addendum_v1.yaml
+- id: FOP009
+  question: temporal guard の grace period を silent extension と誤認しない設計をどう標準化するか
+  priority: P2
+  bucket: implementation_bridge
+  recommended_home: 07_foundational_annex/json_schema/temporal_guard_packet.schema.json
+- id: FOP010
+  question: gradable term の comparison class を業界ごとにどう分けるか
+  priority: P3
+  bucket: domain_calibration
+  recommended_home: domain profile
+- id: FOP011
+  question: outranking の concordance / discordance threshold をどこまで domain 既定値にするか
+  priority: P3
+  bucket: domain_calibration
+  recommended_home: domain policy pack
+- id: FOP012
+  question: provenance compression の粒度を、監査・性能・説明性のどこで折り合うか
+  priority: P3
+  bucket: domain_calibration
+  recommended_home: audit/profile pack

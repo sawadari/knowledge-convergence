@@ -1,0 +1,486 @@
+title: 知識収束学_open_point_register_v1
+file_role: open_point_register
+version: 1
+status: curated
+created_on: '2026-04-11'
+purpose: 散在していた open_points / open_questions を、v1 コアを壊さずに優先度付きで扱うために一元化した。
+triage_policy:
+  P1: 'core_theory: 定義境界・層境界・非収束・履歴成分など、理論コアに直接効く論点'
+  P2: 'implementation_bridge: Approval / delegation / conflict / route / registry / audit など、実装接続に効く論点'
+  P3: 'extension_pack: scheduler / telemetry / fairness / cadence / detector / SLA 較正など、拡張パックへ隔離した論点'
+summary:
+  raw_occurrence_count: 48
+  unique_question_count: 46
+  counts_by_priority:
+    P1: 18
+    P2: 23
+    P3: 5
+  counts_by_bucket:
+    core_theory: 18
+    implementation_bridge: 23
+    extension_pack: 5
+items:
+- id: OP001
+  question: ratified 済みだが未 reflected の裁定結果を一時束縛としてどこまで許すか
+  priority: P1
+  bucket: core_theory
+  recommended_home: 01_core/
+  occurrence_count: 2
+  occurrences:
+  - file: concepts_v3.0.yaml
+    path: central_definitions.convergence.open_points[0]
+  - file: concepts_v3.0.yaml
+    path: central_definitions.ai_self_evaluation.open_points[2]
+  handling_note: canonical core を壊さず、将来版で定義を更新するときだけ本体へ戻す。
+- id: OP002
+  question: 責任 R の delegation_scope D と主体関係をどこまで厳密化するか
+  priority: P1
+  bucket: core_theory
+  recommended_home: 01_core/
+  occurrence_count: 1
+  occurrences:
+  - file: concepts_v3.0.yaml
+    path: central_definitions.convergence.open_points[1]
+  handling_note: canonical core を壊さず、将来版で定義を更新するときだけ本体へ戻す。
+- id: OP003
+  question: non-convergence 状態から active blocker へ昇格する条件をどこまで共通化するか
+  priority: P1
+  bucket: core_theory
+  recommended_home: 01_core/
+  occurrence_count: 1
+  occurrences:
+  - file: concepts_v3.0.yaml
+    path: central_definitions.convergence.open_points[2]
+  handling_note: canonical core を壊さず、将来版で定義を更新するときだけ本体へ戻す。
+- id: OP004
+  question: deliberate_exploration の scoped approval をどこまで標準化するか
+  priority: P2
+  bucket: implementation_bridge
+  recommended_home: 01_core/minimal_implementation_contract_v1.yaml と 02_supplements/
+  occurrence_count: 1
+  occurrences:
+  - file: concepts_v3.0.yaml
+    path: central_definitions.convergence.open_points[3]
+  handling_note: 本体より先に最小実装契約・補助モデル・実装責務の橋渡しで扱う。
+- id: OP005
+  question: risk_tolerance をカテゴリで扱うか、確率・影響度に分解するか
+  priority: P2
+  bucket: implementation_bridge
+  recommended_home: 01_core/minimal_implementation_contract_v1.yaml と 02_supplements/
+  occurrence_count: 1
+  occurrences:
+  - file: concepts_v3.0.yaml
+    path: central_definitions.ai_self_evaluation.open_points[0]
+  handling_note: 本体より先に最小実装契約・補助モデル・実装責務の橋渡しで扱う。
+- id: OP006
+  question: 複数 stakeholder conflict が連鎖するときの裁定優先順位をどう定めるか
+  priority: P2
+  bucket: implementation_bridge
+  recommended_home: 01_core/minimal_implementation_contract_v1.yaml と 02_supplements/
+  occurrence_count: 1
+  occurrences:
+  - file: concepts_v3.0.yaml
+    path: central_definitions.ai_self_evaluation.open_points[1]
+  handling_note: 本体より先に最小実装契約・補助モデル・実装責務の橋渡しで扱う。
+- id: OP007
+  question: rollback_success を historical success にどう算入するか
+  priority: P1
+  bucket: core_theory
+  recommended_home: 01_core/
+  occurrence_count: 2
+  occurrences:
+  - file: concepts_v3.0.yaml
+    path: central_definitions.execution_responsibility.open_points[0]
+  - file: formalization_v3.0.yaml
+    path: knowledge_state.open_points[4]
+  handling_note: canonical core を壊さず、将来版で定義を更新するときだけ本体へ戻す。
+- id: OP008
+  question: consulted と informed を最小核に含めるべきか
+  priority: P2
+  bucket: implementation_bridge
+  recommended_home: 01_core/minimal_implementation_contract_v1.yaml と 02_supplements/
+  occurrence_count: 1
+  occurrences:
+  - file: concepts_v3.0.yaml
+    path: central_definitions.execution_responsibility.open_points[1]
+  handling_note: 本体より先に最小実装契約・補助モデル・実装責務の橋渡しで扱う。
+- id: OP009
+  question: weighted quorum や議決権重み付けを共通語彙へどこまで含めるか
+  priority: P2
+  bucket: implementation_bridge
+  recommended_home: 01_core/minimal_implementation_contract_v1.yaml と 02_supplements/
+  occurrence_count: 1
+  occurrences:
+  - file: concepts_v3.0.yaml
+    path: central_definitions.execution_responsibility.open_points[2]
+  handling_note: 本体より先に最小実装契約・補助モデル・実装責務の橋渡しで扱う。
+- id: OP010
+  question: 共同責任と共同承認の衝突解消規則をどこまで分離して定式化するか
+  priority: P2
+  bucket: implementation_bridge
+  recommended_home: 01_core/minimal_implementation_contract_v1.yaml と 02_supplements/
+  occurrence_count: 1
+  occurrences:
+  - file: concepts_v3.0.yaml
+    path: central_definitions.execution_responsibility.open_points[3]
+  handling_note: 本体より先に最小実装契約・補助モデル・実装責務の橋渡しで扱う。
+- id: OP011
+  question: G と C の厳密境界
+  priority: P1
+  bucket: core_theory
+  recommended_home: 01_core/
+  occurrence_count: 1
+  occurrences:
+  - file: concepts_v3.0.yaml
+    path: central_definitions.knowledge_state.open_points[0]
+  handling_note: canonical core を壊さず、将来版で定義を更新するときだけ本体へ戻す。
+- id: OP012
+  question: E の欠落をどのように表現するか
+  priority: P1
+  bucket: core_theory
+  recommended_home: 01_core/
+  occurrence_count: 1
+  occurrences:
+  - file: concepts_v3.0.yaml
+    path: central_definitions.knowledge_state.open_points[1]
+  handling_note: canonical core を壊さず、将来版で定義を更新するときだけ本体へ戻す。
+- id: OP013
+  question: H を理論本体の成分とみなすか、運用メタ層とみなすか
+  priority: P1
+  bucket: core_theory
+  recommended_home: 01_core/
+  occurrence_count: 1
+  occurrences:
+  - file: concepts_v3.0.yaml
+    path: central_definitions.knowledge_state.open_points[2]
+  handling_note: canonical core を壊さず、将来版で定義を更新するときだけ本体へ戻す。
+- id: OP014
+  question: linked と bound を将来的に present へ統一するか、component-specific positive state を維持するか。
+  priority: P1
+  bucket: core_theory
+  recommended_home: 01_core/
+  occurrence_count: 1
+  occurrences:
+  - file: concepts_v3.0.yaml
+    path: central_definitions.typed_missing_marker.open_points[0]
+  handling_note: canonical core を壊さず、将来版で定義を更新するときだけ本体へ戻す。
+- id: OP015
+  question: H の補助メタデータに typed missing marker をどこまで許し、どこから invalid event とみなすか。
+  priority: P1
+  bucket: core_theory
+  recommended_home: 01_core/
+  occurrence_count: 1
+  occurrences:
+  - file: concepts_v3.0.yaml
+    path: central_definitions.typed_missing_marker.open_points[1]
+  handling_note: canonical core を壊さず、将来版で定義を更新するときだけ本体へ戻す。
+- id: OP016
+  question: V 上の disputed を stakeholder conflict の裁定層へどう接続するか。
+  priority: P2
+  bucket: implementation_bridge
+  recommended_home: 01_core/minimal_implementation_contract_v1.yaml と 02_supplements/
+  occurrence_count: 1
+  occurrences:
+  - file: concepts_v3.0.yaml
+    path: central_definitions.typed_missing_marker.open_points[2]
+  handling_note: 本体より先に最小実装契約・補助モデル・実装責務の橋渡しで扱う。
+- id: OP017
+  question: legacy データの unknown / TBD / N/A を自動正規化するときの誤写像率をどう抑えるか。
+  priority: P2
+  bucket: implementation_bridge
+  recommended_home: 01_core/minimal_implementation_contract_v1.yaml と 02_supplements/
+  occurrence_count: 1
+  occurrences:
+  - file: concepts_v3.0.yaml
+    path: central_definitions.typed_missing_marker.open_points[3]
+  handling_note: 本体より先に最小実装契約・補助モデル・実装責務の橋渡しで扱う。
+- id: OP018
+  question: ordered_fallback を route family の core 語彙に含めるか、approval structure / execution policy 側へ分けるか
+  priority: P2
+  bucket: implementation_bridge
+  recommended_home: 01_core/minimal_implementation_contract_v1.yaml と 02_supplements/
+  occurrence_count: 1
+  occurrences:
+  - file: concepts_v3.0.yaml
+    path: central_definitions.disjunctive_route_family.open_points[0]
+  handling_note: 本体より先に最小実装契約・補助モデル・実装責務の橋渡しで扱う。
+- id: OP019
+  question: weighted k_of_n や coverage-weighted counting basis を共通語彙へどこまで含めるか
+  priority: P2
+  bucket: implementation_bridge
+  recommended_home: 01_core/minimal_implementation_contract_v1.yaml と 02_supplements/
+  occurrence_count: 1
+  occurrences:
+  - file: concepts_v3.0.yaml
+    path: central_definitions.disjunctive_route_family.open_points[1]
+  handling_note: 本体より先に最小実装契約・補助モデル・実装責務の橋渡しで扱う。
+- id: OP020
+  question: 部分重複する route candidate の coverage equivalence を canonical registry でどう ratify するか
+  priority: P2
+  bucket: implementation_bridge
+  recommended_home: 01_core/minimal_implementation_contract_v1.yaml と 02_supplements/
+  occurrence_count: 1
+  occurrences:
+  - file: concepts_v3.0.yaml
+    path: central_definitions.disjunctive_route_family.open_points[2]
+  handling_note: 本体より先に最小実装契約・補助モデル・実装責務の橋渡しで扱う。
+- id: OP021
+  question: lawful cadence / expected burst envelope を detector family / sink class ごとにどう registry 化するか
+  priority: P3
+  bucket: extension_pack
+  recommended_home: 03_extensions/
+  occurrence_count: 1
+  occurrences:
+  - file: formalization_v3.0.yaml
+    path: knowledge_state.open_points[0]
+  handling_note: v1 コアへ戻さず、拡張パック側で独立に深掘りする。
+- id: OP022
+  question: ratified 済みだが未 reflected の outcome を provisional binding としてどこまで使うか
+  priority: P1
+  bucket: core_theory
+  recommended_home: 01_core/
+  occurrence_count: 1
+  occurrences:
+  - file: formalization_v3.0.yaml
+    path: knowledge_state.open_points[1]
+  handling_note: canonical core を壊さず、将来版で定義を更新するときだけ本体へ戻す。
+- id: OP023
+  question: calibration strata の粒度と cross-profile 再利用境界をどう定めるか
+  priority: P1
+  bucket: core_theory
+  recommended_home: 01_core/
+  occurrence_count: 1
+  occurrences:
+  - file: formalization_v3.0.yaml
+    path: knowledge_state.open_points[2]
+  handling_note: canonical core を壊さず、将来版で定義を更新するときだけ本体へ戻す。
+- id: OP024
+  question: H を理論本体に含め続けるか、運用メタ層として外出しするか
+  priority: P1
+  bucket: core_theory
+  recommended_home: 01_core/
+  occurrence_count: 1
+  occurrences:
+  - file: formalization_v3.0.yaml
+    path: knowledge_state.open_points[3]
+  handling_note: canonical core を壊さず、将来版で定義を更新するときだけ本体へ戻す。
+- id: OP025
+  question: latent_downstream reason を Eval_e 完了後にいつ active governance blocker へ昇格させるか
+  priority: P1
+  bucket: core_theory
+  recommended_home: 01_core/
+  occurrence_count: 1
+  occurrences:
+  - file: formalization_v3.0.yaml
+    path: knowledge_state.open_points[5]
+  handling_note: canonical core を壊さず、将来版で定義を更新するときだけ本体へ戻す。
+- id: OP026
+  question: relation_to_primary を dependency だけで表すか、causal/temporal relation まで拡張するか
+  priority: P1
+  bucket: core_theory
+  recommended_home: 01_core/
+  occurrence_count: 1
+  occurrences:
+  - file: formalization_v3.0.yaml
+    path: knowledge_state.open_points[6]
+  handling_note: canonical core を壊さず、将来版で定義を更新するときだけ本体へ戻す。
+- id: OP027
+  question: linked と bound を component-specific positive state のまま維持するか、present 系へ統一するか
+  priority: P1
+  bucket: core_theory
+  recommended_home: 01_core/
+  occurrence_count: 1
+  occurrences:
+  - file: formalization_v3.0.yaml
+    path: knowledge_state.open_points[7]
+  handling_note: canonical core を壊さず、将来版で定義を更新するときだけ本体へ戻す。
+- id: OP028
+  question: H の補助メタデータに typed missing marker をどこまで許すか
+  priority: P1
+  bucket: core_theory
+  recommended_home: 01_core/
+  occurrence_count: 1
+  occurrences:
+  - file: formalization_v3.0.yaml
+    path: knowledge_state.open_points[8]
+  handling_note: canonical core を壊さず、将来版で定義を更新するときだけ本体へ戻す。
+- id: OP029
+  question: legacy の unknown / TBD / N/A を正規化する migration rule をどこまで自動化するか
+  priority: P2
+  bucket: implementation_bridge
+  recommended_home: 01_core/minimal_implementation_contract_v1.yaml と 02_supplements/
+  occurrence_count: 1
+  occurrences:
+  - file: formalization_v3.0.yaml
+    path: knowledge_state.open_points[9]
+  handling_note: 本体より先に最小実装契約・補助モデル・実装責務の橋渡しで扱う。
+- id: OP030
+  question: score 3 の再利用可能性を profile 間でどうベンチマークするか
+  priority: P1
+  bucket: core_theory
+  recommended_home: 01_core/
+  occurrence_count: 1
+  occurrences:
+  - file: formalization_v3.0.yaml
+    path: knowledge_state.open_points[10]
+  handling_note: canonical core を壊さず、将来版で定義を更新するときだけ本体へ戻す。
+- id: OP031
+  question: weighted quorum や voting power を approval structure へどこまで含めるか
+  priority: P2
+  bucket: implementation_bridge
+  recommended_home: 01_core/minimal_implementation_contract_v1.yaml と 02_supplements/
+  occurrence_count: 1
+  occurrences:
+  - file: formalization_v3.0.yaml
+    path: knowledge_state.open_points[11]
+  handling_note: 本体より先に最小実装契約・補助モデル・実装責務の橋渡しで扱う。
+- id: OP032
+  question: disjunctive route family や any_of 要件を set-valued meet へどう一般化するか
+  priority: P2
+  bucket: implementation_bridge
+  recommended_home: 01_core/minimal_implementation_contract_v1.yaml と 02_supplements/
+  occurrence_count: 1
+  occurrences:
+  - file: formalization_v3.0.yaml
+    path: knowledge_state.open_points[12]
+  handling_note: 本体より先に最小実装契約・補助モデル・実装責務の橋渡しで扱う。
+- id: OP033
+  question: composite unit / derived metric を canonical registry の quantity family へどう分解するか
+  priority: P2
+  bucket: implementation_bridge
+  recommended_home: 01_core/minimal_implementation_contract_v1.yaml と 02_supplements/
+  occurrence_count: 1
+  occurrences:
+  - file: formalization_v3.0.yaml
+    path: knowledge_state.open_points[13]
+  handling_note: 本体より先に最小実装契約・補助モデル・実装責務の橋渡しで扱う。
+- id: OP034
+  question: route family の partial-overlap candidate に対する lawful route mapping
+  priority: P2
+  bucket: implementation_bridge
+  recommended_home: 01_core/minimal_implementation_contract_v1.yaml と 02_supplements/
+  occurrence_count: 1
+  occurrences:
+  - file: formalization_v3.0.yaml
+    path: knowledge_state.open_points[14]
+  handling_note: 本体より先に最小実装契約・補助モデル・実装責務の橋渡しで扱う。
+- id: OP035
+  question: action coverage basis の expiry / revocation 規則
+  priority: P2
+  bucket: implementation_bridge
+  recommended_home: 01_core/minimal_implementation_contract_v1.yaml と 02_supplements/
+  occurrence_count: 1
+  occurrences:
+  - file: formalization_v3.0.yaml
+    path: knowledge_state.open_points[15]
+  handling_note: 本体より先に最小実装契約・補助モデル・実装責務の橋渡しで扱う。
+- id: OP036
+  question: 自己評価監査ログの保存期間と要約粒度をどこまで共通化するか
+  priority: P2
+  bucket: implementation_bridge
+  recommended_home: 01_core/minimal_implementation_contract_v1.yaml と 02_supplements/
+  occurrence_count: 1
+  occurrences:
+  - file: formalization_v3.0.yaml
+    path: ai_self_evaluation_model.open_points[0]
+  handling_note: 本体より先に最小実装契約・補助モデル・実装責務の橋渡しで扱う。
+- id: OP037
+  question: 主要主張 criticality の自動推定と手動指定の境界
+  priority: P2
+  bucket: implementation_bridge
+  recommended_home: 01_core/minimal_implementation_contract_v1.yaml と 02_supplements/
+  occurrence_count: 1
+  occurrences:
+  - file: formalization_v3.0.yaml
+    path: epistemic_manageability_model.open_points[0]
+  handling_note: 本体より先に最小実装契約・補助モデル・実装責務の橋渡しで扱う。
+- id: OP038
+  question: 複数承認主体や共同責任の衝突解消規則
+  priority: P2
+  bucket: implementation_bridge
+  recommended_home: 01_core/minimal_implementation_contract_v1.yaml と 02_supplements/
+  occurrence_count: 1
+  occurrences:
+  - file: formalization_v3.0.yaml
+    path: governance_manageability_model.open_points[0]
+  handling_note: 本体より先に最小実装契約・補助モデル・実装責務の橋渡しで扱う。
+- id: OP039
+  question: reject と rollback の語彙境界
+  priority: P1
+  bucket: core_theory
+  recommended_home: 01_core/
+  occurrence_count: 1
+  occurrences:
+  - file: formalization_v3.0.yaml
+    path: governance_manageability_model.open_points[1]
+  handling_note: canonical core を壊さず、将来版で定義を更新するときだけ本体へ戻す。
+- id: OP040
+  question: proxy approval / quorum / fallback role を q_responsibility=3 条件へどう接続するか
+  priority: P2
+  bucket: implementation_bridge
+  recommended_home: 01_core/minimal_implementation_contract_v1.yaml と 02_supplements/
+  occurrence_count: 1
+  occurrences:
+  - file: formalization_v3.0.yaml
+    path: governance_manageability_model.open_points[2]
+  handling_note: 本体より先に最小実装契約・補助モデル・実装責務の橋渡しで扱う。
+- id: OP041
+  question: guard cap の strictest bound を ordinal / numeric threshold へ写像する meet 演算をどう定めるか
+  priority: P2
+  bucket: implementation_bridge
+  recommended_home: 01_core/minimal_implementation_contract_v1.yaml と 02_supplements/
+  occurrence_count: 1
+  occurrences:
+  - file: formalization_v3.0.yaml
+    path: governance_manageability_model.open_points[3]
+  handling_note: 本体より先に最小実装契約・補助モデル・実装責務の橋渡しで扱う。
+- id: OP042
+  question: federated organization 間の approval structure を単一 A_p^+ で表し切れるか
+  priority: P2
+  bucket: implementation_bridge
+  recommended_home: 01_core/minimal_implementation_contract_v1.yaml と 02_supplements/
+  occurrence_count: 1
+  occurrences:
+  - file: formalization_v3.0.yaml
+    path: approval_structure_formalization.open_points[0]
+  handling_note: 本体より先に最小実装契約・補助モデル・実装責務の橋渡しで扱う。
+- id: OP043
+  question: multi-session scheduler telemetry / fairness SLO / auto-throttle threshold をどこまで parameter 化するか
+  priority: P3
+  bucket: extension_pack
+  recommended_home: 03_extensions/
+  occurrence_count: 1
+  occurrences:
+  - file: formalization_v3.0.yaml
+    path: open_points[0]
+  handling_note: v1 コアへ戻さず、拡張パック側で独立に深掘りする。
+- id: OP044
+  question: profile 別の review / activation / emergency confirmation SLA をどこまで数値較正するか
+  priority: P3
+  bucket: extension_pack
+  recommended_home: 03_extensions/
+  occurrence_count: 1
+  occurrences:
+  - file: formalization_v3.0.yaml
+    path: open_points[1]
+  handling_note: v1 コアへ戻さず、拡張パック側で独立に深掘りする。
+- id: OP045
+  question: profile/context ごとの aggregation window と hard expiry をどこまで registry 化するか
+  priority: P3
+  bucket: extension_pack
+  recommended_home: 03_extensions/
+  occurrence_count: 1
+  occurrences:
+  - file: formalization_v3.0.yaml
+    path: open_points[2]
+  handling_note: v1 コアへ戻さず、拡張パック側で独立に深掘りする。
+- id: OP046
+  question: lawful cadence / expected burst envelope を detector family / sink class ごとにどこまで registry 化するか
+  priority: P3
+  bucket: extension_pack
+  recommended_home: 03_extensions/
+  occurrence_count: 1
+  occurrences:
+  - file: formalization_v3.0.yaml
+    path: open_points[3]
+  handling_note: v1 コアへ戻さず、拡張パック側で独立に深掘りする。

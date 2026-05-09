@@ -1,0 +1,169 @@
+title: 知識収束学_SEシステム発展プロファイル_v1
+file_role: se_system_extension_profiles
+version: '1.1'
+status: curated_applied_integration_annex_revised_v1_1
+created_on: '2026-05-08'
+purpose: SEシステムを段階採用するための KC-SE0〜KC-SE5 プロファイルを定義する。
+relationship_to_core:
+  non_override_rule: 01_core の K=(G,C,E,V,R,H) と branch 語彙を上書きしない。
+  namespace_note: KC-SE* は SEシステム応用 annex の名前空間であり、既存 KC-E/G/D/A/T/S/O/H と共存する。
+  recommended_prerequisites:
+  - KC-E1
+  - KC-G1
+  - KC-T1
+  - KC-S1
+  - KC-O1
+  - KC-H1
+  - KC-DV1
+  - KC-AX1
+  - KC-MHO1
+  - KC-ORG1
+  - KC-Q1
+  v1_1_alignment: KC-SE2 は core KC-DV1 のSE実装であり、KC-SE3 は KC-MHO1/KC-ORG1、KC-SE4 は KC-AX1 と対応する。
+normative_language:
+  MUST: 必須
+  SHOULD: 推奨
+  MAY: 任意
+profiles:
+  KC-SE0:
+    label: Problem and Opportunity Framing Profile
+    purpose: コード化前の事業目的、ステークホルダ、運用文脈、システム境界、成功条件を保持すること。
+    pairs_with:
+    - KC-E1
+    - KC-T1
+    MUST:
+    - business_goal または mission を保持できる
+    - stakeholder_need と source evidence を結び付けられる
+    - operational_scenario または intended_environment を保持できる
+    - system_boundary と external_actor を区別できる
+    - success_criteria または validation_intent を保持できる
+    SHOULD:
+    - opportunity と pain point を区別できる
+    - non_goal と out_of_scope を保持できる
+    - competing stakeholder need を conflict として保持できる
+    exit_criteria:
+    - 何を作るべきかの前に、なぜ作るべきかを説明できる
+    - システム境界が未定義のまま実装へ進まない
+  KC-SE1:
+    label: Decision and Trade-off Convergence Profile
+    purpose: コード化前の重要Decision、選択肢、評価基準、採択理由、却下理由、再検討条件を保持すること。
+    requires:
+    - KC-G1
+    - KC-S1
+    pairs_with:
+    - KC-T1
+    MUST:
+    - decision_issue を保持できる
+    - option set と selected option を保持できる
+    - rejected option と rejection rationale を保持できる
+    - criteria または value model を保持できる
+    - assumption と reopen_condition を保持できる
+    - responsible_role と approver_role を保持できる
+    SHOULD:
+    - minority_report または dissent_trace を保持できる
+    - trade_off_matrix を保持できる
+    - comparison uncertainty を保持できる
+    exit_criteria:
+    - コード化対象が decision outcome と結び付いている
+    - 採用案だけでなく捨てた案の理由を説明できる
+  KC-SE2:
+    label: Verification and Validation Anchored Development Profile
+    purpose: 要求・設計・実装タスクを Verification / Validation / 運用フィードバックへ接続すること。
+    requires:
+    - KC-O1
+    pairs_with:
+    - KC-SE0
+    - KC-SE1
+    MUST:
+    - requirement と verification_item を結び付けられる
+    - stakeholder_need または mission と validation_scenario を結び付けられる
+    - verification_status と validation_status を区別できる
+    - high_risk execute で validation pending の場合 exception_basis を要求できる
+    - ops_feedback_event から reopen / revalidate / rollback へ遷移できる
+    SHOULD:
+    - simulation_result と test_result を evidence として区別できる
+    - validation_environment と intended_environment の差分を保持できる
+    - acceptance_criteria と business_outcome を結び付けられる
+    exit_criteria:
+    - Verification passed を Validation passed と誤認しない
+    - 要求・設計・実装タスクが V&V へ追跡できる
+  KC-SE3:
+    label: Human-Organization System Profile
+    purpose: 組織構造、人間の役割、専門性、権限、訓練、停止権、手動代替を SEシステムの一級要素として保持すること。
+    requires:
+    - KC-H1
+    - KC-S1
+    MUST:
+    - organization_role_packet を保持できる
+    - expertise_scope と decision_right を区別できる
+    - accountable_role と responsible_role を区別できる
+    - training_readiness と operator_acceptance を保持できる
+    - stop_right または escalation_path を保持できる
+    - manual_fallback または no_fallback_justification を保持できる
+    SHOULD:
+    - cognitive_load_budget を保持できる
+    - separation_of_duties を保持できる
+    - conflict_of_interest_status を保持できる
+    - backup_role または succession path を保持できる
+    exit_criteria:
+    - 人間の存在だけで human oversight とみなさない
+    - 意思決定権限と専門家証言を混同しない
+  KC-SE4:
+    label: Agent Delegation and Execution Profile
+    purpose: AIエージェントを限定された実行主体として扱い、権限・入力・出力・監査・停止・rollback を管理すること。
+    requires:
+    - KC-G1
+    - KC-H1
+    pairs_with:
+    - KC-SE1
+    - KC-SE2
+    - KC-SE3
+    MUST:
+    - agent_identity を保持できる
+    - capability_scope と authority_envelope を保持できる
+    - sandbox_policy または permission_policy を保持できる
+    - input_knowledge_refs と output_artifact_refs を保持できる
+    - audit_log_refs を保持できる
+    - human_review_gate または exception_basis を保持できる
+    - rollback_path または no_rollback_justification を保持できる
+    SHOULD:
+    - agent_lifecycle_state を保持できる
+    - model_tool_version を保持できる
+    - guardian_agent または SE Lint gate を接続できる
+    - shadow_mode / supervised_mode / autonomous_mode を区別できる
+    exit_criteria:
+    - AIエージェント実行が無権限・無監査で本番へ進まない
+    - agent execution と accountability owner を分離できる
+  KC-SE5:
+    label: Representation Ladder Profile
+    purpose: 自然言語、構造化自然言語、準形式表現、DSL、形式言語、実行可能モデルを、正本ではなくビューとして管理すること。
+    pairs_with:
+    - KC-L1
+    - KC-M1
+    - KC-M2
+    - KC-O1
+    MUST:
+    - representation_level を保持できる
+    - view_to_canonical_mapping を保持できる
+    - transformation_rationale を保持できる
+    - loss_of_meaning_or_unresolved_ambiguity を保持できる
+    - formalization_readiness を保持できる
+    SHOULD:
+    - domain_specific_language_profile を保持できる
+    - verification_contract を形式表現へ接続できる
+    - model_view と canonical graph の差分を検査できる
+    exit_criteria:
+    - SysML / DSL / 形式仕様 / コードを正本そのものと誤認しない
+    - 形式化によって失われた意味や未解決曖昧性を説明できる
+adoption_advice:
+- まず KC-SE0 と KC-SE1 で「何を作るべきか」「何を決めたか」を扱う
+- 次に KC-SE2 で V&V と運用フィードバックを接続する
+- 複数専門家・安全・運用が絡むなら KC-SE3 を早期に採用する
+- AIエージェントにコードや業務操作を委任するなら KC-SE4 を必須に近い扱いにする
+- SysML、DSL、形式仕様を使う組織では KC-SE5 を採用する
+failure_examples:
+- issue description だけを根拠に AI coding agent へ高リスク実装を委任する
+- 検証項目はあるが validation scenario が無い要求を execute へ進める
+- human approver がいるだけで、停止権・説明・訓練・手動代替を確認しない
+- SysML図を描いたことを、要求・根拠・検証の収束と同一視する
+- AIエージェントの作業ログが無いまま PR や外部操作を正本化する

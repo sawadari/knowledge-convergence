@@ -1,0 +1,107 @@
+title: 知識収束学_作業キュー抽出_v1
+file_role: workflow_extract
+version: 1
+status: curated
+purpose: 理論本体から切り離した作業キュー・次トピック・優先度だけを一箇所に集めた。
+release_boundary:
+  canonical_release_label: v1
+  research_tracking_label: v3.1
+concepts_workflow:
+  open_questions: []
+  next_concept_topic:
+    topic: knowledge 定義と公理候補を、既存統治コア・証拠コア・実装責務と矛盾なく fixed にする
+    question: knowledge 定義、公理候補、update_operator を既存の provisional_fixed 群と矛盾なく fixed にするには、概念側で何を最終確定すべきか。
+formalization_workflow:
+  priority_formal_topics:
+  - update_operator を主体・制約・監査・失敗分岐まで fixed にする
+  - knowledge 定義・公理候補と矛盾しない update_operator の fixed 文を作る
+  - mathematical_directions 3候補の採用/非採用/保留を update_operator fixed 後に確定する
+  next_formal_topic:
+    topic: update_operator を主体・制約・監査・失敗分岐まで fixed にする
+    question: 主体 a、入力 K、更新制約、監査痕跡、失敗時分岐まで含めて update_operator をどう fixed にするか。
+  open_points:
+  - multi-session scheduler telemetry / fairness SLO / auto-throttle threshold をどこまで parameter 化するか
+  - profile 別の review / activation / emergency confirmation SLA をどこまで数値較正するか
+  - profile/context ごとの aggregation window と hard expiry をどこまで registry 化するか
+  - lawful cadence / expected burst envelope を detector family / sink class ごとにどこまで registry 化するか
+research_priority:
+  current_priority:
+    main_topic: v1 freeze 完了後の post-freeze extension backlog triage
+    reason:
+    - internal tracking label v3.1 / canonical release v1 の freeze 報告物を確定したから。
+    - status gate と報告物整理が完了し、P7 を閉じられるから。
+    - 残る作業は freeze gate の未解決問題ではなく、非gating open_points の優先度整理だから。
+    next_topics:
+    - non-gating open_points の triage と優先度付け
+    - MBSE / 製造業応用への接続整理
+    - GraphLint / DecisionLedger / GraphEngine / archive object の実装接続具体化
+  current_unresolved_issues: []
+  next_thread_recommendation:
+    topic: v1 freeze 完了後の post-freeze extension backlog triage
+    param: local open_points を freeze gate blocker と extension backlog に分けて優先順位付けする
+    objective: 凍結版を壊さずに、次に掘るべき概念・形式化・応用・実装接続の論点を整理する。
+    expected_outputs:
+    - post-freeze backlog tiering
+    - gating ではない open_points の優先順位表
+    - 次の概念 / 形式化 / 応用 / 実装スレッド候補
+    start_instruction: 'このスレッドでは「v1 freeze 完了後の post-freeze extension backlog triage」だけを扱います。
+
+
+      前提として、freeze_report_v1.yaml, research_master.yaml, concepts.yaml, formalization.yaml, thread_handoff.yaml を参照してください。
+
+
+      まず、freeze gate を通過した条件と、未解決問題ではない local open_points を区別してください。
+
+
+      次に、open_points を concept / formalization / application / implementation connection の4群に分けて優先順位付けしてください。
+
+
+      最後に、次に掘るべきスレッドを3件まで提案してください。'
+    question: v1 freeze 後に、どの extension backlog を先に掘るべきか
+    reason:
+    - freeze 報告物の整理が完了したから。
+    - 残る論点は未解決問題ではなく、拡張の優先順位づけだから。
+thread_handoff_current:
+  current_handoff:
+    current_thread_theme: release note / zero-draft report / zero-open-question report / cross-file consistency check の確定
+    current_status: P7 完了。internal tracking label v3.1 / canonical release v1 の freeze 報告物を確定した。
+    adopted_points:
+    - freshness window は evidence admissibility、hard expiry は case carry-over 失効として分離し、profile baseline + context cap の registry で管理する方針を固定した
+    - direct abuse anchor と detector abuse anchor は family ごとに minimum binding を分け、detector abuse anchor 単独では final penalty を作らない方針を固定した
+    - prompt_pack / rulepack / template_bundle の joint change は benchmark cell 上の counterfactual replay で artifact contribution class を最小分解する方針を固定した
+    - replay benchmark suite は detector family × claim facet × criticality band × evidence strength × portability class × profile family の canonical registry cell 単位で管理する方針を固定した
+    - knowledge 定義を knowledge_state / convergence / update_operator と整合する provisional_fixed 文へ更新した
+    - A1/A2/A4/A5 を provisional_fixed とし、採用理由・棄却理由・負例を追加した
+    - 'update_operator を U_a : (K, Δ, Π) -> (K'', h, o) として fixed 化し、silent success を禁止した'
+    - partial_order_model と abstract_interpretation_model を provisional_fixed とし、metric_model は supplementary diagnostic へ整理した
+    - release note / zero-draft report / zero-open-question report / cross-file consistency check を freeze_report_v1.yaml として確定した
+    - v3.1 は研究過程識別用の internal tracking label、v1 は正規の凍結版名とする方針を明示した
+    deferred_points: []
+    rejected_points:
+    - freshness と expiry を単一 ttl へ潰す方針
+    - detector abuse anchor を direct abuse anchor と同格に扱い final penalty を起動する方針
+    - lexical diff や full-bundle 1回 replay だけで artifact attribution を確定する方針
+    - negative case や migration rule を持たない replay suite を canonical registry と呼ぶ方針
+    - A3 を知識収束学の core axiom として採用する方針
+    - update_operator を K->K の無条件写像として扱う方針
+    - metric_model を収束の唯一または基礎の形式化とする方針
+    unresolved_issues: []
+    next_thread_candidates:
+    - v1 freeze 完了後の post-freeze extension backlog triage
+    - concepts / formalization に残る local open_points をどこから掘るか
+    - MBSE / 製造業応用へどの順で接続するか
+    recommended_next_thread:
+      theme: v1 freeze 完了後の post-freeze extension backlog triage
+      start_instruction: 'このスレッドでは「v1 freeze 完了後の post-freeze extension backlog triage」だけを扱います。
+
+
+        前提として、freeze_report_v1.yaml, research_master.yaml, concepts.yaml, formalization.yaml, thread_handoff.yaml を参照してください。
+
+
+        まず、freeze gate を通過した条件と local open_points を区別してください。
+
+
+        次に、open_points を concept / formalization / application / implementation connection に分け、優先度を付けてください。
+
+
+        最後に、次に着手するスレッドを3件まで提案してください。'

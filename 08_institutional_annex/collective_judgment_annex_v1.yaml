@@ -1,0 +1,103 @@
+title: 知識収束学_制度運用annex_合議設計_v1
+file_role: collective_judgment_annex
+version: 1
+status: curated_institutional_extension
+created_on: '2026-04-11'
+purpose: 複数人のレビュー・承認・討議を、一貫した合議結果として保持するための追加 packet を与える。
+normativity:
+  precedence: 01_core > 06_public_annex > 07_foundational_annex > 08_institutional_annex > 02_supplements
+theme_index:
+  aggregation_core:
+    label: 集約方式
+    entries:
+    - aggregation_rule_profile_model
+    - premise_vs_conclusion_mode_model
+    - quorum_and_weight_basis_model
+  dissent_and_repair:
+    label: dissent と修復
+    entries:
+    - minority_report_model
+    - consistency_repair_policy_model
+    - group_decision_trace_model
+institutional_entries:
+  aggregation_rule_profile_model:
+    label: aggregation rule profile
+    institutional_role: recommended_institutional_extension
+    statement: group outcome が、どの aggregation mode / quorum / consistency guard から出たかを保持する。
+    public_surface:
+      minimum_fields:
+      - profile_id
+      - decision_scope
+      - aggregation_mode
+      - quorum_rule
+      - consistency_guard
+      recommended_fields:
+      - weight_basis
+      - premise_conclusion_mode
+      - minority_report_policy
+      - tie_break_rule
+      - veto_roles
+      - reopen_policy
+    rules:
+    - aggregation rule は outcome の後付け説明ではなく、事前または同時に定義されるべきである。
+    - group outcome から aggregation rule を逆推定させない。
+    - vote count は authority_basis の代替ではない。
+  premise_vs_conclusion_mode_model:
+    label: premise-based / conclusion-based mode
+    institutional_role: recommended_institutional_extension
+    statement: 各前提を集約してから結論を出すか、各人の結論を直接集約するかを区別する。
+    rules:
+    - premise-based は前提の整合性説明に強い。
+    - conclusion-based は最終判断の単純集約に向くが、premise inconsistency を隠しうる。
+    - mode を混用するときは scope を分けて記録する。
+  quorum_and_weight_basis_model:
+    label: quorum and weight basis
+    institutional_role: recommended_institutional_extension
+    statement: 人数条件と重み付け根拠を、role / expertise / accountability から明示する。
+    rules:
+    - weighted quorum の weight_basis は popularity でなく、制度上の根拠を持つべきである。
+    - absent member を tacit approval と数えない。
+    - veto role は weight と別に保持する。
+  minority_report_model:
+    label: minority report
+    institutional_role: recommended_institutional_extension
+    statement: 少数意見や dissent を、最終 decision とは別に retain する。
+    minimum_fields:
+    - report_id
+    - decision_ref
+    - authors
+    - dissent_scope
+    - stated_reasons
+    recommended_fields:
+    - alternative_conclusion
+    - requested_followup
+    - risk_if_overridden
+    rules:
+    - final outcome が execute でも minority report を削除しない。
+    - minority report は sabotage log ではなく、reopen や post-incident review に資する記録である。
+  consistency_repair_policy_model:
+    label: consistency repair policy
+    institutional_role: recommended_institutional_extension
+    statement: 集団判断の不整合を、reopen_premises / reopen_conclusion / split_decision / minority_report / escalate / defer_to_policy のどれで扱うかを定める。
+    rules:
+    - premise inconsistency を silent majority outcome に潰さない。
+    - split_decision は scope 分割が明示されるときだけ lawful としてよい。
+    - policy に defer した場合も、未解決部分を隠さない。
+  group_decision_trace_model:
+    label: group decision trace
+    institutional_role: recommended_institutional_extension
+    statement: どの review, vote, reason, objection が最終 outcome に寄与したかを追跡する。
+    rules:
+    - reason trace は個人情報や redaction policy と両立させてよい。
+    - unanimity claim は abstain / absence / forced alignment と区別する。
+    implementation_touchpoints:
+      DecisionLedger:
+      - aggregation_rule_required
+      - inconsistent_group_outcome_requires_repair
+      Audit_layer:
+      - minority_report_retained
+
+deferred_questions:
+- premise-based と conclusion-based を混在させる複段階会議をどう canonical 化するか
+- weighted quorum の weight basis を profile へどこまで固定するか
+- minority report の匿名化と監査可能性をどう両立させるか

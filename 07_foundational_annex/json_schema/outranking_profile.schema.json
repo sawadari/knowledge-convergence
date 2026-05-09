@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://knowledge-convergence.local/schema/foundational/outranking_profile.schema.json",
+  "title": "OutrankingProfile",
+  "type": "object",
+  "required": [
+    "profile_id",
+    "alternatives",
+    "criteria",
+    "outranking_matrix"
+  ],
+  "properties": {
+    "profile_id": {
+      "type": "string"
+    },
+    "alternatives": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "string"
+      }
+    },
+    "criteria": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "outranking_matrix": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "from",
+          "to",
+          "relation"
+        ],
+        "properties": {
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
+          },
+          "relation": {
+            "type": "string",
+            "enum": [
+              "outranks",
+              "outranked_by",
+              "indifferent",
+              "incomparable",
+              "vetoed"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "veto_rules": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "concordance_basis": {
+      "type": [
+        "object",
+        "array",
+        "string"
+      ]
+    },
+    "discordance_basis": {
+      "type": [
+        "object",
+        "array",
+        "string"
+      ]
+    },
+    "incomparability_policy": {
+      "type": [
+        "string",
+        "object"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

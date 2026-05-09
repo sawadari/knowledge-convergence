@@ -1,0 +1,1076 @@
+title: 知識収束学_概念_recent_decisions_抽出
+file_role: log_extract
+version: 1
+status: extracted
+derived_from:
+  source_file: concepts_v3.0.yaml
+  source_key: recent_decisions
+entry_count: 325
+entries:
+- theme: scheduler federation algorithmic decision register / contestability review lane / override publication notice をどこまで registry 化するか
+  decision: scheduler の federation algorithmic decision register / contestability review lane / override publication notice を暫定固定した
+  note: algorithmic decision register、contestability review lane、override publication notice、DecisionLedger / GraphEngine / GraphLint / archive object の algorithmic constitutional decision transparency 管理責務を採用した。
+- theme: scheduler federation constitutional records preservation order / deletion litigation hold / access denial appeal lane をどこまで registry 化するか
+  decision: scheduler の federation constitutional records preservation order / deletion litigation hold / access denial appeal lane を暫定固定した
+  note: constitutional records preservation order、deletion litigation hold、access denial appeal lane、DecisionLedger / GraphEngine / GraphLint / archive object の constitutional records preservation and access appeal 管理責務を採用した。
+- theme: scheduler federation whistleblower intake warrant / retaliation stay order / remedy restitution docket をどこまで registry 化するか
+  decision: scheduler の federation whistleblower intake warrant / retaliation stay order / remedy restitution docket を暫定固定した
+  note: whistleblower intake warrant、retaliation stay order、remedy restitution docket、DecisionLedger / GraphEngine / GraphLint / archive object の whistleblower protection and remedy restitution 管理責務を採用した。
+- theme: scheduler federation transparency classification charter / closed-session warrant / declassification sunset をどこまで registry 化するか
+  decision: scheduler の federation transparency classification charter / closed-session warrant / declassification sunset を暫定固定した
+  note: transparency classification charter、closed-session warrant、declassification sunset、DecisionLedger / GraphEngine / GraphLint / archive object の transparency classification and closed-session governance 管理責務を採用した。
+- theme: scheduler federation civic initiative signature rule / agenda assignment lane / committee disposition notice をどこまで registry 化するか
+  decision: scheduler の federation civic initiative signature rule / agenda assignment lane / committee disposition notice を暫定固定した
+  note: civic initiative signature rule、agenda assignment lane、committee disposition notice、DecisionLedger / GraphEngine / GraphLint / archive object の civic initiative and agenda assignment 管理責務を採用した。
+- theme: scheduler federation public petition admissibility rule / hearing convening floor / response publication notice をどこまで registry 化するか
+  decision: scheduler の federation public petition admissibility rule / hearing convening floor / response publication notice を暫定固定した
+  note: public petition admissibility rule、hearing convening floor、response publication notice、DecisionLedger / GraphEngine / GraphLint / archive object の public petition and hearing response 管理責務を採用した。
+- theme: scheduler federation lobbying contact register / cooling-off interval / revolving-door clearance をどこまで registry 化するか
+  decision: scheduler の federation lobbying contact register / cooling-off interval / revolving-door clearance を暫定固定した
+  note: lobbying contact register、cooling-off interval、revolving-door clearance、DecisionLedger / GraphEngine / GraphLint / archive object の lobbying disclosure and revolving-door control 管理責務を採用した。
+- theme: scheduler federation officeholder asset disclosure register / blind trust arrangement / disclosure breach consequence をどこまで registry 化するか
+  decision: scheduler の federation officeholder asset disclosure register / blind trust arrangement / disclosure breach consequence を暫定固定した
+  note: officeholder asset disclosure register、blind trust arrangement、disclosure breach consequence、DecisionLedger / GraphEngine / GraphLint / archive object の officeholder asset disclosure and blind-trust compliance 管理責務を採用した。
+- theme: scheduler federation public accounts audit roster / deficiency cure docket / surcharge publication notice をどこまで registry 化するか
+  decision: scheduler の federation public accounts audit roster / deficiency cure docket / surcharge publication notice を暫定固定した
+  note: public accounts audit roster、deficiency cure docket、surcharge publication notice、DecisionLedger / GraphEngine / GraphLint / archive object の public accounts audit and surcharge publication 管理責務を採用した。
+- theme: scheduler federation levy authorization charter / taxpayer objection lane / sunset reapproval test をどこまで registry 化するか
+  decision: scheduler の federation levy authorization charter / taxpayer objection lane / sunset reapproval test を暫定固定した
+  note: levy authorization charter、taxpayer objection lane、sunset reapproval test、DecisionLedger / GraphEngine / GraphLint / archive object の levy authorization and taxpayer objection governance 管理責務を採用した。
+- theme: scheduler federation appropriation deadlock timer / continuity appropriation floor / shutdown mitigation warrant をどこまで registry 化するか
+  decision: scheduler の federation appropriation deadlock timer / continuity appropriation floor / shutdown mitigation warrant を暫定固定した
+  note: appropriation deadlock timer、continuity appropriation floor、shutdown mitigation warrant、DecisionLedger / GraphEngine / GraphLint / archive object の appropriation continuity and shutdown mitigation 管理責務を採用した。
+- theme: scheduler federation constitutional review petition registry / merits hearing panel / invalidation effect matrix をどこまで registry 化するか
+  decision: scheduler の federation constitutional review petition registry / merits hearing panel / invalidation effect matrix を暫定固定した
+  note: constitutional review petition registry、merits hearing panel、invalidation effect matrix、DecisionLedger / GraphEngine / GraphLint / archive object の constitutional review and invalidation effect 管理責務を採用した。
+- theme: scheduler federation constitutional amendment docket / ratification census rule / amendment promulgation warrant をどこまで registry 化するか
+  decision: scheduler の federation constitutional amendment docket / ratification census rule / amendment promulgation warrant を暫定固定した
+  note: constitutional amendment docket、ratification census rule、amendment promulgation warrant、DecisionLedger / GraphEngine / GraphLint / archive object の constitutional amendment and ratification 管理責務を採用した。
+- theme: scheduler federation constituent referendum charter / proposition review lane / promulgation finality notice をどこまで registry 化するか
+  decision: scheduler の federation constituent referendum charter / proposition review lane / promulgation finality notice を暫定固定した
+  note: constituent referendum charter、proposition review lane、promulgation finality notice、DecisionLedger / GraphEngine / GraphLint / archive object の constituent referendum and promulgation finality 管理責務を採用した。
+- theme: scheduler federation mandate challenge petition lane / electoral dispute chamber / seating suspension threshold をどこまで registry 化するか
+  decision: scheduler の federation mandate challenge petition lane / electoral dispute chamber / seating suspension threshold を暫定固定した
+  note: mandate challenge petition lane、electoral dispute chamber、seating suspension threshold、DecisionLedger / GraphEngine / GraphLint / archive object の mandate challenge and seating suspension review 管理責務を採用した。
+- theme: scheduler federation special election writ / candidate qualification screen / mandate commencement attestation をどこまで registry 化するか
+  decision: scheduler の federation special election writ / candidate qualification screen / mandate commencement attestation を暫定固定した
+  note: special election writ、candidate qualification screen、mandate commencement attestation、DecisionLedger / GraphEngine / GraphLint / archive object の special election and mandate commencement 管理責務を採用した。
+- theme: scheduler federation vacancy succession order / acting office ceiling / succession certification notice をどこまで registry 化するか
+  decision: scheduler の federation vacancy succession order / acting office ceiling / succession certification notice を暫定固定した
+  note: vacancy succession order、acting office ceiling、succession certification notice、DecisionLedger / GraphEngine / GraphLint / archive object の vacancy succession and acting authority 管理責務を採用した。
+- theme: scheduler federation impeachment article docket / trial chamber constitution / disqualification warrant をどこまで registry 化するか
+  decision: scheduler の federation impeachment article docket / trial chamber constitution / disqualification warrant を暫定固定した
+  note: impeachment article docket、trial chamber constitution、disqualification warrant、DecisionLedger / GraphEngine / GraphLint / archive object の impeachment trial and disqualification control 管理責務を採用した。
+- theme: scheduler federation no-confidence motion register / snap election trigger / provisional cabinet lane をどこまで registry 化するか
+  decision: scheduler の federation no-confidence motion register / snap election trigger / provisional cabinet lane を暫定固定した
+  note: no-confidence motion register、snap election trigger、provisional cabinet lane、DecisionLedger / GraphEngine / GraphLint / archive object の no-confidence motion and provisional cabinet continuity 管理責務を採用した。
+- theme: scheduler federation recall petition threshold / office recall ballot / caretaker continuity warrant をどこまで registry 化するか
+  decision: scheduler の federation recall petition threshold / office recall ballot / caretaker continuity warrant を暫定固定した
+  note: recall petition threshold、office recall ballot、caretaker continuity warrant、DecisionLedger / GraphEngine / GraphLint / archive object の constitutional recall and caretaker continuity 管理責務を採用した。
+- theme: scheduler federation constitutional ombuds petition lane / maladministration inquiry docket / remedy publication notice をどこまで registry 化するか
+  decision: scheduler の federation constitutional ombuds petition lane / maladministration inquiry docket / remedy publication notice を暫定固定した
+  note: constitutional ombuds petition lane、maladministration inquiry docket、remedy publication notice、DecisionLedger / GraphEngine / GraphLint / archive object の constitutional ombuds and remedy publication 管理責務を採用した。
+- theme: scheduler federation constitutional interim relief warrant / enforcement stay threshold / sunset review notice をどこまで registry 化するか
+  decision: scheduler の federation constitutional interim relief warrant / enforcement stay threshold / sunset review notice を暫定固定した
+  note: constitutional interim relief warrant、enforcement stay threshold、sunset review notice、DecisionLedger / GraphEngine / GraphLint / archive object の constitutional interim relief and stay control 管理責務を採用した。
+- theme: scheduler federation minority veto charter / reserved matter catalog / override sunset test をどこまで registry 化するか
+  decision: scheduler の federation minority veto charter / reserved matter catalog / override sunset test を暫定固定した
+  note: minority veto charter、reserved matter catalog、override sunset test、DecisionLedger / GraphEngine / GraphLint / archive object の minority safeguard and reserved matter governance 管理責務を採用した。
+- theme: scheduler federation emergency rights derogation map / proportionality review chamber / restoration timetable をどこまで registry 化するか
+  decision: scheduler の federation emergency rights derogation map / proportionality review chamber / restoration timetable を暫定固定した
+  note: emergency rights derogation map、proportionality review chamber、restoration timetable、DecisionLedger / GraphEngine / GraphLint / archive object の emergency rights derogation 管理責務を採用した。
+- theme: scheduler federation ethics breach taxonomy / sanction ladder / rehabilitation petition をどこまで registry 化するか
+  decision: scheduler の federation ethics breach taxonomy / sanction ladder / rehabilitation petition を暫定固定した
+  note: ethics breach taxonomy、sanction ladder、rehabilitation petition、DecisionLedger / GraphEngine / GraphLint / archive object の ethics enforcement and rehabilitation 管理責務を採用した。
+- theme: scheduler federation conflict disclosure register / recusal trigger / substitute appointment lane をどこまで registry 化するか
+  decision: scheduler の federation conflict disclosure register / recusal trigger / substitute appointment lane を暫定固定した
+  note: conflict disclosure register、recusal trigger、substitute appointment lane、DecisionLedger / GraphEngine / GraphLint / archive object の conflict disclosure and recusal 管理責務を採用した。
+- theme: scheduler federation office term calendar / transition briefing packet / holdover expiration test をどこまで registry 化するか
+  decision: scheduler の federation office term calendar / transition briefing packet / holdover expiration test を暫定固定した
+  note: office term calendar、transition briefing packet、holdover expiration test、DecisionLedger / GraphEngine / GraphLint / archive object の office turnover and holdover control 管理責務を採用した。
+- theme: scheduler federation proxy delegation warrant / absentee voting boundary / revocation witness をどこまで registry 化するか
+  decision: scheduler の federation proxy delegation warrant / absentee voting boundary / revocation witness を暫定固定した
+  note: proxy delegation warrant、absentee voting boundary、revocation witness、DecisionLedger / GraphEngine / GraphLint / archive object の proxy and absentee vote governance 管理責務を採用した。
+- theme: scheduler federation ballot integrity attestation / recount escalation lane / certification finality test をどこまで registry 化するか
+  decision: scheduler の federation ballot integrity attestation / recount escalation lane / certification finality test を暫定固定した
+  note: ballot integrity attestation、recount escalation lane、certification finality test、DecisionLedger / GraphEngine / GraphLint / archive object の ballot integrity and certification 管理責務を採用した。
+- theme: scheduler federation representation census cadence / seat allocation formula / correction trigger をどこまで registry 化するか
+  decision: scheduler の federation representation census cadence / seat allocation formula / correction trigger を暫定固定した
+  note: representation census cadence、seat allocation formula、correction trigger、DecisionLedger / GraphEngine / GraphLint / archive object の representation apportionment 管理責務を採用した。
+- theme: scheduler federation constitutional electorate registry / eligibility challenge lane / roll freeze window をどこまで registry 化するか
+  decision: scheduler の federation constitutional electorate registry / eligibility challenge lane / roll freeze window を暫定固定した
+  note: constitutional electorate registry、eligibility challenge lane、roll freeze window、DecisionLedger / GraphEngine / GraphLint / archive object の constitutional electorate administration 管理責務を採用した。
+- theme: scheduler federation observer accession charter / speaking-right ceiling / confidentiality perimeter audit をどこまで registry 化するか
+  decision: scheduler の federation observer accession charter / speaking-right ceiling / confidentiality perimeter audit を暫定固定した
+  note: observer accession charter、speaking-right ceiling、confidentiality perimeter audit、DecisionLedger / GraphEngine / GraphLint / archive object の observer status and confidentiality perimeter 管理責務を採用した。
+- theme: scheduler federation reconstitution convention call / founding baseline bundle / legitimacy continuity attestation をどこまで registry 化するか
+  decision: scheduler の federation reconstitution convention call / founding baseline bundle / legitimacy continuity attestation を暫定固定した
+  note: reconstitution convention call、founding baseline bundle、legitimacy continuity attestation、DecisionLedger / GraphEngine / GraphLint / archive object の federation reconstitution continuity 管理責務を採用した。
+- theme: scheduler federation dissolution threshold / winding-up quorum / successor custody charter をどこまで registry 化するか
+  decision: scheduler の federation dissolution threshold / winding-up quorum / successor custody charter を暫定固定した
+  note: dissolution threshold、winding-up quorum、successor custody charter、DecisionLedger / GraphEngine / GraphLint / archive object の federation dissolution and winding-up 管理責務を採用した。
+- theme: scheduler federation member exit notice covenant / secession settlement docket / continuity service floor をどこまで registry 化するか
+  decision: scheduler の federation member exit notice covenant / secession settlement docket / continuity service floor を暫定固定した
+  note: member exit notice covenant、secession settlement docket、continuity service floor、DecisionLedger / GraphEngine / GraphLint / archive object の member exit and settlement continuity 管理責務を採用した。
+- theme: scheduler federation constitutional credential migration packet / signer reissuance window / revocation reciprocity rule をどこまで registry 化するか
+  decision: scheduler の federation constitutional credential migration packet / signer reissuance window / revocation reciprocity rule を暫定固定した
+  note: constitutional credential migration packet、signer reissuance window、revocation reciprocity rule、DecisionLedger / GraphEngine / GraphLint / archive object の constitutional credential migration 管理責務を採用した。
+- theme: scheduler federation common asset partition ledger / shared secret rotation window / liability runoff covenant をどこまで registry 化するか
+  decision: scheduler の federation common asset partition ledger / shared secret rotation window / liability runoff covenant を暫定固定した
+  note: common asset partition ledger、shared secret rotation window、liability runoff covenant、DecisionLedger / GraphEngine / GraphLint / archive object の shared asset partition and runoff 管理責務を採用した。
+- theme: scheduler federation cross-federation appeal venue / neutral arbiter roster / award enforcement warrant をどこまで registry 化するか
+  decision: scheduler の federation cross-federation appeal venue / neutral arbiter roster / award enforcement warrant を暫定固定した
+  note: cross-federation appeal venue、neutral arbiter roster、award enforcement warrant、DecisionLedger / GraphEngine / GraphLint / archive object の cross-federation arbitration and award enforcement 管理責務を採用した。
+- theme: scheduler federation inter-federation treaty registry / reciprocal recognition scope / treaty breach cure plan をどこまで registry 化するか
+  decision: scheduler の federation inter-federation treaty registry / reciprocal recognition scope / treaty breach cure plan を暫定固定した
+  note: inter-federation treaty registry、reciprocal recognition scope、treaty breach cure plan、DecisionLedger / GraphEngine / GraphLint / archive object の inter-federation treaty and reciprocity 管理責務を採用した。
+- theme: scheduler federation charter fork protocol / schism containment boundary / reunification ratification をどこまで registry 化するか
+  decision: scheduler の federation charter fork protocol / schism containment boundary / reunification ratification を暫定固定した
+  note: charter fork protocol、schism containment boundary、reunification ratification、DecisionLedger / GraphEngine / GraphLint / archive object の federation schism and reunification 管理責務を採用した。
+- theme: scheduler federation charter renewal convention / consolidation release packet / ratification replay boundary をどこまで registry 化するか
+  decision: scheduler の federation charter renewal convention / consolidation release packet / ratification replay boundary を暫定固定した
+  note: charter renewal convention、consolidation release packet、ratification replay boundary、DecisionLedger / GraphEngine / GraphLint / archive object の federation charter renewal convention 管理責務を採用した。
+- theme: scheduler federation constitutional stress test scenario / override drill attestation / recovery benchmark floor をどこまで registry 化するか
+  decision: scheduler の federation constitutional stress test scenario / override drill attestation / recovery benchmark floor を暫定固定した
+  note: constitutional stress test scenario、override drill attestation、recovery benchmark floor、DecisionLedger / GraphEngine / GraphLint / archive object の federation constitutional stress and recovery 管理責務を採用した。
+- theme: scheduler federation constitutional sunset scan / obsolete clause retirement / continuity migration packet をどこまで registry 化するか
+  decision: scheduler の federation constitutional sunset scan / obsolete clause retirement / continuity migration packet を暫定固定した
+  note: constitutional sunset scan、obsolete clause retirement、continuity migration packet、DecisionLedger / GraphEngine / GraphLint / archive object の federation constitutional sunset and migration 管理責務を採用した。
+- theme: scheduler federation amendment backlog prioritization / agenda freeze window / carryover lapse rule をどこまで registry 化するか
+  decision: scheduler の federation amendment backlog prioritization / agenda freeze window / carryover lapse rule を暫定固定した
+  note: amendment backlog prioritization、agenda freeze window、carryover lapse rule、DecisionLedger / GraphEngine / GraphLint / archive object の federation amendment backlog 管理責務を採用した。
+- theme: scheduler federation language version canon / translation variance rule / interpretation tie-break lane をどこまで registry 化するか
+  decision: scheduler の federation language version canon / translation variance rule / interpretation tie-break lane を暫定固定した
+  note: language version canon、translation variance rule、interpretation tie-break lane、DecisionLedger / GraphEngine / GraphLint / archive object の federation language interpretation 管理責務を採用した。
+- theme: scheduler federation archival authenticity seal / constitutional record notarization / tamper challenge lane をどこまで registry 化するか
+  decision: scheduler の federation archival authenticity seal / constitutional record notarization / tamper challenge lane を暫定固定した
+  note: archival authenticity seal、constitutional record notarization、tamper challenge lane、DecisionLedger / GraphEngine / GraphLint / archive object の federation constitutional record authenticity 管理責務を採用した。
+- theme: scheduler federation judicial review petition lane / constitutional question referral / advisory opinion register をどこまで registry 化するか
+  decision: scheduler の federation judicial review petition lane / constitutional question referral / advisory opinion register を暫定固定した
+  note: judicial review petition lane、constitutional question referral、advisory opinion register、DecisionLedger / GraphEngine / GraphLint / archive object の federation judicial review 管理責務を採用した。
+- theme: scheduler federation constitutional legitimacy dashboard / governance health index / review cadence covenant をどこまで registry 化するか
+  decision: scheduler の federation constitutional legitimacy dashboard / governance health index / review cadence covenant を暫定固定した
+  note: constitutional legitimacy dashboard、governance health index、review cadence covenant、DecisionLedger / GraphEngine / GraphLint / archive object の federation legitimacy review 管理責務を採用した。
+- theme: scheduler federation public consultation docket / comment adjudication digest / transparency exception carve-out をどこまで registry 化するか
+  decision: scheduler の federation public consultation docket / comment adjudication digest / transparency exception carve-out を暫定固定した
+  note: public consultation docket、comment adjudication digest、transparency exception carve-out、DecisionLedger / GraphEngine / GraphLint / archive object の federation public consultation 管理責務を採用した。
+- theme: scheduler federation constitutional breach classification / impeachment threshold / office suspension lane をどこまで registry 化するか
+  decision: scheduler の federation constitutional breach classification / impeachment threshold / office suspension lane を暫定固定した
+  note: constitutional breach classification、impeachment threshold、office suspension lane、DecisionLedger / GraphEngine / GraphLint / archive object の federation constitutional breach and office suspension 管理責務を採用した。
+- theme: scheduler federation accession readiness dossier / constitutional onboarding packet / probation ratification window をどこまで registry 化するか
+  decision: scheduler の federation accession readiness dossier / constitutional onboarding packet / probation ratification window を暫定固定した
+  note: accession readiness dossier、constitutional onboarding packet、probation ratification window、DecisionLedger / GraphEngine / GraphLint / archive object の federation accession and probation 管理責務を採用した。
+- theme: scheduler federation policy sandbox charter / experimental carve-out permit / rollback evidence floor をどこまで registry 化するか
+  decision: scheduler の federation policy sandbox charter / experimental carve-out permit / rollback evidence floor を暫定固定した
+  note: policy sandbox charter、experimental carve-out permit、rollback evidence floor、DecisionLedger / GraphEngine / GraphLint / archive object の federation policy sandbox 管理責務を採用した。
+- theme: scheduler federation constitutional education syllabus / operator certification floor / re-certification cadence をどこまで registry 化するか
+  decision: scheduler の federation constitutional education syllabus / operator certification floor / re-certification cadence を暫定固定した
+  note: constitutional education syllabus、operator certification floor、re-certification cadence、DecisionLedger / GraphEngine / GraphLint / archive object の federation constitutional training and certification 管理責務を採用した。
+- theme: scheduler federation budget appropriation covenant / cost-sharing formula / emergency reserve warrant をどこまで registry 化するか
+  decision: scheduler の federation budget appropriation covenant / cost-sharing formula / emergency reserve warrant を暫定固定した
+  note: budget appropriation covenant、cost-sharing formula、emergency reserve warrant、DecisionLedger / GraphEngine / GraphLint / archive object の federation budget and reserve 管理責務を採用した。
+- theme: scheduler federation emergency succession roster / incapacitation quorum substitute / continuity attestation をどこまで registry 化するか
+  decision: scheduler の federation emergency succession roster / incapacitation quorum substitute / continuity attestation を暫定固定した
+  note: emergency succession roster、incapacitation quorum substitute、continuity attestation、DecisionLedger / GraphEngine / GraphLint / archive object の federation emergency succession 管理責務を採用した。
+- theme: scheduler federation delegation charter registry / subcouncil mandate ceiling / authority clawback trigger をどこまで registry 化するか
+  decision: scheduler の federation delegation charter registry / subcouncil mandate ceiling / authority clawback trigger を暫定固定した
+  note: delegation charter registry、subcouncil mandate ceiling、authority clawback trigger、DecisionLedger / GraphEngine / GraphLint / archive object の federation delegation and clawback 管理責務を採用した。
+- theme: scheduler federation constitutional compatibility matrix / amendment conflict detector / supremacy resolution lane をどこまで registry 化するか
+  decision: scheduler の federation constitutional compatibility matrix / amendment conflict detector / supremacy resolution lane を暫定固定した
+  note: constitutional compatibility matrix、amendment conflict detector、supremacy resolution lane、DecisionLedger / GraphEngine / GraphLint / archive object の federation constitutional compatibility 管理責務を採用した。
+- theme: scheduler federation temporary derogation permit / exception expiry review / re-entry conformance test をどこまで registry 化するか
+  decision: scheduler の federation temporary derogation permit / exception expiry review / re-entry conformance test を暫定固定した
+  note: temporary derogation permit、exception expiry review、re-entry conformance test、DecisionLedger / GraphEngine / GraphLint / archive object の federation derogation and re-entry 管理責務を採用した。
+- theme: scheduler federation referendum scope gate / stakeholder notice minimum / dissent preservation memo をどこまで registry 化するか
+  decision: scheduler の federation referendum scope gate / stakeholder notice minimum / dissent preservation memo を暫定固定した
+  note: referendum scope gate、stakeholder notice minimum、dissent preservation memo、DecisionLedger / GraphEngine / GraphLint / archive object の federation referendum notice and dissent preservation 管理責務を採用した。
+- theme: scheduler federation constitutional interpretation canon / ambiguity escalation chamber / precedent invalidation test をどこまで registry 化するか
+  decision: scheduler の federation constitutional interpretation canon / ambiguity escalation chamber / precedent invalidation test を暫定固定した
+  note: constitutional interpretation canon、ambiguity escalation chamber、precedent invalidation test、DecisionLedger / GraphEngine / GraphLint / archive object の federation constitutional interpretation 管理責務を採用した。
+- theme: scheduler federation dispute tribunal / sanction ladder / restitution protocol をどこまで registry 化するか
+  decision: scheduler の federation dispute tribunal / sanction ladder / restitution protocol を暫定固定した
+  note: dispute tribunal charter、sanction ladder、restitution protocol、DecisionLedger / GraphEngine / GraphLint / archive object の federation dispute governance 管理責務を採用した。
+- theme: scheduler federation rollout ring / compatibility grace window / deprecation sunset をどこまで registry 化するか
+  decision: scheduler の federation rollout ring / compatibility grace window / deprecation sunset を暫定固定した
+  note: rollout ring charter、compatibility grace window、deprecation sunset policy、DecisionLedger / GraphEngine / GraphLint / archive object の federation rollout governance 管理責務を採用した。
+- theme: scheduler federation observability scorecard / anti-gaming guardrail / incentive settlement をどこまで registry 化するか
+  decision: scheduler の federation observability scorecard / anti-gaming guardrail / incentive settlement を暫定固定した
+  note: observability scorecard、anti-gaming guardrail、incentive settlement rule、DecisionLedger / GraphEngine / GraphLint / archive object の federation incentive governance 管理責務を採用した。
+- theme: scheduler federation credential trust anchor / key rotation covenant / revocation replay をどこまで registry 化するか
+  decision: scheduler の federation credential trust anchor / key rotation covenant / revocation replay を暫定固定した
+  note: credential trust anchor registry、key rotation covenant、revocation replay rule、DecisionLedger / GraphEngine / GraphLint / archive object の federation credential governance 管理責務を採用した。
+- theme: scheduler federation sovereign exit treaty / asset return protocol / post-exit compatibility freeze をどこまで registry 化するか
+  decision: scheduler の federation sovereign exit treaty / asset return protocol / post-exit compatibility freeze を暫定固定した
+  note: sovereign exit treaty、asset return protocol、post-exit compatibility freeze、DecisionLedger / GraphEngine / GraphLint / archive object の federation exit governance 管理責務を採用した。
+- theme: scheduler federation external auditor accreditation / public assurance notice / confidentiality appeal をどこまで registry 化するか
+  decision: scheduler の federation external auditor accreditation / public assurance notice / confidentiality appeal を暫定固定した
+  note: external auditor accreditation、public assurance notice、confidentiality appeal lane、DecisionLedger / GraphEngine / GraphLint / archive object の federation external assurance 管理責務を採用した。
+- theme: scheduler federation assurance scope profile / qualified opinion ladder / remediation undertaking をどこまで registry 化するか
+  decision: scheduler の federation assurance scope profile / qualified opinion ladder / remediation undertaking を暫定固定した
+  note: assurance scope profile、qualified opinion ladder、remediation undertaking、DecisionLedger / GraphEngine / GraphLint / archive object の federation assurance scope 管理責務を採用した。
+- theme: scheduler federation evidence submission corridor / tamper-evident seal / cross-border retention waiver をどこまで registry 化するか
+  decision: scheduler の federation evidence submission corridor / tamper-evident seal / cross-border retention waiver を暫定固定した
+  note: evidence submission corridor、tamper-evident submission seal、cross-border retention waiver、DecisionLedger / GraphEngine / GraphLint / archive object の federation evidence submission 管理責務を採用した。
+- theme: scheduler federation public incident disclosure threshold / partner attribution embargo / coordinated notice window をどこまで registry 化するか
+  decision: scheduler の federation public incident disclosure threshold / partner attribution embargo / coordinated notice window を暫定固定した
+  note: public incident disclosure threshold、partner attribution embargo、coordinated notice window、DecisionLedger / GraphEngine / GraphLint / archive object の federation public notice coordination 管理責務を採用した。
+- theme: scheduler federation assurance suspension trigger / shadow oversight mode / reinstatement review をどこまで registry 化するか
+  decision: scheduler の federation assurance suspension trigger / shadow oversight mode / reinstatement review を暫定固定した
+  note: assurance suspension trigger、shadow oversight mode、reinstatement review、DecisionLedger / GraphEngine / GraphLint / archive object の federation assurance suspension 管理責務を採用した。
+- theme: scheduler federation external benchmark comparability / assurance profile harmonization / seal expiration policy をどこまで registry 化するか
+  decision: scheduler の federation external benchmark comparability / assurance profile harmonization / seal expiration policy を暫定固定した
+  note: external benchmark comparability、assurance profile harmonization、seal expiration policy、DecisionLedger / GraphEngine / GraphLint / archive object の federation assurance profile harmonization 管理責務を採用した。
+- theme: scheduler federation auditor independence attestation / fee conflict cap / recusal escalation lane をどこまで registry 化するか
+  decision: scheduler の federation auditor independence attestation / fee conflict cap / recusal escalation lane を暫定固定した
+  note: independence attestation、affiliate relation disclosure、non-audit boundary、fee conflict cap、recusal escalation lane、replacement auditor handoff、public caveat duty、DecisionLedger / GraphEngine / GraphLint / archive object の federation auditor independence 管理責務を採用した。
+- theme: scheduler federation assurance evidence sampling profile / exception budget / re-sampling escalation lane をどこまで registry 化するか
+  decision: scheduler の federation assurance evidence sampling profile / exception budget / re-sampling escalation lane を暫定固定した
+  note: assurance evidence sampling profile、exception budget、re-sampling escalation lane、DecisionLedger / GraphEngine / GraphLint / archive object の federation assurance sampling 管理責務を採用した。
+- theme: scheduler federation joint-review quorum / minority dissent memo / chair tie-break lane をどこまで registry 化するか
+  decision: scheduler の federation joint-review quorum / minority dissent memo / chair tie-break lane を暫定固定した
+  note: joint-review quorum、abstention semantics、minority dissent memo、chair tie-break lane、DecisionLedger / GraphEngine / GraphLint / archive object の federation joint review 管理責務を採用した。
+- theme: scheduler federation finding materiality band / cross-partner aggregation rule / contagion notice threshold をどこまで registry 化するか
+  decision: scheduler の federation finding materiality band / cross-partner aggregation rule / contagion notice threshold を暫定固定した
+  note: finding materiality band、cross-partner aggregation rule、contagion notice threshold、DecisionLedger / GraphEngine / GraphLint / archive object の federation materiality aggregation 管理責務を採用した。
+- theme: scheduler federation remediation closure attestation / follow-up verification cadence / opinion refresh duty をどこまで registry 化するか
+  decision: scheduler の federation remediation closure attestation / follow-up verification cadence / opinion refresh duty を暫定固定した
+  note: remediation closure attestation、follow-up verification cadence、opinion refresh duty、DecisionLedger / GraphEngine / GraphLint / archive object の federation remediation refresh 管理責務を採用した。
+- theme: scheduler federation stale-reliance withdrawal / third-party reuse boundary / liability caveat passport をどこまで registry 化するか
+  decision: scheduler の federation stale-reliance withdrawal / third-party reuse boundary / liability caveat passport を暫定固定した
+  note: stale-reliance withdrawal、third-party reuse boundary、liability caveat passport、DecisionLedger / GraphEngine / GraphLint / archive object の federation reliance reuse 管理責務を採用した。
+- theme: scheduler federation assurance appeal tribunal / restatement precedence / archive preservation order をどこまで registry 化するか
+  decision: scheduler の federation assurance appeal tribunal / restatement precedence / archive preservation order を暫定固定した
+  note: appeal standing、tribunal composition、record freeze、restatement precedence、archive preservation order、DecisionLedger / GraphEngine / GraphLint / archive object の federation assurance appeal 管理責務を採用した。
+- theme: scheduler federation confidential evidence redaction tier / sealed appendix access lane / public summary floor をどこまで registry 化するか
+  decision: scheduler の federation confidential evidence redaction tier / sealed appendix access lane / public summary floor を暫定固定した
+  note: redaction tier、sealed appendix access、public summary floor、DecisionLedger / GraphEngine / GraphLint / archive object の federation sealed evidence 管理責務を採用した。
+- theme: scheduler federation cross-federation appeal lane / neutral convenor selection / binding precedent digest をどこまで registry 化するか
+  decision: scheduler の federation cross-federation appeal lane / neutral convenor selection / binding precedent digest を暫定固定した
+  note: cross-federation appeal lane、neutral convenor selection、binding precedent digest、DecisionLedger / GraphEngine / GraphLint / archive object の federation appeal precedent 管理責務を採用した。
+- theme: scheduler federation oversight lineage replay packet / recusal history archive / handback closure certificate をどこまで registry 化するか
+  decision: scheduler の federation oversight lineage replay packet / recusal history archive / handback closure certificate を暫定固定した
+  note: lineage replay packet、recusal history archive、handback closure certificate、oversight closure archive、DecisionLedger / GraphEngine / GraphLint / archive object の federation oversight closure archive 管理責務を採用した。
+- theme: scheduler federation oversight public accountability digest / conflict transparency badge / charter drift bulletin をどこまで registry 化するか
+  decision: scheduler の federation oversight public accountability digest / conflict transparency badge / charter drift bulletin を暫定固定した
+  note: public accountability digest、conflict transparency badge、charter drift bulletin、oversight drift transparency、DecisionLedger / GraphEngine / GraphLint / archive object の federation oversight drift transparency 管理責務を採用した。
+- theme: scheduler federation oversight exception docket / sunset waiver ledger / overdue accountability escalation をどこまで registry 化するか
+  decision: scheduler の federation oversight exception docket / sunset waiver ledger / overdue accountability escalation を暫定固定した
+  note: exception docket、sunset waiver ledger、overdue accountability escalation、oversight exception escalation、DecisionLedger / GraphEngine / GraphLint / archive object の federation oversight exception escalation 管理責務を採用した。
+- theme: scheduler federation oversight continuity escrow / temporary trustee appointment / orphaned accountability alarm をどこまで registry 化するか
+  decision: scheduler の federation oversight continuity escrow / temporary trustee appointment / orphaned accountability alarm を暫定固定した
+  note: continuity escrow、temporary trustee appointment、orphaned accountability alarm、oversight gap containment、DecisionLedger / GraphEngine / GraphLint / archive object の federation oversight gap containment 管理責務を採用した。
+- theme: scheduler federation oversight amendment notice packet / reviewer recusal substitution lane / handback acceptance attestation をどこまで registry 化するか
+  decision: scheduler の federation oversight amendment notice packet / reviewer recusal substitution lane / handback acceptance attestation を暫定固定した
+  note: amendment notice packet、reviewer recusal substitution lane、handback acceptance attestation、oversight transition operations、DecisionLedger / GraphEngine / GraphLint / archive object の federation oversight transition operations 管理責務を採用した。
+- theme: scheduler federation oversight charter versioning / reviewer conflict disclosure / accountability handback trigger をどこまで registry 化するか
+  decision: scheduler の federation oversight charter versioning / reviewer conflict disclosure / accountability handback trigger を暫定固定した
+  note: oversight charter versioning、reviewer conflict disclosure、accountability handback trigger、oversight accountability continuity、DecisionLedger / GraphEngine / GraphLint / archive object の federation oversight accountability continuity 管理責務を採用した。
+- theme: scheduler federation public benchmark caveat panel / partner-specific variance note / reviewer dissent archive をどこまで registry 化するか
+  decision: scheduler の federation public benchmark caveat panel / partner-specific variance note / reviewer dissent archive を暫定固定した
+  note: public benchmark caveat panel、partner-specific variance note、reviewer dissent archive、public benchmark fairness context、DecisionLedger / GraphEngine / GraphLint / archive object の federation public benchmark context 管理責務を採用した。
+- theme: scheduler federation publication embargo exception / crisis disclosure fast lane / post-incident retrospective packet をどこまで registry 化するか
+  decision: scheduler の federation publication embargo exception / crisis disclosure fast lane / post-incident retrospective packet を暫定固定した
+  note: publication embargo exception、crisis disclosure fast lane、post-incident retrospective packet、post-incident learning closure、DecisionLedger / GraphEngine / GraphLint / archive object の federation crisis disclosure 管理責務を採用した。
+- theme: scheduler federation trust recovery evidence bundle / remediation completion attestation / probation exit criterion をどこまで registry 化するか
+  decision: scheduler の federation trust recovery evidence bundle / remediation completion attestation / probation exit criterion を暫定固定した
+  note: trust recovery evidence bundle、remediation completion attestation、probation exit criterion、residual risk bounded release、DecisionLedger / GraphEngine / GraphLint / archive object の federation trust recovery governance 管理責務を採用した。
+- theme: scheduler federation challenge intake schema / independent reviewer quorum / escalation freeze gate をどこまで registry 化するか
+  decision: scheduler の federation challenge intake schema / independent reviewer quorum / escalation freeze gate を暫定固定した
+  note: challenge intake schema、independent reviewer quorum、escalation freeze gate、dispute closure path、DecisionLedger / GraphEngine / GraphLint / archive object の federation challenge review 管理責務を採用した。
+- theme: scheduler federation metric restatement severity ladder / correction propagation SLA / recipient re-notification trigger をどこまで registry 化するか
+  decision: scheduler の federation metric restatement severity ladder / correction propagation SLA / recipient re-notification trigger を暫定固定した
+  note: metric restatement severity ladder、correction propagation SLA、recipient re-notification trigger、correction lineage、DecisionLedger / GraphEngine / GraphLint / archive object の federation correction accountability 管理責務を採用した。
+- theme: scheduler federation transparency effectiveness publication tier / recipient trust recovery indicator / oversight review cadence をどこまで registry 化するか
+  decision: scheduler の federation transparency effectiveness publication tier / recipient trust recovery indicator / oversight review cadence を暫定固定した
+  note: publication tier、trust recovery indicator、oversight review cadence、restatement-aware oversight、DecisionLedger / GraphEngine / GraphLint / archive object の federation effectiveness oversight 管理責務を採用した。
+- theme: scheduler federation cross-partner telemetry normalization / hostile gaming detection / metric audit trail をどこまで registry 化するか
+  decision: scheduler の federation cross-partner telemetry normalization / hostile gaming detection / metric audit trail を暫定固定した
+  note: cross-partner telemetry normalization、hostile gaming detection、metric audit trail、metric challenge replay、DecisionLedger / GraphEngine / GraphLint / archive object の federation metric integrity 管理責務を採用した。
+- theme: scheduler federation experiment holdout lane / intervention change log / causal uplift threshold をどこまで registry 化するか
+  decision: scheduler の federation experiment holdout lane / intervention change log / causal uplift threshold を暫定固定した
+  note: experiment holdout lane、intervention change log、causal uplift threshold、negative-result archive、DecisionLedger / GraphEngine / GraphLint / archive object の federation causal evaluation 管理責務を採用した。
+- theme: scheduler federation adaptive advisory policy / channel throttling ladder / fatigue override rule をどこまで registry 化するか
+  decision: scheduler の federation adaptive advisory policy / channel throttling ladder / fatigue override rule を暫定固定した
+  note: adaptive advisory policy、channel throttling ladder、fatigue override rule、reachability-preserving throttle、DecisionLedger / GraphEngine / GraphLint / archive object の federation adaptive advisory 管理責務を採用した。
+- theme: scheduler federation scorecard calibration strata / benchmark cohort / comparability caveat をどこまで registry 化するか
+  decision: scheduler の federation scorecard calibration strata / benchmark cohort / comparability caveat を暫定固定した
+  note: scorecard calibration strata、benchmark cohort、comparability caveat、publication guardrail、DecisionLedger / GraphEngine / GraphLint / archive object の federation effectiveness benchmark 管理責務を採用した。
+- theme: scheduler federation telemetry consent boundary / minimization profile / retention expiry lane をどこまで registry 化するか
+  decision: scheduler の federation telemetry consent boundary / minimization profile / retention expiry lane を暫定固定した
+  note: telemetry consent boundary、minimization profile、retention expiry lane、revocation-aware gating、DecisionLedger / GraphEngine / GraphLint / archive object の federation telemetry privacy 管理責務を採用した。
+- theme: scheduler federation transparency effectiveness scorecard / recipient behavior telemetry / disclosure fatigue cap をどこまで registry 化するか
+  decision: scheduler の federation transparency effectiveness scorecard / recipient behavior telemetry / disclosure fatigue cap を暫定固定した
+  note: transparency effectiveness scorecard、recipient behavior telemetry、disclosure fatigue cap、segment-specific measurement、DecisionLedger / GraphEngine / GraphLint / archive object の federation transparency effectiveness 管理責務を採用した。
+- theme: scheduler federation transparency accessibility profile / multilingual equivalence pack / inclusive advisory rendering をどこまで registry 化するか
+  decision: scheduler の federation transparency accessibility profile / multilingual equivalence pack / inclusive advisory rendering を暫定固定した
+  note: transparency accessibility profile、multilingual equivalence pack、inclusive advisory rendering、locale equivalence、DecisionLedger / GraphEngine / GraphLint / archive object の federation transparency accessibility 管理責務を採用した。
+- theme: scheduler federation third-party relay obligation / syndication correction cascade / stale copy takedown lane をどこまで registry 化するか
+  decision: scheduler の federation third-party relay obligation / syndication correction cascade / stale copy takedown lane を暫定固定した
+  note: third-party relay obligation、syndication correction cascade、stale copy takedown lane、safe replacement、DecisionLedger / GraphEngine / GraphLint / archive object の federation relay correction 管理責務を採用した。
+- theme: scheduler federation assurance seal reinstatement criteria / probationary recovery badge / relapse downgrade ladder をどこまで registry 化するか
+  decision: scheduler の federation assurance seal reinstatement criteria / probationary recovery badge / relapse downgrade ladder を暫定固定した
+  note: assurance seal reinstatement criteria、probationary recovery badge、relapse downgrade ladder、recovery/quorum rule、DecisionLedger / GraphEngine / GraphLint / archive object の federation assurance reinstatement 管理責務を採用した。
+- theme: scheduler federation recipient acknowledgement receipt / corrective action attestation / advisory non-response escalation をどこまで registry 化するか
+  decision: scheduler の federation recipient acknowledgement receipt / corrective action attestation / advisory non-response escalation を暫定固定した
+  note: recipient acknowledgement receipt、corrective action attestation、advisory non-response escalation、recipient-class due window、DecisionLedger / GraphEngine / GraphLint / archive object の federation recipient response 管理責務を採用した。
+- theme: scheduler federation public transparency archive index / immutable report digest / subscription diff feed をどこまで registry 化するか
+  decision: scheduler の federation public transparency archive index / immutable report digest / subscription diff feed を暫定固定した
+  note: public archive index、immutable report digest、subscription diff feed、supersession lineage、DecisionLedger / GraphEngine / GraphLint / archive object の federation transparency archive 管理責務を採用した。
+- theme: scheduler federation public transparency report / assurance seal downgrade badge / recipient advisory channel をどこまで registry 化するか
+  decision: scheduler の federation public transparency report / assurance seal downgrade badge / recipient advisory channel を暫定固定した
+  note: public transparency report、downgrade badge、recipient advisory channel、bounded public disclosure、DecisionLedger / GraphEngine / GraphLint / archive object の federation public transparency 管理責務を採用した。
+- theme: scheduler federation supervisory notice trigger / regulator liaison corridor / compelled disclosure replay をどこまで registry 化するか
+  decision: scheduler の federation supervisory notice trigger / regulator liaison corridor / compelled disclosure replay を暫定固定した
+  note: supervisory notice trigger、regulator liaison corridor、compelled disclosure replay、DecisionLedger / GraphEngine / GraphLint / archive object の federation supervisory disclosure 管理責務を採用した。
+- theme: scheduler federation claimant restitution reserve / payout apportionment rule / insolvency backstop をどこまで registry 化するか
+  decision: scheduler の federation claimant restitution reserve / payout apportionment rule / insolvency backstop を暫定固定した
+  note: claimant restitution reserve、payout apportionment rule、insolvency backstop、DecisionLedger / GraphEngine / GraphLint / archive object の federation restitution 管理責務を採用した。
+- theme: scheduler federation conflict-of-law profile / local override lane / enforcement reciprocity をどこまで registry 化するか
+  decision: scheduler の federation conflict-of-law profile / local override lane / enforcement reciprocity を暫定固定した
+  note: conflict-of-law profile、local override lane、enforcement reciprocity、DecisionLedger / GraphEngine / GraphLint / archive object の federation cross-jurisdiction 管理責務を採用した。
+- theme: scheduler federation precedent digest / doctrine change bulletin / reviewer retraining gate をどこまで registry 化するか
+  decision: scheduler の federation precedent digest / doctrine change bulletin / reviewer retraining gate を暫定固定した
+  note: precedent digest、doctrine change bulletin、reviewer retraining gate、DecisionLedger / GraphEngine / GraphLint / archive object の federation doctrine propagation 管理責務を採用した。
+- theme: scheduler federation meta-governance council / amendment ratification / emergency override constitution をどこまで registry 化するか
+  decision: scheduler の federation meta-governance council / amendment ratification / emergency override constitution を暫定固定した
+  note: meta-governance council、amendment ratification rule、emergency override constitution、DecisionLedger / GraphEngine / GraphLint / archive object の federation meta-governance 管理責務を採用した。
+- theme: scheduler federation joint drill charter / evidence escrow / audit cadence をどこまで registry 化するか
+  decision: scheduler の federation joint drill charter / evidence escrow / audit cadence を暫定固定した
+  note: joint drill charter、evidence escrow、audit cadence policy、DecisionLedger / GraphEngine / GraphLint / archive object の federation joint drill governance 管理責務を採用した。
+- theme: scheduler federation shared reserve covenant / reciprocity settlement / donor protection floor をどこまで registry 化するか
+  decision: scheduler の federation shared reserve covenant / reciprocity settlement / donor protection floor を暫定固定した
+  note: shared reserve covenant、reciprocity settlement、donor protection floor、DecisionLedger / GraphEngine / GraphLint / archive object の federation shared reserve 管理責務を採用した。
+- theme: scheduler federation partition failover / corridor rerouting / reunion attestation をどこまで registry 化するか
+  decision: scheduler の federation partition failover / corridor rerouting / reunion attestation を暫定固定した
+  note: partition incident packet、corridor rerouting plan、reunion attestation、DecisionLedger / GraphEngine / GraphLint / archive object の federation partition failover 管理責務を採用した。
+- theme: scheduler federation capability advertisement / selective subscription / route affinity をどこまで registry 化するか
+  decision: scheduler の federation capability advertisement / selective subscription / route affinity を暫定固定した
+  note: capability advertisement、selective subscription contract、route affinity policy、DecisionLedger / GraphEngine / GraphLint / archive object の federation capability routing 管理責務を採用した。
+- theme: scheduler federation membership admission / trust-tier probation / expulsion trigger をどこまで registry 化するか
+  decision: scheduler の federation membership admission / trust-tier probation / expulsion trigger を暫定固定した
+  note: membership admission packet、trust-tier probation、expulsion trigger、DecisionLedger / GraphEngine / GraphLint / archive object の federation membership governance 管理責務を採用した。
+- theme: scheduler federation mesh topology / cascade override propagation / blast-radius segmentation をどこまで registry 化するか
+  decision: scheduler の federation mesh topology / cascade override propagation / blast-radius segmentation を暫定固定した
+  note: mesh cell registry、cascade propagation rule、blast-radius segmentation、DecisionLedger / GraphEngine / GraphLint / archive object の federation mesh governance 管理責務を採用した。
+- theme: scheduler federation detachment packet / residual obligation repatriation / custody transfer をどこまで registry 化するか
+  decision: scheduler の federation detachment packet / residual obligation repatriation / custody transfer を暫定固定した
+  note: detachment packet、residual obligation repatriation、custody transfer record、DecisionLedger / GraphEngine / GraphLint / archive object の federation detachment 管理責務を採用した。
+- theme: scheduler federation provenance relay / evidence notarization chain / replay parity witness をどこまで registry 化するか
+  decision: scheduler の federation provenance relay / evidence notarization chain / replay parity witness を暫定固定した
+  note: provenance relay packet、evidence notarization chain、replay parity witness、DecisionLedger / GraphEngine / GraphLint / archive object の federation provenance 管理責務を採用した。
+- theme: scheduler federation reciprocity breach quarantine / suspension gate / re-entry attestation をどこまで registry 化するか
+  decision: scheduler の federation reciprocity breach quarantine / suspension gate / re-entry attestation を暫定固定した
+  note: breach quarantine、suspension gate、re-entry attestation、DecisionLedger / GraphEngine / GraphLint / archive object の federation breach governance 管理責務を採用した。
+- theme: scheduler federation precedence matrix / conflict arbitration lane / authoritative-head declaration をどこまで registry 化するか
+  decision: scheduler の federation precedence matrix / conflict arbitration lane / authoritative-head declaration を暫定固定した
+  note: precedence matrix、conflict arbitration lane、authoritative-head declaration、DecisionLedger / GraphEngine / GraphLint / archive object の federation conflict governance 管理責務を採用した。
+- theme: scheduler federation semantic equivalence map / downgrade waiver / obligation uplift をどこまで registry 化するか
+  decision: scheduler の federation semantic equivalence map / downgrade waiver / obligation uplift を暫定固定した
+  note: semantic equivalence map、downgrade waiver、obligation uplift record、DecisionLedger / GraphEngine / GraphLint / archive object の federation semantic alignment 管理責務を採用した。
+- theme: scheduler federation doctrine import / local override boundary / reciprocity attestation をどこまで registry 化するか
+  decision: scheduler の federation doctrine import / local override boundary / reciprocity attestation を暫定固定した
+  note: federation import packet、local override boundary、reciprocity attestation、DecisionLedger / GraphEngine / GraphLint / archive object の federation doctrine 管理責務を採用した。
+- theme: scheduler doctrine conformance audit / drift scorecard / remediation covenant をどこまで registry 化するか
+  decision: scheduler の doctrine conformance audit / drift scorecard / remediation covenant を暫定固定した
+  note: doctrine conformance audit、drift scorecard、remediation covenant、DecisionLedger / GraphEngine / GraphLint / archive object の doctrine conformance 管理責務を採用した。
+- theme: scheduler doctrine migration program / staged adoption wave / rollback-safe coexistence をどこまで registry 化するか
+  decision: scheduler の doctrine migration program / staged adoption wave / rollback-safe coexistence を暫定固定した
+  note: doctrine migration program、staged adoption wave、rollback-safe coexistence guard、DecisionLedger / GraphEngine / GraphLint / archive object の doctrine migration 管理責務を採用した。
+- theme: scheduler sunset archive reopen / legal-hold carveout / replay scope restoration をどこまで registry 化するか
+  decision: scheduler の sunset archive reopen / legal-hold carveout / replay scope restoration を暫定固定した
+  note: archive reopen petition、legal-hold carveout、replay scope restoration、DecisionLedger / GraphEngine / GraphLint / archive object の archive reopen 管理責務を採用した。
+- theme: scheduler supersession conflict arbitration / parallel-charter quarantine / authoritative-head selection をどこまで registry 化するか
+  decision: scheduler の supersession conflict arbitration / parallel-charter quarantine / authoritative-head selection を暫定固定した
+  note: supersession conflict case、parallel-charter quarantine、authoritative-head selection、DecisionLedger / GraphEngine / GraphLint / archive object の conflict arbitration 管理責務を採用した。
+- theme: scheduler doctrine amendment petition / cross-year variance corridor / interim ratification をどこまで registry 化するか
+  decision: scheduler の doctrine amendment petition / cross-year variance corridor / interim ratification を暫定固定した
+  note: doctrine amendment petition、cross-year variance corridor、interim ratification record、DecisionLedger / GraphEngine / GraphLint / archive object の amendment 管理責務を採用した。
+- theme: scheduler multi-year resilience doctrine / charter supersession lineage / sunset archive seal をどこまで registry 化するか
+  decision: scheduler の multi-year resilience doctrine / charter supersession lineage / sunset archive seal を暫定固定した
+  note: multi-year doctrine packet、charter supersession lineage、sunset archive seal、DecisionLedger / GraphEngine / GraphLint / archive object の cross-year doctrine 管理責務を採用した。
+- theme: scheduler charter audit attestation / board-level exception disclosure / renewal freeze gate をどこまで registry 化するか
+  decision: scheduler の charter audit attestation / board-level exception disclosure / renewal freeze gate を暫定固定した
+  note: charter audit attestation、board-level exception disclosure packet、renewal freeze gate、DecisionLedger / GraphEngine / GraphLint / archive object の renewal oversight 管理責務を採用した。
+- theme: scheduler resilience capital floor / discretionary stretch allocation / debt burn-down covenant をどこまで registry 化するか
+  decision: scheduler の resilience capital floor / discretionary stretch allocation / debt burn-down covenant を暫定固定した
+  note: capital floor profile、stretch allocation decision、debt burn-down covenant、DecisionLedger / GraphEngine / GraphLint / archive object の annual capital covenant 管理責務を採用した。
+- theme: scheduler dependency covenant renewal / vendor resilience attestation / non-renewal fallback をどこまで registry 化するか
+  decision: scheduler の dependency covenant renewal / vendor resilience attestation / non-renewal fallback を暫定固定した
+  note: dependency covenant renewal packet、vendor resilience attestation、non-renewal fallback plan、DecisionLedger / GraphEngine / GraphLint / archive object の annual dependency renewal 管理責務を採用した。
+- theme: scheduler annual scenario portfolio rollover / dormant-risk reseeding / stress-budget rebasing をどこまで registry 化するか
+  decision: scheduler の annual scenario portfolio rollover / dormant-risk reseeding / stress-budget rebasing を暫定固定した
+  note: scenario rollover packet、dormant-risk reseed rule、stress-budget rebase decision、DecisionLedger / GraphEngine / GraphLint / archive object の annual scenario renewal 管理責務を採用した。
+- theme: scheduler charter variance petition / off-cycle recalibration trigger / emergency horizon override をどこまで registry 化するか
+  decision: scheduler の charter variance petition / off-cycle recalibration trigger / emergency horizon override を暫定固定した
+  note: variance petition packet、off-cycle recalibration trigger、emergency horizon override rule、DecisionLedger / GraphEngine / GraphLint / archive object の in-year charter deviation 管理責務を採用した。
+- theme: scheduler resilience charter renewal / cross-cycle carryover gate / next-year horizon calibration をどこまで registry 化するか
+  decision: scheduler の resilience charter renewal / cross-cycle carryover gate / next-year horizon calibration を暫定固定した
+  note: charter renewal packet、cross-cycle carryover gate、next-year horizon calibration rule、DecisionLedger / GraphEngine / GraphLint / archive object の annual resilience governance 管理責務を採用した。
+- theme: scheduler review-to-roadmap commitment / resilience investment tranche / residual-risk acceptance をどこまで registry 化するか
+  decision: scheduler の review-to-roadmap commitment / resilience investment tranche / residual-risk acceptance を暫定固定した
+  note: investment tranche packet、roadmap commitment case、residual-risk acceptance record、DecisionLedger / GraphEngine / GraphLint / archive object の resilience portfolio commitment 管理責務を採用した。
+- theme: scheduler control evidence freshness sweep / stale packet reseal / archive demotion をどこまで registry 化するか
+  decision: scheduler の control evidence freshness sweep / stale packet reseal / archive demotion を暫定固定した
+  note: freshness sweep packet、stale packet reseal decision、archive demotion case、DecisionLedger / GraphEngine / GraphLint / archive object の evidence hygiene 管理責務を採用した。
+- theme: scheduler dependency resilience tiering / substitute-path qualification / single-point retirement をどこまで registry 化するか
+  decision: scheduler の dependency resilience tiering / substitute-path qualification / single-point retirement を暫定固定した
+  note: dependency tier packet、substitute qualification bundle、single-point retirement case、DecisionLedger / GraphEngine / GraphLint / archive object の dependency portfolio renewal 管理責務を採用した。
+- theme: scheduler dormant-risk scenario refresh / rare-event coverage gap / wakeup backlog reprioritization をどこまで registry 化するか
+  decision: scheduler の dormant-risk scenario refresh / rare-event coverage gap / wakeup backlog reprioritization を暫定固定した
+  note: scenario refresh packet、rare-event coverage gap case、wakeup backlog item、DecisionLedger / GraphEngine / GraphLint / archive object の rare-risk renewal 管理責務を採用した。
+- theme: scheduler review carryforward debt / resilience budget rebalance / retirement exception ratification をどこまで registry 化するか
+  decision: scheduler の review carryforward debt / resilience budget rebalance / retirement exception ratification を暫定固定した
+  note: carryforward debt register、budget rebalance decision、retirement exception packet、DecisionLedger / GraphEngine / GraphLint / archive object の portfolio follow-through 管理責務を採用した。
+- theme: scheduler quarterly resilience review / dormant-risk wakeup trigger / stale-control retirement をどこまで registry 化するか
+  decision: scheduler の quarterly resilience review / dormant-risk wakeup trigger / stale-control retirement を暫定固定した
+  note: quarterly review packet、dormant-risk wakeup trigger、stale-control retirement case、DecisionLedger / GraphEngine / GraphLint / archive object の periodic resilience governance 管理責務を採用した。
+- theme: scheduler chaos drill packet / shadow exercise replay / readiness score aging をどこまで registry 化するか
+  decision: scheduler の chaos drill packet / shadow exercise replay / readiness score aging を暫定固定した
+  note: exercise packet、shadow replay、readiness score aging rule、DecisionLedger / GraphEngine / GraphLint / archive object の exercise governance 管理責務を採用した。
+- theme: scheduler reserve roster recertification / fatigue-safe staffing rebuild / succession coverage refresh をどこまで registry 化するか
+  decision: scheduler の reserve roster recertification / fatigue-safe staffing rebuild / succession coverage refresh を暫定固定した
+  note: recertification packet、staffing coverage matrix、succession refresh、DecisionLedger / GraphEngine / GraphLint / archive object の human readiness 管理責務を採用した。
+- theme: scheduler dependency contact-path refresh / failover credential reseal / vendor escalation rehearsal をどこまで registry 化するか
+  decision: scheduler の dependency contact-path refresh / failover credential reseal / vendor escalation rehearsal を暫定固定した
+  note: contact-path packet、credential reseal case、vendor escalation rehearsal、DecisionLedger / GraphEngine / GraphLint / archive object の dependency readiness 管理責務を採用した。
+- theme: scheduler detector recalibration / alert threshold retuning / noise-budget reset をどこまで registry 化するか
+  decision: scheduler の detector recalibration / alert threshold retuning / noise-budget reset を暫定固定した
+  note: calibration packet、threshold migration witness、noise-budget reset、DecisionLedger / GraphEngine / GraphLint / archive object の detection recovery 管理責務を採用した。
+- theme: scheduler runbook delta ratification / owner re-acknowledgment / drill backlog issuance をどこまで registry 化するか
+  decision: scheduler の runbook delta ratification / owner re-acknowledgment / drill backlog issuance を暫定固定した
+  note: runbook delta packet、owner acknowledgment bundle、drill backlog item、DecisionLedger / GraphEngine / GraphLint / archive object の readiness execution 管理責務を採用した。
+- theme: scheduler restart learning feedforward / policy baseline reseal / next-incident readiness refresh をどこまで registry 化するか
+  decision: scheduler の restart learning feedforward / policy baseline reseal / next-incident readiness refresh を暫定固定した
+  note: learning feedforward packet、policy baseline reseal gate、readiness refresh plan、DecisionLedger / GraphEngine / GraphLint / archive object の restart learning 管理責務を採用した。
+- theme: scheduler service restoration attestation / external recommit lane / status-page closure をどこまで registry 化するか
+  decision: scheduler の service restoration attestation / external recommit lane / status-page closure を暫定固定した
+  note: restoration attestation packet、external recommit lane、status-page closure packet、residual risk disclosure、DecisionLedger / GraphEngine / GraphLint / archive object の restoration closure 管理責務を採用した。
+- theme: scheduler capacity reaccrual / reserve refill / portfolio reintegration をどこまで registry 化するか
+  decision: scheduler の capacity reaccrual / reserve refill / portfolio reintegration を暫定固定した
+  note: capacity plan、reserve refill packet、portfolio reintegration gate、donor-safe condition、DecisionLedger / GraphEngine / GraphLint / archive object の capacity reintegration 管理責務を採用した。
+- theme: scheduler manual override debt unwind / operator fatigue reset / break-glass revocation をどこまで registry 化するか
+  decision: scheduler の manual override debt unwind / operator fatigue reset / break-glass revocation を暫定固定した
+  note: override debt ledger、fatigue reset packet、break-glass revocation、watch burden、DecisionLedger / GraphEngine / GraphLint / archive object の override unwind 管理責務を採用した。
+- theme: scheduler autonomy confidence accrual / error-budget reopen / freeze-back trigger をどこまで registry 化するか
+  decision: scheduler の autonomy confidence accrual / error-budget reopen / freeze-back trigger を暫定固定した
+  note: confidence ledger、error-budget reopen、freeze-back trigger、confidence decay、DecisionLedger / GraphEngine / GraphLint / archive object の autonomy confidence 管理責務を採用した。
+- theme: scheduler restart cohort expansion / shadow traffic promotion / rollback rehearse をどこまで registry 化するか
+  decision: scheduler の restart cohort expansion / shadow traffic promotion / rollback rehearse を暫定固定した
+  note: expansion plan、shadow diff threshold、rollback rehearsal、promotion ceiling、DecisionLedger / GraphEngine / GraphLint / archive object の restart expansion 管理責務を採用した。
+- theme: scheduler retained-core restart canary / autonomy re-enable / rollback fence をどこまで registry 化するか
+  decision: scheduler の retained-core restart canary / autonomy re-enable / rollback fence を暫定固定した
+  note: restart packet、manual-to-auto handback、rollback fence、shadow witness、DecisionLedger / GraphEngine / GraphLint / archive object の retained-core restart 管理責務を採用した。
+- theme: scheduler budget exhaustion rebasing / scope collapse charter / termination packet をどこまで registry 化するか
+  decision: scheduler の budget exhaustion rebasing / scope collapse charter / termination packet を暫定固定した
+  note: exhaustion trigger、collapse charter、termination packet、retained obligation bundle、DecisionLedger / GraphEngine / GraphLint / archive object の rebase / termination 管理責務を採用した。
+- theme: scheduler vendor fallback substitution / contract breakpoint lane / dependency reselection をどこまで registry 化するか
+  decision: scheduler の vendor fallback substitution / contract breakpoint lane / dependency reselection を暫定固定した
+  note: fallback packet、breakpoint class、equivalence witness、shadow validation plan、DecisionLedger / GraphEngine / GraphLint / archive object の dependency breakpoint 管理責務を採用した。
+- theme: scheduler post-shed evidence quarantine / causal review gate / recurrence debt retirement をどこまで registry 化するか
+  decision: scheduler の post-shed evidence quarantine / causal review gate / recurrence debt retirement を暫定固定した
+  note: quarantine packet、review class、recurrence debt、retirement witness、DecisionLedger / GraphEngine / GraphLint / archive object の post-shed review 管理責務を採用した。
+- theme: scheduler re-entry eligibility / backlog thaw sequencing / trust restoration notice をどこまで registry 化するか
+  decision: scheduler の re-entry eligibility / backlog thaw sequencing / trust restoration notice を暫定固定した
+  note: re-entry clearance packet、thaw class、restore canary、rollback fence、DecisionLedger / GraphEngine / GraphLint / archive object の re-entry 管理責務を採用した。
+- theme: scheduler degraded-mode operating envelope / manual override quota / automation suspension lane をどこまで registry 化するか
+  decision: scheduler の degraded-mode operating envelope / manual override quota / automation suspension lane を暫定固定した
+  note: degraded charter、override token budget、suspension lane、human watch density、DecisionLedger / GraphEngine / GraphLint / archive object の degraded-mode 管理責務を採用した。
+- theme: scheduler executive stop-rule / external commitment renegotiation / controlled service shedding をどこまで registry 化するか
+  decision: scheduler の executive stop-rule / external commitment renegotiation / controlled service shedding を暫定固定した
+  note: stop packet、notice deadline、shed class、retained core、DecisionLedger / GraphEngine / GraphLint / archive object の stop-rule / shedding 管理責務を採用した。
+- theme: scheduler campaign-season prebuild / forecast-triggered reserve staging / freeze window coordination をどこまで registry 化するか
+  decision: scheduler の campaign-season prebuild / forecast-triggered reserve staging / freeze window coordination を暫定固定した
+  note: forecast profile、reserve staging trigger、freeze window coordination、DecisionLedger / GraphEngine / GraphLint / archive object の prebuild readiness 管理責務を採用した。
+- theme: scheduler reserve debt ledger / donor recovery payback / reciprocity settlement をどこまで registry 化するか
+  decision: scheduler の reserve debt ledger / donor recovery payback / reciprocity settlement を暫定固定した
+  note: reserve debt class、payback window、reciprocity settlement、closure witness、DecisionLedger / GraphEngine / GraphLint / archive object の reserve debt settlement 管理責務を採用した。
+- theme: scheduler portfolio priority override charter / customer-critical carveout / fairness exception sunset をどこまで registry 化するか
+  decision: scheduler の portfolio priority override charter / customer-critical carveout / fairness exception sunset を暫定固定した
+  note: override charter、carveout class、impact budget、sunset review、DecisionLedger / GraphEngine / GraphLint / archive object の override governance 管理責務を採用した。
+- theme: scheduler cross-region isolation ring / federated reserve corridor / jurisdictional handoff をどこまで registry 化するか
+  decision: scheduler の cross-region isolation ring / federated reserve corridor / jurisdictional handoff を暫定固定した
+  note: isolation ring、corridor packet、jurisdictional handoff witness、DecisionLedger / GraphEngine / GraphLint / archive object の federated reserve coordination 管理責務を採用した。
+- theme: scheduler donor-team protection floor / aid refusal adjudication / asymmetric support covenant をどこまで registry 化するか
+  decision: scheduler の donor-team protection floor / aid refusal adjudication / asymmetric support covenant を暫定固定した
+  note: donor protection floor、lawful refusal reason code、support covenant、DecisionLedger / GraphEngine / GraphLint / archive object の donor-side protection 管理責務を採用した。
+- theme: scheduler multi-incident reserve arbitration / mutual-aid escalation / portfolio readiness allocation をどこまで registry 化するか
+  decision: scheduler の multi-incident reserve arbitration / mutual-aid escalation / portfolio readiness allocation を暫定固定した
+  note: reserve request packet、portfolio precedence axis、mutual-aid escalation trigger、DecisionLedger / GraphEngine / GraphLint / archive object の portfolio readiness allocation 管理責務を採用した。
+- theme: scheduler recovery policy recalibration / drill debt retirement / closure criteria をどこまで registry 化するか
+  decision: scheduler の recovery policy recalibration / drill debt retirement / closure criteria を暫定固定した
+  note: policy recalibration packet、drill debt case、closure witness、DecisionLedger / GraphEngine / GraphLint / archive object の recovery policy closure 管理責務を採用した。
+- theme: scheduler reserve capacity floor / preemptive throttling / admission shedding をどこまで registry 化するか
+  decision: scheduler の reserve capacity floor / preemptive throttling / admission shedding を暫定固定した
+  note: reserve floor profile、reserve packet、shedding state、DecisionLedger / GraphEngine / GraphLint / archive object の readiness reserve 保護責務を採用した。
+- theme: scheduler surge staffing provenance / vendor-borrowed authority / access sunset をどこまで registry 化するか
+  decision: scheduler の surge staffing provenance / vendor-borrowed authority / access sunset を暫定固定した
+  note: surge source class、borrowed authority packet、access sunset evidence、DecisionLedger / GraphEngine / GraphLint / archive object の surge staffing provenance 管理責務を採用した。
+- theme: scheduler deferred maintenance backlog / compensating follow-up / recovery debt closure をどこまで registry 化するか
+  decision: scheduler の deferred maintenance backlog / compensating follow-up / recovery debt closure を暫定固定した
+  note: recovery debt class、compensating follow-up packet、closure witness、DecisionLedger / GraphEngine / GraphLint / archive object の recovery debt closure 管理責務を採用した。
+- theme: scheduler watchfloor downgrade ladder / relapse trigger / readiness rebound をどこまで registry 化するか
+  decision: scheduler の watchfloor downgrade ladder / relapse trigger / readiness rebound を暫定固定した
+  note: watchfloor stage、relapse trigger family、rebound packet、DecisionLedger / GraphEngine / GraphLint / archive object の readiness rebound 管理責務を採用した。
+- theme: scheduler prolonged-incident staffing horizon / rest debt settlement / recovery-readiness release をどこまで registry 化するか
+  decision: scheduler の prolonged-incident staffing horizon / rest debt settlement / recovery-readiness release を暫定固定した
+  note: staffing horizon tier、rest debt packet、recovery-readiness release evidence、DecisionLedger / GraphEngine / GraphLint / archive object の post-incident staffing recovery 管理責務を採用した。
+- theme: scheduler peer corroboration buddy-check / impairment dissent / contested override suspension をどこまで registry 化するか
+  decision: scheduler の peer corroboration buddy-check / impairment dissent / contested override suspension を暫定固定した
+  note: buddy-check class、challenge trigger、challenge packet、temporary suspension action、DecisionLedger / GraphEngine / GraphLint / archive object の peer challenge 管理責務を採用した。
+- theme: scheduler command vacancy succession / deadman escalation / missing-owner freeze をどこまで registry 化するか
+  decision: scheduler の command vacancy succession / deadman escalation / missing-owner freeze を暫定固定した
+  note: vacancy class、deadman policy、freeze class、succession state、DecisionLedger / GraphEngine / GraphLint / archive object の owner-loss failover 管理責務を採用した。
+- theme: scheduler fatigue-triggered override cooldown / protected-surface lockout / dual-control recovery をどこまで registry 化するか
+  decision: scheduler の fatigue-triggered override cooldown / protected-surface lockout / dual-control recovery を暫定固定した
+  note: lockout class、cooldown evidence、dual-control recovery state、surface-specific recovery gate、DecisionLedger / GraphEngine / GraphLint / archive object の fatigue fail-safe 管理責務を採用した。
+- theme: scheduler handover packet sealing / continuity checksum / orphaned obligation recovery をどこまで registry 化するか
+  decision: scheduler の handover packet sealing / continuity checksum / orphaned obligation recovery を暫定固定した
+  note: handover seal、continuity checksum、orphan class、repair lane、DecisionLedger / GraphEngine / GraphLint / archive object の continuity repair 管理責務を採用した。
+- theme: scheduler relief roster coverage / role substitution / certification freshness をどこまで registry 化するか
+  decision: scheduler の relief roster coverage / role substitution / certification freshness を暫定固定した
+  note: relief roster class、substitution class、certification freshness axes、borrowing packet、DecisionLedger / GraphEngine / GraphLint / archive object の relief staffing 管理責務を採用した。
+- theme: scheduler emergency capability depletion / fatigue budget / shift handover continuity をどこまで registry 化するか
+  decision: scheduler の emergency capability depletion / fatigue budget / shift handover continuity を暫定固定した
+  note: depletion signal、fatigue budget、handover packet、continuity state、DecisionLedger / GraphEngine / GraphLint / archive object の emergency human continuity 管理責務を採用した。
+- theme: scheduler post-incident causal graph / preventive control uplift / replay drill obligation をどこまで registry 化するか
+  decision: scheduler の post-incident causal graph / preventive control uplift / replay drill obligation を暫定固定した
+  note: causal graph node class、uplift class、replay drill obligation、effectiveness review、DecisionLedger / GraphEngine / GraphLint / archive object の post-incident learning 管理責務を採用した。
+- theme: scheduler incident command quorum / escalation ladder / lawful override attestation をどこまで registry 化するか
+  decision: scheduler の incident command quorum / escalation ladder / lawful override attestation を暫定固定した
+  note: incident role、quorum coverage、override attestation、handoff packet、DecisionLedger / GraphEngine / GraphLint / archive object の incident command 管理責務を採用した。
+- theme: scheduler hotfix divergence debt / temporary fork custody / reintegration gate をどこまで registry 化するか
+  decision: scheduler の hotfix divergence debt / temporary fork custody / reintegration gate を暫定固定した
+  note: divergence debt class、fork custody packet、reintegration gate、stale fork disposition、DecisionLedger / GraphEngine / GraphLint / archive object の hotfix divergence 管理責務を採用した。
+- theme: scheduler emergency rollback lane / compensating patch / state re-entry witness をどこまで registry 化するか
+  decision: scheduler の emergency rollback lane / compensating patch / state re-entry witness を暫定固定した
+  note: rollback class、compensation packet、re-entry witness、quarantine exit 条件、DecisionLedger / GraphEngine / GraphLint / archive object の emergency rollback 管理責務を採用した。
+- theme: scheduler incident evidence freeze / triage queue / blast-radius classification をどこまで registry 化するか
+  decision: scheduler の incident evidence freeze / triage queue / blast-radius classification を暫定固定した
+  note: evidence freeze class、triage priority axes、blast-radius class、containment action、DecisionLedger / GraphEngine / GraphLint / archive object の incident triage 管理責務を採用した。
+- theme: scheduler emergency hotfix lane / bounded bypass / supersession sunset をどこまで registry 化するか
+  decision: scheduler の emergency hotfix lane / bounded bypass / supersession sunset を暫定固定した
+  note: hotfix class、bypass packet、sunset packet、supersession/rollback 分岐、DecisionLedger / GraphEngine / GraphLint / archive object の emergency hotfix 管理責務を採用した。
+- theme: scheduler clock skew budget / deadline normalization / temporal witness trust をどこまで registry 化するか
+  decision: scheduler の clock skew budget / deadline normalization / temporal witness trust を暫定固定した
+  note: clock class、trusted source tier、normalized interval、temporal contest、DecisionLedger / GraphEngine / GraphLint / archive object の temporal semantics 管理責務を採用した。
+- theme: scheduler failover leader election / cross-site lease transfer / split-brain containment をどこまで registry 化するか
+  decision: scheduler の failover leader election / cross-site lease transfer / split-brain containment を暫定固定した
+  note: failover class、transfer packet、containment state、surviving reservation disposition、DecisionLedger / GraphEngine / GraphLint / archive object の failover 管理責務を採用した。
+- theme: scheduler reconciliation residue debt / reopen petition / closure aging をどこまで registry 化するか
+  decision: scheduler の reconciliation residue debt / reopen petition / closure aging を暫定固定した
+  note: residue debt class、debt packet、aging budget、reopen petition gate、closure barrier、DecisionLedger / GraphEngine / GraphLint / archive object の residue debt 管理責務を採用した。
+- theme: scheduler out-of-band side effect attestation / external echo assimilation / rollback admissibility をどこまで registry 化するか
+  decision: scheduler の out-of-band side effect attestation / external echo assimilation / rollback admissibility を暫定固定した
+  note: side effect class、effect claim packet、echo state machine、rollback vs compensation gate、DecisionLedger / GraphEngine / GraphLint / archive object の out-of-band effect 管理責務を採用した。
+- theme: scheduler manual takeover capability lease / operator session attestation / emergency revocation をどこまで registry 化するか
+  decision: scheduler の manual takeover capability lease / operator session attestation / emergency revocation を暫定固定した
+  note: capability lease class、session attestation field、dual-control 条件、revocation trigger、DecisionLedger / GraphEngine / GraphLint / archive object の human session 管理責務を採用した。
+- theme: scheduler degraded mode / manual takeover / reconciliation closure をどこまで registry 化するか
+  decision: scheduler の degraded mode / manual takeover / reconciliation closure を暫定固定した
+  note: degraded operation class、manual takeover packet、closure state、re-enable gate、DecisionLedger / GraphEngine / GraphLint / archive object の degraded-mode 管理責務を採用した。
+- theme: scheduler executor crash recovery / idempotent replay / duplicate suppression をどこまで registry 化するか
+  decision: scheduler executor の crash recovery / idempotent replay / duplicate suppression を暫定固定した
+  note: failure class、recovery checkpoint packet、idempotency key、duplicate suppression surface、recovery phase、DecisionLedger / GraphEngine / GraphLint / archive object の executor recovery 管理責務を採用した。
+- theme: scheduler merge train atomicity / partial rollback segmentation / batch witness をどこまで registry 化するか
+  decision: scheduler merge train の atomicity / partial rollback segmentation / batch witness を暫定固定した
+  note: batch class、rollback cell、segment outcome、batch witness、DecisionLedger / GraphEngine / GraphLint / archive object の batch execution 管理責務を採用した。
+- theme: scheduler reservation lease / stale claimant recovery / starvation appeal をどこまで registry 化するか
+  decision: scheduler reservation の lease / stale recovery / starvation appeal を暫定固定した
+  note: lease class、progress witness に基づく renewal、stale claimant signal、recovery outcome、appeal lane、DecisionLedger / GraphEngine / GraphLint / archive object の reservation recovery 管理責務を採用した。
+- theme: scheduler lineage merge queue reservation / conflict arbitration / freeze window をどこまで registry 化するか
+  decision: scheduler lineage の merge queue reservation / conflict arbitration / freeze window を暫定固定した
+  note: reservation unit、priority factor、conflict class、bounded veto reach、freeze packet、DecisionLedger / GraphEngine / GraphLint / archive object の concurrent merge 管理責務を採用した。
+- theme: scheduler lineage rebase / cherry-pick patch provenance / equivalence witness をどこまで registry 化するか
+  decision: scheduler lineage の rebase / cherry-pick patch provenance / equivalence witness を暫定固定した
+  note: operation class、patch provenance bundle、equivalence class、debt delta、canonical head replacement 条件、DecisionLedger / GraphEngine / GraphLint / archive object の patch provenance 管理責務を採用した。
+- theme: scheduler imported branch attestation / issuer trust class / replay admission をどこまで registry 化するか
+  decision: scheduler imported branch の provenance / trust class / replay admission を暫定固定した
+  note: issuer trust class、import packet、admission mode、local attestation gate、mutation prohibition、DecisionLedger / GraphEngine / GraphLint / archive object の imported branch 管理責務を採用した。
+- theme: scheduler lineage branch quarantine / orphan expiry / abandoned branch tombstone をどこまで registry 化するか
+  decision: scheduler lineage の branch quarantine / orphan expiry / abandoned tombstone を暫定固定した
+  note: branch lifecycle state、quarantine trigger、orphan custody、tombstone packet、restore gate、DecisionLedger / GraphEngine / GraphLint / archive object の non-merged branch 管理責務を採用した。
+- theme: scheduler lineage branch merge-back / inherited debt carry-forward / canonical head selection をどこまで registry 化するか
+  decision: scheduler lineage の merge-back / inherited debt carry-forward / canonical head selection を暫定固定した
+  note: branch class、merge witness、conflict class、inherited debt bundle、canonical head selection state、DecisionLedger / GraphEngine / GraphLint / archive object の merge governance 管理責務を採用した。
+- theme: scheduler lineage schema evolution / cross-version replay compatibility / downgrade barrier をどこまで registry 化するか
+  decision: scheduler lineage archive の schema evolution / cross-version replay compatibility / downgrade barrier を暫定固定した
+  note: schema version、semantic profile、adapter manifest、compatibility class、loss class、single-writer rule、DecisionLedger / GraphEngine / GraphLint / archive object の schema evolution 管理責務を採用した。
+- theme: scheduler lineage external audit export / foreign replay proof / trust-boundary redaction をどこまで registry 化するか
+  decision: scheduler lineage archive の external export / foreign replay proof / trust-boundary redaction を暫定固定した
+  note: recipient class、export packet、redaction ledger、authority split、foreign replay proof、DecisionLedger / GraphEngine / GraphLint / archive object の external export 管理責務を採用した。
+- theme: scheduler lineage retention tier / legal-hold carveout / purge attestation をどこまで registry 化するか
+  decision: scheduler lineage archive の retention / legal-hold / purge attestation を暫定固定した
+  note: retention tier、hold class、purge scope、purge attestation packet、DecisionLedger / GraphEngine / GraphLint / archive object の retention / purge 管理責務を採用した。
+- theme: scheduler policy lineage compaction / replay-ready archive / supersession finality をどこまで registry 化するか
+  decision: scheduler policy lineage の compaction / replay-ready archive / supersession finality を暫定固定した
+  note: active/superseded/canary/rolled-back の policy head を lineage segment として扱い、retained witness minimum、replay-ready archive、finality state、targeted reopen、DecisionLedger / GraphEngine / GraphLint / archive object の lineage 管理責務を採用した。
+- theme: scheduler migration regression audit / rollback debt settlement / post-migration attestation をどこまで registry 化するか
+  decision: scheduler migration の regression audit / rollback debt settlement / post-migration attestation を暫定固定した
+  note: regression audit window、rollback debt bucket、attestation packet、insufficient attestation branch、reopen trigger、tool ごとの post-migration 管理責務を採用した。
+- theme: scheduler policy promotion / fleet-wide commit / divergence budget closure をどこまで registry 化するか
+  decision: scheduler policy promotion / fleet-wide commit / divergence budget closure を暫定固定した
+  note: promotion gate、divergence budget、phase mode、closure witness、mixed-mode promotion と rollback 分岐、tool ごとの promotion 管理責務を採用した。
+- theme: scheduler rollout canary cohort / exception lane / emergency bypass をどこまで registry 化するか
+  decision: rollout 中の canary cohort / exception lane / emergency bypass の境界を暫定固定した
+  note: cohort selection unit、mandatory exclusion set、widening condition、exception lane、shadow-mode、emergency bypass の required field と禁止境界、tool ごとの rollout exception 管理責務を採用した。
+- theme: scheduler policy rollout / what-if simulation / threshold migration witness をどこまで registry 化するか
+  decision: scheduler policy rollout の simulation / canary / migration witness を暫定固定した
+  note: what-if simulation の scenario class と input bundle、success/failure witness、canary rollout / dual-policy coexistence、old/new threshold の comparability witness、tool ごとの rollout 管理責務を採用した。
+- theme: quota debt remediation / lane rebalancing / backlog-drain plan をどこまで registry 化するか
+  decision: quota debt の remediation family と lane rebalancing / backlog-drain plan を暫定固定した
+  note: confirmed breach には remediation plan を必須とし、starvation / disclosure / reseal / audit_followup debt ごとに remediation family を分離した。donor/receiver lane、borrow cap、protected floor、expiry、rollback path を束ねた rebalance rule と、waiver を伴う debt forgiveness の例外条件を採用した。
+- theme: scheduler fairness breach / auto-throttle activation の confirmation / hysteresis / cooldown-clearance をどこまで registry 化するか
+  decision: scheduler breach の確定条件と hysteresis / cooldown-clearance を暫定固定した
+  note: nominal / suspected_breach / confirmed_breach / mitigating / cooldown / cleared の状態を導入し、activation threshold と release threshold を分離した。confirmed_breach には sustained window、debt worsening、独立 corroboration のいずれかを要求し、same-source 二重計上を禁止した。
+- theme: multi-session scheduler telemetry / fairness SLO / auto-throttle threshold をどこまで registry 化するか
+  decision: multi-session scheduler の観測項目と fairness SLO、threshold branch を暫定固定した
+  note: lane occupancy・wait time tail・preemption・checkpoint yield gap・debt carry-over・settlement residue age を telemetry の基本集合とし、bounded_wait_p95 / debt_half_life / override_budget_ratio などを SLO に採用した。threshold branch は observe_only / auto_throttle / mandatory_checkpoint_yield / manual_escalation の4段階とした。
+- theme: cross-session settlement checkpoint / quota debt carry-over / audit proof bundle をどこまで registry 化するか
+  decision: 複数 session の結果を閉じ直す settlement checkpoint と debt carry-over を暫定固定した
+  note: settlement checkpoint を append-only bundle とし、starvation / disclosure / reseal / audit followup debt を分離した。partial closure と global clean closure を明確に分け、audit proof bundle を外向け closure の必須条件にした。
+- theme: authority-tier 競合下の forced preemption / emergency override / appeal reopen をどこまで registry 化するか
+  decision: authority 競合時の override と appeal reopen について、優先権と差戻しの境界を暫定固定した
+  note: override_basis・target snapshot・counter-sign notice・restoration path を強制し、emergency override と appeal reopen を分離した。同格 authority 競合では contested surface freeze と remand を既定とした。
+- theme: shared archive object / chain family 競合下の witness reservation / packet budget segregation をどこまで registry 化するか
+  decision: shared archive object 上の資源予約について、reservation unit と borrow 制約を暫定固定した
+  note: witness_set / trace_packet_budget / exact_payload_handle / identity_unseal_slot / revoke_reseal_window の5 reservation unit を導入した。trace-equivalent witness だけを共有可能とし、exact payload・identity unseal・revoke reseal は exclusive か escrow transfer に限定した。
+- theme: multi-case legal-hold / nested replay session の quota / priority / starvation avoidance をどこまで registry 化するか
+  decision: 複数 replay session の同時実行条件について、lane・優先度・入れ子条件・飢餓回避を暫定固定した
+  note: exclusive mutation / bounded parallel read / nested child / observer shadow の4 lane と、life-safety から routine review までの priority class を採用した。nested replay は scope widening 禁止、preemption は freeze witness 必須、timer inheritance は surface ごとの stricter-of rule とした。
+- theme: reopened reverse chain の re-compaction / reseal / retention timer resume をどこまで registry 化するか
+  decision: reopen / replay / correction 後の reverse chain を閉じ直す readiness 条件と timer rule を暫定固定した
+  note: re-compaction readiness を5条件で束ね、reseal を chain manifest / packet set / identity layer / blob custody の4 surface で管理する方針を採用した。timer rule を resume / carry_over / reset / freeze_continue に分け、pre-reopen checkpoint の上書きを禁止した。
+- theme: replay-derived finding の correction / supersession / head reactivation をどこまで registry 化するか
+  decision: replay-derived finding を correction / supersession / reverse head reactivation / incident escalation に振り分ける境界を暫定固定した
+  note: finding class を7群に分け、silent current-basis promotion を禁止した。reverse head reactivation は shadowed-not-invalidated な prior head と replay-traceable lineage を要件とし、supersession には recipient closure evidence を要求する方針を採用した。
+- theme: replay audit packet の bounded disclosure / actor-slice redaction をどこまで registry 化するか
+  decision: replay audit window 中に出せる packet class と slice visibility の境界を暫定固定した
+  note: summary / trace / exact payload / identity-unseal の4 packet class を導入し、actor identity・accountability binding・recipient alias・evidence blob を別 slice として扱う方針を採用した。join barrier と post-use reseal を要求し、packet 横断 stitching による clear identity 再構成を禁止した。
+- theme: transition bundle の reverse chain に対する legal-hold reopen / replay audit window をどこまで registry 化するか
+  decision: compaction 済み reverse chain に対する legal-hold reopen と replay audit window の境界を暫定固定した
+  note: reopen を checkpoint・segment digest・retention attestation を束ねた witness に基づく操作として定義し、current basis と audit basis を分離した。bounded replay と full replay の境界、freeze / stop / reseal の状態、tool ごとの reopen / replay 管理責務を採用した。
+- theme: forward/reverse/correction chain の compaction / finality checkpoint / evidence retention をどこまで registry 化するか
+  decision: forward / reverse / correction chain の compaction class、replay-equivalence witness、finality checkpoint、evidence retention tier を暫定固定した
+  note: compaction を raw chain の削除ではなく checkpoint 追加として扱い、current basis に closure_checkpoint を使うには replay-equivalence witness を要求する方針を採用した。retention tier を chain_core / proof_core / notice_core / downstream_ack_core / full_archive に分け、legal-hold や escalated_gap がある間の finality を禁止する方針を採用した。
+- theme: correction notice の downstream propagation / acknowledgment closure / stale notice quarantine をどこまで registry 化するか
+  decision: correction notice の downstream propagation について、recipient surface、required acknowledgment、closure class、stale notice quarantine、current basis への接続を暫定固定した
+  note: primary / delegated / disclosed downstream / inferred downstream を区別し、closure を exact_closed / bounded_closed / quarantined_stale / escalated_gap / open の5値で扱う方針を採用した。upstream supersession だけで downstream stale notice を閉じず、quarantine を current basis からの隔離状態として明示する方針を採用した。
+- theme: reverse continuity bundle の overlapping rollback / cascade rollback / rollback-set normalization をどこまで registry 化するか
+  decision: 複数の reverse continuity bundle が重なる場合について、rollback cell の canonical 単位、overlap class、active head、cascade rollback / reverse-of-reverse の admissibility を暫定固定した
+  note: rollback cell を forward ref・affected cell・notice surface・authority path・correction generation の束として定義し、authority race や conflicting supersession では automatic head 決定を禁止した。same-surface duplicate だけを idempotent collapse 可能とし、reverse-of-reverse には prior reverse の reopen eligibility と notice duty の可視化を要求する方針を採用した。
+- theme: transition bundle の partial rollback / reverse continuity witness と correction notice supersession をどこまで registry 化するか
+  decision: partial rollback を reverse continuity bundle の append として扱い、minimum reverse witness、affected partition cell selection mode、correction notice supersession / full re-notice 条件を暫定固定した
+  note: forward bundle の削除を禁止したうえで、cell_exact を原則とし、recipient closure / authority rebind の lawful expansion だけを許した。correction notice は widening や coverage 不足や downstream 不明を伴う場合に supersession ではなく full re-notice を要求する方針を採用した。
+- date: '2026-03-21'
+  theme: merge / split transition bundle における lineage slice partition witness を audit witness charter とどう接続するか
+  decision: merge / split transition bundle について、lineage slice partition witness の minimum field set、audit witness packet / central delegation charter / bridge token / archive manifest の binding、notice / correction / rollback duty 分離を暫定固定した
+  note: lineage slice partition witness を hard partition axis ごとの canonical cell に固定し、audit witness packet を lawful continuity の一次 witness、charter を authority/duty template、bridge token を narrow continuity binder、archive manifest を immutable rollback/reopen anchor とした。partial rollback は reverse continuity bundle と correction notice bundle を append する方針にした。
+- date: '2026-03-21'
+  theme: bounded_loss_summary の preserved-statistic set / top-k cap を detector family / profile ごとにどこまで registry 化するか
+  decision: duplicate_discard_digest の bounded_loss_summary について、detector family 主導の preserved-statistic registry、cap class、lossless escalation 条件、silent summary drift 検査を暫定固定した
+  note: local_convention_detected / confirmed_policy_drift / bias_penalty / flooding_penalty には bounded admissibility を残す一方、suspected_leak / replay_penalty は lossless mandatory とした。さらに protected facet / authority path / export bundle / lawful purpose / retention bucket を hard partition axis とし、top-k summary には omitted tail mass・omitted bucket count・max omitted bucket mass・concentration upper bound を mandatory 化した。
+- date: '2026-03-21'
+  theme: root_profile / schema_version migration 時の dual-root coexistence window と comparability rule をどこまで registry 化するか
+  decision: root_profile / schema_version migration について、dual-root coexistence の use surface 境界、comparison loss class、new issuance freeze / old root freeze、comparability witness、rollback rule を暫定固定した
+  note: current_basis は exact_equivalent の shadow dual-current に限って conditional、history_verification は admissible、external_audit_disclosure と bridge_continuity は loss disclosure / bridge token 前提の conditional、replay_benchmark は benchmark linkage 前提の admissible とした。さらに successor 早出し防止の new issuance freeze と predecessor 引きずり防止の old root freeze を分離した。
+- date: '2026-03-21'
+  theme: central delegation charter extension registry の mixed-version coexistence window と batch migration witness 境界をどこまで registry 化するか
+  decision: central delegation charter extension registry について、weighted_quorum・ordered_fallback・jurisdiction_subtype_extension の family ごとに mixed-version coexistence の use surface 境界、predecessor freeze、successor mandatory、dual-validity window、batch migration witness を暫定固定した
+  note: new issuance は全 family で freeze 後 predecessor reuse を禁止し、history verification は admissible とした。weighted quorum は open forum / open packet 限定、ordered fallback は active containment continuity 限定、jurisdiction subtype extension は lineage closure 限定で bounded coexistence を許し、batch migration witness に open packet lineage・recipient-visible packet・emergency lane・drift scan・rollback witness を必須化した。
+- date: '2026-03-21'
+  theme: provisional recipient-visible export の recipient acknowledgment / batch recall evidence 境界をどこまで registry 化するか
+  decision: provisional recipient-visible export では、packet class × context ごとに recipient acknowledgment requirement を分け、batch recall evidence を per-recipient coverage と downstream chain を含む completion class で判定する方針を暫定固定した
+  note: recipient acknowledgment は authority approval や truth 判定ではなく recipient-side evidence として扱い、send success / open tracking / non-response を completion の代用にしない。complete / bounded_complete / escalated_gap / incomplete の4値を導入し、emergency / external-audit では complete のみ、local / central でも bounded_complete を packet class と override witness によって厳格に制限する方針を採用した。
+- date: '2026-03-21'
+  theme: measurement_projection_profile の granularity / collapse rule と critical extension 昇格条件をどこまで registry 化するか
+  decision: measurement_projection_profile では、raw measurement bundle / comparison-stable projection / registered extension / critical extension の4層を分離し、granularity class、lawful collapse 条件、critical extension 昇格条件を registry 化する方針を暫定固定した
+  note: comparison-stable projection の最小核は measurement_projection_profile_ref・measurement_scope_ref・claim_semantics_ref・attested_measurement_digest_ref とし、aggregation / uncertainty / composition / suite / extension family は必要時だけ conditional core として追加する。advisory summary は local 補助に限定し、central / emergency / external-audit の current basis へ昇格させない方針を採用した。
+- date: '2026-03-21'
+  theme: measurement_projection_profile の granularity / collapse rule と critical extension 昇格条件をどこまで registry 化するか
+  decision: measurement_projection_profile では、raw measurement bundle / comparison-stable projection / registered extension / critical extension の4層を分離し、granularity class、lawful collapse 条件、critical extension 昇格条件を registry 化する方針を暫定固定した
+  note: comparison-stable projection の最小核は measurement_projection_profile_ref・measurement_scope_ref・claim_semantics_ref・attested_measurement_digest_ref とし、aggregation / uncertainty / composition / suite / extension family は必要時だけ conditional core として追加する。advisory summary は local 補助に限定し、central / emergency / external-audit の current basis へ昇格させない方針を採用した。
+- date: '2026-03-21'
+  theme: central delegation charter extension registry の migration / supersession / inheritance 境界をどこまで registry 化するか
+  decision: central delegation charter extension registry では、migration・supersession・inheritance を別遷移として registry 化し、alias chain は semantic-equality migration に限定し、successor chain は material change または monotone strengthening を伴う profile successor として扱う方針を暫定固定した
+  note: weighted quorum・ordered fallback・jurisdiction subtype extension の各 family ごとに admissible transition 条件を分け、silent weakening / silent fallback / subtype minimum 緩和を禁止した。local / central / emergency / external-audit の各 context では deprecation notice duty、dual-validity window、provisional export / emergency lane への propagation rule を別に持たせる方針を採用した。
+- date: '2026-03-21'
+  theme: provisional recipient-visible export の contradiction / recall / notice duty をどこまで registry 化するか
+  decision: provisional recipient-visible export は current_decision_preview / bounded_preview / emergency_reveal / post_confirm_follow_up の4 packet class に分け、contradiction・rollback・supersession・expiry・reflection completion に応じて revoke / correct / narrow / follow-up notice を registry 化した duty family で扱う方針を暫定固定した
+  note: recipient-visible provisional packet は named recipient・explicit provisional label・expiry・notice plan・follow-up owner・predecessor/successor lineage を必須とし、public explanation と irreversible commitment を既定禁止にした。archive / bridge continuity は context と packet class に応じて mandatory 化し、silent replacement / silent expiry / widening correction を禁止する方針を採用した。
+- date: '2026-03-21'
+  theme: HSM attestation packet / human observer credential の raw measurement claim / algorithm suite / extension field をどこまで notation core から分離するか
+  decision: HSM attestation packet / human observer credential では、comparison-stable な projection / digest / registry reference family だけを notation core に残し、algorithm suite policy と extension meaning は extension registry に、raw measurement claim・vendor parameter blob・transcript / screen artifact は raw evidence adjunct に退避する方針を暫定固定した
+  note: raw measurement claim は projection profile と semantics ref を伴う digest family に縮約し、algorithm suite は profile ref と strength class に正規化し、extension field は registered / critical extension に限って registry 昇格させる。local / central / emergency / external-audit の context ごとに mandatory / conditional / forbidden を分け、challenge / freshness / replay / post-confirm duty は raw claim や algorithm literal や extension payload で代用しない方針を採用した。
+- date: '2026-03-21'
+  theme: central delegation charter の weighted quorum / ordered fallback / jurisdiction subtype extension の registry 分離
+  decision: central delegation charter では、jurisdiction family・authority family・approval route family・override / escalation family・non-delegable boundary を taxonomy core に残し、weighted quorum・ordered fallback・jurisdiction subtype extension は extension registry として分離する方針を暫定固定した
+  note: weighted quorum は collective approval forum の tally policy、ordered fallback は same-or-higher authority への monotone successor chain、jurisdiction subtype extension は family-level minimum を弱めない finer legal / sector overlay として整理した。local / central / emergency / external-audit の各 context で admissibility を分け、auditor の voting seat 化、silent fallback、subtype による family minimum 緩和を禁止した。
+- date: '2026-03-21'
+  theme: ratified 済みだが未 reflected の裁定結果を provisional binding としてどこまで使うか
+  decision: ratified 済みだが未 reflected の裁定結果は authoritative binding に昇格させず、reflection preparation・bounded internal preview・厳格条件付き provisional recipient-visible export に限定して provisional use する方針を暫定固定した
+  note: current decision / coverage / route gating / hold release / recipient-visible export の各 use surface を分け、shared_core coverage・head clear・route switch・hold release・public/irreversible export を unreflected outcome だけで正当化しない方針を採用した。recipient-visible provisional export では named recipient、explicit provisional label、expiry、contradiction notice path、archive/bridge continuity、post-reflection follow-up owner を mandatory とした。
+- date: '2026-03-21'
+  theme: HSM attestation packet / human observer credential の external serialization notation
+  decision: HSM attestation packet と human observer credential の external serialization notation では、semantic registry layer・canonical serialization layer・raw vendor evidence layer の三層分離、canonical field family、notation profile registry、challenge / freshness / replay / post-confirm duty の独立 binding rule を採用する方針を暫定固定した
+  note: HSM 側は hsm_detached_receipt / hsm_custody_external_bundle / hsm_challenge_emergency_bundle、observer 側は observer_scoped_session_credential / observer_challenge_bound_credential / observer_post_confirm_reviewer_credential を採用した。raw vendor blob や timestamp 単独や packet_digest 単独は canonical admissibility の代用にせず、local / central / emergency / external-audit の context ごとに mandatory / conditional / forbidden profile を分ける方針を採用した。
+- date: '2026-03-21'
+  theme: central delegation charter の jurisdiction family / authority family taxonomy
+  decision: central delegation charter では jurisdiction family・authority family・override / escalation family・non-delegable boundary を canonical taxonomy として固定し、local / central / emergency / external-audit の context ごとに mandatory / conditional / forbidden authority family を分ける方針を暫定固定した
+  note: jurisdiction family は same_tenant_same_jurisdiction から sovereign_or_external_audit_overlay までの5群、authority family は domain_execution / domain_review / domain_protected_facet / central_policy / central_exception / emergency_containment の6群を採用した。external auditor は authority family に数えず observer credential lane へ分離し、protected facet の final interpretation、cross-boundary broad reveal、charter issuance / ratification、bridge token の external continuity revoke / reissue、post-confirm 前の public explanation / irreversible commitment を non-delegable boundary として central lane へ固定した。
+- date: '2026-03-21'
+  theme: probabilistic allocation_witness の calibration strata / scoring rule / risk threshold registry
+  decision: probabilistic allocation_witness は、class ごとの calibration strata・scoring rule・evidence window・confidence floor・risk threshold を registry cell として固定し、deterministic current basis を代替させず、freeze / verify_only / triage へつなぐ非対称な diagnostic overlay としてだけ扱う方針を暫定固定した
+  note: calibrated_branch_distribution・ambiguous_mapping_posterior・risk_envelope_distribution の3 class を hypothesis universe / calibration profile / scoring rule / evidence window / decision cost profile が一致する場合にだけ比較可能とし、sub_bundle local current・super_bundle coverage では診断補助としてのみ許し、handoff_manifest current・replay / recipient alias / downstream digest continuity では current basis として禁止した。良好な probabilistic score を理由に deterministic mandatory witness の欠落や downgrade block を解除しない方針も採用した。
+- date: '2026-03-21'
+  theme: allocation_witness の composite unit / derived metric decomposition rule
+  decision: allocation_witness の composite unit / derived metric は、family ごとの canonical component へ lawful に分解できる場合にだけ current comparison に入れ、mandatory component 欠落・family collapse・comparison profile 不一致の metric は current basis から除外する方針を暫定固定した
+  note: super_bundle coverage、handoff_manifest current、recipient alias / replay export / downstream digest continuity では set-valued component を mandatory とし、sub_bundle local current で quantity conservation と identity binding を同時要求する場合は numeric + set-valued の togetherness を要求し、probabilistic component は diagnostic overlay に限定する方針を採用した。
+- date: '2026-03-21'
+  theme: handoff manifest の rollback / reopen / replay splice の canonical rule
+  decision: handoff manifest の rollback / reopen / replay splice は、archive manifest object を rewrite せず append-only linkage event と active current cell の切替で扱い、local reopen は same-boundary repair に限定し、nonlocal 再接続は replay splice として explicit successor proof と LCA boundary interface を要求する方針を暫定固定した
+  note: rollback は mandatory closure 上の current claim を撤回するが archived manifest object の削除や non-dependent sibling への一律 cascade を意味せず、recipient alias / replay export / downstream digest continuity は predecessor/current/successor witness cell の切替に従って再束縛する方針を採用した。
+- date: '2026-03-21'
+  theme: bundle-of-bundles の recursive nesting / stage DAG constraint の canonical rule
+  decision: recursive nesting は、intermediate super_bundle が独自の coverage rule / dependency cut / charter / export boundary を持ち、2層 flattening では current admissibility または lineage boundary を保持できない場合にだけ許す方針を暫定固定した
+  note: containment を rooted tree に固定し、child dependency を parent ごとの DAG に限定し、cross-branch dependency は lowest common ancestor の boundary interface を通すこと、child override は parent mandatory rule を弱めない monotone strengthening に限ること、recipient alias / replay export / downstream digest を LCA boundary を越えて自動継承させないことを採用した。
+- date: '2026-03-21'
+  theme: allocation_witness の numeric / set-valued / probabilistic family の canonical registry
+  decision: allocation_witness を numeric・set-valued・probabilistic の3 family に分け、context ごとの mandatory / conditional / forbidden matrix と downgrade barrier を持つ canonical registry として扱う方針を暫定固定した
+  note: super-bundle coverage claim、handoff_manifest current、recipient alias / replay export / downstream digest continuity では set-valued witness を mandatory とし、numeric witness は conserved quantity / quota / capacity の補助に限定し、probabilistic witness は calibration profile / scoring rule / evidence window が揃う場合でも freeze / verify_only / risk triage の補助に留め、sole current basis へ昇格させない方針を採用した。
+- date: '2026-03-21'
+  theme: staged n→m transition の bundle-of-bundles canonical schema
+  decision: staged n→m transition は flat な single canonical bundle ではなく、global continuity を束ねる super_bundle、stage-bound な sub_bundle、stage 境界を固定する handoff_manifest の三者で canonical 化する方針を暫定固定した
+  note: stage は coordination window・topology/mapping mode・mandatory edge cohort・local allocation_witness・archive handoff manifest を共有する最小単位とし、super-bundle coverage claim は mandatory sub-bundle current と required handoff current を必要条件にし、未依存の sub-bundle local claim を自動的に巻き込まない。archive manifest object は immutable とし、recipient alias / replay export / downstream digest は explicit linkage なしに stage boundary を自動継承させない方針を採用した。
+- date: '2026-03-21'
+  theme: bundle proof / edge proof の simultaneous suite revision dual-validity rule
+  decision: simultaneous suite revision を transition bundle 一括ではなく bundle_lane / edge_cohort_lane / claim class policy の3層で管理し、bundle coverage claim には successor bundle proof に加えて mandatory edge cohort の conformity を要求し、edge 局所 claim は bundle witness 非必須なら独立 current を維持できる方針を暫定固定した
+  note: proof_handle の propagation overlay を dual-validity より優先させ、tombstone / cut / freeze / verify_only が付いた mandatory witness を current continuity claim に使わせないこと、same current claim への predecessor / successor witness の無記名混在を禁止すること、recipient-visible alias / TTL extension には successor recipient-bound proof を mandatory とすることを採用した。
+- date: '2026-03-21'
+  theme: bundle proof / edge proof の simultaneous suite revision dual-validity rule
+  decision: simultaneous suite revision を transition bundle 一括ではなく bundle_lane / edge_cohort_lane / claim class policy の3層で管理し、bundle coverage claim には successor bundle proof に加えて mandatory edge cohort の conformity を要求し、edge 局所 claim は bundle witness 非必須なら独立 current を維持できる方針を暫定固定した
+  note: proof_handle の propagation overlay を dual-validity より優先させ、tombstone / cut / freeze / verify_only が付いた mandatory witness を current continuity claim に使わせないこと、same current claim への predecessor / successor witness の無記名混在を禁止すること、recipient-visible alias / TTL extension には successor recipient-bound proof を mandatory とすることを採用した。
+- date: '2026-03-21'
+  theme: proof_handle の partial revocation propagation rule
+  decision: proof_handle の revoke / supersede / quarantine / expire を sink class 別の cut / freeze / tombstone / verify_only matrix と、per-proof / per-bundle / per-recipient alias bundle / per-manifest continuity claim の scope unit で暫定固定した
+  note: mirrored cache は revoke=cut・supersede/quarantine=freeze・expire=verify_only、replay export は revoke=tombstone・supersede=cut・quarantine=freeze、downstream digest は immutable digest 本体ではなく continuity linkage cell を tombstone/verify_only/freeze で処理し、recipient-visible alias は revoke/supersede/expire=cut、archive manifest continuity は manifest immutable を維持したまま linkage record を verify_only/freeze で扱う。token hard cut は base token lawful existence / lineage 断絶時だけ mandatory とし、recipient misuse や local export binding loss では proof_handle local revoke で閉じる方針を採用した。
+- date: '2026-03-21'
+  theme: bridge token suite revision の migration / anti-downgrade registry
+  decision: bridge token の suite revision を predecessor/successor 関係・dual-validity mode・context 別 anti-downgrade barrier・migration witness・token_handle/proof_handle cut policy を持つ canonical registry として整理し、dual-validity window を equivalence ではなく bounded coexistence として暫定固定した
+  note: migration kind は alias_preserving_translation / monotone_strengthening / hard_cut_reissue に分け、internal_continuity・transition_bundle・external_audit・recipient_visible_continuity・emergency_bypass の5文脈ごとに legacy verification と legacy issuance の境界を分離した。anti-downgrade は bridge token suite 単体ではなく required attestation / observer profile を含む effective assurance vector で判定し、historical verification 用 legacy proof の current issuance 代用、suite revision entry を作らない backend 差替え、token_handle だけ更新して proof_handle の reissue/revoke を省略する shortcut を禁止した。
+- date: '2026-03-21'
+  theme: audit witness packet の vendor-neutral attestation / observer credential profile registry
+  decision: vendor-neutral registry を attestation class・observer credential class・evidence binding field・profile matrix・migration/downgrade barrier の5要素に分け、session_precommit / custody_boundary / observer_challenge / authority_outcome と supervised_session_observer / protected_audit_observer / emergency_containment_observer / post_confirm_reviewer の4×4 class 体系を暫定固定した
+  note: packet schema 側には class/profile ref と instance ref、registry 側には issuer/verification/freshness/independence/downgrade barrier を残す分界を採用した。external_protected_audit では session_precommit + custody_boundary、emergency_bypass では observer_challenge + emergency_containment_observer、post_confirm_review では authority_outcome + post_confirm_reviewer を mandatory とし、dual-validity window 中の silent downgrade と無記名 profile 混在を禁止した。
+- date: '2026-03-21'
+  theme: merge / split transition bundle の canonical schema
+  decision: transition bundle を common core・cardinality / mapping layer・edge layer・continuity linkage・export alias layer の5層で整理し、1→1 recontainer / n→1 merge / 1→n split の topology ごとの mandatory field と continuity cut 条件を暫定固定した
+  note: edge proof は predecessor/successor 局所関係、bundle proof は edge 集合の coverage / digest / manifest continuity を束ねると分離し、merge/split では allocation_witness と branch coverage、recontainer では unique_mapping_witness を mandatory とした。export-local pseudonym は successor branch × export bundle × recipient class 単位で新発行し、source stable pseudonym や他 branch alias の再利用を禁止した。
+- date: '2026-03-21'
+  theme: bridge token の signature suite / proof profile / revocation handle の canonical registry
+  decision: bridge token registry を raw algorithm 名ではなく assurance class ベースの suite registry として整理し、internal_continuity / transition_bundle / external_audit / recipient_visible_continuity / emergency_bypass の5文脈ごとに mandatory suite class・proof profile・revocation cut event を暫定固定した
+  note: signature suite は seal / notarization / derived proof・signer authority tier・key custody・recipient binding・downgrade barrier を束ねる registry cell とし、revocation handle は token_handle と proof_handle に分離した。supersession は monotone strengthening / reveal narrowing の場合だけ許し、hard cut・key compromise・allocation witness invalidation などでは tombstone を mandatory とした。
+- date: '2026-03-21'
+  theme: tenant merge / split 時の lawful continuity 条件
+  decision: tenant_id が変わる merge / split では source stable pseudonym の literal continuity を禁止し、1→1 recontainer で accountability preserved・same authority family・same jurisdiction family・reflected central transition charter・unique mapping が同時に満たされる場合だけ linear rebind を許す方針を暫定固定した
+  note: n→1 merge と 1→n split は single linear bridge で扱わず、predecessor_set / successor_set / allocation_witness を持つ transition bundle を mandatory とした。predecessor manifest は immutable とし、successor tenant は新しい manifest root を持つ。domain_delegation charter は same-tenant 内部委任に限るため、cross-tenant / cross-jurisdiction continuity charter の代替に使わない。
+- date: '2026-03-21'
+  theme: audit witness packet / central delegation charter の canonical schema
+  decision: audit witness packet を session basis・witness composition・authority judgement・continuity linkage・post-confirm duty を束ねる canonical packet として整理し、central delegation charter を authority tier・scope cap・allowed action family・exception lane・SLA・post-confirm owner を束ねる canonical charter として暫定固定した
+  note: external_protected_audit では charter_ref、required witness、duplicate digest linkage、bridge_token_proof_ref、archive_manifest_digest_ref を mandatory とし、emergency_bypass_record は provisional packet として final evidence / final penalty / public explanation への流用を禁止した。domain delegation は same-tenant・same-jurisdiction・bounded reveal に限定し、cross-tenant / cross-jurisdiction final confirm は central template または central delegation を mandatory とする。
+- date: '2026-03-21'
+  theme: duplicate_discard_digest の multiset root hash primitive / compression boundary
+  decision: multiset root を root_profile_ref = {compact_internal_v1, standard_canonical_v1, strict_external_v1} に束縛し、collision witness の mandatory 境界、compression grade の3段階、bridge token proof_ref / archive manifest digest を用いた external continuity rule を暫定固定した
+  note: multiset root の直接比較は root_profile_ref と schema_version_ref が一致する場合に限り、profile/schema migration では dual-root migration witness を併記する。lossless は external / deterministic / forensic / leak / replay_penalty で必須、bounded_loss は内部 analytical 限定、coarse は internal monitoring 限定とし、source stable pseudonym の external 露出を禁止する。
+- date: '2026-03-21'
+  theme: bridge token の cryptographic shape / export-local pseudonym TTL
+  decision: bridge token を HSM-backed seal・append-only notarization・recipient-scoped derived proof の三層として整理し、seal と notarization を mandatory、derived proof を external audit / external digest / emergency bypass / recipient-visible export で mandatory とする方針を暫定固定した。さらに、export-local pseudonym を recipient-bound alias と定義し、sink class × profile baseline と recipient cap の strictest min による TTL table、revocation trigger、single export bundle 単位の non-reuse clause を暫定固定した。
+  note: bridge token の canonical field set には bridge_kind、predecessor/successor commitment、lawful purpose、authorization basis、accountability lineage、recipient class、validity window、non_reuse_clause、revocation_handle、envelope binding、archive/reopen/digest linkage を含め、clear identity と reusable join key を禁止する。duplicate_discard_digest / archive replay / legal-hold reopen では proof_ref・manifest digest・reopen event ref を接続し、external surface には source stable pseudonym を出さない。
+- date: '2026-03-21'
+  theme: audit witness shard / central_authority 境界 / emergency bypass SLA
+  decision: audit witness shard を append-only precommit を必須基底とし、cross-boundary / protected / external visibility では HSM attested witness、clear identity または direct contact route を含む高危険 session では human observer witness を追加する hybrid witness composition として暫定固定した。また、cross-tenant / cross-jurisdiction external audit の central_authority 必須境界と、emergency bypass の bounded_actor_slice 上限・例外時 accountable_identity_slice・post-confirm SLA の数値 cap を暫定固定した。
+  note: central_authority は cross-tenant / cross-jurisdiction / cross-system join / protected facet external audit の既定 authority とし、domain_authority 例外は same-tenant・same-jurisdiction・pre-ratified charter・bounded reveal・supervised session に限定する。emergency bypass は full_envelope を禁止し、例外でも single named principal 向け accountable_identity_slice・audience 1・短TTL・post-confirm 前 final evidence 流用禁止を維持する。
+- date: '2026-03-21'
+  theme: duplicate_discard_digest の canonical field set と multiset root
+  decision: duplicate_discard_digest を common core field と family-specific override に分け、multiset root を order-independent かつ count-sensitive な canonical multiset root とし、root 単体ではなく cardinality・duplicate reason・stable pseudonym lineage・route / recipient / effect summary を別 field で残す方針を暫定固定した
+  note: representative 1件だけを universal default にせず、strict sink / leak / replay penalty では route・recipient・effect・lineage の summary を mandatory にする。member projection schema の違いを同一 root 比較に使わず、external digest では source stable pseudonym を export-local pseudonym または redacted lineage slice へ再束縛する。
+- date: '2026-03-21'
+  theme: stable pseudonym の scope / epoch / rotation bridge
+  decision: stable pseudonym の canonical scope を tenant_id・authority_family_id・accountability_domain_id の直積に固定し、epoch rotation と bridge packet、reopen 後 derived export の export-local pseudonym 再束縛を暫定固定した
+  note: forum / tool / archive は projection surface として扱い、独立 root scope を作らない。epoch は authority binding・accountability domain・reidentification risk・lawful partition の material change でだけ更新し、bridge packet は clear identity や reusable join key を含めない。external recipient 向け export では source pseudonym を再利用せず、export-local pseudonym と non-reuse clause に再束縛する。
+- date: '2026-03-21'
+  theme: legal-hold reopen key の split custody / quorum / emergency bypass
+  decision: sealed identity envelope の reopen を lane-based quorum として再定義し、authority_lane・custody_lane・security_lane・audit_notary_lane の4 lane、scenario 別 minimum quorum、retention timer 停止、access audit 先行固定、provisional emergency bypass を暫定固定した
+  note: delegated reviewer は request と scope packet 準備に限定し、domain/central authority と legal_hold_custodian の分離を崩さない。external_auditor は reusable shard を持たず、security_escalation は provisional bypass 後に authority post-confirm を要する。
+- date: '2026-03-21'
+  theme: cluster de-dup 後の raw signal retention の detector family 別規則
+  decision: cluster de-dup 後の retained raw unit は detector family ごとに変える方針を暫定固定し、cluster representative・duplicate discard digest・burst evidence packet・abuse anchor packet・replay-support blob の5 class を canonical artifact class として分離した
+  note: local_convention_detected は representative 中心、confirmed_policy_drift は basis pair / effective-use path、suspected_leak は route / recipient / effect evidence、bias/flooding/replay penalty は duplicate discard digest と burst / lineage 証拠を minimum retained raw unit に要求する。purge admissibility は replay class・archive bucket・legal hold・family minimum retained raw unit を同時に満たすときだけ true とする。
+- date: '2026-03-21'
+  theme: execution capsule の binary object と manifest/hash の canonical archive 境界
+  decision: execution capsule の archive 境界について、manifest を canonical archive core、digest chain を canonical integrity layer、sealed identity envelope を companion object、reference pointer を auxiliary locator とし、binary payload は replay class に応じて retained blob と purge 可能 blob を分ける方針を暫定固定した
+  note: pointer 単独や current-system 再生成を正本代替として認めず、incident replay / legal-hold reopen / purge admissibility を replay class と immutable digest binding で分岐させる。DecisionLedger は normative binding と purge judgement、GraphEngine は capsule production / blob lifecycle、archive object は manifest+digest chain+envelope linkage、external blob store は immutable payload 保持に責務分割する。
+- date: '2026-03-20'
+  theme: lawful cadence / expected burst envelope の detector family / sink class 別 registry 化
+  decision: detector family × cadence sink class × profile/context の registry cell を導入し、normal burst / lawful burst / suspicious burst / attack-like or drift-like active の4状態で cadence breach を扱う方針を暫定固定した
+  note: raw count ではなく cadence window・simultaneous burst・review backlog・confirmation lag・lawful burst witness の束で評価し、batch charter は event cap だけを限定的に引き上げられるが review_due / confirmation_due は緩めない方針を採用した。
+- date: '2026-03-20'
+  theme: 同一 authority・同一 precedence layer の複数 conflict に対する batch/tie-break 規則
+  decision: same-tier same-layer の conflict を interaction edge により cluster 化し、batchability、active head、blocking veto reach、timeout/fallback、split 条件を cluster 単位で判定する方針を暫定固定した
+  note: batch は tie-break の代用品ではなく bundle ratification の包装単位としてだけ扱い、head 選定は blocking_veto_reach → effective_due_urgency → effect_zone_width → coverage_deficit → coupling_degree → stable case_id の順で deterministic に決める。timeout と silence は deemed approval に使わず、blocking veto が shared_branch_family 以上へ及ぶ場合は reflected isolation basis がない限り cluster 全体を hold または escalate に送る。
+- date: '2026-03-20'
+  theme: 自己評価ログの監査粒度と保存期間の共通化
+  decision: 自己評価ログについて、canonical event family、granularity class、retention bucket、DecisionLedger / GraphEngine / GraphLint の責務分割を暫定固定した
+  note: final label だけでは再監査できないため、policy bundle・witness hash・execution capsule・override / branch effect を最小 event schema に含める方針を採用した。full_witness / summary_with_repro_capsule / archive_digest / purge_eligible_digest を分け、normative_permanent / audit_long / audit_medium / summary_short の4 bucket と profile/context override を採用した。
+- date: '2026-03-20'
+  theme: shared prompt / template 変更の semantic delta class の自動判定
+  decision: semantic delta class を none / bounded / material / unresolved の4値で暫定固定し、lexical diff ではなく canonical normalization・execution behavior・downstream binding・protected invariant の witness で安全側に自動判定する方針を採用した
+  note: parameterized_variant / inherited_bundle で semantic delta class が none の場合も hard_shared として扱い、見かけ上の差分を独立 corroboration route に数えない方針を明示した。bounded は ratified facet map と scoped downstream binding を持つ場合だけ許し、affected facet の prior reset / review に限定する。material / unresolved は affected facet の warmed state を崩し、lawful burst witness を増やさず、dense rotation では ambiguous_sparse / flooding_suspect 側へ倒す。
+- date: '2026-03-20'
+  theme: 真の incident burst と adversarial flooding の early-stage separation の較正
+  decision: early-stage burst / flooding separation を lawful_incident_burst・ambiguous_sparse_burst・flooding_suspect・attack_like_flooding_confirmed の4状態で整理し、suspend threshold を confirm threshold より低く置く方針を暫定固定した
+  note: same_team cap・hidden coupling closure・replay 汚染・sink exposure を通した後に diversity / cadence / coupling / replay / sink / direct anchor の6軸で cluster を判定し、lawful burst は confirm shortcut を開かず、flooding_suspect は bonus / corroboration を停止し、confirmed attack-like judgement には direct abuse anchor または separated corroboration を要求する方針を採用した。
+- date: '2026-03-20'
+  theme: shared prompt / shared rulepack / shared model checkpoint の hidden common-mode coupling の registry 化
+  decision: hidden common-mode coupling を pairwise heuristic ではなく canonical registry で扱い、prompt_pack / rulepack / model_checkpoint / template_bundle / mirror_lineage の5 family、relation taxonomy、coupling strength、same_team cap / prior reset / penalty / manual review linkage を暫定固定した
+  note: mirror_lineage は derivation family だが corroboration collapse と replay 判定に効くため同一 registry で扱い、family 一致だけでは hard coupling とみなさず、identical / parameterized_variant / inherited_bundle / mirrored_lineage / co_executed_profile の関係と semantic delta で強度を判定する方針を採用した。hard_shared は same_team corroboration を増やさず、bounded_shared は bounded bonus と scoped review に限定し、hidden coupling の新規検出・major version change・lineage root change・unresolved relation を calibration reset trigger 候補にした。
+- date: '2026-03-20'
+  theme: small-sample 時の prior α0 / β0 と credibility level ρ の領域別較正
+  decision: α0 / β0 / ρ の役割を prior mean・prior mass・credibility level に分離し、target family / detector family / profile / context ごとの baseline table、cold_start / sparse / warmed の ordinal fallback、confirm 系と suspend 系の分岐規則を暫定固定した
+  note: prior は証拠代替ではなく、confirm / release / delegated auto re-enable では warmed または direct anchor exception を要求し、small-sample posterior 単独では severe penalty や confirmed attack judgement を作らない方針を採用した。self-confidence の c_hist には delegated_auto_success を、confirmed_policy_drift / confirmed_leak には detector_confirmability を、bias / flooding / replay の severity には penalty_severity_estimation を割り当てた。
+- date: '2026-03-20'
+  theme: operator bias / adversarial flooding / replay attack の補正
+  decision: benign な partial independence と adversarial / strategic correlation を別軸として扱い、bias / flooding / replay penalty は separation を昇格させずに bonus・corroboration・confirmability を安全側へ減衰させる方針を暫定固定した
+  note: bias penalty は operator / reviewer path の偏りに、flooding penalty は dedup 後にも残る low-diversity burst に、replay penalty は stale / resolved / mirrored lineage の再包装に掛ける。clean な direct authoritative pair や direct reach には numeric penalty を掛けず、severe penalty が confirm path を汚染した場合だけ hold / emergency suspend / escalate を優先する。
+- date: '2026-03-20'
+  theme: same-team だが別 tool / 別 operator の partial independence の較正
+  decision: same_team の内部を coupled_duplicate / judgement_split / tool_split / dual_separated / forum_separated の5 class に分け、dual_separated 以上だけを same_team corroboration unit 候補として認める方針を暫定固定した
+  note: independence は人数差ではなく common-mode failure の分離として扱い、judgement_split / tool_split は bounded bonus に留め、same_team corroboration は 1 team / 1 hypothesis / 1 aggregation window あたり 1 unit に cap した。same_team corroboration は local_convention_detected と template_local の drift 確認補助には使えるが、confirmed leak、direct reach、external commitment、policy_sensitive facet の shortcut には使わない。
+- date: '2026-03-20'
+  theme: mirror lag upper bound の prior / credibility level の較正
+  decision: mirrored source の lag upper bound を source family ごとの prior と credibility class で初期化し、clock / cadence / breach history を用いて安全側に更新する方針を暫定固定した
+  note: lag upper bound は平均遅延ではなく current judgement 用の安全側上界として扱い、deterministic / bounded_strong / bounded_moderate / weak / unknown_or_excessive の5 class を採用した。direct observation / direct reach は zero-lag、mirrored telemetry は30分 strong、mirrored registry は1営業日 moderate、exported log は4時間 moderate、batch summary は2営業日 weak を初期値とし、effective age・freshness・detector window・confirmation_due の接続境界を固定した。
+- date: '2026-03-20'
+  theme: profile/context ごとの aggregation window と hard expiry の数値較正
+  decision: detector evidence の時間窓を signal persistence window・corroboration aggregation window・case hard expiry の3層へ分離し、detector family / profile / context ごとの baseline と stale-to-invalid 規則を暫定固定した
+  note: local_convention_detected / confirmed_policy_drift / suspected_leak を同一 window で扱わず、grace support は hold / suspend 継続にだけ許し、confirm / release には live support を要求する方針を採用した。hard expiry 到達は auto release ではなく stale support の invalid 化と new epoch 開始の契機とし、mirror lag と confirmation_due への linkage を追加した。
+- date: '2026-03-20'
+  theme: profile 別の review / activation / emergency confirmation SLA の数値較正
+  decision: registry authority / detector governance の SLA clock を profile・artifact class・context override の直積で monotone 較正し、baseline table と stricter override を暫定固定した
+  note: route_mapping_rule / strengthening_rule / canonical_registry_entry ごとに delegated review・domain/central ratification・activation・emergency confirmation の baseline を分け、regulated を最短、engineering_tradeoff を基準、organizational_or_social を consultation 反映のやや長い baseline とした。single_branch / external_irreversible / policy_sensitive は effective due を min で短縮するだけとし、silent extension を禁止し、breach 時は predecessor safe・suspend 状態・upper authority path に応じて hold / suspend-confirm / escalate / false に分岐させる。
+- date: '2026-03-20'
+  theme: detector confidence aggregation window / cluster de-dup rule
+  decision: local_convention_detected・policy drift・suspected leak の各 detector について、signal unit / cluster unit / corroboration unit / aggregation window を分離し、同系統反復を bounded aggregation で扱う共通規則を暫定固定した
+  note: same_source / same_pipeline / mirrored duplicate / batch anomaly は独立 corroboration として水増しせず、cluster 内は capped max、cluster 間は independence boundary つき bounded aggregation を採用した。single strong cluster は emergency suspend を起動しうるが、confirm には direct authoritative pair または required separation を満たす corroboration を要求し、DecisionLedger / GraphEngine には signal_cluster / corroboration_unit / burst_cap などの linkage を追加する方針を採用した。
+- date: '2026-03-20'
+  theme: local_convention_detected と confirmed policy drift の detector threshold
+  decision: local convention の疑いと confirmed policy drift を分離し、confidence 単独ではなく strong signal・corroboration・provenance separation・blast radius・authority tier・effective reliance の束で threshold を切る方針を暫定固定した
+  note: same-tier reviewer conflict 自体は drift とみなさず、unreflected override や unauthorized activation が加わったときだけ drift signal に昇格させる。delegated reviewer は provisional emergency suspend まで、confirmed policy drift の確定は domain authority または central authority が担う。high blast radius では suspend を早める一方、confirm 条件は direct registry/runtime pair または分離した証拠群を要求して緩めない方針を採用した。
+- date: '2026-03-20'
+  theme: 同一 authority tier 内の複数 reviewer / forum の tie-break と veto 競合
+  decision: same-tier review conflict を reviewer 序列ではなく approval structure・facet precedence・forum charter・fallback/escalation path により処理する方針を暫定固定し、response semantics と veto strength を整理した
+  note: approve / conditional_approve / veto / abstain / silence / timeout の意味論を分け、policy_block・risk_block を outvote 不可の blocking veto、review_block を same-frame remediation 前提の approval_conflict とした。forum verdict は lawful quorum と chair_tiebreak がある場合だけ1 review_unit outcome として数え、timeout は承認ではなく H4 から fallback / escalate へ分岐する方針を採用した。
+- date: '2026-03-20'
+  theme: sink typing evidence の freshness / self-report / mirrored observation の precedence
+  decision: freshness taxonomy を live / grace / stale / invalid の4状態で暫定固定し、mirror lag を effective age に織り込み、self-report を owner binding 系の補助根拠に限定した
+  note: claim facet ごとに局所比較を行い、admissibility → integrity → freshness → provenance → externality conservatism → recency の tie-break を採用した。mirrored telemetry は suspected leak や provisional promotion に限定して使い、confirmed leak や sealed 再縮退の override には使わない。DecisionLedger / GraphEngine には freshness_state・mirror_lag_class・override_block_reason などの linkage を追加する方針を採用した。
+- date: '2026-03-20'
+  theme: shared telemetry / cache / derived preview の sink 分類
+  decision: 5軸 vocabulary と class precedence を暫定固定し、shared telemetry=既定 bounded、temporary_cache=既定 sealed、derived_preview=既定 bounded として profile/context override を採用した
+  note: sealed/bounded/externalized を queryability・visibility・reuse・automation・TTL の最大軸で判定し、regulated では sealed 例外を狭め、organizational_or_social では human-forwardable な surface を重く見て外部化を早める方針を採用した。single_branch / external_irreversible / policy_sensitive では admissibility cap を別に置き、DecisionLedger / GraphEngine の sink typing record unit を追加した。
+- date: '2026-03-20'
+  theme: suspected leak と confirmed leak の detector threshold
+  decision: suspected / confirmed leak を confidence 単独ではなく detector confidence・corroboration・provenance separation・detector integrity の4軸で切り、sink class / profile / context override ごとの threshold floor を暫定固定した
+  note: authoritative_state / public_output / external_commitment / irreversible_resource_lock の各 sink class について suspected / confirmed の base threshold floor を置き、regulated は quarantine を早める lower threshold、organizational_or_social は false positive 抑制の higher threshold を採用した。confirmed は direct reach evidence と direct sink identity を要し、shortcut は authoritative_state / public_output / external_commitment にだけ限定し、irreversible_resource_lock では認めない。shared telemetry / temporary cache / derived preview については provisional sink typing を置き、DecisionLedger / GraphEngine の detector record 単位を拡張した。
+- date: '2026-03-20'
+  theme: externality budget の ttl / audience / sink cap の数値較正
+  decision: isolation externality budget の numeric cap table を regulated / engineering_tradeoff / organizational_or_social の3 profile で暫定固定し、single_branch / external irreversible / policy-sensitive 文脈の stricter override を採用した
+  note: sealed_internal と bounded_internal_observable について sink_cap_count、audience_cap_named_humans、artifact_kind_cap_count、ttl、review_due、expiry、purge_due_after_expiry を profile 別に固定し、externalized_nonbinding と authoritative_or_committing は isolation_basis では正当化しない方針を維持した。review_due は期限前の cleanup / revalidation 専用 cap、expiry は quarantine/purge 遷移、single_branch / external irreversible / policy-sensitive では class cap と ttl をさらに切り詰める。
+- date: '2026-03-20'
+  theme: mapping registry authority の delegated review と SLA
+  decision: registry authority tier を central authority / domain authority / delegated reviewer に分け、delegated reviewer を review・template-bound activation・same-identity revalidation・provisional emergency suspend に限定する方針を暫定固定した
+  note: cross-domain conversion、global canonical core change、authority/accountability/rollback expectation の再束縛は central authority に留保し、domain authority は domain-local rule の ratification / activation / supersession / final revoke を担う。baseline SLA は delegated review=2営業日、domain ratification=5営業日、central ratification=10営業日、activation/reflection=2営業日、emergency suspend confirmation=1営業日とし、期限超過は predecessor の有無と upper authority path に応じて hold / escalate / false に分岐する。local convention は registry_id・lineage・witness のない慣行として扱い、lawful basis に数えない。
+- date: '2026-03-20'
+  theme: dominance_only mapping と monotone strengthening の境界
+  decision: dominance_only を shared-core coverage の basis から切り離し、monotone strengthening governance を別建てで採用する方針を暫定固定した
+  note: 許容対象を safety / monitoring / rollback readiness / evidence gate strengthening に限定し、authority・accountability・rollback expectation・effect_zone を変える action family を禁止した。DecisionLedger には strengthening rule・witness・invariance を、GraphEngine には rule lifecycle と action admitted/rejected event を残す。
+- date: '2026-03-20'
+  theme: route family の partial-overlap candidate に対する lawful route mapping
+  decision: partial-overlap candidate を canonical route core と residual bundle に分け、exact_equivalent / core_equivalent だけを lawful mapped coverage の basis とする方針を暫定固定した
+  note: shared-core coverage は、current action の support profile が全 live branch の preserved core に含まれ、residual bundle が affected zone と authority/accountability/rollback expectation を変えないときにだけ lawful mapped basis で主張できる。required facet に ratified mapping がなければ incomparable_coverage、mapping があっても residual に触れれば uncovered とする。DecisionLedger には mapping rule・canonical core・relation kind・validity を、GraphEngine には ratified/activated/revoked/superseded と coverage invalidation を残す。
+- date: '2026-03-20'
+  theme: shared-core action / intersection-safe action の admissible 条件
+  decision: 未解決 plurality / open stakeholder conflict の下でも、shared_core または intersection_safe の coverage_kind を満たす action だけを branch-preserving に許容し、uncovered / incomparable_coverage を分離して扱う方針を暫定固定した
+  note: coverage_basis は live candidate / outcome 全体を覆う reflected binding に、isolation_basis は contested binding の外側または shadow/sandbox/rollback-contained な effect zone に限定した。ratified だが未 reflected の outcome は coverage に数えず、branch collapse・external irreversible commitment・policy-sensitive reduction は既定で禁止とした。q_decision は coverage_kind に応じて blocker 化し、DecisionLedger / GraphEngine の記録単位も分離した。
+- date: '2026-03-20'
+  theme: unresolved plurality から active governance blocker への昇格規則
+  decision: unresolved_plurality は保存状態そのものでは blocker とせず、commitment requirement・branch-critical divergence・action coverage 不足・lawful path 状態の交差でだけ active governance blocker へ昇格させる方針を暫定固定した
+  note: commitment_mode / plurality_effect_zone / path_status / action_coverage を最小語彙とし、plurality それ自体や候補数だけでは blocker 化しないと整理した。single-branch または bounded authoritative set を現在要求する文脈で、candidate 差分が safety・法規・契約・外部コミット・結果責任・不可逆 resource lock に触れ、intended action が reflected coexistence / scope split / scoped exploration に包まれていないときだけ q_decision を抑制する。same-frame path があれば hold、上位 authority path のみなら escalate、lawful path absent や target invalidated なら false とする。
+- date: '2026-03-20'
+  theme: canonical unit / baseline registry の共通化
+  decision: canonical registry を authority-bound な正規化基盤として暫定固定し、quantity kind・semantic facet・canonical unit・baseline family・comparator profile・sampling window profile・ratified conversion rule を最小核とした
+  note: ratified conversion rule が active で scope 内にある場合だけ incomparable_guard の representation mismatch を解消できると整理した。DecisionLedger を normative authority、GraphEngine を versioned persistence owner、GraphBuild/GraphLint を proposal/diagnostic 側に分け、same-frame manual redesign の lawful alignment は既存 registry rule を使う場合に限定した。
+- date: '2026-03-20'
+  theme: guard_contradiction と same-frame manual redesign path の判定規則
+  decision: guard_failure / guard_contradiction / incomparable_guard を切り分け、same-frame manual redesign path を frame-preserving redesign として暫定固定した
+  note: guard_failure は admissible set 非空の未充足、guard_contradiction は admissible set 空、incomparable_guard は canonical conversion / baseline / ratified comparison rule 不足と整理した。same-frame manual redesign path は target・V・R・policy を緩めずに admissible set を非空化できる lawful manual redesign とし、存在時は delegated branch を human_approval_required、非存在時は force_escalate または current frame false へ送る方針を採用した。
+- date: '2026-03-20'
+  theme: 非収束領域の理論化
+  decision: 非収束を Hold / false / unresolved_plurality / deliberate_exploration に分け、未収束を failure 一般へ潰さない方針を暫定固定した
+  note: unresolved_plurality は institutional incomparability・ratified coexistence・scope split pending などに支えられる co-legitimate alternatives の保存状態、deliberate_exploration は objective / owner / review_window / exit_criteria を持つ探索統制状態と整理した。unknown relation や live conflict はそのまま plurality 扱いせず、delegated auto は branch collapse を正当化しない。
+- date: '2026-03-20'
+  theme: calibration history の decay window と drift 閾値
+  decision: calibrated self-confidence の履歴較正について、stratum の最小軸、time decay、effective sample floor、rollback_success の部分算入、mild / severe drift の閾値を暫定固定した
+  note: γ, op, ic, ext, rev, ev_cls, ctx_cls を stratum 最小軸とし、cross-profile の正の流用を禁止した。decay は domain 別 half-life / max window を持ち、verification_pending は成功へ算入せず、policy_version major change・unseen context/evidence class・negative outcome 連続を severe drift とした
+- date: '2026-03-20'
+  theme: guard cap の ordinal / numeric 較正式
+  decision: mixed-domain profile と delegation_scope D の guard facet を ordinal_cap / numeric_guard / set_valued_requirement に正規化し、strictest bound の meet と branch 接続規則を暫定固定した
+  note: ordinal cap は最小許容 bound、numeric guard は comparator・unit・baseline 正規化後の meet、required_all は和集合、allowed_set は積集合を採用した。guard meet の結果は eligible / guard_failure / guard_contradiction / incomparable_guard に正規化し、branch-critical / regulated trigger / external commitment を含む incomparable_guard は force_escalate 側へ寄せた
+- date: '2026-03-20'
+  theme: auto_rollback の完了保証と rollback failure 時の分岐
+  decision: auto_rollback 完了を rollback_target への lawful restoration と verification evidence の充足で判定し、rollback_success / verification_pending / partial_rollback / rollback_fail を暫定固定した
+  note: verification_pending は成功扱いせず、partial_rollback と rollback_fail は既定で force_escalate とした。regulated / engineering_tradeoff / organizational_or_social ごとに completion 条件と escalation 境界を分けた
+- date: '2026-03-20'
+  theme: self-confidence の較正と confidence_floor の設定
+  decision: calibrated self-confidence を raw self-report から切り離し、required_evidence・freshness・conflict・decision context・rollback readiness・過去実績から保守的に較正する統治用信号として暫定固定した
+  note: confidence_floor は domain profile ごとの base floor と operation/impact/externality/reversibility による uplift で管理し、cold start・drift・critical disputed evidence では delegated auto を止める方針を採用した
+- date: '2026-03-19'
+  theme: 収束の候補定義の比較
+  decision: 収束の基礎定義として二層型を暫定採用した
+  note: 説明可能化型と判断可能化型を二層モデルの内部要件として再配置した
+- date: '2026-03-19'
+  theme: Knowledge State の最小構成
+  decision: Knowledge State の理論上の最小核を認識層 K_e=(G,C,E)、統治層 K_g=(G,C,E,V,R) として整理した
+  note: H は履歴・監査・差戻しを担う運用層として残し、K=(G,C,E,V,R,H) という拡張状態表記は維持した
+- date: '2026-03-19'
+  theme: 認識収束と統治収束の接続条件
+  decision: C_e(K_e) の必須判定項目、K_g への追加条件、Hold(K) の理由付き正当化、AI自己評価と人間承認の境界を暫定整理した
+  note: 説明可能性と実行承認のあいだに、価値 V と責任 R を束縛する統治ゲートを置く方針を採用した
+- date: '2026-03-19'
+  theme: 価値 V と責任 R の表現形式
+  decision: V は採択基準・許容リスク・優先関係・棄却条件、R は承認主体・実行主体・結果責任主体・エスカレーション先・委任範囲を最小語彙とし、制御語彙を基底に置く多層表現を暫定採用した
+  note: 自然言語は説明層、部分順序は優先関係、数値化は補助層として位置づけた
+- date: '2026-03-19'
+  theme: Knowledge State 各成分の最小単位の厳密化
+  decision: 各成分について、存在条件と収束十分条件を分離し、G/C の境界、E の型付き欠落マーカー、V/R/H の最小存在条件とツール割付けを暫定固定した
+  note: 存在条件を満たしても収束成立は意味しない方針を明示し、DecisionLedger と GraphLint の責務境界を強化した
+- date: '2026-03-19'
+  theme: C_e(K_e) の管理可能水準の定量化または半定量化
+  decision: Q_e(K_e) を 6 次元の順序尺度として暫定固定し、重大/軽微/許容の分類規則、true/hold/false 分岐条件を採用した
+  note: 主要主張未充足は gate 判定で重く扱い、単一総合スコアを主判定器にしない方針を明示した
+- date: '2026-03-20'
+  theme: Hold(K) の理由語彙と差戻し条件の標準化
+  decision: Hold の最小 reason_code を H1〜H6 に固定し、各 code に rollback_target・required_action・reopen_condition・deadline_basis・escalation_condition を必須化した
+  note: GraphLint は診断正本、DecisionLedger は hold 運用正本、GraphEngine は状態遷移履歴の正本という責務分割を明示した
+- date: '2026-03-20'
+  theme: Q_g(K_g) と C_g(K_g) の接続定義
+  decision: Q_g(K_g)=(q_decision, q_responsibility) の 0..3 順序尺度、Eval_g(K_g) ∈ {true, hold, false} の branch 条件、DecisionLedger と GraphEngine の判定責務分割を暫定固定した
+  note: GC1 を entry gate とし、H3〜H6 を governance hold の理由語彙として用い、GraphEngine は意味判定を持たず履歴確定に専念する方針を明示した
+- date: '2026-03-20'
+  theme: 事前委任された自動承認範囲の形式化
+  decision: delegation_scope D の最小構文を target_scope・guard_conditions・prohibited_conditions・required_evidence・fallback_branch・audit_obligation として暫定固定し、human approval required / conditional auto / auto rollback / force escalate の概念境界を整理した
+  note: 事前委任は価値採択主体や結果責任主体の移転を意味せず、DecisionLedger に delegation policy schema を保持する方針を明示した
+- date: '2026-03-20'
+  theme: V の priority_relation と数値補助の厳密化
+  decision: priority_relation から blocks を排除し、dominates / independent / incomparable を最小関係語彙として採用したうえで、numeric_support は veto や未比較性を上書きしない補助層として暫定固定した
+  note: 未裁定の stakeholder conflict は V に直接押し込まず、裁定結果だけを V に反映する方針を採用した
+- date: '2026-03-20'
+  theme: 複数 hold reason の優先順位と集約規則
+  decision: Hold は single reason ではなく、primary_reason 1件と secondary_reasons 集合を持つ複合モデルとして暫定固定した
+  note: epistemic blocker を entry gate 上で優先し、同一 family 内では root-cause 優先、同順位では H2>H1 / H6>H5>H3>H4 の既定順序を採用した
+- date: '2026-03-20'
+  theme: typed missing marker の共通語彙化
+  decision: 共通語彙の核を absent / pending / external_ref / not_applicable / disputed に固定し、E は evidence_status、V/R は binding_status で受ける方針を暫定採用した
+  note: approval_pending / risk_excess / policy_block は marker ではなく統治状態として扱い、legacy の e_missing_* / e_conflicted は正規化対象とした
+- date: '2026-03-20'
+  theme: priority_relation の領域別語彙較正
+  decision: priority_relation の共通 relation 語彙を dominates / independent / incomparable / unknown に固定し、領域差は calibration profile と stakeholder conflict の裁定層で扱う方針を暫定採用した
+  note: unknown は未束縛、incomparable は制度的比較禁止、independent は並列評価、dominates は ratified precedence として分離した
+- date: '2026-03-20'
+  theme: stakeholder conflict の裁定層接続
+  decision: live conflict は V の外で adjudication case として保持し、ratified かつ reflected された outcome だけを V に反映する方針を暫定採用した
+  note: adjudication case の最小核、open→ratified→reflected の lifecycle、branch-critical open conflict の q_decision / Eval_g への接続境界を整理した
+- date: '2026-03-20'
+  theme: q_decision / q_responsibility の領域別較正
+  decision: Q_g(K_g) の共通下位観点、domain profile ごとの cap rule、score 2/3 条件、cross-check 規則を暫定固定した
+  note: regulated_domain / engineering_tradeoff_domain / organizational_or_social_domain で語彙は共有し、適用下位観点と blocker 規則だけを較正する方針を採用した
+- date: '2026-03-20'
+  theme: 複数承認主体、代理承認、fallback role の正規化
+  decision: approval structure を approval_mode・required_approver_condition・proxy_rule・quorum_rule・fallback_role・approval_validity を含む責任構造の最小拡張として暫定固定した
+  note: q_responsibility=2 と 3 の境界を approval structure の機械可読性で分け、構造不足は H3、運用中の承認待ちや conflict は H4 へ写像する方針を採用した
+- date: '2026-03-20'
+  theme: delegation_scope D の guard/prohibition 語彙の標準化
+  decision: guard_conditions を cap 判定、prohibited_conditions を categorical blocker として分離し、後者を X_auto / X_esc に分ける方針を暫定固定した
+  note: required_evidence の pending / external_ref / freshness 不足は既定では guard failure、critical disputed evidence と lawful exception required は prohibition family に送る方針を採用した
+- date: '2026-03-20'
+  theme: mixed-domain profile 合成規則
+  decision: profile を decision target 全体へ一括適用せず、affected subdimension と delegation facet ごとに applicable profile 集合を求め、score=min・blocker=union・global cap 後適用で合成する方針を暫定固定した
+  note: local override は stricter 方向の精密化に限定し、regulated veto・mandatory authority・X_esc・branch-critical cap を緩めない方針を採用した
+- date: '2026-03-20'
+  theme: disjunctive requirement / route family の meet 演算
+  decision: any_of / k_of_n / route family を、local bundle を持つ admissible selection family として暫定固定し、strictest meet は lawful alignment 後の admissible selection の交差で定義する方針を採用した
+  note: route family を allowed_set や required_all へ直接還元しない。single-step any_of と identical-universe pure k_of_n だけを special case として還元し、semantic obligation / counting basis / route mapping / exclusivity が揃わない場合は incomparable_guard とする。
+- date: '2026-03-20'
+  theme: stakeholder conflict の branch-criticality と chained adjudication 規則
+  decision: live stakeholder conflict を adjudication layer の governance object とし、branch-criticality の4因子、precedence DAG に基づく chained adjudication、q_decision / Eval_g / tool split への接続を暫定固定した
+  note: stakeholder 数や numeric_support を criticality proxy に使わず、frame 定義→hard gate→risk gate→tradeoff の順で head case を処理する方針を採用した
+- date: '2026-03-20'
+  theme: action coverage basis の expiry / revocation 規則
+  decision: basis_status を active / review_due / expired / revoked / superseded / revalidation_pending に整理し、expiry・revocation・supersession・revalidation を basis kind 横断で分離して q_decision と lifecycle event へ接続する方針を採用した
+  note: review_due は expiry 後 grace ではなく期限前 cap とし、expired basis の暗黙延長、revoked basis の in-place 再有効化、stale basis を使った external commitment を禁止した。
+- date: '2026-03-20'
+  theme: shadow / sandbox / branch-local artifact の externality budget と expiry
+  decision: shadow / sandbox / branch-local artifact を containment profile として整理し、externality budget を allowed sink set・audience class・artifact kind・ttl・rollback/purge obligation・automation prohibition の束として暫定固定した
+  note: externalized_nonbinding と authoritative_or_committing は intersection_safe の isolation_basis に数えず、confirmed leak は isolation_basis を即時 revoked にし、review_due は cleanup / containment だけを許す期限前 cap とした。
+- date: '2026-03-20'
+  theme: detector integrity class と provenance level の canonical registry
+  decision: sink typing と leak detector の共通 registry として、5つの source family、5段階の detector integrity class、4段階の provenance level、claim facet 別 precedence を暫定固定した
+  note: human declaration / mirrored telemetry / direct system observation / access-control or routing log / direct reach evidence を区別し、single total order は採用せず、effect realization・route identity・sink typing positive escalation・owner binding の各 facet ごとに precedence を分けた。confirmed leak の integrity floor は sink class ごとに authoritative_state=system_of_record_or_forensic、public_output=standard_observability、external_commitment=control_plane_record、irreversible_resource_lock=system_of_record_or_forensic とした。DecisionLedger / GraphEngine には evidence_source_family・claim_facet・direct_reach_basis などの record linkage を追加した。
+- date: '2026-03-20'
+  theme: mirror lag estimate と sampling window の統計的同値 rule
+  decision: mirror lag estimate を平均遅延ではなく upper-bound freshness parameter として扱い、sampling window equivalence を exact / conservative / provisional / non-equivalent に分けて freshness・suspected judgement・confirmed judgement の admissibility に接続する方針を採用した
+  note: duration 一致だけでは window equivalence を認めず、observation_mode・aggregation_operator・alignment_anchor・coverage・missing_data policy を束縛する ratified rule を要求した。outward-risk 側では conservative_equivalent まで許すが、sealed re-entry / closure confirmation では exact_equivalent を要求する。DecisionLedger / GraphEngine には sampling_window_profile_ref・window_equivalence_rule_ref・lag_upper_bound・coverage_ratio・alias_risk_class などを追加する。
+- theme: Q_e(K_e) の補助主張側しきい値を領域別にどう較正するか
+  decision: 補助主張 cluster の score 2/3 floor、independence rule、systemic promotion 条件を domain profile ごとに暫定固定した
+  note: regulated_domain / engineering_tradeoff_domain / organizational_or_social_domain ごとに、q_structure〜q_explain の score2/score3 に必要な cluster role と minimum cluster count を固定し、active primary unresolved 時の cap と context-sensitive claim の active/inactive uplift rule を採用した。
+- theme: 根拠強度を q_evidence の内部で扱うか、別次元として外出しするか
+  decision: 根拠強度は q_evidence の内部 subfactor として扱い、Q_e(K_e) の第7軸にはしない方針を暫定固定した
+  note: coverage / binding / strength_class / origin_diversity を q_evidence 内で評価し、GraphLint 出力には evidence_strength_profile を別欄で出してよいが Q_e 次元は増やさない方針を採用した。
+- theme: latent_downstream な hold reason を、いつ active な governance blocker へ昇格させるか
+  decision: latent_downstream は relation ではなく activation_state として保持し、promotion trigger で active governance blocker へ昇格させる方針を暫定固定した
+  note: GC1 通過、dependency clear、deadline 逼迫、precommit/externality 露出を昇格トリガにし、特に H5/H6 は near_due や external exposure があれば GC1 前でも latent のまま放置しない方針を採用した。
+- theme: 複数 hold reason の relation_to_primary を dependency だけで足りるとみなすか、causal/temporal を追加するか
+  decision: relation_to_primary を dependency だけに縮退させず、dependency / causal / temporal / independent を分けた共通語彙へ拡張する方針を暫定固定した
+  note: derived_from_primary / dependency_precondition / causal_driver / temporal_deadline_precedence / independent_co_blocker の5語彙を採用し、activation_state は別フィールドへ分離した。
+- theme: H1〜H6 の下位 subtype をどこまで共通語彙化し、どこから領域拡張に委ねるか
+  decision: H1〜H6 の family-level core subtype と domain extension 境界を暫定固定した
+  note: 各 H family に4つの core subtype を固定し、領域別の finer typing は parent_core_subtype_ref を持つ extension としてのみ許し、cross-family 付け替えを禁止した。
+- theme: linked / bound の正値語彙を present 系へ統一するか、component-specific positive state を維持するか
+  decision: linked / bound は literal present へ統一せず、component-specific positive state を authoritative storage に維持する方針を暫定固定した
+  note: E は linked、V/R は bound、G/C/H auxiliary は concrete value/ref/digest を positive state とし、generic analytics には derived positive_meta_state=present を返してよいが raw schema に present は保存しない方針を採用した。
+- theme: H の補助メタデータに typed missing marker をどこまで許し、どこから invalid event とみなすか
+  decision: H の typed missing marker は audit-support auxiliary field に限って許し、core event / replay-critical field では invalid event とする境界を暫定固定した
+  note: event_id/timestamp/actor_ref/operation/reason と replay-critical transition field には marker を許さず、supporting_evidence_ref や external_case_ref などの auxiliary field にだけ required metadata 付きで marker を許す方針を採用した。
+- theme: organizational_or_social_domain における risk_binding の not_applicable 境界をどう監査可能にするか
+  decision: organizational_or_social_domain の risk_binding=not_applicable 境界を effect_zone / reversibility / reviewer / reevaluation trigger 付きの監査パケットで暫定固定した
+  note: pure clarification / reversible local analysis / internal option listing に限って not_applicable を許し、reputation・privacy・人員・対外説明・resource commitment・contested risk_tolerance がある場合は risk_binding を active にする方針を採用した。
+- theme: score 3 の再利用可能性を profile 間でどうベンチマークするか
+  decision: score 3 の profile 間比較は ordinal 直比較ではなく witness packet と portability class で benchmark する方針を暫定固定した
+  note: direct_reusable / caveated_reusable / benchmark_only / non_reusable の4クラスを採用し、Q24 は canonical registry cell と suite governance の固定へ切り分けた。
+- theme: weighted quorum や議決権重み付けを、approval structure の共通語彙へどこまで含めるか
+  decision: weighted quorum は approval structure の core へ最小 tally semantics だけを入れ、weight table や apportionment formula は extension registry へ分離する方針を暫定固定した
+  note: counting_basis, threshold_rule, mandatory_role_set, veto/abstention/timeout/tie_break, weighted_tally_profile_ref を core に残し、seat_weight_table_ref や constituency snapshot は extension に逃がす方針を採用した。
+- theme: joint approval と joint accountability の衝突を、同一 R でどう分離して追跡するか
+  decision: approval leg と accountability leg を別レコードとして保持し、co-accountability は facet partition + residual owner 付きでのみ許す方針を暫定固定した
+  note: approval 成立は accountability 移転の代用ではなく、forum verdict / proxy / fallback は approval leg に閉じ、rollback owner / reflection owner を accountability leg に明示する。
+- theme: same-frame manual redesign action family の finer typing をどこまで共通語彙化するか
+  decision: same-frame manual redesign action family は5つの core family だけを共通語彙化し、domain/tool 固有 subtype は extension registry へ分離する方針を暫定固定した
+  note: route substitution、safe envelope、evidence gate strengthening、canonical alignment、rollback/monitoring relayout を core とし、reframe / policy exception / role change は除外した。
+- theme: deliberate_exploration の option value と終了条件をどう半定量化するか
+  decision: deliberate_exploration は discrimination gain・branch relevance・reuse value・reversibility と cost/risk burn の半定量評価で継続 / bounded 継続 / 終了を判定する方針を暫定固定した
+  note: review window, budget cap, risk/authority bound, allowed action の4条件を termination と結び、探索中を先送り一般と切り分けた。
+- theme: ordered_fallback と weighted k_of_n を、route family の core ではなく拡張語彙としてどう分離するか
+  decision: ordered_fallback と weighted k_of_n は route family core ではなく extension overlay として分離する方針を暫定固定した
+  note: core は any_of / k_of_n の離散 selection semantics に留め、ordered chain と weighted threshold は overlay registry に逃がし、approval weighted quorum と混同しない。
+- theme: externality budget の ttl / audience / sink cap を profile ごとにどこまで数値較正するか
+  decision: externality budget の numeric calibration は 3 profile baseline + stricter-only context override で固定する方針を暫定固定した
+  note: sink / audience / artifact kind / review_due / expiry / purge_due_after_expiry を baseline 化し、review_due と expiry を別概念として固定した。

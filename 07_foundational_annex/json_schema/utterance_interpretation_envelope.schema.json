@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://knowledge-convergence.local/schema/foundational/utterance_interpretation_envelope.schema.json",
+  "title": "UtteranceInterpretationEnvelope",
+  "type": "object",
+  "required": [
+    "utterance_id",
+    "speech_act",
+    "speaker_commitment",
+    "evidentiality",
+    "deictic_anchor"
+  ],
+  "properties": {
+    "utterance_id": {
+      "type": "string"
+    },
+    "raw_text": {
+      "type": "string"
+    },
+    "source_ref": {
+      "type": "string"
+    },
+    "speech_act": {
+      "type": "string",
+      "enum": [
+        "assert",
+        "question",
+        "directive",
+        "report",
+        "proposal"
+      ]
+    },
+    "speaker_commitment": {
+      "type": "string",
+      "enum": [
+        "asserted_strong",
+        "asserted_hedged",
+        "attributed",
+        "attributed_hedged",
+        "hypothetical",
+        "interrogative"
+      ]
+    },
+    "evidentiality": {
+      "type": "string",
+      "enum": [
+        "direct",
+        "inferred",
+        "reported",
+        "assumed",
+        "simulated"
+      ]
+    },
+    "deictic_anchor": {
+      "type": "object",
+      "required": [
+        "speaker_ref",
+        "uttered_at"
+      ],
+      "properties": {
+        "speaker_ref": {
+          "type": "string"
+        },
+        "uttered_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "scope_ref": {
+          "type": "string"
+        },
+        "referent_binding": {
+          "type": [
+            "object",
+            "array",
+            "string"
+          ]
+        },
+        "timezone": {
+          "type": "string"
+        },
+        "audience_ref": {
+          "type": [
+            "string",
+            "array"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "attributed_source_ref": {
+      "type": "string"
+    },
+    "presuppositions": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "discourse_relation": {
+      "type": [
+        "array",
+        "object",
+        "string"
+      ]
+    },
+    "ambiguity_profile": {
+      "$ref": "ambiguity_profile.schema.json"
+    },
+    "claim_kind_hint": {
+      "type": "string",
+      "enum": [
+        "fact",
+        "event",
+        "state",
+        "norm",
+        "plan",
+        "report",
+        "obligation"
+      ]
+    },
+    "lift_target": {
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "lift_status": {
+      "type": "string"
+    }
+  },
+  "anyOf": [
+    {
+      "required": [
+        "raw_text"
+      ]
+    },
+    {
+      "required": [
+        "source_ref"
+      ]
+    }
+  ],
+  "additionalProperties": true
+}

@@ -1,0 +1,24 @@
+example_id: annex_identity_redaction_policy
+scenario: レビュー担当者の個人識別を常時公開しないが、incident replay 時には lawful reopen を許す。
+identity_surface_policy:
+  public_surface:
+    reviewer_ref: pseudonym:rvw-12
+    operator_ref: role_data_steward
+  restricted_surface:
+    person_binding_ref: secure_identity_envelope_884
+    reopen_authority: role_compliance_officer
+  reopen_conditions:
+  - authorization lane の承認
+  - custody lane の記録
+  - security lane の確認
+  - access audit event の先行記録
+  retention_note: public surface は長期保持、restricted surface は policy と lawful hold に従う。
+history_event_excerpt:
+  event_id: evt_reopen_001
+  operation: identity_reopen_request
+  outcome: escalate
+  rationale_or_origin_ref: incident_ticket_2026_0411_7
+annex_links:
+- public_annex_concepts_v1.yaml#identity_redaction_accountability_governance
+- public_annex_formalization_v1.yaml#identity_redaction_accountability_model
+- public_annex_formalization_v1.yaml#legal_hold_reopen_custody_model

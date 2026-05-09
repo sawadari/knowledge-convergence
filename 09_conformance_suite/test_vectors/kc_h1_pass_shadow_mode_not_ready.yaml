@@ -1,0 +1,25 @@
+test_vector_id: kc_h1_pass_shadow_mode_not_ready
+profile: KC-H1
+evaluation_context:
+  risk_tier: high
+  deployment_mode: shadow
+human_oversight_packet:
+  packet_id: hop_pass_001
+  target_ref: scoring_assist_shadow_v1
+  human_roles:
+  - operator
+  - auditor
+  override_rights:
+    operator: soft_stop
+    auditor: escalation_request
+  explanation_scope_by_role:
+    operator: operational_rationale
+    auditor: full_audit
+  training_readiness: complete
+  operator_acceptance: not_ready
+  manual_fallback:
+    available: true
+    fallback_route: manual_review_queue
+    switchover_time_target: PT1M
+branch_binding:
+  branch: execute

@@ -1,0 +1,19 @@
+test_vector_id: kc_o1_fail_validation_pending_execute
+profile: KC-O1
+evaluation_context:
+  risk_tier: critical
+  validation_status: pending
+lifecycle_gate_packet:
+  gate_id: gate_emergency_release_rc10
+  target_ref: release_candidate_rc10
+  artifact_class: baseline
+  baseline_id: baseline_rc10_tmp
+  entry_criteria:
+  - verification_report_signed
+  - rollback_package_ready
+  exit_criteria:
+  - deployment_window_confirmed
+  - monitoring_dashboard_live
+  responsible_role: release_board
+branch_binding:
+  branch: execute

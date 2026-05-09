@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ops_feedback_event.schema.json",
+  "title": "OpsFeedbackEvent",
+  "type": "object",
+  "required": [
+    "event_id",
+    "target_ref",
+    "observed_in_operation",
+    "effect_summary"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "target_ref": {
+      "type": "string"
+    },
+    "observed_in_operation": {
+      "type": "string"
+    },
+    "effect_summary": {
+      "type": "string"
+    },
+    "severity": {
+      "type": "string"
+    },
+    "reproduction_status": {
+      "type": "string"
+    },
+    "triggers_reopen": {
+      "type": "boolean"
+    },
+    "linked_incident_ref": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

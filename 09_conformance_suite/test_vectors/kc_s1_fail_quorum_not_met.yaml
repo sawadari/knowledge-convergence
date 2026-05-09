@@ -1,0 +1,20 @@
+test_vector_id: kc_s1_fail_quorum_not_met
+profile: KC-S1
+aggregation_rule_profile:
+  profile_id: agr_bad_002
+  decision_scope: policy_change_delta_7
+  aggregation_mode: premise_based
+  quorum_rule:
+    minimum_members: 6
+    minimum_present: 5
+  consistency_guard: all_required_premises_must_pass
+premise_results:
+- premise_ref: operator_training_ready
+  'yes': 2
+  'no': 2
+- premise_ref: safety_signoff
+  'yes': 2
+  'no': 2
+final_group_outcome:
+  branch: hold
+  rationale: quorum was not met

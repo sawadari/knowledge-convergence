@@ -1,0 +1,17 @@
+test_vector_id: kc_t1_fail_stale_transferable
+profile: KC-T1
+evaluation_context:
+  risk_tier: medium
+  intended_branch: hold
+  evaluation_date: '2026-04-11'
+epistemic_justification_packet:
+  packet_id: ejp_bad_002
+  target_ref: claim_recent_field_status
+  source_ref: src_shift_report_12
+  speaker_warrant_profile: process_owner
+  trust_channel: incident_report
+  justification_basis: field_report
+  freshness_window:
+    observed_at: '2026-03-01'
+    stale_after: '2026-03-10'
+  epistemic_transfer_status: transferable

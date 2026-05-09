@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/knowledge-convergence/se_system/se_org_role_packet.schema.json",
+  "title": "SE Organization Role Packet",
+  "type": "object",
+  "required": [
+    "role_id",
+    "role_name",
+    "decision_rights",
+    "expertise_scope",
+    "accountability_scope",
+    "escalation_path"
+  ],
+  "properties": {
+    "role_id": {"type": "string"},
+    "role_name": {"type": "string"},
+    "decision_rights": {"type": "array", "items": {"type": "string"}},
+    "expertise_scope": {"type": "array", "items": {"type": "string"}},
+    "accountability_scope": {"type": "array", "items": {"type": "string"}},
+    "escalation_path": {"type": "array", "items": {"type": "string"}},
+    "training_readiness": {"type": "string", "enum": ["complete", "provisional", "incomplete", "retraining_required", "not_applicable"]},
+    "override_rights": {"type": "array", "items": {"type": "string"}},
+    "manual_fallback": {"type": "object", "additionalProperties": true},
+    "cognitive_load_budget": {"type": "object", "additionalProperties": true}
+  },
+  "additionalProperties": true
+}

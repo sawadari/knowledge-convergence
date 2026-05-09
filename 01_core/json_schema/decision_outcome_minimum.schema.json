@@ -1,0 +1,263 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://knowledge-convergence.local/schema/decision_outcome_minimum.schema.json",
+  "title": "DecisionOutcomeMinimum v1.1",
+  "type": "object",
+  "required": [
+    "decision_context",
+    "decision_outcome"
+  ],
+  "properties": {
+    "decision_context": {
+      "type": "object",
+      "required": [
+        "target",
+        "alternatives",
+        "decision_time",
+        "scope"
+      ],
+      "properties": {
+        "target": {
+          "type": "string"
+        },
+        "alternatives": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "decision_time": {
+          "type": "string"
+        },
+        "scope": {
+          "type": [
+            "string",
+            "object",
+            "array"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "decision_outcome": {
+      "type": "object",
+      "properties": {
+        "epistemic_eval_state": {
+          "type": "string",
+          "enum": [
+            "true",
+            "hold",
+            "false"
+          ]
+        },
+        "governance_entry_state": {
+          "type": "string",
+          "enum": [
+            "blocked_by_epistemic",
+            "eligible"
+          ]
+        },
+        "governance_eval_state": {
+          "type": "string",
+          "enum": [
+            "not_started",
+            "true",
+            "hold",
+            "false"
+          ]
+        },
+        "branch": {
+          "type": "string",
+          "enum": [
+            "execute",
+            "hold",
+            "reject",
+            "escalate",
+            "rollback"
+          ]
+        },
+        "primary_reason": {
+          "type": "object",
+          "required": [
+            "reason_code",
+            "origin_ref",
+            "source_of_judgement"
+          ],
+          "properties": {
+            "reason_code": {
+              "type": "string",
+              "enum": [
+                "H1",
+                "H2",
+                "H3",
+                "H4",
+                "H5",
+                "H6"
+              ]
+            },
+            "origin_ref": {
+              "type": "string"
+            },
+            "source_of_judgement": {
+              "type": "string",
+              "enum": [
+                "GraphLint",
+                "DecisionLedger"
+              ]
+            }
+          },
+          "additionalProperties": true
+        },
+        "secondary_reasons": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "reason_code",
+              "origin_ref",
+              "source_of_judgement"
+            ],
+            "properties": {
+              "reason_code": {
+                "type": "string",
+                "enum": [
+                  "H1",
+                  "H2",
+                  "H3",
+                  "H4",
+                  "H5",
+                  "H6"
+                ]
+              },
+              "origin_ref": {
+                "type": "string"
+              },
+              "relation_to_primary": {
+                "type": "string"
+              },
+              "source_of_judgement": {
+                "type": "string",
+                "enum": [
+                  "GraphLint",
+                  "DecisionLedger"
+                ]
+              }
+            },
+            "additionalProperties": true
+          }
+        },
+        "rationale": {
+          "type": "string"
+        },
+        "success_basis": {
+          "type": "object",
+          "required": [
+            "basis_ref",
+            "source_of_judgement"
+          ],
+          "properties": {
+            "basis_ref": {
+              "type": "string"
+            },
+            "source_of_judgement": {
+              "type": "string",
+              "enum": [
+                "GraphLint",
+                "DecisionLedger"
+              ]
+            }
+          },
+          "additionalProperties": true
+        },
+        "domain_validity_eval_state": {
+          "type": "string",
+          "enum": [
+            "not_applicable",
+            "not_started",
+            "true",
+            "hold",
+            "false"
+          ]
+        },
+        "domain_validity_reason": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "oversight_state": {
+          "type": "string",
+          "enum": [
+            "meaningful",
+            "fragile",
+            "formal_only",
+            "absent",
+            "not_applicable"
+          ]
+        },
+        "agent_execution_state": {
+          "type": "string",
+          "enum": [
+            "not_applicable",
+            "planned",
+            "executed",
+            "blocked",
+            "rolled_back",
+            "failed"
+          ]
+        }
+      },
+      "additionalProperties": true,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "branch": {
+                "const": "execute"
+              }
+            },
+            "required": [
+              "branch"
+            ]
+          },
+          "then": {
+            "required": [
+              "epistemic_eval_state",
+              "governance_entry_state",
+              "governance_eval_state",
+              "branch",
+              "success_basis",
+              "rationale"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "branch": {
+                "enum": [
+                  "hold",
+                  "reject",
+                  "escalate",
+                  "rollback"
+                ]
+              }
+            },
+            "required": [
+              "branch"
+            ]
+          },
+          "then": {
+            "required": [
+              "epistemic_eval_state",
+              "governance_entry_state",
+              "governance_eval_state",
+              "branch",
+              "primary_reason",
+              "rationale"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "additionalProperties": true
+}

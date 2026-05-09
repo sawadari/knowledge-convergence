@@ -1,0 +1,101 @@
+title: 知識収束学_制度運用annex_HCI_v1
+file_role: human_centered_operations_annex
+version: 1
+status: curated_institutional_extension
+created_on: '2026-04-11'
+purpose: 人が安全に理解し、止め、引き継ぎ、手動代替できる条件を、core を壊さずに補う。
+normativity:
+  precedence: 01_core > 06_public_annex > 07_foundational_annex > 08_institutional_annex > 02_supplements
+theme_index:
+  human_authority_and_explanation:
+    label: 人の権限と説明
+    entries:
+    - human_oversight_packet_model
+    - role_scoped_explanation_model
+    - override_and_stop_right_model
+  readiness_and_fallback:
+    label: 準備状態と代替経路
+    entries:
+    - cognitive_load_budget_model
+    - training_readiness_model
+    - operator_acceptance_model
+    - manual_fallback_and_safe_mode_model
+institutional_entries:
+  human_oversight_packet_model:
+    label: human oversight packet
+    institutional_role: recommended_institutional_extension
+    statement: target ごとに human roles, override rights, explanation scope, training readiness, manual fallback を束ねる。
+    public_surface:
+      minimum_fields:
+      - packet_id
+      - target_ref
+      - human_roles
+      - override_rights
+      - explanation_scope_by_role
+      recommended_fields:
+      - cognitive_load_budget
+      - training_readiness
+      - operator_acceptance
+      - manual_fallback
+      - escalation_contact
+      - review_cadence
+    rules:
+    - override right は execute authority と同義ではない。
+    - no_fallback の場合は justification を残す。
+  role_scoped_explanation_model:
+    label: role-scoped explanation
+    institutional_role: recommended_institutional_extension
+    statement: reviewer / operator / auditor / safety_lead ごとに必要な explanation scope を分ける。
+    rules:
+    - operator には operational rationale と immediate hazard を優先する。
+    - auditor には provenance / approval / dissent trace を含む full audit を与えられるようにする。
+    - same summary を全役割へ一律配布して責務差を隠さない。
+  override_and_stop_right_model:
+    label: override and stop rights
+    institutional_role: recommended_institutional_extension
+    statement: none / soft_stop / hard_stop / rollback_request / escalation_request を区別し、人が lawful に止められる状態を保持する。
+    rules:
+    - hard_stop は emergency safety ルートとして扱ってよい。
+    - rollback_request と rollback authority は別に管理してよい。
+    - stop action 後の handoff role を明示できると強い。
+  cognitive_load_budget_model:
+    label: cognitive load budget
+    institutional_role: recommended_institutional_extension
+    statement: 運用者が一度に処理できる alert 数や explanation depth を budget として保持する。
+    rules:
+    - high explanation density が必ずしも safer とは限らない。
+    - budget 超過時は more detail でなく mode reduction や escalation を選んでよい。
+  training_readiness_model:
+    label: training readiness
+    institutional_role: recommended_institutional_extension
+    statement: complete / provisional / incomplete / retraining_required を保持し、訓練完了と権限行使を結び付ける。
+    rules:
+    - training incomplete は単なる staffing issue でなく execution blocker になりうる。
+    - retraining_required は incident 後の lawful state として扱える。
+  operator_acceptance_model:
+    label: operator acceptance
+    institutional_role: recommended_institutional_extension
+    statement: ready / limited / not_ready / retraining_required を保持し、現場の受容と安全運用能力を分けて見る。
+    rules:
+    - acceptance は popularity poll ではなく、安全な使用可能性に関わる signal として扱う。
+    - limited acceptance は shadow mode や additional supervision の根拠になりうる。
+  manual_fallback_and_safe_mode_model:
+    label: manual fallback and safe mode
+    institutional_role: recommended_institutional_extension
+    statement: 自動経路が不適なとき、safe mode や手動代替へ移れる経路を保持する。
+    rules:
+    - manual fallback は available / unavailable だけでなく、switchover 条件や責任引継ぎ先を持てる。
+    - fallback 不在の高リスク automation は stronger justification を要求しうる。
+    implementation_touchpoints:
+      HMI_layer:
+      - role_scoped_explanation_check
+      - stop_right_visibility_check
+      DecisionLedger:
+      - training_incomplete_blocks_execute
+      GraphEngine:
+      - manual_fallback_activation_event
+
+deferred_questions:
+- cognitive load budget の最小計測を domain 共通化できるか
+- operator acceptance と governance approval の境界をどこまで固定するか
+- no_fallback_justification の最低説明要件をどこまで標準化するか

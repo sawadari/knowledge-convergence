@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "minority_report_packet.schema.json",
+  "title": "MinorityReportPacket",
+  "type": "object",
+  "required": [
+    "report_id",
+    "decision_ref",
+    "authors",
+    "dissent_scope",
+    "stated_reasons"
+  ],
+  "properties": {
+    "report_id": {
+      "type": "string"
+    },
+    "decision_ref": {
+      "type": "string"
+    },
+    "authors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "dissent_scope": {
+      "type": "string"
+    },
+    "stated_reasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "alternative_conclusion": {
+      "type": "string"
+    },
+    "requested_followup": {
+      "type": "string"
+    },
+    "risk_if_overridden": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

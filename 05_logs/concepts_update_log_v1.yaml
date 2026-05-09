@@ -1,0 +1,373 @@
+title: 知識収束学_概念_update_log_抽出
+file_role: log_extract
+version: 1
+status: extracted
+derived_from:
+  source_file: concepts_v3.0.yaml
+  source_key: update_log
+entry_count: 181
+entries:
+- date: '2026-03-22'
+  change: scheduler federation algorithmic decision register / contestability review lane / override publication notice をどこまで registry 化するか を反映し、algorithmic decision register・contestability review lane・override publication notice・algorithmic constitutional decision transparency 責務分割を採用し、次スレッド指示を scheduler federation autonomous policy agent credential / model drift challenge lane / human override supremacy clause をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation constitutional records preservation order / deletion litigation hold / access denial appeal lane をどこまで registry 化するか を反映し、constitutional records preservation order・deletion litigation hold・access denial appeal lane・constitutional records preservation and access appeal 責務分割を採用し、次スレッド指示を scheduler federation algorithmic decision register / contestability review lane / override publication notice をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation whistleblower intake warrant / retaliation stay order / remedy restitution docket をどこまで registry 化するか を反映し、whistleblower intake warrant・retaliation stay order・remedy restitution docket・whistleblower protection and remedy restitution 責務分割を採用し、次スレッド指示を scheduler federation constitutional records preservation order / deletion litigation hold / access denial appeal lane をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation transparency classification charter / closed-session warrant / declassification sunset をどこまで registry 化するか を反映し、transparency classification charter・closed-session warrant・declassification sunset・transparency classification and closed-session governance 責務分割を採用し、次スレッド指示を scheduler federation whistleblower intake warrant / retaliation stay order / remedy restitution docket をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation civic initiative signature rule / agenda assignment lane / committee disposition notice をどこまで registry 化するか を反映し、civic initiative signature rule・agenda assignment lane・committee disposition notice・civic initiative and agenda assignment 責務分割を採用し、次スレッド指示を scheduler federation transparency classification charter / closed-session warrant / declassification sunset をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation public petition admissibility rule / hearing convening floor / response publication notice をどこまで registry 化するか を反映し、public petition admissibility rule・hearing convening floor・response publication notice・public petition and hearing response 責務分割を採用し、次スレッド指示を scheduler federation civic initiative signature rule / agenda assignment lane / committee disposition notice をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation lobbying contact register / cooling-off interval / revolving-door clearance をどこまで registry 化するか を反映し、lobbying contact register・cooling-off interval・revolving-door clearance・lobbying disclosure and revolving-door control 責務分割を採用し、次スレッド指示を scheduler federation public petition admissibility rule / hearing convening floor / response publication notice をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation officeholder asset disclosure register / blind trust arrangement / disclosure breach consequence をどこまで registry 化するか を反映し、officeholder asset disclosure register・blind trust arrangement・disclosure breach consequence・officeholder asset disclosure and blind-trust compliance 責務分割を採用し、次スレッド指示を scheduler federation lobbying contact register / cooling-off interval / revolving-door clearance をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation public accounts audit roster / deficiency cure docket / surcharge publication notice をどこまで registry 化するか を反映し、public accounts audit roster・deficiency cure docket・surcharge publication notice・public accounts audit and surcharge publication 責務分割を採用し、次スレッド指示を scheduler federation officeholder asset disclosure register / blind trust arrangement / disclosure breach consequence をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation levy authorization charter / taxpayer objection lane / sunset reapproval test をどこまで registry 化するか を反映し、levy authorization charter・taxpayer objection lane・sunset reapproval test・levy authorization and taxpayer objection governance 責務分割を採用し、次スレッド指示を scheduler federation public accounts audit roster / deficiency cure docket / surcharge publication notice をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation appropriation deadlock timer / continuity appropriation floor / shutdown mitigation warrant をどこまで registry 化するか を反映し、appropriation deadlock timer・continuity appropriation floor・shutdown mitigation warrant・appropriation continuity and shutdown mitigation 責務分割を採用し、次スレッド指示を scheduler federation levy authorization charter / taxpayer objection lane / sunset reapproval test をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation constitutional review petition registry / merits hearing panel / invalidation effect matrix をどこまで registry 化するか を反映し、constitutional review petition registry・merits hearing panel・invalidation effect matrix・constitutional review and invalidation effect 責務分割を採用し、次スレッド指示を scheduler federation appropriation deadlock timer / continuity appropriation floor / shutdown mitigation warrant をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation constitutional amendment docket / ratification census rule / amendment promulgation warrant をどこまで registry 化するか を反映し、constitutional amendment docket・ratification census rule・amendment promulgation warrant・constitutional amendment and ratification 責務分割を採用し、次スレッド指示を scheduler federation constitutional review petition registry / merits hearing panel / invalidation effect matrix をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation constituent referendum charter / proposition review lane / promulgation finality notice をどこまで registry 化するか を反映し、constituent referendum charter・proposition review lane・promulgation finality notice・constituent referendum and promulgation finality 責務分割を採用し、次スレッド指示を scheduler federation constitutional amendment docket / ratification census rule / amendment promulgation warrant をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation mandate challenge petition lane / electoral dispute chamber / seating suspension threshold をどこまで registry 化するか を反映し、mandate challenge petition lane・electoral dispute chamber・seating suspension threshold・mandate challenge and seating suspension review 責務分割を採用し、次スレッド指示を scheduler federation constituent referendum charter / proposition review lane / promulgation finality notice をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation special election writ / candidate qualification screen / mandate commencement attestation をどこまで registry 化するか を反映し、special election writ・candidate qualification screen・mandate commencement attestation・special election and mandate commencement 責務分割を採用し、次スレッド指示を scheduler federation mandate challenge petition lane / electoral dispute chamber / seating suspension threshold をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation vacancy succession order / acting office ceiling / succession certification notice をどこまで registry 化するか を反映し、vacancy succession order・acting office ceiling・succession certification notice・vacancy succession and acting authority 責務分割を採用し、次スレッド指示を scheduler federation special election writ / candidate qualification screen / mandate commencement attestation をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation impeachment article docket / trial chamber constitution / disqualification warrant をどこまで registry 化するか を反映し、impeachment article docket・trial chamber constitution・disqualification warrant・impeachment trial and disqualification control 責務分割を採用し、次スレッド指示を scheduler federation vacancy succession order / acting office ceiling / succession certification notice をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation no-confidence motion register / snap election trigger / provisional cabinet lane をどこまで registry 化するか を反映し、no-confidence motion register・snap election trigger・provisional cabinet lane・no-confidence motion and provisional cabinet continuity 責務分割を採用し、次スレッド指示を scheduler federation impeachment article docket / trial chamber constitution / disqualification warrant をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation recall petition threshold / office recall ballot / caretaker continuity warrant をどこまで registry 化するか を反映し、recall petition threshold・office recall ballot・caretaker continuity warrant・constitutional recall and caretaker continuity 責務分割を採用し、次スレッド指示を scheduler federation no-confidence motion register / snap election trigger / provisional cabinet lane をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation constitutional ombuds petition lane / maladministration inquiry docket / remedy publication notice をどこまで registry 化するか を反映し、constitutional ombuds petition lane・maladministration inquiry docket・remedy publication notice・constitutional ombuds and remedy publication 責務分割を採用し、次スレッド指示を scheduler federation recall petition threshold / office recall ballot / caretaker continuity warrant をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation constitutional interim relief warrant / enforcement stay threshold / sunset review notice をどこまで registry 化するか を反映し、constitutional interim relief warrant・enforcement stay threshold・sunset review notice・constitutional interim relief and stay control 責務分割を採用し、次スレッド指示を scheduler federation constitutional ombuds petition lane / maladministration inquiry docket / remedy publication notice をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation minority veto charter / reserved matter catalog / override sunset test をどこまで registry 化するか を反映し、minority veto charter・reserved matter catalog・override sunset test・minority safeguard and reserved matter governance 責務分割を採用し、次スレッド指示を scheduler federation constitutional interim relief warrant / enforcement stay threshold / sunset review notice をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation emergency rights derogation map / proportionality review chamber / restoration timetable をどこまで registry 化するか を反映し、emergency rights derogation map・proportionality review chamber・restoration timetable・emergency rights derogation 責務分割を採用し、次スレッド指示を scheduler federation minority veto charter / reserved matter catalog / override sunset test をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation ethics breach taxonomy / sanction ladder / rehabilitation petition をどこまで registry 化するか を反映し、ethics breach taxonomy・sanction ladder・rehabilitation petition・ethics enforcement and rehabilitation 責務分割を採用し、次スレッド指示を scheduler federation emergency rights derogation map / proportionality review chamber / restoration timetable をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation conflict disclosure register / recusal trigger / substitute appointment lane をどこまで registry 化するか を反映し、conflict disclosure register・recusal trigger・substitute appointment lane・conflict disclosure and recusal 責務分割を採用し、次スレッド指示を scheduler federation ethics breach taxonomy / sanction ladder / rehabilitation petition をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation office term calendar / transition briefing packet / holdover expiration test をどこまで registry 化するか を反映し、office term calendar・transition briefing packet・holdover expiration test・office turnover and holdover control 責務分割を採用し、次スレッド指示を scheduler federation conflict disclosure register / recusal trigger / substitute appointment lane をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation proxy delegation warrant / absentee voting boundary / revocation witness をどこまで registry 化するか を反映し、proxy delegation warrant・absentee voting boundary・revocation witness・proxy and absentee vote governance 責務分割を採用し、次スレッド指示を scheduler federation office term calendar / transition briefing packet / holdover expiration test をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation ballot integrity attestation / recount escalation lane / certification finality test をどこまで registry 化するか を反映し、ballot integrity attestation・recount escalation lane・certification finality test・ballot integrity and certification 責務分割を採用し、次スレッド指示を scheduler federation proxy delegation warrant / absentee voting boundary / revocation witness をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation representation census cadence / seat allocation formula / correction trigger をどこまで registry 化するか を反映し、representation census cadence・seat allocation formula・correction trigger・representation apportionment 責務分割を採用し、次スレッド指示を scheduler federation ballot integrity attestation / recount escalation lane / certification finality test をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation constitutional electorate registry / eligibility challenge lane / roll freeze window をどこまで registry 化するか を反映し、constitutional electorate registry・eligibility challenge lane・roll freeze window・constitutional electorate administration 責務分割を採用し、次スレッド指示を scheduler federation representation census cadence / seat allocation formula / correction trigger をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation observer accession charter / speaking-right ceiling / confidentiality perimeter audit をどこまで registry 化するか を反映し、observer accession charter・speaking-right ceiling・confidentiality perimeter audit・observer status and confidentiality perimeter 責務分割を採用し、次スレッド指示を scheduler federation constitutional electorate registry / eligibility challenge lane / roll freeze window をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation reconstitution convention call / founding baseline bundle / legitimacy continuity attestation をどこまで registry 化するか を反映し、reconstitution convention call・founding baseline bundle・legitimacy continuity attestation・federation reconstitution continuity 責務分割を採用し、次スレッド指示を scheduler federation observer accession charter / speaking-right ceiling / confidentiality perimeter audit をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation dissolution threshold / winding-up quorum / successor custody charter をどこまで registry 化するか を反映し、dissolution threshold・winding-up quorum・successor custody charter・federation dissolution and winding-up 責務分割を採用し、次スレッド指示を scheduler federation reconstitution convention call / founding baseline bundle / legitimacy continuity attestation をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation member exit notice covenant / secession settlement docket / continuity service floor をどこまで registry 化するか を反映し、member exit notice covenant・secession settlement docket・continuity service floor・member exit and settlement continuity 責務分割を採用し、次スレッド指示を scheduler federation dissolution threshold / winding-up quorum / successor custody charter をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation constitutional credential migration packet / signer reissuance window / revocation reciprocity rule をどこまで registry 化するか を反映し、constitutional credential migration packet・signer reissuance window・revocation reciprocity rule・constitutional credential migration 責務分割を採用し、次スレッド指示を scheduler federation member exit notice covenant / secession settlement docket / continuity service floor をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation common asset partition ledger / shared secret rotation window / liability runoff covenant をどこまで registry 化するか を反映し、common asset partition ledger・shared secret rotation window・liability runoff covenant・shared asset partition and runoff 責務分割を採用し、次スレッド指示を scheduler federation constitutional credential migration packet / signer reissuance window / revocation reciprocity rule をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation cross-federation appeal venue / neutral arbiter roster / award enforcement warrant をどこまで registry 化するか を反映し、cross-federation appeal venue・neutral arbiter roster・award enforcement warrant・cross-federation arbitration and award enforcement 責務分割を採用し、次スレッド指示を scheduler federation common asset partition ledger / shared secret rotation window / liability runoff covenant をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation inter-federation treaty registry / reciprocal recognition scope / treaty breach cure plan をどこまで registry 化するか を反映し、inter-federation treaty registry・reciprocal recognition scope・treaty breach cure plan・inter-federation treaty and reciprocity 責務分割を採用し、次スレッド指示を scheduler federation cross-federation appeal venue / neutral arbiter roster / award enforcement warrant をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation charter fork protocol / schism containment boundary / reunification ratification をどこまで registry 化するか を反映し、charter fork protocol・schism containment boundary・reunification ratification・federation schism and reunification 責務分割を採用し、次スレッド指示を scheduler federation inter-federation treaty registry / reciprocal recognition scope / treaty breach cure plan をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation charter renewal convention / consolidation release packet / ratification replay boundary をどこまで registry 化するか を反映し、charter renewal convention・consolidation release packet・ratification replay boundary・federation charter renewal convention 責務分割を採用し、次スレッド指示を scheduler federation charter fork protocol / schism containment boundary / reunification ratification をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation constitutional stress test scenario / override drill attestation / recovery benchmark floor をどこまで registry 化するか を反映し、constitutional stress test scenario・override drill attestation・recovery benchmark floor・federation constitutional stress and recovery 責務分割を採用し、次スレッド指示を scheduler federation charter renewal convention / consolidation release packet / ratification replay boundary をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation constitutional sunset scan / obsolete clause retirement / continuity migration packet をどこまで registry 化するか を反映し、constitutional sunset scan・obsolete clause retirement・continuity migration packet・federation constitutional sunset and migration 責務分割を採用し、次スレッド指示を scheduler federation constitutional stress test scenario / override drill attestation / recovery benchmark floor をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation amendment backlog prioritization / agenda freeze window / carryover lapse rule をどこまで registry 化するか を反映し、amendment backlog prioritization・agenda freeze window・carryover lapse rule・federation amendment backlog 責務分割を採用し、次スレッド指示を scheduler federation constitutional sunset scan / obsolete clause retirement / continuity migration packet をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation language version canon / translation variance rule / interpretation tie-break lane をどこまで registry 化するか を反映し、language version canon・translation variance rule・interpretation tie-break lane・federation language interpretation 責務分割を採用し、次スレッド指示を scheduler federation amendment backlog prioritization / agenda freeze window / carryover lapse rule をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation archival authenticity seal / constitutional record notarization / tamper challenge lane をどこまで registry 化するか を反映し、archival authenticity seal・constitutional record notarization・tamper challenge lane・federation constitutional record authenticity 責務分割を採用し、次スレッド指示を scheduler federation language version canon / translation variance rule / interpretation tie-break lane をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation judicial review petition lane / constitutional question referral / advisory opinion register をどこまで registry 化するか を反映し、judicial review petition lane・constitutional question referral・advisory opinion register・federation judicial review 責務分割を採用し、次スレッド指示を scheduler federation archival authenticity seal / constitutional record notarization / tamper challenge lane をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation constitutional legitimacy dashboard / governance health index / review cadence covenant をどこまで registry 化するか を反映し、constitutional legitimacy dashboard・governance health index・review cadence covenant・federation legitimacy review 責務分割を採用し、次スレッド指示を scheduler federation judicial review petition lane / constitutional question referral / advisory opinion register をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation public consultation docket / comment adjudication digest / transparency exception carve-out をどこまで registry 化するか を反映し、public consultation docket・comment adjudication digest・transparency exception carve-out・federation public consultation 責務分割を採用し、次スレッド指示を scheduler federation constitutional legitimacy dashboard / governance health index / review cadence covenant をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation constitutional breach classification / impeachment threshold / office suspension lane をどこまで registry 化するか を反映し、constitutional breach classification・impeachment threshold・office suspension lane・federation constitutional breach and office suspension 責務分割を採用し、次スレッド指示を scheduler federation public consultation docket / comment adjudication digest / transparency exception carve-out をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation accession readiness dossier / constitutional onboarding packet / probation ratification window をどこまで registry 化するか を反映し、accession readiness dossier・constitutional onboarding packet・probation ratification window・federation accession and probation 責務分割を採用し、次スレッド指示を scheduler federation constitutional breach classification / impeachment threshold / office suspension lane をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation policy sandbox charter / experimental carve-out permit / rollback evidence floor をどこまで registry 化するか を反映し、policy sandbox charter・experimental carve-out permit・rollback evidence floor・federation policy sandbox 責務分割を採用し、次スレッド指示を scheduler federation accession readiness dossier / constitutional onboarding packet / probation ratification window をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation constitutional education syllabus / operator certification floor / re-certification cadence をどこまで registry 化するか を反映し、constitutional education syllabus・operator certification floor・re-certification cadence・federation constitutional training and certification 責務分割を採用し、次スレッド指示を scheduler federation policy sandbox charter / experimental carve-out permit / rollback evidence floor をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation budget appropriation covenant / cost-sharing formula / emergency reserve warrant をどこまで registry 化するか を反映し、budget appropriation covenant・cost-sharing formula・emergency reserve warrant・federation budget and reserve 責務分割を採用し、次スレッド指示を scheduler federation constitutional education syllabus / operator certification floor / re-certification cadence をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation emergency succession roster / incapacitation quorum substitute / continuity attestation をどこまで registry 化するか を反映し、emergency succession roster・incapacitation quorum substitute・continuity attestation・federation emergency succession 責務分割を採用し、次スレッド指示を scheduler federation budget appropriation covenant / cost-sharing formula / emergency reserve warrant をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation delegation charter registry / subcouncil mandate ceiling / authority clawback trigger をどこまで registry 化するか を反映し、delegation charter registry・subcouncil mandate ceiling・authority clawback trigger・federation delegation and clawback 責務分割を採用し、次スレッド指示を scheduler federation emergency succession roster / incapacitation quorum substitute / continuity attestation をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation constitutional compatibility matrix / amendment conflict detector / supremacy resolution lane をどこまで registry 化するか を反映し、constitutional compatibility matrix・amendment conflict detector・supremacy resolution lane・federation constitutional compatibility 責務分割を採用し、次スレッド指示を scheduler federation delegation charter registry / subcouncil mandate ceiling / authority clawback trigger をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation temporary derogation permit / exception expiry review / re-entry conformance test をどこまで registry 化するか を反映し、temporary derogation permit・exception expiry review・re-entry conformance test・federation derogation and re-entry 責務分割を採用し、次スレッド指示を scheduler federation constitutional compatibility matrix / amendment conflict detector / supremacy resolution lane をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation referendum scope gate / stakeholder notice minimum / dissent preservation memo をどこまで registry 化するか を反映し、referendum scope gate・stakeholder notice minimum・dissent preservation memo・federation referendum notice and dissent preservation 責務分割を採用し、次スレッド指示を scheduler federation temporary derogation permit / exception expiry review / re-entry conformance test をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation constitutional interpretation canon / ambiguity escalation chamber / precedent invalidation test をどこまで registry 化するか を反映し、constitutional interpretation canon・ambiguity escalation chamber・precedent invalidation test・federation constitutional interpretation 責務分割を採用し、次スレッド指示を scheduler federation referendum scope gate / stakeholder notice minimum / dissent preservation memo をどこまで registry 化するか へ更新した
+- date: '2026-03-22'
+  change: scheduler federation dispute tribunal / sanction ladder / restitution protocol を反映し、dispute tribunal charter・sanction ladder・restitution protocol・federation dispute governance 責務分割を採用し、次スレッド指示を scheduler federation meta-governance council / amendment ratification / emergency override constitution へ更新した
+- date: '2026-03-22'
+  change: scheduler federation rollout ring / compatibility grace window / deprecation sunset を反映し、rollout ring charter・compatibility grace window・deprecation sunset policy を採用し、次スレッド指示を scheduler federation dispute tribunal / sanction ladder / restitution protocol へ更新した
+- date: '2026-03-22'
+  change: scheduler federation observability scorecard / anti-gaming guardrail / incentive settlement を反映し、observability scorecard・anti-gaming guardrail・incentive settlement rule を採用し、次スレッド指示を scheduler federation rollout ring / compatibility grace window / deprecation sunset へ更新した
+- date: '2026-03-22'
+  change: scheduler federation credential trust anchor / key rotation covenant / revocation replay を反映し、credential trust anchor registry・key rotation covenant・revocation replay rule を採用し、次スレッド指示を scheduler federation observability scorecard / anti-gaming guardrail / incentive settlement へ更新した
+- date: '2026-03-22'
+  change: scheduler federation sovereign exit treaty / asset return protocol / post-exit compatibility freeze を反映し、sovereign exit treaty・asset return protocol・post-exit compatibility freeze を採用し、次スレッド指示を scheduler federation credential trust anchor / key rotation covenant / revocation replay へ更新した
+- date: '2026-03-22'
+  change: scheduler federation external auditor accreditation / public assurance notice / confidentiality appeal を反映し、external auditor accreditation・public assurance notice・confidentiality appeal lane を採用し、次スレッド指示を scheduler federation sovereign exit treaty / asset return protocol / post-exit compatibility freeze へ更新した
+- date: '2026-03-22'
+  change: scheduler federation assurance scope profile / qualified opinion ladder / remediation undertaking を反映し、assurance scope profile・qualified opinion ladder・remediation undertaking を採用し、次スレッド指示を scheduler federation external auditor accreditation / public assurance notice / confidentiality appeal へ更新した
+- date: '2026-03-22'
+  change: scheduler federation evidence submission corridor / tamper-evident seal / cross-border retention waiver を反映し、evidence submission corridor・tamper-evident submission seal・cross-border retention waiver を採用し、次スレッド指示を scheduler federation assurance scope profile / qualified opinion ladder / remediation undertaking へ更新した
+- date: '2026-03-22'
+  change: scheduler federation public incident disclosure threshold / partner attribution embargo / coordinated notice window を反映し、public incident disclosure threshold・partner attribution embargo・coordinated notice window を採用し、次スレッド指示を scheduler federation evidence submission corridor / tamper-evident seal / cross-border retention waiver へ更新した
+- date: '2026-03-22'
+  change: scheduler federation assurance suspension trigger / shadow oversight mode / reinstatement review を反映し、assurance suspension trigger・shadow oversight mode・reinstatement review を採用し、次スレッド指示を scheduler federation public incident disclosure threshold / partner attribution embargo / coordinated notice window へ更新した
+- date: '2026-03-22'
+  change: scheduler federation external benchmark comparability / assurance profile harmonization / seal expiration policy を反映し、external benchmark comparability・assurance profile harmonization・seal expiration policy を採用し、次スレッド指示を scheduler federation assurance suspension trigger / shadow oversight mode / reinstatement review へ更新した
+- date: '2026-03-22'
+  change: scheduler federation auditor independence attestation / fee conflict cap / recusal escalation lane を反映し、independence attestation・fee conflict cap・recusal escalation lane・replacement auditor handoff を採用し、次スレッド指示を scheduler federation external benchmark comparability / assurance profile harmonization / seal expiration policy へ更新した
+- date: '2026-03-22'
+  change: scheduler federation assurance evidence sampling profile / exception budget / re-sampling escalation lane を反映し、assurance evidence sampling profile・exception budget・re-sampling escalation lane を採用し、次スレッド指示を scheduler federation auditor independence attestation / fee conflict cap / recusal escalation lane へ更新した
+- date: '2026-03-22'
+  change: scheduler federation joint-review quorum / minority dissent memo / chair tie-break lane を反映し、joint-review quorum・abstention semantics・minority dissent memo・chair tie-break lane を採用し、次スレッド指示を scheduler federation assurance evidence sampling profile / exception budget / re-sampling escalation lane へ更新した
+- date: '2026-03-22'
+  change: scheduler federation finding materiality band / cross-partner aggregation rule / contagion notice threshold を反映し、finding materiality band・cross-partner aggregation rule・contagion notice threshold を採用し、次スレッド指示を scheduler federation joint-review quorum / minority dissent memo / chair tie-break lane へ更新した
+- date: '2026-03-22'
+  change: scheduler federation remediation closure attestation / follow-up verification cadence / opinion refresh duty を反映し、remediation closure attestation・follow-up verification cadence・opinion refresh duty を採用し、次スレッド指示を scheduler federation finding materiality band / cross-partner aggregation rule / contagion notice threshold へ更新した
+- date: '2026-03-22'
+  change: scheduler federation stale-reliance withdrawal / third-party reuse boundary / liability caveat passport を反映し、stale-reliance withdrawal・third-party reuse boundary・liability caveat passport を採用し、次スレッド指示を scheduler federation remediation closure attestation / follow-up verification cadence / opinion refresh duty へ更新した
+- date: '2026-03-22'
+  change: scheduler federation assurance appeal tribunal / restatement precedence / archive preservation order を反映し、appeal standing・tribunal composition・record freeze・restatement precedence・archive preservation order を採用し、次スレッド指示を scheduler federation stale-reliance withdrawal / third-party reuse boundary / liability caveat passport へ更新した
+- date: '2026-03-22'
+  change: scheduler federation confidential evidence redaction tier / sealed appendix access lane / public summary floor を反映し、redaction tier・sealed appendix access・public summary floor・federation sealed evidence 責務分割を採用し、次スレッド指示を scheduler federation assurance appeal tribunal / restatement precedence / archive preservation order へ更新した
+- date: '2026-03-22'
+  change: scheduler federation cross-federation appeal lane / neutral convenor selection / binding precedent digest を反映し、cross-federation appeal lane・neutral convenor selection・binding precedent digest・federation appeal precedent 責務分割を採用し、次スレッド指示を scheduler federation confidential evidence redaction tier / sealed appendix access lane / public summary floor へ更新した
+- date: '2026-03-22'
+  change: scheduler federation oversight lineage replay packet / recusal history archive / handback closure certificate を反映し、lineage replay packet・recusal history archive・handback closure certificate・federation oversight closure archive 責務分割を採用し、次スレッド指示を scheduler federation cross-federation appeal lane / neutral convenor selection / binding precedent digest へ更新した
+- date: '2026-03-22'
+  change: scheduler federation oversight public accountability digest / conflict transparency badge / charter drift bulletin を反映し、public accountability digest・conflict transparency badge・charter drift bulletin・federation oversight drift transparency 責務分割を採用し、次スレッド指示を scheduler federation oversight lineage replay packet / recusal history archive / handback closure certificate へ更新した
+- date: '2026-03-22'
+  change: scheduler federation oversight exception docket / sunset waiver ledger / overdue accountability escalation を反映し、exception docket・sunset waiver ledger・overdue accountability escalation・federation oversight exception escalation 責務分割を採用し、次スレッド指示を scheduler federation oversight public accountability digest / conflict transparency badge / charter drift bulletin へ更新した
+- date: '2026-03-22'
+  change: scheduler federation oversight continuity escrow / temporary trustee appointment / orphaned accountability alarm を反映し、continuity escrow・temporary trustee appointment・orphaned accountability alarm・federation oversight gap containment 責務分割を採用し、次スレッド指示を scheduler federation oversight exception docket / sunset waiver ledger / overdue accountability escalation へ更新した
+- date: '2026-03-22'
+  change: scheduler federation oversight amendment notice packet / reviewer recusal substitution lane / handback acceptance attestation を反映し、amendment notice packet・recusal substitution lane・handback acceptance attestation・federation oversight transition operations 責務分割を採用し、次スレッド指示を scheduler federation oversight continuity escrow / temporary trustee appointment / orphaned accountability alarm へ更新した
+- date: '2026-03-22'
+  change: scheduler federation oversight charter versioning / reviewer conflict disclosure / accountability handback trigger を反映し、charter versioning・reviewer conflict disclosure・accountability handback trigger・federation oversight accountability continuity 責務分割を採用し、次スレッド指示を scheduler federation oversight amendment notice packet / reviewer recusal substitution lane / handback acceptance attestation へ更新した
+- date: '2026-03-21'
+  change: cross-session settlement checkpoint / quota debt carry-over / audit proof bundle を反映し、settlement checkpoint・debt class・transfer rule・closure projection・audit proof bundle completeness を採用し、次スレッド指示を multi-session scheduler telemetry / fairness SLO / auto-throttle threshold へ更新した
+- date: '2026-03-21'
+  change: authority-tier 競合下の forced preemption / emergency override / appeal reopen を反映し、override class・precedence DAG・contested surface freeze・appeal lane・restoration outcome を採用し、次スレッド指示を cross-session settlement checkpoint / quota debt carry-over / audit proof bundle へ更新した
+- date: '2026-03-21'
+  change: shared archive object / chain family 競合下の witness reservation / packet budget segregation を反映し、reservation unit・sharing mode・borrow debt・orphan reclaim・silent invalidation 防止を採用し、次スレッド指示を authority-tier 競合下の forced preemption / emergency override / appeal reopen へ更新した
+- date: '2026-03-21'
+  change: multi-case legal-hold / nested replay session の quota / priority / starvation avoidance を反映し、lane class・priority class・nested admissibility・preemption witness・starvation avoidance・timer inheritance を採用し、次スレッド指示を shared archive object / chain family 競合下の witness reservation / packet budget segregation へ更新した
+- date: '2026-03-21'
+  change: reopened reverse chain の re-compaction / reseal / retention timer resume を反映し、readiness 条件・reseal surface・timer rule・append-only post-checkpoint・責務分割を採用し、次スレッド指示を multi-case legal-hold / nested replay session の quota / priority / starvation avoidance へ更新した
+- date: '2026-03-21'
+  change: replay-derived finding の correction / supersession / head reactivation を反映し、finding class・action branch・reactivation admissibility・notice duty・責務分割を採用し、次スレッド指示を reopened reverse chain の re-compaction / reseal / retention timer resume へ更新した
+- date: '2026-03-21'
+  change: replay audit packet の bounded disclosure / actor-slice redaction を反映し、packet class・slice visibility・join barrier・unseal gate・責務分割を採用し、次スレッド指示を replay-derived finding の correction / supersession / head reactivation へ更新した
+- date: '2026-03-21'
+  change: reverse chain の legal-hold reopen / replay audit window を反映し、rehydration witness・window class・basis lane・freeze/stop 条件・責務分割を採用し、次スレッド指示を replay audit packet の bounded disclosure / actor-slice redaction へ更新した
+- date: '2026-03-21'
+  change: forward/reverse/correction chain の compaction / finality checkpoint / evidence retention を反映し、compaction class・replay-equivalence witness・retention tier・finality state を採用し、次スレッド指示を reverse chain に対する legal-hold reopen / replay audit window へ更新した
+- date: '2026-03-21'
+  change: correction notice の downstream propagation / acknowledgment closure / stale notice quarantine を反映し、recipient surface・closure class・quarantine・current basis admissibility を採用し、次スレッド指示を forward/reverse/correction chain の compaction / finality checkpoint / evidence retention へ更新した
+- date: '2026-03-21'
+  change: reverse continuity bundle の overlapping rollback / cascade rollback / rollback-set normalization を反映し、rollback cell 正規形・overlap class・single active head・reverse-of-reverse admissibility を採用し、次スレッド指示を correction notice の downstream propagation / acknowledgment closure / stale notice quarantine へ更新した
+- date: '2026-03-21'
+  change: transition bundle の partial rollback / reverse continuity witness と correction notice supersession を反映し、reverse bundle minimum witness・affected cell selection mode・supersession/full re-notice rule・責務分割を採用し、次スレッド指示を overlapping rollback / cascade rollback / rollback-set normalization へ更新した
+- date: '2026-03-21'
+  change: merge / split transition bundle の lineage slice partition witness と audit witness charter の接続を反映し、transition_bundle_lineage_partition_governance を追加して hard partition axis ごとの witness、packet / charter / bridge / archive の binding、notice / correction / rollback duty 分離、責務分割、禁止 shortcut を採用し、open_questions と next_concept_topic を partial rollback / reverse continuity witness へ更新した
+- date: '2026-03-21'
+  change: bounded_loss_summary の preserved-statistic set / top-k cap を反映し、bounded_loss_summary_registry_governance を追加して detector family 主導の exact preserved statistic・cap class・lossless escalation・hard partition axis・silent summary drift・責務分割・禁止 shortcut を採用し、open_questions と next_concept_topic を merge / split transition bundle の lineage slice partition witness へ更新した
+- date: '2026-03-21'
+  change: root_profile / schema_version migration 時の dual-root coexistence window と comparability rule を反映し、root_profile_schema_version_dual_root_comparability_governance を追加して use surface 別 dual-root admissibility・comparison loss class・new issuance freeze / old root freeze・comparability witness・silent drift / rollback・責務分割・禁止 shortcut を採用し、open_questions と next_concept_topic を bounded_loss_summary の preserved-statistic set / top-k cap へ更新した
+- date: '2026-03-21'
+  change: central delegation charter extension registry の mixed-version coexistence window と batch migration witness を反映し、central_delegation_charter_extension_mixed_version_batch_migration_governance を追加して use surface matrix・predecessor freeze / successor mandatory・dual-validity window・batch migration witness・completion / rollback・責務分割・禁止 shortcut を採用し、open_questions と next_concept_topic を root_profile / schema_version migration 時の dual-root coexistence window と comparability rule へ更新した
+- date: '2026-03-21'
+  change: provisional recipient-visible export の recipient acknowledgment / batch recall evidence を反映し、provisional_recipient_visible_export_acknowledgment_recall_governance を追加して acknowledgment semantics・packet/context matrix・batch recall evidence class・completion class・責務分割・禁止 shortcut を採用し、open_questions と next_concept_topic を central delegation charter extension registry の mixed-version coexistence window と batch migration witness へ更新した
+- date: '2026-03-21'
+  change: measurement_projection_profile の granularity / collapse rule と critical extension 昇格条件を反映し、measurement_projection_profile_governance を追加して four-layer partition・granularity class・lawful collapse・critical extension promotion・context matrix・責務分割・migration barrier・禁止 shortcut を採用し、open_questions と next_concept_topic を provisional recipient-visible export の recipient acknowledgment / batch recall evidence へ更新した
+- date: '2026-03-21'
+  change: measurement_projection_profile の granularity / collapse rule と critical extension 昇格条件を反映し、measurement_projection_profile_governance を追加して four-layer partition・granularity class・lawful collapse・critical extension promotion・context matrix・責務分割・migration barrier・禁止 shortcut を採用し、open_questions と next_concept_topic を provisional recipient-visible export の recipient acknowledgment / batch recall evidence へ更新した
+- date: '2026-03-21'
+  change: central delegation charter extension registry の migration / supersession / inheritance 境界を反映し、central_delegation_charter_extension_transition_governance を追加して transition taxonomy・family 別 successor boundary・context matrix・propagation rule・責務分割・禁止 shortcut を採用し、open_questions と next_concept_topic を measurement_projection_profile の granularity / collapse rule と critical extension 昇格条件へ更新した
+- date: '2026-03-21'
+  change: provisional recipient-visible export の contradiction / recall / notice duty を反映し、provisional_recipient_visible_export_notice_governance を追加して packet class・notice action family・context matrix・責務分割・禁止 shortcut を採用し、open_questions と next_concept_topic を central delegation charter extension registry の migration / supersession / inheritance 境界へ更新した
+- date: '2026-03-21'
+  change: HSM attestation packet / human observer credential の raw measurement claim / algorithm suite / extension field の notation core 分離を反映し、audit_witness_notation_core_separation_governance を追加して core-vs-extension matrix・context matrix・責務分割・禁止 shortcut を採用し、open_questions と next_concept_topic を provisional recipient-visible export の contradiction / recall / notice duty へ更新した
+- date: '2026-03-21'
+  change: central delegation charter の weighted quorum / ordered fallback / jurisdiction subtype extension の registry 分離を反映し、central_delegation_charter_extension_registry_governance を追加して core-vs-extension matrix・context matrix・binding rule・registry schema・責務分割・禁止 shortcut を採用し、open_questions と next_concept_topic を HSM attestation packet / human observer credential の notation core 分離へ更新した
+- date: '2026-03-21'
+  change: ratified 済みだが未 reflected の裁定結果の provisional binding rule を反映し、ratified_unreflected_provisional_binding_governance を追加して use surface matrix・context/authority rule・contradiction/rollback rule・責務分割・禁止 shortcut を採用し、open_questions と next_concept_topic を central delegation charter の weighted quorum / ordered fallback / jurisdiction subtype extension の registry 分離へ更新した
+- date: '2026-03-21'
+  change: HSM attestation packet / human observer credential の external serialization notation を反映し、audit_witness_external_serialization_notation_governance を追加して three-layer separation・canonical field family・notation profile registry・challenge/freshness/replay/post-confirm binding・責務分割・禁止 shortcut を採用し、open_questions と next_concept_topic を ratified 済みだが未 reflected の裁定結果の provisional binding へ更新した
+- date: '2026-03-21'
+  change: central delegation charter の jurisdiction family / authority family taxonomy を反映し、central_delegation_charter_taxonomy_governance を追加して canonical taxonomy・context matrix・non-delegable boundary・charter registry schema・責務分割・禁止 shortcut を採用し、open_questions と next_concept_topic を HSM attestation packet / human observer credential の external serialization notation へ更新した
+- date: '2026-03-21'
+  change: probabilistic allocation_witness の calibration strata / scoring rule / risk threshold registry を反映し、probabilistic_allocation_witness_registry_governance を追加して class ごとの registry cell・context policy・confidence/risk threshold・comparability barrier・責務分割・禁止 shortcut を採用し、open_questions と next_concept_topic を central delegation charter の jurisdiction family / authority family taxonomy へ更新した
+- date: '2026-03-21'
+  change: allocation_witness の composite unit / derived metric decomposition rule を反映し、allocation_witness_composite_decomposition_governance を追加して lawful decomposition 条件・comparison exclusion・context ごとの mandatory / conditional / forbidden component・togetherness rule・禁止 shortcut を採用し、open_questions から composite decomposition 論点を外して次概念テーマを probabilistic allocation_witness の calibration strata / scoring rule / risk threshold registry へ更新した
+- date: '2026-03-21'
+  change: handoff manifest の rollback / reopen / replay splice の canonical rule を反映し、handoff_manifest_rollback_reopen_replay_splice_governance を追加して archive manifest immutable・append-only linkage・same-boundary reopen・mandatory closure / LCA fanout propagation・predecessor/current/successor witness cell・禁止 shortcut を採用し、open_questions と next_concept_topic を allocation_witness の composite unit / derived metric decomposition rule へ更新した
+- date: '2026-03-21'
+  change: bundle-of-bundles の recursive nesting / stage DAG constraint の canonical rule を反映し、recursive_bundle_of_bundles_stage_dag_governance を追加して rooted tree containment・allowed/forbidden topology class・LCA boundary interface・monotone strengthening override・recipient/export の非自動継承を採用し、open_questions と next_concept_topic を handoff manifest の rollback / reopen / replay splice の canonical rule へ更新した
+- date: '2026-03-21'
+  change: allocation_witness の numeric / set-valued / probabilistic family の canonical registry を反映し、allocation_witness_family_registry_governance を追加して 3 family・comparability rule・context matrix・downgrade barrier・責務分割を採用し、open_questions と next_concept_topic を bundle-of-bundles の recursive nesting / stage DAG constraint の canonical rule へ更新した
+- date: '2026-03-21'
+  change: staged n→m transition の bundle-of-bundles canonical schema を反映し、staged_bundle_of_bundles_canonical_schema_governance を追加して super_bundle / sub_bundle / handoff_manifest の三者構造、single bundle 採用境界、super-bundle coverage claim と sub-bundle local claim の分界、archive immutable rule、recipient alias / replay export / downstream digest の非自動継承、責務分割を採用し、open_questions と next_concept_topic を allocation_witness の numeric / set-valued / probabilistic family の canonical registry へ更新した
+- date: '2026-03-21'
+  change: bundle proof / edge proof の simultaneous suite revision dual-validity rule を反映し、simultaneous_suite_revision_dual_validity_governance を追加して bundle_lane / edge_cohort_lane / claim class policy の3層 shared unit、mandatory edge cohort conformity、mixed-mode decision、propagation overlay 優先、recipient alias successor mandatory rule を採用し、open_questions と next_concept_topic を staged n→m transition の bundle-of-bundles canonical schema へ更新した
+- date: '2026-03-21'
+  change: bundle proof / edge proof の simultaneous suite revision dual-validity rule を反映し、simultaneous_suite_revision_dual_validity_governance を追加して bundle_lane / edge_cohort_lane / claim class policy の3層 shared unit、mandatory edge cohort conformity、mixed-mode decision、propagation overlay 優先、recipient alias successor mandatory rule を採用し、open_questions と next_concept_topic を staged n→m transition の bundle-of-bundles canonical schema へ更新した
+- date: '2026-03-21'
+  change: proof_handle の partial revocation propagation rule を反映し、proof_handle_partial_revocation_propagation_governance を追加して sink class 別 propagation matrix、scope unit、token hard cut との分界、DecisionLedger / GraphEngine / GraphLint の責務分割、禁止 shortcut を採用し、open_questions と next_concept_topic を bundle proof / edge proof の simultaneous suite revision dual-validity rule へ更新した
+- date: '2026-03-21'
+  change: bridge token suite revision の migration / anti-downgrade registry を反映し、bridge_token_suite_revision_governance を追加して revision_id ベースの suite revision registry、dual-validity mode、5文脈の legacy issuance / verification 境界、cross-registry anti-downgrade barrier、token_handle / proof_handle cut policy、禁止 shortcut を採用し、open_questions と next_concept_topic を proof_handle の partial revocation propagation rule へ更新した
+- date: '2026-03-21'
+  change: audit witness packet の vendor-neutral attestation / observer credential profile registry を反映し、audit_witness_profile_registry_governance を追加して 4 attestation class・4 observer credential class・binding field・4文脈 profile matrix・schema/registry 分界・migration barrier を採用し、open_questions と next_concept_topic を bridge token suite revision の migration / anti-downgrade registry へ更新した
+- date: '2026-03-21'
+  change: bridge token の signature suite / proof profile / revocation handle の canonical registry を反映し、bridge_token_registry_governance を追加して suite class・proof profile matrix・token_handle / proof_handle の二層 revocation・supersession / tombstone rule・禁止 shortcut を採用し、open_questions と next_concept_topic を merge / split transition bundle の canonical schema へ更新した
+- date: '2026-03-21'
+  change: tenant merge / split 時の lawful continuity 条件を反映し、tenant_merge_split_lawful_continuity_governance を追加して literal pseudonym continuity の禁止、1→1 recontainer の linear rebind 条件、merge/split transition bundle、archive manifest の immutable rule、central transition charter 必須境界を採用し、open_questions と next_concept_topic を bridge token の signature suite / proof profile / revocation handle の canonical registry へ更新した
+- date: '2026-03-21'
+  change: audit witness packet / central delegation charter の canonical schema を反映し、audit_witness_packet_central_delegation_charter_governance を追加して canonical packet field set、central delegation charter field set、duplicate_discard_digest / bridge token / archive manifest linkage rule、exception lane と post-confirm duty、禁止 shortcut を採用し、open_questions と next_concept_topic を tenant merge / split 時の lawful continuity 条件へ更新した
+- date: '2026-03-21'
+  change: duplicate_discard_digest の multiset root hash primitive / compression boundary を反映し、duplicate_discard_digest_governance を更新して root_profile_ref の canonical profile、collision witness の mandatory 境界、compression grade の3段階、bridge token proof_ref / archive manifest digest を用いた external continuity rule、migration witness と禁止 shortcut を採用し、open_questions と next_concept_topic を audit witness packet / central delegation charter の canonical schema へ更新した
+- date: '2026-03-21'
+  change: audit witness shard / central_authority 境界 / emergency bypass SLA を反映し、audit_witness_external_audit_emergency_bypass_governance を追加して append-only precommit・HSM attested witness・human observer witness の hybrid composition、central_authority 必須境界、bounded_actor_slice 上限と例外的 accountable_identity_slice、post-confirm SLA と failure branch、禁止 shortcut を採用し、open_questions と next_concept_topic を bridge token の cryptographic shape / export-local pseudonym TTL へ更新した
+- date: '2026-03-21'
+  change: duplicate_discard_digest の canonical field set と multiset root を反映し、duplicate_discard_digest_governance を追加して common core field、family-specific override、multiset root の order-independence / count-sensitivity、stable pseudonym lineage・route / recipient / effect summary の接続、禁止 shortcut を採用し、open_questions と next_concept_topic を audit witness shard / central_authority 境界 / emergency bypass SLA へ更新した
+- date: '2026-03-21'
+  change: stable pseudonym の scope / epoch / rotation bridge を反映し、stable_pseudonym_continuity_governance を追加して canonical scope unit、epoch rotation trigger、bridge taxonomy、export-local pseudonym 再束縛、禁止 shortcut を採用し、open_questions と next_concept_topic を duplicate_discard_digest の canonical field set と multiset root へ更新した
+- date: '2026-03-21'
+  change: legal-hold reopen key の split custody / quorum / emergency bypass を反映し、legal_hold_reopen_custody_governance を追加して actor class / custody lane / shard class、scenario 別 quorum、retention timer / access audit / emergency bypass 規則、禁止 shortcut を採用し、open_questions と next_concept_topic を stable pseudonym の scope / epoch / rotation bridge へ更新した
+- date: '2026-03-21'
+  change: cluster de-dup 後の raw signal retention の detector family 別規則を反映し、raw_signal_retention_governance を追加して retained artifact 5 class、family 別 minimum retained raw unit、claim facet override、purge / replay 接続、禁止 shortcut を採用し、open_questions と next_concept_topic を legal-hold reopen key の split custody / quorum / emergency bypass へ更新した
+- date: '2026-03-21'
+  change: execution capsule の binary object と manifest/hash の canonical archive 境界を反映し、execution_capsule_canonical_archive_governance を追加して manifest core・digest chain・sealed identity envelope・pointer・blob store の境界、replay / reopen / purge の分岐、責務分割、禁止 shortcut を採用し、open_questions と next_concept_topic を cluster de-dup 後の raw signal retention の detector family 別規則へ更新した
+- date: '2026-03-20'
+  change: operator / reviewer identity と accountability の redaction 境界を反映し、identity_redaction_accountability_governance を追加して identity surface の6層、場面別 visibility、DecisionLedger / GraphEngine / GraphLint / archive object の責務分割、reopen 条件、禁止 shortcut を採用し、次概念テーマを execution capsule の binary object と manifest/hash の canonical archive 境界へ更新した
+- date: '2026-03-20'
+  change: lawful cadence / expected burst envelope の detector family / sink class 別 registry 化を反映し、cadence_registry_governance を追加して detector family taxonomy、cadence sink class、registry cell、burst state taxonomy、batch charter / review_due / confirmation_due linkage、DecisionLedger / GraphEngine 記録単位を採用し、open_questions と next_concept_topic を operator / reviewer の個人識別と accountability の redaction 境界へ更新した
+- date: '2026-03-20'
+  change: 同一 authority・同一 precedence layer の複数 conflict に対する batch/tie-break 規則を反映し、stakeholder_conflict_governance 配下に same_layer_conflict_batch_tiebreak_normalization を追加して cluster unit、batch admissibility、blocking veto reach、timeout/fallback、tool split を採用し、次概念テーマを lawful cadence / expected burst envelope の detector family / sink class 別 registry 化へ更新した
+- date: '2026-03-20'
+  change: 自己評価ログの監査粒度と保存期間の共通化を反映し、self_evaluation_audit_log_governance を追加して canonical event family、granularity class、retention bucket、DecisionLedger / GraphEngine / GraphLint の責務分割を採用し、次概念テーマを同一 authority・同一 precedence layer の複数 conflict に対する batch/tie-break 規則へ更新した
+- date: '2026-03-20'
+  change: shared prompt / template 変更の semantic delta class の自動判定を反映し、semantic_delta_autoclassification_governance を追加して、none / bounded / material / unresolved の4値、witness taxonomy、facet override、hidden coupling / prior reset / burst taxonomy / penalty linkage を採用し、hidden coupling の hard_shared 条件へ semantic delta class=none を明示接続し、次概念テーマを自己評価ログの監査粒度と保存期間の共通化へ更新した
+- date: '2026-03-20'
+  change: calibration history の decay window と drift 閾値を反映し、calibrated self-confidence の履歴較正方針、stratum 再利用境界、rollback_success の部分算入、mild / severe drift の既定閾値、次概念テーマを非収束領域の理論化へ更新
+- date: '2026-03-20'
+  change: priority_relation の領域別語彙較正を反映し、共通 relation 語彙、禁止混同パターン、stakeholder conflict の裁定層境界、次スレッド指示を更新
+- date: '2026-03-20'
+  change: stakeholder conflict の裁定層接続を反映し、adjudication case 最小核、lifecycle、V への反映規則、q_decision / Eval_g への接続境界、次概念テーマを q_decision / q_responsibility の領域別較正へ更新
+- date: '2026-03-20'
+  change: q_decision / q_responsibility の領域別較正を反映し、共通下位観点、profile 別 cap rule、cross-check 規則、次概念テーマを複数承認主体・代理承認・fallback role の正規化へ更新
+- date: '2026-03-20'
+  change: mixed-domain profile 合成規則を反映し、subdimension/facet 単位の profile 合成、local override の境界、delegation_scope D の prohibition/cap 合成、次優先テーマを self-confidence の較正へ更新
+- date: '2026-03-20'
+  change: self-confidence の較正と confidence_floor の設定を反映し、calibrated self-confidence の定義、domain/profile 別 floor、cold start と fail-safe 規則、次概念テーマを auto_rollback の完了保証へ更新
+- date: '2026-03-20'
+  change: auto_rollback の完了保証と rollback failure 時の分岐を反映し、execution_responsibility に auto_rollback_completion_policy、4つの outcome、rollback_ready の最小束縛、domain/profile 別 completion 条件を追加して、次概念テーマを guard cap の較正式へ更新
+- date: '2026-03-20'
+  change: guard cap の ordinal / numeric 較正式を反映し、mixed_domain_profile_composition に guard_meet_policy、ordinal/numeric/set-valued の meet 規則、guard_contradiction / incomparable_guard の branch 接続を追加して、次概念テーマを calibration history の decay window と drift 閾値へ更新
+- date: '2026-03-20'
+  change: 非収束領域の理論化を反映し、Hold / false / unresolved_plurality / deliberate_exploration の概念境界、adjudication / delegation_scope との接続、次概念テーマを guard_contradiction と same-frame manual redesign path の判定規則へ更新
+- date: '2026-03-20'
+  change: guard_contradiction と same-frame manual redesign path の判定規則を反映し、guard_failure / guard_contradiction / incomparable_guard の境界、same-frame manual redesign path の成立条件、branch 接続、次概念テーマを canonical unit / baseline registry の共通化へ更新
+- date: '2026-03-20'
+  change: canonical unit / baseline registry の共通化を反映し、central_definitions に canonical_registry を追加して、正規化単位・ratified conversion rule・authority split・registry issue mapping を暫定固定し、次概念テーマを disjunctive requirement / route family の meet 演算へ更新した
+- date: '2026-03-20'
+  change: disjunctive requirement / route family の meet 演算を反映し、route family の最小語彙、admissible selection family、guard_failure / guard_contradiction / incomparable_guard の境界、適用例、次優先テーマを更新
+- date: '2026-03-20'
+  change: unresolved plurality の昇格規則を反映し、non_convergence_domain に escalation_policy を追加し、open_questions と next_concept_topic を更新
+- date: '2026-03-20'
+  change: stakeholder conflict の branch-criticality と chained adjudication 規則を反映し、central_definitions に stakeholder_conflict_governance を追加して、branch-criticality の4因子、precedence DAG、DecisionLedger / GraphEngine の責務、open_questions と next_concept_topic を更新した
+- date: '2026-03-20'
+  change: shared-core action / intersection-safe action の admissible 条件を反映し、central_definitions に action_coverage_boundary を追加して、coverage_basis / isolation_basis、許容・禁止 action family、q_decision 接続、DecisionLedger / GraphEngine の責務、open_questions と next_concept_topic を更新した
+- date: '2026-03-20'
+  change: route family の partial-overlap candidate に対する lawful route mapping を反映し、central_definitions に lawful_route_mapping を追加して、canonical route core・relation_kind・lawful mapped coverage の境界を暫定固定し、次概念テーマを action coverage basis の expiry / revocation 規則へ更新した
+- date: '2026-03-20'
+  change: action coverage basis の expiry / revocation 規則を反映し、central_definitions に basis_lifecycle_governance を追加して、basis_status、expiry / revocation / supersession / revalidation の境界、grace 不採用、DecisionLedger / GraphEngine の責務、open_questions と next_concept_topic を更新した
+- date: '2026-03-20'
+  change: shadow / sandbox / branch-local artifact の externality budget と expiry を反映し、central_definitions に isolation_externality_budget_governance を追加して、externality_class、budget 単位、review_due / expired / revoked の分岐、DecisionLedger / GraphEngine の記録単位を採用し、次スレッド指示を dominance_only mapping と monotone strengthening の境界へ更新した
+- date: '2026-03-20'
+  change: dominance_only mapping と monotone strengthening の境界を反映し、central_definitions に monotone_strengthening_governance を追加して、許容 strengthening family・禁止 family・DecisionLedger / GraphEngine の記録単位・次スレッド指示を更新した
+- date: '2026-03-20'
+  change: mapping registry authority の delegated review と SLA を反映し、authority tier、delegation 境界、baseline SLA、emergency suspend、local convention 流入防止策、次スレッド指示を更新した
+- date: '2026-03-20'
+  change: externality budget の ttl / audience / sink cap の数値較正を反映し、isolation_externality_budget_governance に profile 別 numeric cap table、review_due/expiry の運用差、single_branch / external irreversible / policy-sensitive の stricter override、purge/rollback obligation を追加して、次概念テーマを suspected leak と confirmed leak の detector threshold へ更新した
+- date: '2026-03-20'
+  change: suspected leak と confirmed leak の detector threshold を反映し、isolation_externality_budget_governance に detector_threshold_policy、sink class ごとの base threshold floor、profile/context override、provisional sink typing、DecisionLedger / GraphEngine の detector 記録単位を追加して、次概念テーマを shared telemetry / cache / derived preview の sink 分類へ更新した
+- date: '2026-03-20'
+  change: shared telemetry / cache / derived preview の sink 分類を反映し、isolation_externality_budget_governance に5軸 vocabulary、class precedence、artifact 別 default/exception、profile/context override、sink typing record 単位を追加して、次概念テーマを detector integrity class と provenance level の canonical registry へ更新した
+- date: '2026-03-20'
+  change: detector integrity class と provenance level の canonical registry を反映し、isolation_externality_budget_governance に source family・detector integrity class・claim facet 別 precedence・required floor・record linkage を追加して、次概念テーマを sink typing evidence の freshness / self-report / mirrored observation の precedence へ更新した
+- date: '2026-03-20'
+  change: sink typing evidence の freshness / self-report / mirrored observation の precedence を反映し、freshness 4状態、mirror lag の effective age、self-report の admissible scope、facet 局所 tie-break、DecisionLedger / GraphEngine の freshness linkage を採用し、次スレッド指示を同一 authority tier 内の複数 reviewer / forum の tie-break と veto 競合へ更新した
+- date: '2026-03-20'
+  change: 同一 authority tier 内の複数 reviewer / forum の tie-break と veto 競合を反映し、same_tier_reviewer_conflict_normalization を追加して response semantics・blocking veto・forum 内部 tie・timeout/fallback の概念境界を固定し、次概念テーマを local_convention_detected と confirmed policy drift の detector threshold へ更新した
+- date: '2026-03-20'
+  change: local_convention_detected と confirmed policy drift の detector threshold を反映し、policy_drift_detector_governance を追加して、signal taxonomy・threshold policy・hold/emergency suspend/confirm/release/revoke/escalate/false の分岐・DecisionLedger / GraphEngine の drift linkage を固定し、次概念テーマを mirror lag estimate と sampling window の統計的同値 rule へ更新した
+- date: '2026-03-20'
+  change: mirror lag estimate と sampling window の統計的同値 rule を反映し、isolation_externality_budget_governance に statistical_equivalence_policy を追加して、window profile の最小束縛、equivalence class、lag upper bound、resampling admissibility、branch 接続、DecisionLedger / GraphEngine の linkage を固定し、次概念テーマを detector confidence aggregation window / cluster de-dup rule へ更新した
+- date: '2026-03-20'
+  change: detector confidence aggregation window / cluster de-dup rule を反映し、detector_confidence_aggregation_governance を追加して signal / cluster / corroboration / aggregation window の境界、duplicate/burst の扱い、bounded aggregation、branch 接続、DecisionLedger / GraphEngine linkage を採用し、次概念テーマを profile 別の review / activation / emergency confirmation SLA の数値較正へ更新した
+- date: '2026-03-20'
+  change: profile 別の review / activation / emergency confirmation SLA の数値較正を反映し、sla_clock_calibration_governance を追加して、profile baseline、context override cap、shortening-only rule、breach branch、DecisionLedger / GraphEngine linkage を採用し、次概念テーマを profile/context ごとの aggregation window と hard expiry の数値較正へ更新した
+- date: '2026-03-20'
+  theme: profile/context ごとの aggregation window と hard expiry の数値較正
+  decision: detector evidence の時間窓を3層へ分離し、family/profile/context 別 baseline、grace と live の役割分離、hard expiry 後の stale-to-invalid、merge / split / de-dup、mirror lag / confirmation_due linkage を暫定固定した
+  note: hard expiry を auto clear と誤解しないよう、incident history と current admissibility を分離した。local_convention_detected は longest、confirmed_policy_drift は middle、suspected_leak は shortest の baseline を採用し、context override は短縮だけ許す方針を明示した。
+- date: '2026-03-20'
+  change: mirror lag upper bound の prior / credibility level の較正を反映し、mirror_lag_prior_credibility_governance を追加して、source family 別 prior table、5段階 credibility class、安全側 update rule、effective age / freshness / detector window / confirmation_due linkage を採用し、次概念テーマを same-team だが別 tool / 別 operator の partial independence の較正へ更新した
+- date: '2026-03-20'
+  change: same-team だが別 tool / 別 operator の partial independence の較正を反映し、same_team_partial_independence_governance を追加して、same_team 内部の5 class、bounded bonus / corroboration unit / forbidden use の境界、DecisionLedger / GraphEngine linkage を採用し、次概念テーマを operator bias / adversarial flooding / replay attack の補正へ更新した
+- date: '2026-03-20'
+  change: operator bias / adversarial flooding / replay attack の補正を反映し、adversarial_correlation_penalty_governance を追加して、penalty taxonomy、適用文脈、degrade / suspend / escalate 規則、DecisionLedger / GraphEngine linkage を採用し、次概念テーマを small-sample 時の prior α0 / β0 と credibility level ρ の領域別較正へ更新した
+- date: '2026-03-20'
+  change: small-sample 時の prior α0 / β0 と credibility level ρ の領域別較正を反映し、small_sample_prior_credibility_governance を追加して、target family / detector family / profile / context の役割分担、ordinal fallback、confirm 系と suspend 系の境界、DecisionLedger / GraphEngine linkage を採用し、次概念テーマを hidden common-mode coupling の registry 化へ更新した
+- date: '2026-03-20'
+  change: 真の incident burst と adversarial flooding の early-stage separation の較正を反映し、early_stage_burst_flooding_separation_governance を追加して、cluster taxonomy、6軸 threshold bundle、lawful burst / flooding suspect / confirmed attack-like の分岐、DecisionLedger / GraphEngine linkage を採用し、次概念テーマを shared prompt / template 変更の semantic delta class の自動判定へ更新した
+- date: '2026-03-20'
+  change: shared prompt / shared rulepack / shared model checkpoint の hidden common-mode coupling の registry 化を反映し、hidden_common_mode_coupling_registry_governance を追加して、5つの canonical source family、relation taxonomy、coupling strength、same_team corroboration cap / prior reset / penalty / manual review linkage を採用し、次概念テーマを真の incident burst と adversarial flooding の early-stage separation の較正へ更新した
+- date: '2026-03-22'
+  change: Q01-Q03 を反映し、scheduler_federation_autonomous_policy_agent_governance と accountable_identity_slice_exception_threshold_governance を追加して、autonomous agent credential / drift challenge / human override supremacy、および detector family / sink class 別の accountable_identity_slice 例外閾値を暫定固定し、open_questions と next_concept_topic を主要主張 criticality へ更新した
+- date: '2026-03-22'
+  change: Q04-Q05 を反映し、execution_capsule_blob_boundary_governance と claim_criticality_governance を追加して、profile × replay class の inline/pinned 境界、および primary / context-sensitive / auxiliary claim の criticality band と GraphLint mapping を暫定固定し、open_questions と next_concept_topic を Q06 へ更新した
+- date: '2026-03-22'
+  change: Q06-Q10 を反映し、auxiliary_support_domain_calibration_governance・evidence_strength_embedding_governance・latent_downstream_hold_promotion_governance・hold_reason_relation_taxonomy_governance・hold_reason_subtype_registry_governance を追加して、補助主張しきい値、evidence strength の位置づけ、latent hold promotion、reason relation taxonomy、H subtype registry を暫定固定し、open_questions と next_concept_topic を Q24 へ更新した
+- date: '2026-03-22'
+  change: Q11-Q15 を反映し、positive_state_vocabulary_governance・hold_auxiliary_metadata_marker_governance・organizational_risk_binding_not_applicable_audit_governance・cross_profile_score3_benchmark_governance・approval_weighted_quorum_governance を追加して、component-specific positive state、H auxiliary marker 境界、organizational risk not_applicable 監査、score 3 portability class、weighted quorum の core-vs-extension 境界を暫定固定し、open_questions を更新した
+- date: '2026-03-22'
+  change: Q16-Q20 を反映し、joint approval/accountability split、same-frame manual redesign core typing、deliberate exploration の semi-quant option value、route family extension boundary、externality budget numeric calibration を採用し、次概念テーマを Q24 の benchmark registry canonicalization へ維持した
+- date: '2026-03-22'
+  change: Q21-Q24 を反映し、freshness/expiry registry 分離、direct abuse anchor と detector abuse anchor の family 別最小束縛、joint change の artifact contribution class、replay benchmark registry cell と migration/versioning rule を採用し、open_questions を空にして次概念テーマを knowledge 定義 / 公理候補の fixed 化へ更新した

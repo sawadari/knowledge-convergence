@@ -1,0 +1,13 @@
+test_vector_id: kc_t1_fail_public_claim_execute
+profile: KC-T1
+evaluation_context:
+  risk_tier: high
+  intended_branch: execute
+  evaluation_date: '2026-04-11'
+epistemic_justification_packet:
+  packet_id: ejp_bad_001
+  target_ref: claim_remote_monitoring_safe
+  source_ref: src_vendor_blog_post
+  speaker_warrant_profile: domain_expert
+  trust_channel: public_claim
+  justification_basis: attributed_statement

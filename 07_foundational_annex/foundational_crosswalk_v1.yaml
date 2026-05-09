@@ -1,0 +1,163 @@
+title: 知識収束学_基礎発展crosswalk_v1
+file_role: foundational_crosswalk
+version: 1
+status: curated_foundational_extension
+created_on: '2026-04-11'
+purpose: 言語学・数学方向の追加項目を、既存 core / public annex / implementation split へどう接続するかを示す。
+precedence:
+  order: 01_core > 06_public_annex > 07_foundational_annex > 02_supplements
+  non_override_rule: 07_foundational_annex は 01_core の最小語彙を上書きせず、追加 packet と追加 profile を提供する。
+integration_map:
+  upstream_language_to_core:
+    utterance_interpretation_envelope:
+      connects_to:
+      - G
+      - C
+      - E
+      primary_use: raw utterance を claim-ready candidate に持ち上げる前段 packet
+      implementation_owner:
+      - GraphLint
+      - ingestion adapter
+    speech_act:
+      connects_to:
+      - G.claims
+      - C.intent
+      primary_use: assert / report / proposal / directive の取り違え防止
+      implementation_owner:
+      - GraphLint
+    speaker_commitment:
+      connects_to:
+      - E.bindings
+      - H.events
+      primary_use: assert / hedge / attributed / hypothetical を evidence binding の強さと切り離して保持
+      implementation_owner:
+      - GraphLint
+      - DecisionLedger
+    evidentiality:
+      connects_to:
+      - E.bindings
+      - H.events
+      primary_use: direct / inferred / reported / assumed を追跡
+      implementation_owner:
+      - GraphLint
+    presupposition_and_deictic_anchor:
+      connects_to:
+      - C
+      - H1
+      primary_use: 指示対象や前提不成立を claim truth と混同しない
+      implementation_owner:
+      - GraphLint
+    ambiguity_profile:
+      connects_to:
+      - H1
+      - G.claims
+      - C
+      primary_use: referential / scope / modality / discourse / gradable threshold を個別に hold できるようにする
+      implementation_owner:
+      - GraphLint
+    claim_kind_typing:
+      connects_to:
+      - G.claims
+      - V
+      - R
+      primary_use: fact / event / norm / plan / obligation に応じて evidence と approval 期待形を変える
+      implementation_owner:
+      - GraphLint
+      - DecisionLedger
+  downstream_math_to_core:
+    four_valued_support_status:
+      connects_to:
+      - E
+      - H2
+      primary_use: supported / refuted / both / neither により open conflict と情報欠落を分離する
+      implementation_owner:
+      - GraphLint
+    argument_graph_packet:
+      connects_to:
+      - E
+      - H2
+      - H.events
+      primary_use: rebut / undercut / source conflict / authority conflict を edge で説明する
+      implementation_owner:
+      - GraphLint
+      - Audit layer
+    outranking_profile:
+      connects_to:
+      - V
+      - decision_outcome
+      primary_use: 多基準判断・比較不能・veto を lawful に残す
+      implementation_owner:
+      - DecisionLedger
+    measurement_profile:
+      connects_to:
+      - V
+      primary_use: ordinal / interval / ratio の意味境界を固定する
+      implementation_owner:
+      - DecisionLedger
+      - policy registry
+    provenance_trace_packet:
+      connects_to:
+      - E
+      - H
+      primary_use: derivation と rollback dependency を追跡する
+      implementation_owner:
+      - GraphEngine
+      - Audit layer
+    temporal_guard_packet:
+      connects_to:
+      - R
+      - H
+      - decision_outcome
+      primary_use: approval validity, hold expiry, revalidation due を管理する
+      implementation_owner:
+      - GraphEngine
+      - DecisionLedger
+profile_alignment:
+  KC-L1:
+    enriches:
+    - KC-E1
+    typical_outputs:
+    - utterance_interpretation_envelope
+    - ambiguity_profile
+    - lifted_claim_candidate
+  KC-M1:
+    enriches:
+    - KC-E1
+    - KC-A1
+    typical_outputs:
+    - support_status_4
+    - argument_graph_packet
+    - conflict_explanation
+  KC-M2:
+    enriches:
+    - KC-G1
+    typical_outputs:
+    - measurement_profile
+    - outranking_profile
+    - incomparability_record
+  KC-M3:
+    enriches:
+    - KC-A1
+    - KC-D1
+    typical_outputs:
+    - provenance_trace_packet
+    - temporal_guard_packet
+    - validity_expiry_event
+adoption_priority:
+- id: F1
+  profile: KC-L1
+  why_first: 発話から claim への誤正規化を早期に止められるため
+- id: F2
+  profile: KC-M1
+  why_first: H2 を説明可能な競合グラフへ変えられるため
+- id: F3
+  profile: KC-M2
+  why_first: V の単一スコア依存を減らせるため
+- id: F4
+  profile: KC-M3
+  why_first: approval expiry と rollback lineage を監査できるため
+minimum_non_goals:
+- core branch 語彙 execute / hold / reject / escalate / rollback は維持する
+- H1〜H6 を廃止しない
+- argument graph を ratified adjudication の代替にはしない
+- measurement profile 無しの数値に高い数学的意味を仮定しない

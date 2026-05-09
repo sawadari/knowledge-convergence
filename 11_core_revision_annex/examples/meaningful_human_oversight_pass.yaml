@@ -1,0 +1,17 @@
+example_id: meaningful_human_oversight_pass
+profile: KC-MHO1
+meaningful_human_oversight_packet:
+  oversight_role: release_manager
+  role_scoped_explanation: diff summary, impacted requirements, failed/passed tests,
+    open risks
+  stop_or_override_right: true
+  intervention_window: 24h before merge
+  training_readiness: adequate
+  cognitive_load_budget:
+    max_parallel_agent_tasks: 5
+  manual_fallback: manual revert and rollback script RB-19
+  escalation_path:
+  - chief_systems_engineer
+  - safety_lead
+  audit_visibility: full logs available
+  oversight_state: meaningful

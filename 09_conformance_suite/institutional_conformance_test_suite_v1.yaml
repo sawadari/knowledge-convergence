@@ -1,0 +1,120 @@
+title: 知識収束学_制度運用適合試験スイート_v1
+file_role: institutional_conformance_test_suite
+version: 1
+status: curated_conformance_suite
+created_on: '2026-04-11'
+purpose: 既存例と test vector をまとめて、制度運用 annex packet の pass / warn / fail を確認する。
+outcome_meaning:
+  pass: error と warning が無い
+  warn: warning はあるが error は無い
+  fail: 1件以上の error がある
+cases:
+- test_id: T1-PASS-001
+  profile: KC-T1
+  input_file: ../08_institutional_annex/examples/attributed_expert_claim_with_defeater.yaml
+  expected_outcome: pass
+  expected_rule_hits: []
+- test_id: T1-FAIL-001
+  profile: KC-T1
+  input_file: test_vectors/kc_t1_fail_public_claim_execute.yaml
+  expected_outcome: fail
+  expected_rule_hits:
+  - KCI-T1-001
+  - KCI-T1-002
+- test_id: T1-FAIL-002
+  profile: KC-T1
+  input_file: test_vectors/kc_t1_fail_stale_transferable.yaml
+  expected_outcome: fail
+  expected_rule_hits:
+  - KCI-T1-003
+- test_id: T1-WARN-001
+  profile: KC-T1
+  input_file: test_vectors/kc_t1_warn_conflict_interest_without_status.yaml
+  expected_outcome: warn
+  expected_rule_hits:
+  - KCI-T1-004
+- test_id: S1-PASS-001
+  profile: KC-S1
+  input_file: ../08_institutional_annex/examples/premise_based_board_decision.yaml
+  expected_outcome: pass
+  expected_rule_hits: []
+- test_id: S1-PASS-002
+  profile: KC-S1
+  input_file: ../08_institutional_annex/examples/minority_report_escalation.yaml
+  expected_outcome: pass
+  expected_rule_hits: []
+- test_id: S1-FAIL-001
+  profile: KC-S1
+  input_file: test_vectors/kc_s1_fail_contested_without_report.yaml
+  expected_outcome: fail
+  expected_rule_hits:
+  - KCI-S1-003
+  - KCI-S1-004
+- test_id: S1-FAIL-002
+  profile: KC-S1
+  input_file: test_vectors/kc_s1_fail_quorum_not_met.yaml
+  expected_outcome: fail
+  expected_rule_hits:
+  - KCI-S1-002
+- test_id: O1-PASS-001
+  profile: KC-O1
+  input_file: ../08_institutional_annex/examples/lifecycle_gate_transition_package.yaml
+  expected_outcome: pass
+  expected_rule_hits: []
+- test_id: O1-PASS-002
+  profile: KC-O1
+  input_file: ../08_institutional_annex/examples/ops_feedback_triggered_reopen.yaml
+  expected_outcome: pass
+  expected_rule_hits: []
+- test_id: O1-FAIL-001
+  profile: KC-O1
+  input_file: test_vectors/kc_o1_fail_execute_without_baseline.yaml
+  expected_outcome: fail
+  expected_rule_hits:
+  - KCI-O1-001
+- test_id: O1-FAIL-002
+  profile: KC-O1
+  input_file: test_vectors/kc_o1_fail_validation_pending_execute.yaml
+  expected_outcome: fail
+  expected_rule_hits:
+  - KCI-O1-003
+- test_id: H1-PASS-001
+  profile: KC-H1
+  input_file: ../08_institutional_annex/examples/operator_override_with_manual_fallback.yaml
+  expected_outcome: pass
+  expected_rule_hits: []
+- test_id: H1-PASS-002
+  profile: KC-H1
+  input_file: test_vectors/kc_h1_pass_shadow_mode_not_ready.yaml
+  expected_outcome: pass
+  expected_rule_hits: []
+- test_id: H1-FAIL-001
+  profile: KC-H1
+  input_file: test_vectors/kc_h1_fail_execute_without_training.yaml
+  expected_outcome: fail
+  expected_rule_hits:
+  - KCI-H1-002
+  - KCI-X-002
+- test_id: H1-WARN-001
+  profile: KC-H1
+  input_file: test_vectors/kc_h1_warn_no_fallback_high_risk.yaml
+  expected_outcome: warn
+  expected_rule_hits:
+  - KCI-H1-003
+- test_id: X-FAIL-001
+  profile: CROSS
+  input_file: test_vectors/kc_x_fail_qualified_testimony_high_risk_execute.yaml
+  expected_outcome: fail
+  expected_rule_hits:
+  - KCI-X-001
+- test_id: X-FAIL-002
+  profile: CROSS
+  input_file: test_vectors/kc_x_fail_training_premise_execute.yaml
+  expected_outcome: fail
+  expected_rule_hits:
+  - KCI-X-002
+- test_id: X-PASS-001
+  profile: CROSS
+  input_file: test_vectors/kc_x_pass_qualified_with_corroboration_execute.yaml
+  expected_outcome: pass
+  expected_rule_hits: []

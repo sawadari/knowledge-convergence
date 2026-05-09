@@ -1,0 +1,17 @@
+test_vector_id: kc_t1_warn_conflict_interest_without_status
+profile: KC-T1
+evaluation_context:
+  risk_tier: medium
+  intended_branch: hold
+  evaluation_date: '2026-04-11'
+epistemic_justification_packet:
+  packet_id: ejp_warn_001
+  target_ref: claim_supplier_recommendation
+  source_ref: src_internal_procurement_owner
+  speaker_warrant_profile: process_owner
+  trust_channel: peer_report
+  justification_basis: internal_report
+  defeater_register:
+  - defeater_id: def_coi_1
+    kind: conflict_of_interest
+    effect: independent_corroboration_required
