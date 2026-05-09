@@ -1,0 +1,25 @@
+package: knowledge_convergence_public_docs_bilingual
+version: v1.1-public-docs
+created_for: GitHub public release preparation
+languages:
+  - en
+  - ja
+root_readmes:
+  en: README.md
+  ja: README.ja.md
+document_sets:
+  beginner_guides:
+    en: docs/en/
+    ja: docs/ja/
+  diagrams:
+    en: diagrams/en/
+    ja: diagrams/ja/
+  public_examples:
+    en: examples/public/en/
+    ja: examples/public/ja/
+primary_message:
+  en: Generated output is not knowledge. Knowledge Convergence turns generated outputs into decision-ready knowledge states.
+  ja: 生成物は知識ではない。知識収束学は、生成物を判断可能な知識状態へ変換する。
+status: early public specification and research framework; not a mature industrial standard
+license_file: LICENSE
+license_summary: Publicly readable; modification and redistribution require prior written permission.

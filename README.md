@@ -1,67 +1,174 @@
-# 知識収束学 v1.1 公開仕様＋SEシステム core 改訂版
+# Knowledge Convergence / 知識収束学
 
-このZIPは、前版の SEシステム統合版を土台にし、core そのものを改善した v1.1 版です。
+**Tagline:** A framework for turning generated outputs into decision-ready knowledge.
 
-## v1.1でcoreへ昇格したこと
+Knowledge Convergence is a theory and engineering framework for turning generated outputs, human claims, evidence, decisions, and operational feedback into knowledge states that an organization can reason about, govern, and act on.
 
-- `domain_validity_convergence`: 認識・統治に加えて、対象ドメインで本当に使ってよいかを判定する第三層
-- `agent_execution_governance`: AI/agent を限定された実行主体として扱うための権限・監査・停止・rollback
-- `meaningful_human_oversight`: 形式的 human-in-the-loop ではなく、実効的な人間介入可能性
-- `organization_topology`: 組織構造・人間系・専門性・意思決定権・レビュー能力
-- `convergence_measurement`: 単一スコアではなく、多次元かつ blocker-preserving な収束計量
+In AI-era development, the main problem is not only whether AI can generate text, code, requirements, plans, or summaries. The harder problem is whether those outputs can be trusted, reviewed, assigned to responsible actors, validated in a domain, and safely executed.
 
-詳細は `11_core_revision_annex/` を参照してください。
+**Generated output is not knowledge.**
 
----
+Knowledge Convergence treats AI outputs, human statements, documents, models, and test results as **candidates**. A candidate becomes usable knowledge only when it is connected to meaning, context, evidence, value criteria, responsibility, history, and domain validity.
 
-## 前版から引き継いだ構成
+```mermaid
+flowchart LR
+    A[Generated outputs<br/>AI outputs / human claims / documents] --> B[Candidate knowledge]
+    B --> C[Knowledge convergence]
+    C --> D[Decision-ready knowledge state]
+    D --> E{Outcome}
+    E -->|execute| F[Act]
+    E -->|hold| G[Hold with reason]
+    E -->|reject| H[Reject]
+    E -->|escalate| I[Escalate]
+    E -->|rollback| J[Rollback]
 
-このZIPは、前版で整備した `institutional_annex`、`09_conformance_suite`、`10_se_system_annex` を引き継ぎ、そのうえで core を v1.1 として補強した版です。
+    C --> C1[Meaning]
+    C --> C2[Context]
+    C --> C3[Evidence]
+    C --> C4[Value criteria]
+    C --> C5[Responsibility]
+    C --> C6[History]
+    C --> C7[Domain validity]
+```
 
-## この版で追加したこと
-- `09_conformance_suite/` を新設
-- 制度運用 annex 用の **検査ルール集** を追加
-- `KC-T1 / KC-S1 / KC-O1 / KC-H1` ごとの **適合マトリクス** を追加
-- pass / warn / fail を返せる **テストスイート** を追加
-- 既存 institutional 例と負例ベクトルをまとめて検査した **validation report** を追加
-- 実装依存に寄せすぎない **Python runner** を追加
-- `10_se_system_annex/` を新設
-- 知識収束学を **システム開発・組織構造・人間系・AIエージェント運用** へ接続する理論統合を追加
-- SEシステム用の `KC-SE0`〜`KC-SE5` プロファイル、参照アーキテクチャ、SE Lint ルール集、例を追加
+## Why this matters
 
-## この版の改善方針
-このv1.1版は、`K = (G, C, E, V, R, H)` の表記と既存 branch 語彙を維持しつつ、core に第三層 `domain_validity_convergence` と、AI実行主体・人間監督・組織トポロジー・収束計量の補助packetを追加します。  
-そのうえで、
+AI lowers the cost of generation. It does not remove the cost of judgment.
 
-- どの packet を持てば `KC-T1 / KC-S1 / KC-O1 / KC-H1` に適合したと言えるか
-- JSON Schema だけでは拾えない **意味規則** をどう検査するか
-- 既存 example がどこまで pass し、どのような負例が fail するか
-- 実装チームが rule id 単位で CI / review gate に接続できるか
+Organizations still need to decide:
 
-を、**追加の conformance suite** として整備しています。
+- Is this true enough for the intended use?
+- What evidence supports it?
+- Which context does it apply to?
+- Who is responsible for approving, executing, stopping, or rolling it back?
+- What value criteria should be used?
+- What happens if the assumption is wrong?
+- Has the result been validated in the target domain?
 
-## この版の立場
-- `01_core/` は canonical public contract
-- `06_public_annex/` は公開配布向けの補助 annex
-- `07_foundational_annex/` は言語学・数学・由来・時相の基礎拡張 annex
-- `08_institutional_annex/` は認識論・合議設計・運用工学・HCI を扱う制度運用発展 annex
-- `09_conformance_suite/` は制度運用発展 packet を検査するための適合スイート
-- `10_se_system_annex/` は知識収束学をSEシステム、組織構造、人間系、AIエージェント運用へ接続する応用統合 annex
-- `02_supplements/` は raw research supplement の source pool
-- `03_extensions/`、`04_operations/`、`05_logs/`、`99_archive/` は研究運用と厚みを保持
+Knowledge Convergence addresses this gap between **generation** and **accountable use**.
 
-## 最初の入口
-- 外部読者・レビュー担当: `01_core/00_start_here_public_spec.md`
-- 実装者: `01_core/implementation_quickstart_public_v1.md`
-- 制度運用発展の語彙を見る人: `08_institutional_annex/00_start_here_institutional_annex.md`
-- 実際に制度運用 packet を検査したい人: `09_conformance_suite/00_start_here_conformance_suite.md`
-- SEシステム統合を読みたい人: `10_se_system_annex/00_start_here_se_system_annex.md`
-- 追加採用プロファイルを見る人: `01_core/institutional_extension_profiles_v1.yaml`
+## Core idea
 
-## 意味変更ポリシー
-このv1.1版は、理論の芯である `K=(G,C,E,V,R,H)` と branch 語彙を維持しながら、二層収束を三層収束へ拡張します。  
-**制度運用 annex を保存したまま、SEシステム統合で露出した弱点を core 側に反映し、検査可能な規則・試験ケース・実行例を足した版** です。
+A knowledge state is represented as:
 
-## ライセンス
+```text
+K = (G, C, E, V, R, H)
+```
 
-このリポジトリは公開閲覧用に提供されていますが、オープンソースではありません。改変、派生物作成、再配布、転載、ミラーには、事前の書面許可が必要です。詳細は `LICENSE` を参照してください。
+| Symbol | Meaning | Plain explanation |
+|---|---|---|
+| `G` | Meaning structure | What is being claimed, modeled, decided, or related |
+| `C` | Context | Where, when, and under what assumptions it applies |
+| `E` | Evidence | What supports it |
+| `V` | Value criteria | What it is judged against |
+| `R` | Responsibility and authority | Who can decide, execute, review, stop, or rollback |
+| `H` | History | How it changed, why it changed, and what was approved |
+
+Version 1.1 adds explicit support for:
+
+- domain validity convergence
+- AI agent execution governance
+- meaningful human oversight
+- organization topology
+- convergence metrics
+- Systems Engineering use cases
+
+## Three-layer convergence
+
+Knowledge Convergence v1.1 evaluates knowledge states through three layers:
+
+1. **Epistemic convergence** — Can the content be explained with meaning, context, evidence, and uncertainty?
+2. **Governance convergence** — Can the organization decide, approve, hold, reject, escalate, execute, or rollback it responsibly?
+3. **Domain validity convergence** — Is it valid enough for the target domain, operational environment, and intended use?
+
+Convergence does **not** mean forcing everyone into one answer. It means reaching a state where an accountable branch can be selected: execute, hold, reject, escalate, reopen, or rollback.
+
+## Relation to AI agents
+
+Modern AI agents may generate, edit, execute commands, call tools, create tickets, or operate existing applications. Knowledge Convergence treats agents as **bounded execution actors**, not as automatic authorities.
+
+An AI agent action should be governed by:
+
+- agent identity
+- owner role
+- authority envelope
+- tool scope
+- data access scope
+- review gate
+- audit log
+- stop condition
+- rollback path
+
+## Relation to Systems Engineering
+
+The SE System extension applies Knowledge Convergence to the work that must happen before code is written and beyond code execution:
+
+- stakeholder needs
+- system boundary
+- operational scenarios
+- requirements
+- constraints
+- architecture decisions
+- trade-offs
+- verification
+- validation
+- human and organization roles
+- AI coding delegation
+- change impact
+
+An SE System is not a SysML tool and not an AI coding tool. It is a decision and knowledge infrastructure for deciding what should be built, why it should be built, under what constraints, by whom, and how it will be verified and validated.
+
+## Repository map
+
+| Path | Purpose |
+|---|---|
+| `01_core/` | Core theory, public contract, schemas, and examples |
+| `06_public_annex/` | Public supplementary annex |
+| `07_foundational_annex/` | Foundational annex for language, mathematics, and temporality |
+| `08_institutional_annex/` | Institutional operation, governance, consensus, and HCI annex |
+| `09_conformance_suite/` | Rulebook, test vectors, schemas, and validation runner |
+| `10_se_system_annex/` | Systems Engineering extension |
+| `11_core_revision_annex/` | v1.1 revision rationale and migration notes |
+| `docs/en/` | Human-readable English guides |
+| `docs/ja/` | Human-readable Japanese guides |
+| `diagrams/` | Mermaid diagrams |
+| `examples/public/` | Beginner-friendly public examples |
+
+## Start here
+
+| Reader | Recommended starting point |
+|---|---|
+| New readers | [`docs/en/00_introduction_for_beginners.md`](docs/en/00_introduction_for_beginners.md) |
+| AI researchers | [`docs/en/11_for_ai_researchers.md`](docs/en/11_for_ai_researchers.md) |
+| Systems Engineering users | [`docs/en/12_for_systems_engineers.md`](docs/en/12_for_systems_engineers.md) |
+| Implementers | [`01_core/implementation_quickstart_public_v1.md`](01_core/implementation_quickstart_public_v1.md) |
+| Conformance users | [`09_conformance_suite/00_start_here_conformance_suite.md`](09_conformance_suite/00_start_here_conformance_suite.md) |
+| Japanese readers | [`README.ja.md`](README.ja.md) |
+
+## Minimal example
+
+A team asks an AI coding agent to implement a change. The agent can write code, but the SE System first checks:
+
+- Is the requirement approved?
+- Is the decision rationale recorded?
+- Is the validation scenario defined?
+- Is the agent allowed to edit the target repository?
+- Is there a review gate?
+- Is rollback defined?
+
+If a required condition is missing, the correct outcome is not automatic execution. The correct outcome may be **hold** with a reason.
+
+## Status
+
+This repository is an early public specification and research framework. It is intended for discussion, implementation experiments, Systems Engineering tool design, AI agent governance research, and conformance tooling.
+
+It should **not** be treated as a mature industrial standard.
+
+## Language
+
+- English: this file
+- Japanese: [`README.ja.md`](README.ja.md)
+
+## License
+
+This repository is publicly readable, but it is not open source. Modification, derivative works, redistribution, republication, and mirroring require prior written permission. See [`LICENSE`](LICENSE).

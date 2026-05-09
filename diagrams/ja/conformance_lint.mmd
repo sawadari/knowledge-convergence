@@ -1,0 +1,8 @@
+flowchart LR
+    A[知識状態] --> B[Schema検査]
+    B --> C[意味規則検査]
+    C --> D[Blocker検査]
+    D --> E{分岐}
+    E -->|pass| F[続行]
+    E -->|warn| G[レビュー]
+    E -->|fail| H[保留 / エスカレーション]

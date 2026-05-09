@@ -1,0 +1,15 @@
+stateDiagram-v2
+    [*] --> Candidate
+    Candidate --> Proposed
+    Proposed --> Reviewed
+    Reviewed --> Approved
+    Reviewed --> Held
+    Reviewed --> Rejected
+    Held --> Revised
+    Revised --> Proposed
+    Approved --> Executed
+    Executed --> Reopened
+    Reopened --> Proposed
+    Executed --> RolledBack
+    Rejected --> [*]
+    RolledBack --> [*]

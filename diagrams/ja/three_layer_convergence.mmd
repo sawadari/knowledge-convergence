@@ -1,0 +1,11 @@
+flowchart LR
+    A[候補出力] --> B[認識収束]
+    B --> C[統治収束]
+    C --> D[ドメイン妥当性収束]
+    D --> E[判断可能な知識]
+    E --> F{分岐}
+    F -->|execute| X[実行]
+    F -->|hold| H[保留]
+    F -->|reject| R[棄却]
+    F -->|escalate| S[エスカレーション]
+    F -->|rollback| RB[ロールバック]

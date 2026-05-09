@@ -1,0 +1,11 @@
+flowchart LR
+    A[Candidate output] --> B[Epistemic convergence]
+    B --> C[Governance convergence]
+    C --> D[Domain validity convergence]
+    D --> E[Decision-ready knowledge]
+    E --> F{Outcome}
+    F -->|execute| X[Execute]
+    F -->|hold| H[Hold]
+    F -->|reject| R[Reject]
+    F -->|escalate| S[Escalate]
+    F -->|rollback| RB[Rollback]

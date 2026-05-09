@@ -1,0 +1,17 @@
+flowchart LR
+    A[Generated outputs] --> B[Candidate knowledge]
+    B --> C[Knowledge convergence]
+    C --> D[Decision-ready knowledge state]
+    D --> E{Outcome}
+    E -->|execute| F[Act]
+    E -->|hold| G[Hold with reason]
+    E -->|reject| H[Reject]
+    E -->|escalate| I[Escalate]
+    E -->|rollback| J[Rollback]
+    C --> C1[Meaning]
+    C --> C2[Context]
+    C --> C3[Evidence]
+    C --> C4[Value criteria]
+    C --> C5[Responsibility]
+    C --> C6[History]
+    C --> C7[Domain validity]

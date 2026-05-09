@@ -1,0 +1,15 @@
+flowchart TB
+    A[Human / Organization Decision] --> B[Agent Execution Envelope]
+    B --> B1[Agent identity]
+    B --> B2[Owner role]
+    B --> B3[Authority scope]
+    B --> B4[Tool scope]
+    B --> B5[Data access scope]
+    B --> B6[Human review gate]
+    B --> B7[Audit log]
+    B --> B8[Rollback path]
+    B --> B9[Stop condition]
+    B --> C[AI Agent Action]
+    C --> D{Post-check}
+    D -->|pass| E[Commit / Execute]
+    D -->|fail| F[Hold / Rollback / Escalate]

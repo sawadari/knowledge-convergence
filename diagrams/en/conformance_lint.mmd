@@ -1,0 +1,8 @@
+flowchart LR
+    A[Knowledge State] --> B[Schema check]
+    B --> C[Semantic rule check]
+    C --> D[Blocker check]
+    D --> E{Outcome}
+    E -->|pass| F[Proceed]
+    E -->|warn| G[Review]
+    E -->|fail| H[Hold / Escalate]
