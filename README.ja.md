@@ -99,6 +99,27 @@ AIエージェントの行動には、次が必要です。
 - 停止条件
 - ロールバック経路
 
+## 関連実装: KC
+
+[KC](https://github.com/sawadari/KC) は、Knowledge Convergence / 知識収束学の一部の考え方を、AI支援開発と GitHub Pull Request のワークフローに適用した関連実装です。
+
+KC は、このリポジトリで扱う知識収束学全体を実装するものではありません。KC は意図的にスコープを狭くし、Codex などのAIコーディングエージェントが生成した Pull Request を、人間がレビュー・承認・保留・差戻しできるようにする実用的な gate に焦点を当てています。
+
+KC では、知識収束学の一部の概念を次のようにリポジトリ内 artifact に対応づけます。
+
+| 知識収束学の概念 | KCでの実装 |
+|---|---|
+| 知識候補 | CodexのPlan、PR差分、生成された証跡 |
+| 文脈と意図 | GitHub Issue と `.kc/issue.yaml` |
+| 承認済み範囲 | `.kc/plan.yaml` と `.kc/approval.yaml` |
+| 根拠 | `.kc/evidence_bundle.yaml` |
+| 責任と権限 | 人間の承認証跡と agent envelope |
+| 履歴 | PRコメント、Evidence Bundleのライフサイクル、`.kc/current.yaml` |
+| ドメイン妥当性 | validation scenario と validation evidence |
+| 分岐 | `PASS` / `WARN` / `HOLD` / `FAIL` |
+
+KC は、知識収束学の標準的・完全な実装ではなく、実装実験および実用上のガードレイヤーとして扱うべきです。理論、語彙、データ契約、適合検査、システムズエンジニアリング拡張の正本は、このリポジトリにあります。
+
 ## システムズエンジニアリングとの関係
 
 SEシステム拡張は、コードを書く前、およびコード実行だけでは解決しない作業に知識収束学を適用します。

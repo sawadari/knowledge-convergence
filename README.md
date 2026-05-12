@@ -99,6 +99,27 @@ An AI agent action should be governed by:
 - stop condition
 - rollback path
 
+## Related implementation: KC
+
+[KC](https://github.com/sawadari/KC) is a related implementation experiment that applies selected Knowledge Convergence ideas to AI-assisted GitHub pull request workflows.
+
+KC is intentionally narrower than this repository. It does not implement the full Knowledge Convergence framework. Instead, it focuses on one practical use case: helping teams review and govern pull requests produced with Codex or other coding agents.
+
+KC maps a subset of Knowledge Convergence concepts into repository-local artifacts:
+
+| Knowledge Convergence concept | KC implementation |
+|---|---|
+| Candidate output | Codex plan, PR diff, generated evidence |
+| Context and intent | GitHub Issue and `.kc/issue.yaml` |
+| Approved scope | `.kc/plan.yaml` and `.kc/approval.yaml` |
+| Evidence | `.kc/evidence_bundle.yaml` |
+| Responsibility and authority | human approval evidence and agent envelope |
+| History | PR comments, evidence bundle lifecycle, `.kc/current.yaml` |
+| Domain validity | validation scenario and validation evidence fields |
+| Branching | `PASS`, `WARN`, `HOLD`, `FAIL` |
+
+KC should be treated as an implementation experiment and practical guardrail, not as the normative definition of Knowledge Convergence. The specification, vocabulary, data contracts, and broader Systems Engineering concepts remain in this repository.
+
 ## Relation to Systems Engineering
 
 The SE System extension applies Knowledge Convergence to the work that must happen before code is written and beyond code execution:
